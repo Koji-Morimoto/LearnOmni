@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 596" width="900" height="596">
+  <rect class="background" x="0" y="0" width="900" height="596" fill="#1e1e2e"/>
+
+  <text x="450" y="34" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="21" fill="#cdd6f4">カプセルの寸法定義と、非一様スケールで壊れる仕組み</text>
+  <text x="450" y="60" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">左は正しい寸法の与え方、右はスケールで寸法を与えたときに起きる不整合</text>
+
+  <!-- panel 1 : capsule dimensions -->
+  <rect class="container" x="40" y="80" width="400" height="380" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <text x="240" y="108" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">UsdGeom.Capsule が持つ寸法属性</text>
+
+  <!-- capsule body -->
+  <path d="M130 170 A40 40 0 0 1 210 170 L210 290 A40 40 0 0 1 130 290 Z" fill="#89b4fa" fill-opacity="0.32" stroke="#89b4fa" stroke-width="2.5"/>
+  <!-- axis dashed, split so it never crosses the shape -->
+  <path d="M170 132 L170 126" stroke="#a6adc8" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/>
+  <path d="M170 334 L170 352" stroke="#a6adc8" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/>
+  <text x="170" y="368" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8">軸 = axis 属性</text>
+
+  <!-- R dimension bar above the capsule -->
+  <path d="M170 122 L210 122 M170 116 L170 128 M210 116 L210 128" stroke="#f9e2af" stroke-width="1.8" fill="none"/>
+  <text x="218" y="128" text-anchor="start" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#f9e2af">R</text>
+
+  <!-- h dimension bar -->
+  <path d="M252 170 L252 290 M246 170 L258 170 M246 290 L258 290" stroke="#f9e2af" stroke-width="1.8" fill="none"/>
+  <text x="266" y="235" text-anchor="start" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#f9e2af">h</text>
+
+  <!-- L dimension bar -->
+  <path d="M310 130 L310 330 M304 130 L316 130 M304 330 L316 330" stroke="#a6e3a1" stroke-width="1.8" fill="none"/>
+  <text x="324" y="235" text-anchor="start" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#a6e3a1">L</text>
+
+  <text x="56" y="396" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#cdd6f4">R = radius 属性（半径）</text>
+  <text x="56" y="418" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#cdd6f4">h = height 属性（軸方向の長さ。両端の半球を含まない）</text>
+  <text x="56" y="440" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#a6e3a1">L = 全長 = h + 2R（USD属性には無く、計算で求める値）</text>
+
+  <!-- panel 2 : non-uniform scale -->
+  <rect class="container" x="460" y="80" width="400" height="380" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <text x="660" y="108" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">軸に垂直な断面を軸方向から見たところ</text>
+
+  <ellipse cx="560" cy="190" rx="55" ry="28" fill="#89b4fa" fill-opacity="0.32" stroke="#89b4fa" stroke-width="2.5"/>
+  <circle cx="760" cy="190" r="55" fill="#a6e3a1" fill-opacity="0.28" stroke="#a6e3a1" stroke-width="2.5"/>
+  <text x="660" y="196" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">不一致</text>
+
+  <text x="560" y="278" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">ビューポートの見た目</text>
+  <text x="560" y="300" text-anchor="middle" font-family="Noto Sans Mono CJK JP, monospace" font-size="12" fill="#a6adc8">scale = (1, 1, 0.5)</text>
+  <text x="760" y="278" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">PhysX が使う衝突形状</text>
+  <text x="760" y="300" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#a6adc8">半径は1つしか持てない</text>
+
+  <text x="660" y="348" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f38ba8">非一様スケールをかけると、ビューポートの見た目と</text>
+  <text x="660" y="370" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f38ba8">PhysX の衝突形状が食い違う</text>
+  <text x="660" y="406" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#cdd6f4">対策: 軸に垂直な2方向のスケールを等しく保つ。</text>
+  <text x="660" y="428" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#cdd6f4">より確実なのは radius / height 属性で寸法を決めること</text>
+
+  <!-- legend -->
+  <rect class="container" x="40" y="472" width="820" height="76" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <text x="56" y="503" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">凡例</text>
+
+  <rect x="112" y="490" width="26" height="16" fill="#89b4fa" fill-opacity="0.32" stroke="#89b4fa" stroke-width="2.5"/>
+  <text x="148" y="503" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#cdd6f4">青 = ビューポートにレンダリングされる形状</text>
+
+  <rect x="470" y="490" width="26" height="16" fill="#a6e3a1" fill-opacity="0.28" stroke="#a6e3a1" stroke-width="2.5"/>
+  <text x="506" y="503" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#cdd6f4">緑 = PhysX が実際に使う衝突形状・導出値</text>
+
+  <path d="M112 526 L138 526" stroke="#a6adc8" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/>
+  <text x="148" y="531" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#cdd6f4">灰の破線 = カプセルの軸</text>
+
+  <path d="M470 526 L496 526" stroke="#f9e2af" stroke-width="1.8" fill="none"/>
+  <text x="506" y="531" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#cdd6f4">黄の寸法線 = USD属性として直接与える値</text>
+
+  <text x="450" y="578" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">→ カプセルの寸法は xform のスケールではなく radius / height / axis 属性で与える</text>
+</svg>

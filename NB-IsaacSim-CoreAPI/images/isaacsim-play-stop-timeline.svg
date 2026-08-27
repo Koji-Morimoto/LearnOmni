@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 700" width="1240" height="700">
+  <defs>
+    <marker id="ah" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#cdd6f4"/>
+    </marker>
+  </defs>
+  <rect class="background" x="0" y="0" width="1240" height="700" fill="#1e1e2e"/>
+
+  <text x="620" y="40" font-family="Noto Sans CJK JP, sans-serif" font-size="20" fill="#cdd6f4" text-anchor="middle">Isaac Sim 6.0.1 : Play と Stop で何がいつ有効になるか</text>
+  <text x="620" y="70" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8" text-anchor="middle">バーの長さ＝そのデータがメモリ上に存在している区間。バーが無い区間ではそのデータは存在しない。</text>
+
+  <rect x="230" y="100" width="270" height="36" fill="#45475a" stroke="#cdd6f4" stroke-width="1"/>
+  <rect x="500" y="100" width="150" height="36" fill="#45475a" stroke="#cdd6f4" stroke-width="1"/>
+  <rect x="650" y="100" width="370" height="36" fill="#45475a" stroke="#cdd6f4" stroke-width="1"/>
+  <rect x="1020" y="100" width="200" height="36" fill="#45475a" stroke="#cdd6f4" stroke-width="1"/>
+  <text x="365" y="123" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#cdd6f4" text-anchor="middle">① 停止中</text>
+  <text x="575" y="123" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#cdd6f4" text-anchor="middle">② 物理初期化</text>
+  <text x="835" y="123" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#cdd6f4" text-anchor="middle">③ 実行中（物理ステップが進む）</text>
+  <text x="1120" y="123" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#cdd6f4" text-anchor="middle">④ 停止後</text>
+
+  <line x1="500" y1="136" x2="500" y2="146" stroke="#cdd6f4" stroke-width="1"/>
+  <line x1="650" y1="136" x2="650" y2="146" stroke="#cdd6f4" stroke-width="1"/>
+  <line x1="1020" y1="136" x2="1020" y2="146" stroke="#cdd6f4" stroke-width="1"/>
+
+  <text x="500" y="166" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#f9e2af" text-anchor="middle">Play押下</text>
+  <text x="650" y="166" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#f9e2af" text-anchor="middle">SIMULATION_SETUP</text>
+  <text x="650" y="184" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#f9e2af" text-anchor="middle">SIMULATION_STARTED</text>
+  <text x="1020" y="166" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#f9e2af" text-anchor="middle">Stop押下</text>
+  <text x="1020" y="184" font-family="Noto Sans CJK JP, sans-serif" font-size="12" fill="#f9e2af" text-anchor="middle">SIMULATION_STOPPED</text>
+
+  <text x="16" y="204" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8">各データの存在区間</text>
+
+  <rect x="230" y="212" width="990" height="34" fill="#2b4a72" stroke="#89b4fa" stroke-width="2"/>
+  <text x="725" y="234" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4" text-anchor="middle">常に存在する（Stopで設計値に巻き戻る）</text>
+  <text x="16" y="234" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#89b4fa">USDステージ</text>
+
+  <rect x="575" y="260" width="445" height="34" fill="#2c4a30" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="797" y="282" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4" text-anchor="middle">PhysXが確保・更新</text>
+  <text x="16" y="282" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6e3a1">物理エンジン内部状態</text>
+
+  <rect x="620" y="308" width="400" height="34" fill="#2c4a30" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="820" y="330" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4" text-anchor="middle">テンソルAPIの入口</text>
+  <text x="16" y="330" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6e3a1">Simulation View</text>
+
+  <rect x="650" y="356" width="370" height="40" fill="#2c4a30" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="835" y="381" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4" text-anchor="middle">RigidPrimがこれを掴む</text>
+  <text x="16" y="374" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6e3a1">prim単位の</text>
+  <text x="16" y="392" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6e3a1">テンソルエンティティ</text>
+
+  <rect x="230" y="418" width="420" height="44" fill="#313244" stroke="#585b70" stroke-width="2"/>
+  <rect x="650" y="418" width="370" height="44" fill="#4a4020" stroke="#f9e2af" stroke-width="2"/>
+  <rect x="1020" y="418" width="200" height="44" fill="#313244" stroke="#585b70" stroke-width="2"/>
+  <text x="440" y="445" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4" text-anchor="middle">usd / usdrt / fabric のみ</text>
+  <text x="835" y="445" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f9e2af" text-anchor="middle">tensor 使用可（最速）</text>
+  <text x="1120" y="445" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4" text-anchor="middle">usd 系のみ</text>
+  <text x="16" y="445" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">使えるバックエンド</text>
+
+  <line x1="230" y1="478" x2="1215" y2="478" stroke="#cdd6f4" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="16" y="482" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8">時間の経過</text>
+
+  <text x="16" y="504" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">結論：tensorが使えるのは③だけ。①②④ではusdへ自動フォールバックし、返る値はUSD上の設計値になる。</text>
+
+  <rect class="container" x="16" y="516" width="1204" height="152" fill="none" stroke="#585b70" stroke-width="1"/>
+  <text x="40" y="540" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">凡例</text>
+  <rect x="40" y="556" width="24" height="16" fill="#2b4a72" stroke="#89b4fa" stroke-width="2"/>
+  <text x="76" y="569" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">USD側のデータ。Play/Stopに関わらず常に存在する。</text>
+  <rect x="40" y="584" width="24" height="16" fill="#2c4a30" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="76" y="597" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">物理エンジン側の実行時データ。Playで生成されStopで破棄される。</text>
+  <rect x="40" y="612" width="24" height="16" fill="#4a4020" stroke="#f9e2af" stroke-width="2"/>
+  <text x="76" y="625" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">tensorバックエンドが使える区間。</text>
+  <rect x="40" y="640" width="24" height="16" fill="#313244" stroke="#585b70" stroke-width="2"/>
+  <text x="76" y="653" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">tensorが使えず usd / usdrt / fabric にフォールバックする区間。</text>
+</svg>

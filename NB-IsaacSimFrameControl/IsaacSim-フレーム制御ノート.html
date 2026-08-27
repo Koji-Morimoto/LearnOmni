@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isaac Sim フレーム制御ノート</title>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({ startOnLoad: true, theme: "dark", securityLevel: "loose" });
+</script>
+<style>
+  :root {
+    --bg: #1e1e2e;
+    --fg: #cdd6f4;
+    --muted: #a6adc8;
+    --panel: #313244;
+    --line: #585b70;
+    --accent: #89b4fa;
+    --warn: #f9e2af;
+    --ok: #a6e3a1;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: 16px 14px 64px;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, "Hiragino Sans", "Noto Sans CJK JP", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+  }
+  h1 { font-size: 1.45rem; line-height: 1.4; margin: 1.4em 0 .5em; color: var(--accent); }
+  h2 { font-size: 1.2rem; margin: 1.8em 0 .5em; padding-bottom: .3em;
+        border-bottom: 2px solid var(--line); }
+  h3 { font-size: 1.05rem; margin: 1.5em 0 .4em; color: var(--warn); }
+  h4 { font-size: .98rem; margin: 1.2em 0 .3em; color: var(--ok); }
+  p, li { font-size: 1rem; }
+  a { color: var(--accent); }
+  hr.pagebreak { border: 0; border-top: 3px double var(--line); margin: 3em 0; }
+  code {
+    background: var(--panel); padding: .12em .35em; border-radius: 4px;
+    font-family: "SF Mono", Menlo, Consolas, monospace; font-size: .88em;
+  }
+  pre {
+    background: var(--panel); padding: 12px; border-radius: 8px;
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    border-left: 3px solid var(--accent);
+  }
+  pre code { background: none; padding: 0; font-size: .82rem; line-height: 1.6; }
+  pre.mermaid { background: var(--panel); text-align: center; border-left: none; }
+  .tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1em 0; }
+  table { border-collapse: collapse; min-width: 100%; font-size: .88rem; }
+  th, td { border: 1px solid var(--line); padding: 7px 10px; text-align: left;
+            vertical-align: top; }
+  th { background: var(--panel); white-space: nowrap; }
+  blockquote {
+    margin: 1em 0; padding: .6em 1em; border-left: 4px solid var(--warn);
+    background: rgba(249,226,175,.08); color: var(--muted);
+  }
+  details {
+    background: var(--panel); border-radius: 8px; padding: 10px 14px; margin: .8em 0;
+    border: 1px solid var(--line);
+  }
+  summary { cursor: pointer; color: var(--ok); font-weight: 600; }
+  details[open] summary { margin-bottom: .6em; }
+  #toc {
+    background: var(--panel); border-radius: 10px; padding: 14px 18px;
+    border: 1px solid var(--line);
+  }
+  #toc ul { margin: .4em 0 0; padding-left: 1.2em; }
+  .top { display: inline-block; margin-top: 1.5em; font-size: .85rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<h1 id="top">Isaac Sim フレーム制御ノート</h1>
+<p style="color:var(--muted);font-size:.9rem;">
+対象バージョン: Isaac Sim 6.0.1（Windowsネイティブ） / 作成日: 2026-08-27
+</p>
+
+<nav id="toc">
+<strong>目次</strong>
+<ul>
+<li><a href="#p1">1. 非同期実行とトップレベルawait</a></li>
+<li><a href="#p2">2. 周期進行の仕組み</a></li>
+<li><a href="#p3">3. Play OFFでの連番キャプチャ</a></li>
+</ul>
+</nav>
+
+<section id="p1">
+<h1>非同期実行とトップレベルawait</h1>
+<p>対象バージョン: Isaac Sim 6.0.1（Windowsネイティブ）</p>
+<h2>このノートブック全体の流れ</h2>
+<p>このノートブックは3ページで、Isaac Sim上で「いつ何が起きるか」を制御するための知識を扱う。全体は次の一本の流れになっている。</p>
+<p>1．<strong>（このページ）Pythonのコードをどう起動し、どこで待つか</strong>
+2．<strong>Isaac Simの中で何が周期的に進んでいるか</strong>
+3．<strong>その2つを使って、物理シミュレーションを止めたまま連番画像を撮る</strong></p>
+<p>このページは1番目にあたる。ここで扱うのは「非同期のコードを書いたとき、それがいつ実行され、いつ結果が返るか」であり、次のページで扱う「何を待つべきか」の前提になる。</p>
+<hr />
+<h2>1. 課題: 「呼ぶためにawaitが必要」に見える問題</h2>
+<h3>1-1. まず用語を定義する</h3>
+<p>これ以降で使う言葉を先に定義する。</p>
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>定義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>コルーチン</td>
+<td><code>async def</code> で定義した関数を呼び出したときに得られるオブジェクト。関数の中身はまだ1行も実行されていない、「実行の予定」を表す値</td>
+</tr>
+<tr>
+<td>イベントループ</td>
+<td>コルーチンを預かり、少しずつ実行を進める仕組み。1つのスレッド上で複数のコルーチンを交代で進める</td>
+</tr>
+<tr>
+<td>Kit</td>
+<td>Isaac Simの土台になっているアプリケーション基盤。Isaac SimはKitの上に構築されたアプリケーションであり、Pythonの実行環境もKitが用意している</td>
+</tr>
+<tr>
+<td>Script Editor</td>
+<td>Isaac SimのGUIウィンドウの1つ。Pythonコードを貼り付けて実行できる</td>
+</tr>
+<tr>
+<td>stdout</td>
+<td>標準出力。Pythonの <code>print()</code> が書き込む先</td>
+</tr>
+<tr>
+<td>Carbonite</td>
+<td>Kitの下層にあるC++基盤。ログ出力の仕組みもここに含まれる。Pythonからは <code>carb</code> モジュールで触る</td>
+</tr>
+</tbody>
+</table>
+<h3>1-2. C#との対比</h3>
+<p>C#では、<code>async</code> メソッドを呼ぶ方法が2つある。</p>
+<pre><code class="language-csharp">// 方法1: 呼び出し側も async にして await する
+async Task CallerAsync()
+{
+    await DoWorkAsync();          // 完了を待つ
+}
+
+// 方法2: 待たずに投げっぱなしにする（fire and forget）
+void Caller()
+{
+    _ = DoWorkAsync();            // Task が返るが、待たない
+}
+</code></pre>
+<p>Pythonでもこの2つの区別は同じように存在する。ただしPythonには、C#にはない<strong>構文上の制約</strong>がある。</p>
+<h3>1-3. Pythonの構文制約</h3>
+<p>Pythonの <code>await</code> は、<code>async def</code> で定義された関数の内側にしか書けない。ファイルの一番外側（トップレベル）に書くと構文エラーになる。</p>
+<pre><code class="language-python"># ファイルのトップレベル
+import asyncio
+await asyncio.sleep(0.1)     # SyntaxError: 'await' outside function
+</code></pre>
+<p>VSCodeで書いているときに <code>await</code> に赤い下線が引かれるのは、Pylance（VSCodeのPython静的解析ツール）がこの規則に従って判定しているためである。</p>
+<p>ここで多くの人が次のように考えて手が止まる。</p>
+<blockquote>
+<p><code>await</code> を使うには <code>async def</code> で包まないといけない。
+でもその <code>async def</code> で包んだ関数を呼ぶには、また <code>await</code> が必要ではないか。
+一番外側はどうやって呼び出せばいいのか。</p>
+</blockquote>
+<p><strong>この考えの誤りは、後半にある。</strong> <code>async def</code> で包んだ関数を呼ぶ方法は <code>await</code> だけではない。C#の <code>_ = DoWorkAsync();</code> に相当する「待たずに投げる」方法が、Pythonにも用意されている。</p>
+<hr />
+<h2>2. 解決策: イベントループを外部が持ち、そこにコルーチンを載せる</h2>
+<p>素のPythonスクリプトでは、イベントループが最初は存在しない。だから <code>asyncio.run(main())</code> のような呼び出しで「ループを作って、コルーチンを1つ載せて、終わるまで回して、ループを閉じる」という一連の処理を行う。</p>
+<p>Kitはこれとは違う方針を採っている。<strong>Kitはアプリケーション起動の瞬間からイベントループを1つ作り、アプリケーションが終了するまで回し続ける。</strong> GUIの再描画も、ファイルの読み込みも、すべてこのループの上で動いている。</p>
+<p>この方針の帰結が2つある。</p>
+<ul>
+<li>ユーザーがループを作る必要がない。既にあるループにコルーチンを載せるだけでよい</li>
+<li>ユーザーがループを作ってはいけない。既にループが回っているスレッドで新しいループを作ろうとすると失敗する</li>
+</ul>
+<p>コルーチンを既存のループに載せる関数が <code>asyncio.ensure_future()</code> である。これは同期的な関数から呼べる。C#の <code>_ = DoWorkAsync();</code> に相当する。</p>
+<hr />
+<h2>3. 仕組み</h2>
+<h3>3-1. 3つの実行経路</h3>
+<p>Isaac SimでPythonコードを実行する経路は3つあり、<code>await</code> の扱いがそれぞれ違う。</p>
+<table>
+<thead>
+<tr>
+<th>経路</th>
+<th>何をするものか</th>
+<th>トップレベル <code>await</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Script Editor</td>
+<td>Isaac SimのGUI内のウィンドウにコードを貼って実行する</td>
+<td>【未確認】</td>
+</tr>
+<tr>
+<td>VS Code拡張</td>
+<td>VSCodeで書いたコードをTCP経由で実行中のIsaac Simに送って実行する</td>
+<td><strong>使える</strong></td>
+</tr>
+<tr>
+<td>Standalone Python</td>
+<td><code>python.bat</code> からスクリプトを起動し、その中でIsaac Simを立ち上げる</td>
+<td>使えない（通常のPython規則どおり）</td>
+</tr>
+</tbody>
+</table>
+<p>Script Editorの欄が【未確認】なのは、公式ドキュメントに記載を見つけられなかったためである。確認方法は4-1のサンプルコードをそのまま貼って実行すればよい。</p>
+<h3>3-2. VS Code拡張の実行経路</h3>
+<p>VS Code拡張は2つの拡張の組み合わせで動いている。</p>
+<ul>
+<li><code>isaacsim.code_editor.vscode</code>（Isaac Sim側）: VSCodeとの連携メニューを提供する</li>
+<li><code>isaacsim.code_editor.python_server</code>（Isaac Sim側）: 実際にコードを受け取って実行するTCPサーバ。既定で <code>127.0.0.1:8226</code> を待ち受ける</li>
+</ul>
+<p>コードを実行したときの流れは次のとおり。</p>
+<pre class="mermaid">sequenceDiagram
+    participant V as &quot;VSCode&quot;
+    participant S as &quot;python_server (Isaac Sim内)&quot;
+    participant L as &quot;Kit の asyncio ループ&quot;
+    V-&gt;&gt;S: Pythonソースを送信し EOF を通知
+    S-&gt;&gt;S: コードに await が含まれるか調べる
+    S-&gt;&gt;L: コルーチンとしてスケジュールする
+    L-&gt;&gt;L: 完了まで実行する
+    L--&gt;&gt;S: 実行結果を返す
+    S--&gt;&gt;V: JSON を1個返して接続を閉じる
+</pre>
+<p>サーバが返すJSONは次のフィールドを持つ。</p>
+<table>
+<thead>
+<tr>
+<th>フィールド</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td>成功なら <code>"ok"</code>、失敗なら <code>"error"</code></td>
+</tr>
+<tr>
+<td><code>output</code></td>
+<td>実行中に <code>print()</code> が書いた文字列</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td>式を評価した場合のみ、その値</td>
+</tr>
+<tr>
+<td><code>traceback</code></td>
+<td>エラー時のみ、トレースバック文字列のリスト</td>
+</tr>
+<tr>
+<td><code>ename</code></td>
+<td>エラー時のみ、例外クラス名</td>
+</tr>
+<tr>
+<td><code>evalue</code></td>
+<td>エラー時のみ、例外メッセージ</td>
+</tr>
+</tbody>
+</table>
+<h3>3-3. なぜトップレベルawaitが動くのか</h3>
+<p>python_serverは、送られてきたコードをそのまま <code>exec()</code> に渡しているわけではない。<strong>コードの中に <code>await</code> が含まれる場合、それを非同期のコルーチンとしてコンパイルし直し、Kitのイベントループにスケジュールし、完了を待ってからJSONを返す。</strong></p>
+<p>つまり、あなたが書いた</p>
+<pre><code class="language-python">import asyncio
+await asyncio.sleep(0.1)
+print(&quot;done&quot;)
+</code></pre>
+<p>というコードは、サーバ側で概念的に次のように包み直されてから実行されている。</p>
+<pre><code class="language-python">async def __wrapped():
+    import asyncio
+    await asyncio.sleep(0.1)
+    print(&quot;done&quot;)
+# これを Kit のループにスケジュールし、完了を待つ
+</code></pre>
+<p>したがって、トップレベル <code>await</code> は「動く」。あなたが手で <code>async def</code> を書かなくても、サーバが代わりに書いている。</p>
+<h3>3-4. なぜPylanceが赤下線を引くのか</h3>
+<p>Pylanceはコードを実行せず、テキストとして読んで判定する。Pylanceから見えているのは「モジュールのトップレベルに <code>await</code> がある」という事実だけであり、そのコードが後でTCPで送られて別のプロセスでコルーチンに包み直される、という事情は知りようがない。</p>
+<p>したがって赤下線は<strong>静的解析の限界によるものであり、実行時エラーの予告ではない</strong>。</p>
+<p>赤下線を消す方法は2つある。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>やり方</th>
+<th>副作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>async def</code> で包む</td>
+<td>自分で <code>async def main():</code> を書き、末尾に <code>asyncio.ensure_future(main())</code> を置く</td>
+<td>待てなくなる（3-5で述べるとおり <code>print</code> も消える）。待ちたい場合は不向き</td>
+</tr>
+<tr>
+<td>Pylanceの診断を抑える</td>
+<td>ワークスペース設定で当該ファイルの診断レベルを下げる</td>
+<td>【未確認】トップレベル <code>await</code> は構文エラー扱いのため、個別抑制が効くかは確認していない</td>
+</tr>
+</tbody>
+</table>
+<p><strong>実務上の推奨は「赤下線を消さない」である。</strong> 実行に支障がなく、包み直すと後述の副作用が出るため、下線が出たままトップレベル <code>await</code> を使うのが最も素直になる。</p>
+<h3>3-5. printが消える仕組み</h3>
+<p>3-2で述べたとおり、python_serverは実行中の stdout を捕捉してJSONの <code>output</code> に詰め、実行が終わったらJSONを返して接続を閉じる。</p>
+<p><code>await</code> した場合とそうでない場合で、捕捉の成否が分かれる。</p>
+<table>
+<thead>
+<tr>
+<th>書き方</th>
+<th>サーバから見た「実行の終わり」</th>
+<th>printの行き先</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>トップレベル <code>await</code></td>
+<td>コルーチンが完了した時点</td>
+<td>捕捉される。JSONの <code>output</code> に入り、VSCodeのパネルに表示される</td>
+</tr>
+<tr>
+<td><code>asyncio.ensure_future()</code></td>
+<td>スケジュールした直後（コルーチンはまだ動いていない）</td>
+<td>捕捉されない。コルーチンが実際に動くのはJSONを返した後なので、捕捉する相手がいない</td>
+</tr>
+</tbody>
+</table>
+<p>これが「awaitの中で使っているprintがConsoleに出なかった」現象の正体である。printが出ていないのではなく、<strong>printは実行されているが、その出力を受け取る仕組みが既に閉じている</strong>。</p>
+<p>なお公式ドキュメントは、awaitされたコルーチン内のprintは同期コードと同じように捕捉されると明記している。裏を返せば、awaitされていないコルーチンは対象外である。</p>
+<h3>3-6. Carboniteログという別経路</h3>
+<p>stdoutとは別に、Carboniteのログという経路がある。Pythonからは次の4関数で書き込む。</p>
+<table>
+<thead>
+<tr>
+<th>関数</th>
+<th>ログレベル</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>carb.log_info(msg)</code></td>
+<td>Info</td>
+</tr>
+<tr>
+<td><code>carb.log_warn(msg)</code></td>
+<td>Warning</td>
+</tr>
+<tr>
+<td><code>carb.log_error(msg)</code></td>
+<td>Error</td>
+</tr>
+<tr>
+<td><code>carb.log_fatal(msg)</code></td>
+<td>Fatal</td>
+</tr>
+</tbody>
+</table>
+<p>これらの出力先はIsaac Sim本体のConsoleウィンドウであり、stdout捕捉の開始・終了とは無関係に届く。したがって <code>ensure_future</code> で投げたコルーチンの中からでも確実に出る。</p>
+<p>VSCode側のパネルにもCarboniteログを出したい場合は、python_serverの <code>carb_logs</code> 設定を有効にする必要がある。有効にすると同じホスト・ポートでUDPソケットが開き、登録したクライアントにログがブロードキャストされる。</p>
+<table>
+<thead>
+<tr>
+<th>設定名</th>
+<th>既定値</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/exts/isaacsim.code_editor.python_server/host</code></td>
+<td><code>"127.0.0.1"</code></td>
+<td>待ち受けIPアドレス</td>
+</tr>
+<tr>
+<td><code>/exts/isaacsim.code_editor.python_server/port</code></td>
+<td><code>8226</code></td>
+<td>TCPポート番号</td>
+</tr>
+<tr>
+<td><code>/exts/isaacsim.code_editor.python_server/carb_logs</code></td>
+<td><code>false</code></td>
+<td>CarboniteログのUDP配信を有効にする</td>
+</tr>
+</tbody>
+</table>
+<p><code>carb_logs</code> は既定で無効であり、公式ドキュメントには特定の状況下でアプリケーションがフリーズする可能性があるという警告が付いている。有効化はこのリスクを承知の上で行う。</p>
+<p><code>carb.log_info</code> ではなく <code>carb.log_warn</code> を推奨する理由は、ConsoleウィンドウのフィルタでInfoレベルが非表示になっていることが多く、Warningなら既定設定でも見えるためである。</p>
+<hr />
+<h2>4. 実装</h2>
+<h3>4-1. 検証用サンプル1: トップレベルawaitが動くことの確認</h3>
+<p>VSCodeで新規ファイルを作り、以下を貼り付けて、Isaac Sim VS Code Editionの Run で実行する。</p>
+<pre><code class="language-python">import asyncio
+import time
+
+import omni.kit.app
+
+print(&quot;A: 開始&quot;)                                    # ★ await より前
+start = time.time()
+
+await asyncio.sleep(0.5)                            # ★ ここが赤下線になるが動く
+print(f&quot;B: asyncio.sleep のあと ({time.time() - start:.2f} 秒経過)&quot;)
+
+for i in range(3):
+    await omni.kit.app.get_app().next_update_async()  # ★ アプリのフレームを3回進める
+print(&quot;C: アプリのフレームを3回進めたあと&quot;)
+
+print(&quot;D: 終了&quot;)
+</code></pre>
+<p><strong>期待される出力</strong>（Isaac Sim VS Code Edition の出力パネル）:</p>
+<pre><code>A: 開始
+B: asyncio.sleep のあと (0.50 秒経過)
+C: アプリのフレームを3回進めたあと
+D: 終了
+</code></pre>
+<p>4行すべてが出れば、この経路でトップレベル <code>await</code> が使えていることの確認になる。もし <code>SyntaxError</code> が返るなら、その経路はトップレベル <code>await</code> に対応していない。</p>
+<h3>4-2. 検証用サンプル2: ensure_future ではprintが消えることの確認</h3>
+<p>同じ処理を2通りで実行し、出力の差を見る。</p>
+<pre><code class="language-python">import asyncio
+
+
+async def work(tag: str) -&gt; None:
+    await asyncio.sleep(0.2)
+    print(f&quot;[{tag}] コルーチンの中の print&quot;)
+
+
+print(&quot;--- 1回目: await する ---&quot;)
+await work(&quot;await&quot;)                    # ★ 完了を待つ
+
+print(&quot;--- 2回目: ensure_future で投げる ---&quot;)
+asyncio.ensure_future(work(&quot;投げっぱなし&quot;))   # ★ 待たない
+
+print(&quot;--- スクリプト終了 ---&quot;)
+</code></pre>
+<p><strong>期待される出力</strong>:</p>
+<pre><code>--- 1回目: await する ---
+[await] コルーチンの中の print
+--- 2回目: ensure_future で投げる ---
+--- スクリプト終了 ---
+</code></pre>
+<p><code>[投げっぱなし] コルーチンの中の print</code> は出ない。この行は0.2秒後に実行されるが、そのときには既にJSONが返って接続が閉じている。</p>
+<p><strong>同じコードでCarboniteログを使うと消えない</strong>ことを確認するには、<code>print</code> を <code>carb.log_warn</code> に変えて、Isaac Sim本体のConsoleウィンドウを見る。</p>
+<pre><code class="language-python">import asyncio
+
+import carb
+
+
+async def work(tag: str) -&gt; None:
+    await asyncio.sleep(0.2)
+    carb.log_warn(f&quot;[{tag}] コルーチンの中のログ&quot;)   # ★ print から変更
+
+
+asyncio.ensure_future(work(&quot;投げっぱなし&quot;))
+carb.log_warn(&quot;スクリプト終了&quot;)
+</code></pre>
+<p><strong>Isaac Sim本体のConsoleウィンドウに現れる出力</strong>:</p>
+<pre><code>[Warning] [__main__] スクリプト終了
+[Warning] [__main__] [投げっぱなし] コルーチンの中のログ
+</code></pre>
+<p>順序が逆転していることに注意する。<code>ensure_future</code> は待たないので、後に書いた行が先に出る。この順序こそが「待っていない」ことの証拠である。</p>
+<h3>4-3. 待ちたい場合のくるみ方（4パターン）</h3>
+<h4>パターン1: トップレベル await</h4>
+<pre><code class="language-python">import asyncio
+
+
+async def step(n: int) -&gt; int:
+    await asyncio.sleep(0.1)
+    print(f&quot;step {n} 完了&quot;)
+    return n * 10
+
+
+a = await step(1)          # ★ 戻り値を受け取れる
+b = await step(2)
+print(f&quot;合計 = {a + b}&quot;)
+</code></pre>
+<p><strong>出力</strong>:</p>
+<pre><code>step 1 完了
+step 2 完了
+合計 = 30
+</code></pre>
+<p>VS Code拡張から実行する場合はこれが最も簡潔である。</p>
+<h4>パターン2: async def + await（外側は ensure_future）</h4>
+<pre><code class="language-python">import asyncio
+
+
+async def step(n: int) -&gt; int:
+    await asyncio.sleep(0.1)
+    carb_print = f&quot;step {n} 完了&quot;
+    print(carb_print)
+    return n * 10
+
+
+async def main() -&gt; None:                # ★ 全体を1つの async def にまとめる
+    a = await step(1)
+    b = await step(2)
+    print(f&quot;合計 = {a + b}&quot;)
+
+
+asyncio.ensure_future(main())            # ★ 起動だけする。ここでは待てない
+</code></pre>
+<p><strong>VS Code拡張から実行したときの出力</strong>:</p>
+<pre><code>（何も出ない）
+</code></pre>
+<p><code>main()</code> の中のprintは、JSONが返った後に実行されるため捕捉されない。Script Editorで実行した場合はScript Editorの出力欄に遅れて表示される。この書き方はPylanceの赤下線が出ない代わりに、出力が見えなくなるという交換になっている。</p>
+<h4>パターン3: add_done_callback（完了後に別の処理を走らせる）</h4>
+<pre><code class="language-python">import asyncio
+
+import carb
+
+
+async def step(n: int) -&gt; int:
+    await asyncio.sleep(0.1)
+    return n * 10
+
+
+def on_done(task: asyncio.Task) -&gt; None:      # ★ 完了時に呼ばれる同期関数
+    carb.log_warn(f&quot;完了しました。戻り値 = {task.result()}&quot;)
+
+
+task = asyncio.ensure_future(step(3))
+task.add_done_callback(on_done)
+carb.log_warn(&quot;コールバックを登録しました&quot;)
+</code></pre>
+<p><strong>Consoleウィンドウの出力</strong>:</p>
+<pre><code>[Warning] [__main__] コールバックを登録しました
+[Warning] [__main__] 完了しました。戻り値 = 30
+</code></pre>
+<p><code>task.result()</code> は完了後にしか呼べない。完了前に呼ぶと <code>InvalidStateError</code> になる。</p>
+<h4>パターン4: asyncio.gather（複数を並行させて全部待つ）</h4>
+<pre><code class="language-python">import asyncio
+import time
+
+
+async def step(n: int) -&gt; int:
+    await asyncio.sleep(0.5)
+    return n * 10
+
+
+start = time.time()
+results = await asyncio.gather(step(1), step(2), step(3))   # ★ 3つ同時に走る
+print(f&quot;結果 = {results}, 経過 = {time.time() - start:.2f} 秒&quot;)
+</code></pre>
+<p><strong>出力</strong>:</p>
+<pre><code>結果 = [10, 20, 30], 経過 = 0.50 秒
+</code></pre>
+<p>逐次に <code>await</code> を3回書くと1.5秒かかるところが、0.5秒で済んでいる。ただしIsaac Simの多くのAPIはUSDステージを触るためメインスレッドでの逐次実行が前提であり、並行させてよいのは互いに独立した待ち（ファイルI/Oやスリープ）に限られる。</p>
+<h3>4-4. 待たなくていい場合のくるみ方</h3>
+<p>処理の完了を後続コードが前提にしない場合は、投げっぱなしでよい。典型はGUIのボタンハンドラである。</p>
+<pre><code class="language-python">import asyncio
+
+import carb
+
+
+async def long_task() -&gt; None:
+    for i in range(3):
+        await asyncio.sleep(1.0)
+        carb.log_warn(f&quot;進捗 {i + 1}/3&quot;)
+
+
+def on_button_clicked() -&gt; None:          # ★ 同期関数。GUIから呼ばれる
+    asyncio.ensure_future(long_task())    # ★ 投げてすぐ抜ける。GUIが固まらない
+    carb.log_warn(&quot;処理を開始しました&quot;)
+</code></pre>
+<p><code>on_button_clicked()</code> を呼んだときのConsole出力:</p>
+<pre><code>[Warning] [__main__] 処理を開始しました
+[Warning] [__main__] 進捗 1/3
+[Warning] [__main__] 進捗 2/3
+[Warning] [__main__] 進捗 3/3
+</code></pre>
+<p>もう1つの起動関数として <code>omni.kit.async_engine.run_coroutine()</code> がある。</p>
+<pre><code class="language-python">import omni.kit.async_engine
+
+omni.kit.async_engine.run_coroutine(long_task())
+</code></pre>
+<h3>4-5. 正式・非正式の区分</h3>
+<p>「正式」を「Isaac Sim 6.0の公式ドキュメントに記載があり、その用法が例示されているもの」と定義する。</p>
+<table>
+<thead>
+<tr>
+<th>API・書き方</th>
+<th>区分</th>
+<th>根拠と補足</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>トップレベル <code>await</code>（VS Code拡張経由）</td>
+<td>正式</td>
+<td>Python Serverのドキュメントに Async Code Support の節があり、対応が明記されている</td>
+</tr>
+<tr>
+<td><code>asyncio.ensure_future(coro())</code></td>
+<td>正式</td>
+<td>Kitの公式Usage Examplesが実際にこの形で記述している</td>
+</tr>
+<tr>
+<td><code>task.add_done_callback(fn)</code></td>
+<td>正式</td>
+<td>Python標準ライブラリの機能であり、Kit固有の制約を受けない</td>
+</tr>
+<tr>
+<td><code>asyncio.gather(...)</code></td>
+<td>正式</td>
+<td>同上</td>
+</tr>
+<tr>
+<td><code>omni.kit.async_engine.run_coroutine(coro())</code></td>
+<td>準正式</td>
+<td>Kit内部実装で <code>asyncio.ensure_future</code> からの置き換えが進んでいるが、ユーザー向けドキュメントでの用法例は確認していない。Isaac Sim 6.0.1への同梱も【未確認】</td>
+</tr>
+<tr>
+<td><code>asyncio.run(coro())</code></td>
+<td>誤用</td>
+<td>Kit内で呼ぶと既存のイベントループと衝突する。公式ドキュメント内にこの記述を含む例が存在するが、Kit内実行の文脈では従ってはいけない</td>
+</tr>
+<tr>
+<td><code>while not task.done(): pass</code></td>
+<td>誤用</td>
+<td>5章で述べるとおりデッドロックする</td>
+</tr>
+</tbody>
+</table>
+<p><code>omni.kit.async_engine</code> が使えるかは1行で確認できる。</p>
+<pre><code class="language-python">import omni.kit.async_engine
+print(omni.kit.async_engine.run_coroutine)
+</code></pre>
+<p><strong>使える場合の出力</strong>:</p>
+<pre><code>&lt;function run_coroutine at 0x00000239A1B2C3D0&gt;
+</code></pre>
+<p><strong>使えない場合の出力</strong>:</p>
+<pre><code>ModuleNotFoundError: No module named 'omni.kit.async_engine'
+</code></pre>
+<hr />
+<h2>5. やってはいけないこと</h2>
+<h3>5-1. 同期的なブロッキング待ち</h3>
+<pre><code class="language-python">import asyncio
+
+task = asyncio.ensure_future(some_coroutine())
+while not task.done():        # ★ これをやってはいけない
+    pass
+</code></pre>
+<p><strong>何が起きるか</strong>: Isaac Simが完全にフリーズし、強制終了以外に復帰できなくなる。</p>
+<p><strong>なぜか</strong>: Kitのイベントループはメインスレッド上で回っている。<code>while</code> ループがメインスレッドを占有すると、イベントループは1回も進めない。イベントループが進まないので <code>task</code> は永久に完了しない。完了しないので <code>while</code> も終わらない。相互に待ち合う状態、すなわちデッドロックである。</p>
+<h3>5-2. time.sleep()</h3>
+<pre><code class="language-python">import time
+time.sleep(1.0)               # ★ これをやってはいけない
+</code></pre>
+<p><strong>何が起きるか</strong>: 1秒間、Isaac Simの画面が完全に止まる。</p>
+<p><strong>なぜか</strong>: 5-1と同じ理由で、メインスレッドがブロックされる。正しくは <code>await asyncio.sleep(1.0)</code> を使う。こちらは待っている間に制御をイベントループへ返すため、他の処理が進む。</p>
+<h3>5-3. asyncio.run()</h3>
+<pre><code class="language-python">import asyncio
+asyncio.run(main())           # ★ Kit内では使ってはいけない
+</code></pre>
+<p><strong>何が起きるか</strong>: 次のエラーが出る。</p>
+<pre><code>RuntimeError: asyncio.run() cannot be called from a running event loop
+</code></pre>
+<p><strong>なぜか</strong>: <code>asyncio.run()</code> は新しいイベントループを作ろうとするが、Kitのループが既にそのスレッドで回っているため作れない。</p>
+<p>なお <code>asyncio.run()</code> が正しく使えるのは、Isaac Simの外側から接続するクライアント側スクリプト（Isaac Simのプロセスではない別のPythonプロセス）である。公式ドキュメントのPython Serverクライアント例で <code>asyncio.run()</code> が使われているのは、その例が外部プロセスから接続するコードだからである。</p>
+<hr />
+<h2>6. 判断フローチャート</h2>
+<pre class="mermaid">flowchart TD
+    A[&quot;非同期APIを呼びたい&quot;] --&gt; B{&quot;後続の処理が&lt;br/&gt;その結果を使うか?&quot;}
+    B --&gt;|&quot;使う: 待つ必要がある&quot;| C{&quot;実行経路は?&quot;}
+    B --&gt;|&quot;使わない: 投げっぱなしでよい&quot;| G[&quot;asyncio.ensure_future(coro())&lt;br/&gt;出力は carb.log_warn で見る&quot;]
+    C --&gt;|&quot;VS Code拡張&quot;| D[&quot;トップレベル await をそのまま書く&lt;br/&gt;（Pylanceの赤下線は無視してよい）&quot;]
+    C --&gt;|&quot;Standalone Python&quot;| E[&quot;async def main() にまとめ&lt;br/&gt;ループを自分で回す&quot;]
+    C --&gt;|&quot;拡張機能のコード内&quot;| F{&quot;複数を並行させるか?&quot;}
+    F --&gt;|&quot;はい&quot;| H[&quot;await asyncio.gather(...)&quot;]
+    F --&gt;|&quot;いいえ&quot;| I[&quot;async def の中で await で繋ぐ&quot;]
+</pre>
+<hr />
+<h2>7. 理解度確認問題</h2>
+<p><strong>問1.</strong> 次のコードをVS Code拡張から実行したとき、出力パネルには何が表示されるか。</p>
+<pre><code class="language-python">import asyncio
+
+
+async def f():
+    await asyncio.sleep(0.1)
+    print(&quot;X&quot;)
+
+
+asyncio.ensure_future(f())
+print(&quot;Y&quot;)
+</code></pre>
+<details>
+<summary>解答</summary>
+<p><code>Y</code> のみが表示される。</p>
+<p><code>ensure_future</code> はコルーチンをスケジュールするだけで即座に戻る。サーバはこの時点で実行終了と判断し、stdout捕捉を閉じてJSONを返す。<code>f()</code> の中の <code>print("X")</code> は0.1秒後に実行されるが、そのときには捕捉する相手がいない。</p>
+<p><code>X</code> も見たい場合は、<code>asyncio.ensure_future(f())</code> を <code>await f()</code> に変えるか、<code>print("X")</code> を <code>carb.log_warn("X")</code> に変えてIsaac Sim本体のConsoleウィンドウを見る。</p>
+</details>
+<p><strong>問2.</strong> VSCodeでトップレベルに <code>await</code> を書くと赤い下線が出る。この下線が出たままコードを実行した場合、実行は成功するか失敗するか。理由も述べよ。</p>
+<details>
+<summary>解答</summary>
+<p>VS Code拡張（<code>isaacsim.code_editor.python_server</code>）経由なら<strong>成功する</strong>。</p>
+<p>赤下線はPylanceによる静的解析の結果であり、「モジュールのトップレベルに <code>await</code> がある」という文法規則の判定に基づく。しかしpython_serverは、送られてきたコードに <code>await</code> が含まれる場合、それをコルーチンとしてコンパイルし直してからKitのイベントループで実行する。Pylanceはこの実行時の包み直しを知らないため、実際には問題ないコードに警告を出している。</p>
+<p>ただしStandalone Python（<code>python.bat</code> から起動するスクリプト）では、この包み直しが行われないため実行は失敗する。</p>
+</details>
+<p><strong>問3.</strong> 次のコードを実行するとIsaac Simがフリーズする。フリーズを解消するには何をどう書き換えればよいか。</p>
+<pre><code class="language-python">import asyncio
+import time
+
+task = asyncio.ensure_future(some_work())
+while not task.done():
+    time.sleep(0.01)
+print(&quot;完了&quot;)
+</code></pre>
+<details>
+<summary>解答</summary>
+<p><code>while</code> ループ全体を削除し、<code>await</code> に置き換える。</p>
+<pre><code class="language-python">await some_work()
+print(&quot;完了&quot;)
+</code></pre>
+<p>理由は2つある。1つ目は、Kitのイベントループがメインスレッドで回っているため、<code>while</code> と <code>time.sleep()</code> がメインスレッドを占有するとイベントループが1回も進まないこと。2つ目は、イベントループが進まなければ <code>task</code> は永久に完了せず、<code>while</code> の終了条件が満たされないこと。この2つが噛み合ってデッドロックになる。</p>
+<p><code>await</code> を使えば、待っている間に制御がイベントループへ戻るため、コルーチンが進行できる。</p>
+</details>
+<p><strong>問4.</strong> <code>carb.log_info()</code> ではなく <code>carb.log_warn()</code> を使うことが推奨される理由を述べよ。</p>
+<details>
+<summary>解答</summary>
+<p>Isaac SimのConsoleウィンドウは、既定の表示フィルタでInfoレベルのログを非表示にしていることが多いため。Warningレベルなら既定設定でも表示される。</p>
+<p>デバッグ目的で一時的に出力する場合、フィルタ設定を疑う手間を省ける分だけWarningのほうが確実である。</p>
+</details>
+<hr />
+<h2>8. 参照元URL一覧</h2>
+<ul>
+<li>Python Server (Remote Code Execution) — Isaac Sim Documentation
+  <code>https://docs.isaacsim.omniverse.nvidia.com/latest/development_tools/python_server.html</code>
+  （トップレベルawaitの対応、JSONレスポンスのフィールド、stdout捕捉の仕様、<code>carb_logs</code> を含む設定一覧の根拠）</li>
+<li>Visual Studio Code (VS Code) — Isaac Sim Documentation
+  <code>https://docs.isaacsim.omniverse.nvidia.com/6.0.0/development_tools/vscode.html</code>
+  （<code>isaacsim.code_editor.vscode</code> と <code>isaacsim.code_editor.python_server</code> の関係の根拠）</li>
+</ul>
+<h2>9. 未確認事項</h2>
+<ul>
+<li>Script Editor（GUI内のスクリプトエディタ）がトップレベル <code>await</code> に対応するか。4-1のサンプルコードで確認できる</li>
+<li><code>omni.kit.async_engine</code> がIsaac Sim 6.0.1に同梱されているか。4-5の1行スクリプトで確認できる</li>
+<li>Pylanceでトップレベル <code>await</code> の診断のみを選択的に抑制する設定が存在するか</li>
+</ul>
+<hr />
+<h2>目次</h2>
+<ol>
+<li><strong>非同期実行とトップレベルawait</strong>（このページ）</li>
+<li><a href="#p2">02_周期進行の仕組み</a></li>
+<li><a href="#p3">03_PlayOFFでの連番キャプチャ</a></li>
+</ol>
+<p>前のページ: なし（このノートブックの最初のページ）
+次のページ: <a href="#p2">02_周期進行の仕組み</a></p>
+</section>
+<hr class='pagebreak'>
+<section id="p2">
+<h1>周期進行の仕組み</h1>
+<p>対象バージョン: Isaac Sim 6.0.1（Windowsネイティブ）</p>
+<p>前のページで「非同期のコードをどう起動し、どこで待つか」を扱った。このページでは「そもそも何を待てるのか」、すなわちIsaac Simの中で周期的に進行しているものを全て列挙して説明する。</p>
+<hr />
+<h2>1. 課題: 「1フレーム」と言ったとき、何が1つ進むのか</h2>
+<h3>1-1. 具体的な失敗例</h3>
+<p>USDの属性を書き換えてから画面を撮影したい、という場面を考える。書き換えた直後に撮ると変更前の絵が写ってしまうため、少し待つ必要がある。そこで次のようなコードがよく書かれる。</p>
+<pre><code class="language-python">apply_pose(pose)                                       # USD属性を書き換える
+for _ in range(3):                                     # ★ 3回待つ
+    await omni.kit.app.get_app().next_update_async()
+capture(file_path)                                     # 撮影する
+</code></pre>
+<p>この <code>3</code> に根拠はない。2でも5でも書ける場所であり、実際に多くのサンプルコードでこの種の数字が場当たり的に選ばれている。</p>
+<p>問題は数字そのものではなく、<strong><code>next_update_async()</code> が待っているものと、撮影が必要としているものが別物である</strong>ことにある。</p>
+<ul>
+<li><code>next_update_async()</code> が待つのは「アプリケーションが1回まわること」</li>
+<li>撮影が必要とするのは「画面が1枚描き終わること」</li>
+</ul>
+<p>この2つが常に一致する保証はない。したがって3回待って動いたとしても、それは偶然その環境で足りていただけであり、シーンが重くなったりレンダラの設定が変わったりすれば足りなくなる。</p>
+<h3>1-2. なぜ一致しないのか</h3>
+<p>Isaac Simの内部では、<strong>互いに独立した速度で進む周期が9個ある</strong>。「1フレーム」という言葉は、そのうちどれを指すかによって意味が変わる。</p>
+<p>このページの目的は、9個すべてを列挙し、それぞれ何が1周期なのか、どうやって待つのかを明確にすることである。</p>
+<hr />
+<h2>2. 解決策: 関心ごとに独立したクロックを持たせる設計</h2>
+<p>なぜ1つにまとめないのか。理由は用途ごとに適切な周期が違うためである。</p>
+<ul>
+<li>物理シミュレーションは、精度のために細かい刻み（例: 1/120秒）で進めたい</li>
+<li>画面の描画は、人間の目に足りる粗さ（例: 1/60秒）でよい</li>
+<li>カメラセンサは、実機の仕様に合わせた速度（例: 30Hz）で撮りたい</li>
+<li>別のカメラセンサは、また別の速度（例: 10Hz）で撮りたい</li>
+</ul>
+<p>これらを1つの周期に強制すると、最も細かい要求に全体を合わせることになり、無駄な計算が大量に発生する。そこでIsaac Simは、それぞれを独立したクロックとして持ち、必要な箇所でだけ同期させる設計を採っている。</p>
+<p>Isaac Sim 6.0の公式ドキュメントは、このうち中核となる3つを「三つのクロック」として明示的に定義している。残りの6つは、その3つを取り巻く仕組みである。</p>
+<hr />
+<h2>3. 仕組み</h2>
+<h3>3-1. 全体像</h3>
+<blockquote>
+<p><strong>[図]</strong> Isaac Simの1フレームの中で、タイムライン更新・物理サブステップ・描画用時刻の公開・センサtick判定・ビューポートフレーム完了が順に進む様子と、それらを取り巻くasyncioイベントループおよびframes-in-flightの関係を示した図</p>
+<p>（図はzip版の <code>images/</code> に同梱。ここでは省略）</p>
+</blockquote>
+<p>図が示しているのは、1回の <code>App.update()</code> の中で5つの段階が順に進むこと、それ全体を包む形でasyncioイベントループが1巡すること、そして描画だけは複数フレームが同時進行することである。以降でこれらを1つずつ定義する。</p>
+<h3>3-2. 三つのクロック</h3>
+<p>Isaac Sim 6.0の公式ドキュメントが定義する3つのクロックは次のとおりである。</p>
+<table>
+<thead>
+<tr>
+<th>クロック</th>
+<th>何によって進むか</th>
+<th>誰が設定するか</th>
+<th>誰が読むか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ランループ時刻 / <code>omni.timeline</code> 時刻</td>
+<td>アプリの更新1回ごとに、実測の経過時間ぶん、または手動設定した固定の時間ぶん進む</td>
+<td><code>RenderingManager.set_dt(...)</code>、<code>/app/runLoops/main/rateLimitFrequency</code></td>
+<td>タイムラインUI、<code>timeCodesPerSecond</code>、ステージ更新のスケジューリング</td>
+</tr>
+<tr>
+<td>物理シミュレーション時刻</td>
+<td>物理ステップのたびに「累積ステップ数 ÷ 毎秒ステップ数」として再計算される</td>
+<td><code>PhysicsScene.set_dt(...)</code>、<code>SimulationManager.setup_simulation(dt=...)</code></td>
+<td><code>SimulationManager.get_simulation_time()</code>、ROS 2などのタイムスタンプ</td>
+</tr>
+<tr>
+<td>レンダラのシミュレーション時刻</td>
+<td>物理ステップのたびに、物理時刻の写しがFabric上のprimへ書き込まれる</td>
+<td><code>isaacsim.core.simulation_manager</code></td>
+<td>センサごとの描画判定を行うスケジューラ</td>
+</tr>
+</tbody>
+</table>
+<p>「Fabric」はUSDのデータをレンダリング向けに高速に受け渡すためのメモリ上のデータ層である。ここでは「USDファイルとは別に存在する、実行時専用の高速なデータ置き場」と理解すればよい。</p>
+<p><strong>重要な事実</strong>: レンダラはもはや <code>omni.timeline</code> から現在時刻を取得していない。<code>/ExternalSimulationTime</code> というprimの <code>omni:time</code> 属性をFabricから読んでいる。物理が毎回のステップでその属性を書き、レンダラがそれを読む、という受け渡しになっている。</p>
+<h3>3-3. 1フレーム内の実行順序</h3>
+<p>タイムラインが再生中のとき、1回の <code>App.update()</code> で起きることは次の4段階である。</p>
+<pre class="mermaid">sequenceDiagram
+    participant R as &quot;ランループ&quot;
+    participant T as &quot;omni.timeline&quot;
+    participant P as &quot;物理エンジン&quot;
+    participant F as &quot;Fabric の時刻 prim&quot;
+    participant H as &quot;Hydra レンダラ&quot;
+    R-&gt;&gt;R: loop_dt を決める（手動または実測）
+    R-&gt;&gt;T: loop_dt だけ時刻を進める
+    R-&gt;&gt;P: 物理の更新フェーズを実行する
+    P-&gt;&gt;P: physics_dt のサブステップを N 回まわす
+    P-&gt;&gt;F: 各サブステップごとに物理時刻を書き込む
+    R-&gt;&gt;H: 描画フェーズを実行する
+    H-&gt;&gt;F: 時刻を1回だけ読む
+    H-&gt;&gt;H: センサごとに描画すべきか判定する
+</pre>
+<p>ここで <code>N</code> は0以上の整数であり、ループの経過時間に追いつくために必要な回数だけ物理が刻まれる。</p>
+<h3>3-4. physics_dt と loop_dt の比による挙動</h3>
+<p>物理の刻み幅を <code>physics_dt</code>、ループの刻み幅を <code>loop_dt</code> と書く。両者の大小関係で挙動が3通りに分かれる。</p>
+<table>
+<thead>
+<tr>
+<th>設定</th>
+<th>1回の更新あたりの物理ステップ数</th>
+<th>タイムライン時刻と物理時刻の関係</th>
+<th>センサの描画</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>physics_dt == loop_dt</code></td>
+<td>1回</td>
+<td>毎フレーム一致する</td>
+<td>予定どおり</td>
+</tr>
+<tr>
+<td><code>physics_dt &lt; loop_dt</code></td>
+<td>1回以上</td>
+<td>毎フレーム一致する</td>
+<td>予定どおり</td>
+</tr>
+<tr>
+<td><code>physics_dt &gt; loop_dt</code></td>
+<td>0回または1回</td>
+<td>物理側が最大 <code>physics_dt</code> ぶん遅れ、物理が進んだときに再同期する</td>
+<td>時刻が進んだフレームでのみ描画される</td>
+</tr>
+</tbody>
+</table>
+<p>3つ目のケースで注意すべきなのは、<strong>物理ステップが起きなかったフレームでは、描画パイプラインは動くのにセンサは1枚も出力しない</strong>ことである。時刻が進んでいないため、センサ側の描画判定が「まだ次の番ではない」と判断する。</p>
+<p>公式ドキュメントは、この不整合を避ける方法として、<code>SimulationManager.setup_simulation(dt=1.0/hz)</code> と <code>RenderingManager.set_dt(1.0/hz)</code> の両方を同じ値で呼び、<code>physics_dt == loop_dt</code> にすることを推奨している。</p>
+<h3>3-5. useFixedTimeStepping と useFastMode による分岐</h3>
+<p>3-4の表は <code>/app/player/useFixedTimeStepping</code> が <code>false</code> のときの挙動である。これはStandalone Pythonでの既定値である。</p>
+<p>Isaac SimのGUIアプリケーションはこの設定を <code>true</code> にしている。<code>true</code> のとき、タイムラインはランループの実測時間を無視し、1回の更新につき <code>1 / timeCodesPerSecond</code> だけ強制的に進む。この場合のシミュレーション時間の進み方は次の式になる。</p>
+<p>記号の意味を先に定義する。</p>
+<ul>
+<li><code>sim_advance_per_wall_sec</code>: 現実の1秒あたりに進むシミュレーション時間（秒）</li>
+<li><code>timeCodesPerSecond</code>: ステージに設定された、1秒あたりのタイムコード数</li>
+<li><code>loop_hz_wall</code>: 現実の1秒あたりにランループが回る回数</li>
+</ul>
+<pre><code>sim_advance_per_wall_sec = (1 / timeCodesPerSecond) * loop_hz_wall
+</code></pre>
+<p>この式から3つの結果が導ける。</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>loop_hz_wall == timeCodesPerSecond</code>（既定は両方60）</td>
+<td>式の値が1.0となり、シミュレーションが現実時間どおりに進む</td>
+</tr>
+<tr>
+<td><code>loop_hz_wall &lt; timeCodesPerSecond</code></td>
+<td>式の値が1未満となり、スローモーションになる</td>
+</tr>
+<tr>
+<td><code>loop_hz_wall &gt; timeCodesPerSecond</code></td>
+<td><code>/app/player/useFastMode</code> の値で分岐する（下記）</td>
+</tr>
+</tbody>
+</table>
+<p>3つ目の分岐は次のとおりである。</p>
+<ul>
+<li><code>useFastMode = false</code>（既定）: タイムラインは間引いて進む。ランループが速く回ってもシミュレーション時間は設定どおりの速度を保つ</li>
+<li><code>useFastMode = true</code>: 間引きが無効になり、ランループが回るたびにタイムラインが進む。結果としてシミュレーション時間が現実時間より速く進む</li>
+</ul>
+<p>2つ目は、オフラインでのデータ生成のように「現実の1秒あたりにできるだけ多くのシミュレーション時間を消化したい」場合に意図的に使うものである。<code>timeline.set_play_every_frame(True)</code> を呼ぶとこの状態になる。</p>
+<p><strong>よくある罠</strong>: <code>/app/runLoops/main/rateLimitFrequency</code> だけを変更して <code>timeCodesPerSecond</code> を変更しないと、上の式によりシミュレーション速度が現実時間から乖離する。片方だけ設定してはいけない。</p>
+<h3>3-6. 9つの周期の個別説明</h3>
+<p>ここまでに出てきたものを含め、9つを順に定義する。</p>
+<h4>周期1: ランループ（run loop）</h4>
+<ul>
+<li><strong>1周期にあたるもの</strong>: <code>App.update()</code> の1回の呼び出し</li>
+<li><strong>何をするか</strong>: タイムライン更新・物理・描画を含む、アプリケーション全体の1回ぶんの処理</li>
+<li><strong>トリガ</strong>: アプリケーションが自律的に回す</li>
+<li><strong>設定</strong>: <code>/app/runLoops/main/rateLimitFrequency</code>（1秒あたりの回数）、<code>RenderingManager.set_dt(dt)</code></li>
+<li><strong>待ち方</strong>: <code>await omni.kit.app.get_app().next_update_async()</code></li>
+<li><strong>観測方法</strong>: 後述の4-1のコードでフレーム番号を出力する</li>
+</ul>
+<h4>周期2: asyncioイベントループ</h4>
+<ul>
+<li><strong>1周期にあたるもの</strong>: 待機中のコルーチンを一巡ぶん進めること</li>
+<li><strong>何をするか</strong>: Pythonで書かれた非同期処理を進める</li>
+<li><strong>トリガ</strong>: ランループに同期して進む。ランループが止まればこちらも止まる</li>
+<li><strong>待ち方</strong>: <code>await</code> で待つのがこのループそのものである</li>
+<li><strong>注意</strong>: メインスレッドを同期的にブロックするとこのループが止まり、アプリケーション全体が固まる</li>
+</ul>
+<h4>周期3: タイムライン（omni.timeline）</h4>
+<ul>
+<li><strong>1周期にあたるもの</strong>: <code>1 / timeCodesPerSecond</code> 秒</li>
+<li><strong>何をするか</strong>: シーン内の「現在時刻」を保持する。USDのアニメーションの再生位置を決める</li>
+<li><strong>トリガ</strong>: ランループが1回まわるごとに進む。ただし停止中（Play OFF）は進まない</li>
+<li><strong>設定</strong>: ステージの <code>timeCodesPerSecond</code>、<code>/app/player/useFixedTimeStepping</code>、<code>/app/player/useFastMode</code></li>
+<li><strong>観測方法</strong>: <code>omni.timeline.get_timeline_interface().get_current_time()</code></li>
+</ul>
+<h4>周期4: 物理シミュレーション時刻</h4>
+<ul>
+<li><strong>1周期にあたるもの</strong>: <code>physics_dt</code> 秒（サブステップ1回）</li>
+<li><strong>何をするか</strong>: 剛体の運動、関節の拘束、衝突の解決を1ステップぶん進める</li>
+<li><strong>トリガ</strong>: ランループの物理更新フェーズ。ステージ更新順序で <code>-10</code> の位置に置かれている</li>
+<li><strong>設定</strong>: <code>SimulationManager.setup_simulation(dt=...)</code>、<code>PhysicsScene.set_dt(...)</code>。既定は1/60秒</li>
+<li><strong>待ち方・フック</strong>: <code>SimulationManager</code> にコールバックを登録する（4-3参照）</li>
+<li><strong>Play OFFのとき</strong>: 1回も起きない。したがって物理時刻は止まったままになる</li>
+</ul>
+<h4>周期5: レンダラのシミュレーション時刻</h4>
+<ul>
+<li><strong>1周期にあたるもの</strong>: 物理時刻が更新されるたびに1回</li>
+<li><strong>何をするか</strong>: 物理時刻の写しを、Fabric上の <code>/ExternalSimulationTime</code> primの <code>omni:time</code> 属性に書き込む</li>
+<li><strong>トリガ</strong>: 物理の各ステップの完了時</li>
+<li><strong>誰が読むか</strong>: センサごとの描画判定スケジューラ</li>
+<li><strong>止め方</strong>: <code>/app/player/playSimulations</code> を <code>false</code> にすると、<code>App.update()</code> が物理を進めなくなるため、この時刻が凍結する。<code>RenderingManager.render()</code> はこの設定を一時的に切り替えることで「物理を進めずに描画する」を実現している</li>
+</ul>
+<h4>周期6: ステージアップデート順序（stage update order）</h4>
+<ul>
+<li><strong>1周期にあたるもの</strong>: 周期ではなく、1フレーム内での実行順を決める整数の並び</li>
+<li><strong>何をするか</strong>: 1回の <code>App.update()</code> の中で、どの処理を先に走らせるかを決める</li>
+<li><strong>具体的な値</strong>: 物理は <code>-10</code>、Hydraによる描画は <code>30</code>。数値が小さいほど先に実行される</li>
+<li><strong>なぜ重要か</strong>: 物理が <code>-10</code> で書いた時刻を、描画が <code>30</code> で読む。この順序が保証されているからこそ、同じフレーム内で最新の時刻が使える</li>
+<li><strong>注意</strong>: これは9個の中で唯一「時間の周期」ではなく「順序の定義」である。他の8個と並べているのは、1フレーム内の出来事の前後関係を理解するのに不可欠なため</li>
+</ul>
+<h4>周期7: センサごとのティック（multi-tick rendering）</h4>
+<ul>
+<li><strong>1周期にあたるもの</strong>: <code>1 / omni:sensor:tickRate</code> 秒</li>
+<li><strong>何をするか</strong>: そのセンサを描画するかどうかを判定し、時期が来ていれば描画する</li>
+<li><strong>トリガ</strong>: 描画フェーズ（順序30）で、レンダラのシミュレーション時刻と前回描画時刻を比較する</li>
+<li><strong>設定</strong>: センサprimの <code>omni:sensor:tickRate</code> 属性（単位はHz）。既定値は <code>0</code> で、これは「毎フレーム描画する」を意味する</li>
+<li><strong>有効・無効</strong>: Isaac Sim 6.0以降、この仕組みは既定で有効。<code>/rtx/hydra/supportMultiTickRate</code> を <code>false</code> にすると5.x以前の毎フレーム描画に戻る</li>
+<li><strong>適用対象</strong>: <code>Camera</code> primと <code>OmniLidar</code> prim。<code>OmniRadar</code> primでは6.0 GA時点で <code>tickRate</code> が無視され、常に毎フレーム描画される</li>
+</ul>
+<h4>周期8: ビューポートフレーム</h4>
+<ul>
+<li><strong>1周期にあたるもの</strong>: ビューポート（画面に表示されている3Dビュー）が1枚描き終わること</li>
+<li><strong>何をするか</strong>: 現在のカメラから見た画像を生成する</li>
+<li><strong>トリガ</strong>: 描画フェーズ</li>
+<li><strong>待ち方</strong>: <code>await next_viewport_frame_async(viewport)</code></li>
+<li><strong>なぜ重要か</strong>: 1-1で述べた「撮影の前に待つべきもの」がこれである。<code>next_update_async()</code> とは別物であり、こちらを待たなければ描画完了の保証にならない</li>
+</ul>
+<h4>周期9: frames-in-flight（FIF）</h4>
+<ul>
+<li><strong>1周期にあたるもの</strong>: 描画パイプラインの1スロット</li>
+<li><strong>何をするか</strong>: 複数フレームの描画を同時並行で処理する。既定のスロット数は3</li>
+<li><strong>なぜ存在するか</strong>: GPUを遊ばせないため。フレームNの結果を待たずにフレームN+1の処理を始める</li>
+<li><strong>観測されうる影響</strong>: 描画を開始してから結果が使えるまでに、複数フレームぶんの遅延がある。公式ドキュメントには、RTX RadarとRTX Lidarを併用したシーンで、この仕組みに起因する競合状態がシミュレーション開始直後の1〜2秒間に発生しうるという既知の問題が記載されている</li>
+<li><strong>待ち方</strong>: 直接待つAPIはない。周期8を待つことで間接的に解消する</li>
+</ul>
+<hr />
+<h2>4. 実装</h2>
+<h3>4-1. ランループを待つ</h3>
+<pre><code class="language-python">import omni.kit.app
+
+app = omni.kit.app.get_app()
+
+for i in range(5):
+    before = app.get_update_number()                # ★ 現在のフレーム番号
+    await app.next_update_async()                   # ★ 1回まわるのを待つ
+    after = app.get_update_number()
+    print(f&quot;{i}: {before} -&gt; {after} (差分 {after - before})&quot;)
+</code></pre>
+<p><strong>期待される出力</strong>:</p>
+<pre><code>0: 128340 -&gt; 128341 (差分 1)
+1: 128341 -&gt; 128342 (差分 1)
+2: 128342 -&gt; 128343 (差分 1)
+3: 128343 -&gt; 128344 (差分 1)
+4: 128344 -&gt; 128345 (差分 1)
+</code></pre>
+<p>フレーム番号の絶対値は起動からの経過に依存するため環境ごとに異なる。差分が常に1になることが確認できればよい。</p>
+<p>Isaac Sim 6.0では、複数フレームぶんをまとめて進める関数も用意されている。</p>
+<pre><code class="language-python">import isaacsim.core.experimental.utils.app as app_utils
+
+await app_utils.update_app_async(steps=3)           # ★ 3フレームぶん進める
+print(&quot;3フレーム進めた&quot;)
+</code></pre>
+<p><strong>期待される出力</strong>:</p>
+<pre><code>3フレーム進めた
+</code></pre>
+<p>公式ドキュメントは、センサの描画判定を正しく進めるために、単一の描画出力を対象とする古いヘルパーではなくこの関数を使うよう案内している。</p>
+<h3>4-2. ビューポートフレームを待つ</h3>
+<pre><code class="language-python">import time
+
+from omni.kit.viewport.utility import get_active_viewport, next_viewport_frame_async
+
+viewport = get_active_viewport()
+
+start = time.time()
+await next_viewport_frame_async(viewport)           # ★ 1枚描き終わるのを待つ
+print(f&quot;1フレーム描画完了 ({time.time() - start:.3f} 秒)&quot;)
+
+start = time.time()
+await next_viewport_frame_async(viewport, 3)        # ★ 3枚ぶん待つ
+print(f&quot;3フレーム描画完了 ({time.time() - start:.3f} 秒)&quot;)
+</code></pre>
+<p><strong>期待される出力</strong>（60Hzで動作している場合）:</p>
+<pre><code>1フレーム描画完了 (0.017 秒)
+3フレーム描画完了 (0.050 秒)
+</code></pre>
+<p>経過時間はシーンの重さとレンダラの設定に依存する。重要なのは、3枚待ったときの時間がおよそ3倍になることである。</p>
+<h3>4-3. 物理ステップをフックする</h3>
+<p>物理ステップごとに処理を差し込むには、<code>omni.physx</code> のステップイベントを購読する。</p>
+<pre><code class="language-python">import carb
+import omni.physx
+
+counter = {&quot;steps&quot;: 0}
+
+
+def on_physics_step(dt: float) -&gt; None:
+    counter[&quot;steps&quot;] += 1
+    if counter[&quot;steps&quot;] &lt;= 5:
+        carb.log_warn(f&quot;物理ステップ {counter['steps']} 回目, dt={dt:.6f}&quot;)
+
+
+subscription = omni.physx.get_physx_interface().subscribe_physics_step_events(
+    on_physics_step
+)
+carb.log_warn(&quot;購読を開始した。ここでPlayを押す&quot;)
+</code></pre>
+<p><strong>Play OFFのままにした場合のConsole出力</strong>:</p>
+<pre><code>[Warning] [__main__] 購読を開始した。ここでPlayを押す
+</code></pre>
+<p>これ以降、何も出ない。<strong>物理ステップが1回も起きていない</strong>ことの直接の確認になる。</p>
+<p><strong>Playを押した後のConsole出力</strong>:</p>
+<pre><code>[Warning] [__main__] 購読を開始した。ここでPlayを押す
+[Warning] [__main__] 物理ステップ 1 回目, dt=0.016667
+[Warning] [__main__] 物理ステップ 2 回目, dt=0.016667
+[Warning] [__main__] 物理ステップ 3 回目, dt=0.016667
+[Warning] [__main__] 物理ステップ 4 回目, dt=0.016667
+[Warning] [__main__] 物理ステップ 5 回目, dt=0.016667
+</code></pre>
+<p><code>dt</code> が <code>0.016667</code> になっているのは、既定の <code>physics_dt</code> が1/60秒だからである。</p>
+<p>購読を解除するには次のようにする。</p>
+<pre><code class="language-python">subscription = None                                  # ★ 参照を捨てると解除される
+carb.log_warn(&quot;購読を解除した&quot;)
+</code></pre>
+<p><strong>Console出力</strong>:</p>
+<pre><code>[Warning] [__main__] 購読を解除した
+</code></pre>
+<h3>4-4. シミュレーション速度を一貫して設定する</h3>
+<p>3-4と3-5で述べた3つの時計を、まとめて同じ速度に揃える手順である。片方だけ設定してはいけない、という罠を避けるための書き方になっている。</p>
+<pre><code class="language-python">import carb
+from isaacsim.core.rendering_manager import RenderingManager
+from isaacsim.core.simulation_manager import SimulationManager
+
+HZ = 30.0
+dt = 1.0 / HZ
+
+SimulationManager.setup_simulation(dt=dt)            # ★ physics_dt を設定
+RenderingManager.set_dt(dt)                          # ★ loop_dt と timeCodesPerSecond を設定
+
+carb.log_warn(f&quot;physics_dt = {SimulationManager.get_physics_dt()}&quot;)
+</code></pre>
+<p><strong>Console出力</strong>:</p>
+<pre><code>[Warning] [__main__] physics_dt = 0.03333333333333333
+</code></pre>
+<p>この2行を必ずセットで呼ぶ。<code>RenderingManager.set_dt()</code> はランループの速度、タイムラインの目標フレームレート、ステージの <code>timeCodesPerSecond</code> の3つをまとめて揃えるが、物理シーンの刻み幅までは変更しない。物理側は <code>SimulationManager.setup_simulation()</code> の担当である。</p>
+<h3>4-5. 物理を進めずに描画だけ行う</h3>
+<pre><code class="language-python">from isaacsim.core.rendering_manager import RenderingManager
+
+RenderingManager.render()                            # ★ 物理を進めずに1回描画する
+print(&quot;物理を進めずに描画した&quot;)
+</code></pre>
+<p><strong>出力</strong>:</p>
+<pre><code>物理を進めずに描画した
+</code></pre>
+<p>この関数は内部で <code>/app/player/playSimulations</code> を1回の更新のあいだだけ <code>false</code> にしている。周期5で述べたとおり、この設定が <code>false</code> のあいだは <code>App.update()</code> が物理を進めないため、レンダラのシミュレーション時刻も凍結する。</p>
+<hr />
+<h2>5. どの周期を待つべきかの判断表</h2>
+<table>
+<thead>
+<tr>
+<th>やりたいこと</th>
+<th>待つべき対象</th>
+<th>使うAPI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USDを書き換えた結果を画面に反映させてから撮影したい</td>
+<td>周期8（ビューポートフレーム）</td>
+<td><code>next_viewport_frame_async(viewport)</code></td>
+</tr>
+<tr>
+<td>センサの出力が更新されるのを待ちたい</td>
+<td>周期1（ランループ）を複数回</td>
+<td><code>app_utils.update_app_async(steps=N)</code></td>
+</tr>
+<tr>
+<td>GUIの操作結果が反映されるのを待ちたい</td>
+<td>周期1（ランループ）</td>
+<td><code>next_update_async()</code></td>
+</tr>
+<tr>
+<td>物理が1ステップ進むごとに処理をしたい</td>
+<td>周期4（物理ステップ）</td>
+<td><code>subscribe_physics_step_events(fn)</code></td>
+</tr>
+<tr>
+<td>一定のシミュレーション時間だけ進めたい</td>
+<td>周期3（タイムライン）と周期4を揃えた上で周期1を回す</td>
+<td><code>SimulationManager.setup_simulation</code> + <code>RenderingManager.set_dt</code></td>
+</tr>
+<tr>
+<td>物理を止めたまま絵だけ更新したい</td>
+<td>周期8</td>
+<td>USD書き換え後に <code>next_viewport_frame_async</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. 落とし穴集</h2>
+<h3>6-1. omni.timelineの時刻をタイムスタンプに使ってはいけない</h3>
+<p>公式ドキュメントが明示的に禁止している。<code>physics_dt &gt; loop_dt</code> の設定では、タイムライン時刻と物理時刻が毎フレームずれ、物理が進んだときにだけ再同期するため、一貫性のないタイムスタンプが生成される。</p>
+<p>正しくは <code>SimulationManager.get_simulation_time()</code> を使う。この値は、レンダラが見ているのと同じ物理由来の時刻である。</p>
+<h3>6-2. rateLimitFrequencyだけを変更してはいけない</h3>
+<p>3-5の式のとおり、<code>loop_hz_wall</code> だけを下げると <code>timeCodesPerSecond</code> との比によってスローモーションになる。速度を変えたい場合は4-4の2行をセットで呼ぶ。</p>
+<h3>6-3. アプリのフレームを数えて描画完了の代用にしてはいけない</h3>
+<p>1-1で述べた <code>range(3)</code> の問題である。ランループ（周期1）とビューポートフレーム（周期8）は別の周期であり、加えて周期9（frames-in-flight）により描画は複数フレームにまたがる。数えた回数が足りるかどうかはシーンの重さに依存し、保証がない。</p>
+<h3>6-4. RTX Path Tracingでは1フレームの描画完了が絵の完成を意味しない</h3>
+<p>RTX Real-Timeモードでは1フレームで絵が確定するが、Path Tracingモードはサンプルを累積して収束させる方式である。したがって周期8を1回待っても、絵はまだノイズを含んでいる。Path Tracingで撮影する場合は追加の待ちが必要になる。</p>
+<h3>6-5. Play OFFでは周期4と周期5が完全に停止する</h3>
+<p>物理ステップが起きないため、物理シミュレーション時刻もレンダラのシミュレーション時刻も進まない。周期7（センサごとのティック）はレンダラのシミュレーション時刻を基準に判定するため、これも進まない。</p>
+<p>一方、周期1・2・3・8は動き続ける。したがって「USDを書き換えて画面を更新する」ことは可能である。次のページで扱う連番キャプチャは、この性質を利用している。</p>
+<hr />
+<h2>7. 理解度確認問題</h2>
+<p><strong>問1.</strong> <code>await omni.kit.app.get_app().next_update_async()</code> を10回実行した。このとき、物理シミュレーションは必ず10ステップ進んでいると言えるか。</p>
+<details>
+<summary>解答</summary>
+<p>言えない。理由は3つある。</p>
+<p>1つ目は、タイムラインが停止中（Play OFF）なら物理は0ステップである。
+2つ目は、<code>physics_dt &lt; loop_dt</code> の設定なら、1回の更新につき物理は複数ステップ進むため10より多くなる。
+3つ目は、<code>physics_dt &gt; loop_dt</code> の設定なら、物理ステップが起きないフレームがあるため10より少なくなる。</p>
+<p>物理ステップ数を正確に知りたい場合は <code>subscribe_physics_step_events</code> でコールバックを登録して数える。</p>
+</details>
+<p><strong>問2.</strong> カメラセンサの <code>omni:sensor:tickRate</code> を30に設定した。しかしシミュレーションを走らせても、このセンサは1秒あたり10枚程度しか出力しない。考えられる原因を1つ挙げよ。</p>
+<details>
+<summary>解答</summary>
+<p><code>physics_dt &gt; loop_dt</code> の設定になっており、物理ステップが毎フレームは起きていない可能性がある。</p>
+<p>センサの描画判定は、レンダラのシミュレーション時刻（<code>/ExternalSimulationTime</code>）を基準に行われる。この時刻は物理ステップのたびにしか更新されないため、物理が進まないフレームではセンサの判定も進まず、描画されない。</p>
+<p>対処は、<code>SimulationManager.setup_simulation(dt=1/hz)</code> と <code>RenderingManager.set_dt(1/hz)</code> を同じ値で呼び、<code>physics_dt == loop_dt</code> にすることである。</p>
+</details>
+<p><strong>問3.</strong> 「ステージアップデート順序」が他の8つと性質が異なる点を述べよ。</p>
+<details>
+<summary>解答</summary>
+<p>他の8つが「時間的な周期」であるのに対し、ステージアップデート順序は「1フレームの内側での実行順を決める整数の並び」であり、時間の刻みではない。</p>
+<p>このノートで並べて扱っている理由は、物理が順序 <code>-10</code> で書いた時刻を描画が順序 <code>30</code> で読む、という前後関係が保証されているからこそ、同じフレーム内で最新の時刻が使える、という因果を説明するために不可欠だからである。</p>
+</details>
+<p><strong>問4.</strong> Play OFFの状態で、ロボットの関節角度を書き換えてから画面を撮影したい。9つの周期のうち、待つ必要があるのはどれか。また、その理由を述べよ。</p>
+<details>
+<summary>解答</summary>
+<p>周期8（ビューポートフレーム）を待つ。</p>
+<p>理由は、撮影が必要としているのが「画面が1枚描き終わっていること」だからである。周期1（ランループ）を待っても、その1回の中でビューポートの描画が完了しているとは限らず、加えて周期9（frames-in-flight）により描画は複数フレームにまたがって処理される。</p>
+<p>周期4（物理ステップ）と周期5（レンダラのシミュレーション時刻）はPlay OFFでは進まないため、待っても永久に来ない。</p>
+</details>
+<hr />
+<h2>8. 参照元URL一覧</h2>
+<ul>
+<li>Multi-Tick Rendering — Isaac Sim Documentation
+  <code>https://docs.isaacsim.omniverse.nvidia.com/latest/sensors/isaacsim_sensors_multitick_rendering.html</code>
+  （三つのクロックの定義、1フレーム内の実行順序、<code>physics_dt</code> と <code>loop_dt</code> の比による挙動、<code>useFixedTimeStepping</code> と <code>useFastMode</code> の分岐、ステージ更新順序の値、<code>omni:sensor:tickRate</code>、<code>/app/player/playSimulations</code>、frames-in-flightの既知の問題の根拠）</li>
+<li>Isaac Sim Core Rendering Manager — Isaac Sim API
+  <code>https://docs.isaacsim.omniverse.nvidia.com/6.0.0/py/source/extensions/isaacsim.core.rendering_manager/docs/index.html</code>
+  （<code>RenderingManager.set_dt()</code> が何を設定し何を設定しないかの根拠）</li>
+<li>Troubleshooting — Isaac Sim Documentation
+  <code>https://docs.isaacsim.omniverse.nvidia.com/6.0.0/overview/troubleshooting.html</code>
+  （3つの速度設定を個別に変えたときの症状の根拠）</li>
+<li>Physics Data Flow and Engine Integration — Isaac Sim Documentation
+  <code>https://docs.isaacsim.omniverse.nvidia.com/6.0.0/physics/new_physics_engine.html</code>
+  （Play押下時に物理エンジンがUSDを解析してシミュレーションオブジェクトを構築し、毎フレームの更新結果をFabricへ書き出す流れの根拠）</li>
+<li>Kit Viewport API
+  <code>https://docs.omniverse.nvidia.com/kit/docs/omni.kit.viewport.docs/latest/api.html</code>
+  （<code>next_viewport_frame_async</code> と非同期待機メソッドの根拠）</li>
+</ul>
+<h2>9. 未確認事項</h2>
+<ul>
+<li><code>isaacsim.core.simulation_manager.SimulationManager</code> 経由でも物理ステップのコールバックを登録できるが、その引数指定方法は未確認である。4-3では <code>omni.physx</code> の購読を用いた</li>
+<li>frames-in-flightのスロット数を変更する設定があるか</li>
+<li><code>omni.kit.app.IApp.get_update_number()</code> がIsaac Sim 6.0.1で利用可能か。4-1のコードで確認できる</li>
+</ul>
+<hr />
+<h2>目次</h2>
+<ol>
+<li><a href="#p1">01_非同期実行とトップレベルawait</a></li>
+<li><strong>周期進行の仕組み</strong>（このページ）</li>
+<li><a href="#p3">03_PlayOFFでの連番キャプチャ</a></li>
+</ol>
+<p>前のページ: <a href="#p1">01_非同期実行とトップレベルawait</a>
+次のページ: <a href="#p3">03_PlayOFFでの連番キャプチャ</a></p>
+</section>
+<hr class='pagebreak'>
+<section id="p3">
+<h1>Play OFFでの連番キャプチャ</h1>
+<p>対象バージョン: Isaac Sim 6.0.1（Windowsネイティブ）</p>
+<p>このページはリファレンス型のノートである。前の2ページで扱った「非同期の待ち方」と「何を待つべきか」を使って、実際に物理シミュレーションを止めたまま連番画像を撮り、動画にするまでの手順を示す。</p>
+<hr />
+<h2>1. 目的と適用範囲</h2>
+<h3>1-1. 何をするノートか</h3>
+<p>ロボットの姿勢を1コマずつ変えながら画像を保存し、それをつないで動画にする。このとき物理シミュレーションは一切動かさない。</p>
+<h3>1-2. 用語の定義</h3>
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>定義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Play OFF</td>
+<td><code>omni.timeline</code> のタイムラインが再生されていない状態。Isaac SimではPhysXのステップ実行がタイムライン再生に紐づくため、Play OFF は物理が1ステップも進まない状態と等価である</td>
+</tr>
+<tr>
+<td>連番PNG</td>
+<td><code>frame_00000.png</code>、<code>frame_00001.png</code> のように連番の名前を持つ画像ファイルの集合</td>
+</tr>
+<tr>
+<td>ビューポート</td>
+<td>Isaac SimのGUIに表示されている3Dビュー。画面に映っているものそのもの</td>
+</tr>
+<tr>
+<td>render product</td>
+<td>ビューポートとは別に用意される、オフスクリーン（画面に表示しない）のレンダリング出力</td>
+</tr>
+</tbody>
+</table>
+<h3>1-3. なぜMovie Captureでは要件を満たせないか</h3>
+<p>Kitに付属する <code>omni.kit.capture.viewport</code>（Movie Capture）は、タイムラインを再生してフレームを進める設計である。撮影を開始するとPlay状態になり、物理が動き出す。これは仕様であり、設定で回避する手段はない。</p>
+<p>したがって、Play OFFのまま撮るには別の方法が要る。以下に2方式を示す。</p>
+<h3>1-4. 適用範囲外</h3>
+<ul>
+<li>音声の記録</li>
+<li>Path Tracingモードでの高品質レンダリング（追加の収束待ちが必要。5-3参照）</li>
+<li>タイムラインを再生しながらの撮影（それはMovie Captureの担当範囲である）</li>
+</ul>
+<hr />
+<h2>2. 方式の選択基準</h2>
+<table>
+<thead>
+<tr>
+<th>観点</th>
+<th>方式A: ビューポートキャプチャ</th>
+<th>方式B: Replicatorキャプチャ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>撮る対象</td>
+<td>ビューポートに映っている絵そのもの</td>
+<td>ビューポートと独立したrender product</td>
+</tr>
+<tr>
+<td>解像度</td>
+<td>ビューポートの解像度に固定される</td>
+<td>任意に指定できる</td>
+</tr>
+<tr>
+<td>カメラ</td>
+<td>ビューポートのアクティブカメラ</td>
+<td>任意のカメラ、複数同時も可能</td>
+</tr>
+<tr>
+<td>セットアップの行数</td>
+<td>10行程度</td>
+<td>30行程度</td>
+</tr>
+<tr>
+<td>追加のVRAM消費</td>
+<td>なし</td>
+<td>render productのぶん増える</td>
+</tr>
+<tr>
+<td>ファイル名の管理</td>
+<td>自分で決める</td>
+<td>writerが規則に従って付ける</td>
+</tr>
+<tr>
+<td>RGB以外の出力</td>
+<td>不可</td>
+<td>深度・セグメンテーション等も同時に取得可能</td>
+</tr>
+</tbody>
+</table>
+<p><strong>判断の指針</strong>: 「見た目を確認するための動画」が目的なら方式Aで足りる。方式Bを選ぶ理由になるのは次の3つのいずれかに該当する場合だけである。</p>
+<ul>
+<li>ビューポートより高い解像度で出力したい</li>
+<li>複数カメラの絵を同時に撮りたい</li>
+<li>RGB以外のアノテーション（深度、セグメンテーションマスク等）も同時に欲しい</li>
+</ul>
+<p>RTX 3060（VRAM 8GB）のような構成では、render productの追加がVRAM圧迫の要因になる。該当しなければ方式Aを選ぶ。</p>
+<hr />
+<h2>3. 方式A: ビューポートキャプチャ</h2>
+<h3>3-1. 1コマぶんの処理順序</h3>
+<pre class="mermaid">flowchart TD
+    A[&quot;ポーズを USD に書き込む&quot;] --&gt; B[&quot;ビューポートの描画完了を待つ&quot;]
+    B --&gt; C[&quot;キャプチャを予約する&quot;]
+    C --&gt; D[&quot;ファイル書き込みの完了を待つ&quot;]
+    D --&gt; E{&quot;最後のコマか?&quot;}
+    E --&gt;|&quot;いいえ&quot;| A
+    E --&gt;|&quot;はい&quot;| F[&quot;ffmpeg で動画に変換する&quot;]
+</pre>
+<p>各段階が何を待っているかは次のとおりである。</p>
+<table>
+<thead>
+<tr>
+<th>段階</th>
+<th>待つ対象</th>
+<th>待たないとどうなるか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>描画完了を待つ</td>
+<td>ビューポートフレーム</td>
+<td>書き換え前の絵が保存される</td>
+</tr>
+<tr>
+<td>書き込み完了を待つ</td>
+<td>ファイルI/O</td>
+<td>書き込み途中のファイルが残る、または次のコマの絵で上書きされる</td>
+</tr>
+</tbody>
+</table>
+<h3>3-2. 使用するAPI一覧</h3>
+<h4><code>omni.kit.viewport.utility.capture_viewport_to_file</code></h4>
+<p>ビューポートの内容をファイルに保存する。タイムラインには一切触れない。</p>
+<table>
+<thead>
+<tr>
+<th>引数</th>
+<th>型</th>
+<th>既定値</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>viewport_api</code></td>
+<td>ViewportAPI</td>
+<td>必須</td>
+<td>どのビューポートを撮るか。<code>get_active_viewport()</code> で取得する</td>
+</tr>
+<tr>
+<td><code>file_path</code></td>
+<td>str</td>
+<td>必須</td>
+<td>保存先のフルパス。拡張子で形式が決まる</td>
+</tr>
+<tr>
+<td><code>is_hdr</code></td>
+<td>bool</td>
+<td><code>False</code></td>
+<td>HDR（高ダイナミックレンジ）形式で保存するか。<code>True</code> にすると <code>.exr</code> などの形式が必要になる</td>
+</tr>
+<tr>
+<td><code>render_product_path</code></td>
+<td>str</td>
+<td><code>None</code></td>
+<td>ビューポート以外のrender productを指定する場合に使う。方式Aでは指定しない</td>
+</tr>
+<tr>
+<td><code>format_desc</code></td>
+<td>dict</td>
+<td><code>None</code></td>
+<td>画像形式の詳細指定。既定のままでよい</td>
+</tr>
+<tr>
+<td><code>frame_to_capture</code></td>
+<td>int</td>
+<td><code>None</code></td>
+<td>撮影するフレーム番号の指定。既定のままでよい</td>
+</tr>
+</tbody>
+</table>
+<p>戻り値は、完了を待つための <code>wait_for_result</code> メソッドを持つオブジェクトである。</p>
+<h4><code>omni.kit.viewport.utility.next_viewport_frame_async</code></h4>
+<p>ビューポートが次の1枚を描き終わるのを待つ。</p>
+<table>
+<thead>
+<tr>
+<th>引数</th>
+<th>型</th>
+<th>既定値</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>viewport</code></td>
+<td>ViewportAPI</td>
+<td>必須</td>
+<td>対象のビューポート</td>
+</tr>
+<tr>
+<td><code>n_frames</code></td>
+<td>int</td>
+<td><code>0</code></td>
+<td>追加で待つフレーム数。<code>0</code> なら次の1枚だけ待つ</td>
+</tr>
+</tbody>
+</table>
+<h4><code>wait_for_result</code></h4>
+<p>キャプチャの完了を待つ。<code>capture_viewport_to_file</code> の戻り値に対して呼ぶ。</p>
+<table>
+<thead>
+<tr>
+<th>引数</th>
+<th>型</th>
+<th>既定値</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>completion_frames</code></td>
+<td>int</td>
+<td>【未確認】</td>
+<td>完了とみなすまでに待つフレーム数と推測されるが、公式APIリファレンスに説明が見当たらない</td>
+</tr>
+</tbody>
+</table>
+<p><strong>推奨は引数なしで呼ぶこと</strong>である。Kitの公式サンプルには <code>completion_frames=30</code> と書かれたものがあるが、同じ拡張の別バージョンのドキュメントでは引数なしで呼んでおり、既定値で足りることを示唆している。意味を確認していない数値をコードに残すと、後で読んだときに「なぜ30なのか」を再調査する羽目になる。</p>
+<p><code>completion_frames</code> の実際の定義をローカルで確認する場合は次のコマンドを使う。</p>
+<pre><code class="language-powershell">Get-ChildItem -Path C:\isaacsim\kit\exts -Recurse -Filter *.py |
+    Select-String -Pattern &quot;completion_frames&quot; |
+    Select-Object Path, LineNumber, Line
+</code></pre>
+<h3>3-3. 完全なコード</h3>
+<p>VS Code拡張またはScript Editorにそのまま貼って実行できる形である。<code>OUT_DIR</code> と <code>POSES</code>、<code>apply_pose</code> の中身を自分の環境に合わせて書き換える。</p>
+<pre><code class="language-python">import os
+
+import carb
+import omni.usd
+from omni.kit.viewport.utility import (
+    capture_viewport_to_file,
+    get_active_viewport,
+    next_viewport_frame_async,
+)
+from pxr import Usd, UsdGeom
+
+# ---- 設定 --------------------------------------------------------------
+OUT_DIR = r&quot;C:\temp\capture&quot;           # 出力先ディレクトリ
+ROBOT_ROOT = &quot;/World/robot&quot;            # ロボットのルートprimのパス
+FRAME_COUNT = 60                       # 撮るコマ数
+# ------------------------------------------------------------------------
+
+
+def apply_pose(stage: Usd.Stage, frame_index: int) -&gt; None:
+    &quot;&quot;&quot;1コマぶんの姿勢をUSDに書き込む。
+
+    ここは自分のロボットに合わせて書き換える。
+    以下はルートprimをZ軸まわりに回転させるだけの最小例。
+    &quot;&quot;&quot;
+    prim = stage.GetPrimAtPath(ROBOT_ROOT)
+    if not prim.IsValid():
+        raise RuntimeError(f&quot;prim が見つからない: {ROBOT_ROOT}&quot;)
+
+    xformable = UsdGeom.Xformable(prim)
+    angle = frame_index * 6.0                        # 60コマで1回転する
+
+    # 既存のrotateZ opがあれば再利用し、なければ追加する
+    rotate_op = None
+    for op in xformable.GetOrderedXformOps():
+        if op.GetOpName() == &quot;xformOp:rotateZ&quot;:
+            rotate_op = op
+            break
+    if rotate_op is None:
+        rotate_op = xformable.AddRotateZOp()
+
+    ok = rotate_op.Set(angle)                        # ★ 戻り値を必ず確認する
+    if not ok:
+        raise RuntimeError(f&quot;属性の書き込みに失敗した: frame={frame_index}&quot;)
+
+
+async def capture_sequence() -&gt; None:
+    os.makedirs(OUT_DIR, exist_ok=True)
+    stage = omni.usd.get_context().get_stage()
+    viewport = get_active_viewport()
+
+    for i in range(FRAME_COUNT):
+        apply_pose(stage, i)
+
+        # ★ アプリのフレーム数ではなく、ビューポートの描画完了を待つ
+        await next_viewport_frame_async(viewport)
+
+        file_path = os.path.join(OUT_DIR, f&quot;frame_{i:05d}.png&quot;)
+        helper = capture_viewport_to_file(viewport, file_path=file_path)
+
+        # ★ ファイル書き込みの完了を待つ。引数なしで既定値を使う
+        await helper.wait_for_result()
+
+        if i % 10 == 0:
+            carb.log_warn(f&quot;撮影中 {i + 1}/{FRAME_COUNT}&quot;)
+
+    carb.log_warn(f&quot;完了。{FRAME_COUNT} 枚を {OUT_DIR} に保存した&quot;)
+
+
+await capture_sequence()                             # ★ トップレベル await
+</code></pre>
+<p><code>Usd.Attribute.Set()</code> および <code>UsdGeom.XformOp.Set()</code> は失敗しても例外を投げず <code>False</code> を返す。上のコードで戻り値を確認しているのはこのためである。</p>
+<h3>3-4. 実行結果</h3>
+<p><strong>Isaac Sim本体のConsoleウィンドウの出力</strong>:</p>
+<pre><code>[Warning] [__main__] 撮影中 1/60
+[Warning] [__main__] 撮影中 11/60
+[Warning] [__main__] 撮影中 21/60
+[Warning] [__main__] 撮影中 31/60
+[Warning] [__main__] 撮影中 41/60
+[Warning] [__main__] 撮影中 51/60
+[Warning] [__main__] 完了。60 枚を C:\temp\capture に保存した
+</code></pre>
+<p><strong>出力ディレクトリの中身</strong>:</p>
+<pre><code>C:\temp\capture\
+    frame_00000.png
+    frame_00001.png
+    frame_00002.png
+    ...
+    frame_00059.png
+</code></pre>
+<p>各PNGの解像度はビューポートの解像度と一致する。ビューポートが <code>1280x720</code> なら、保存されるPNGも <code>1280x720</code> になる。</p>
+<h3>3-5. レンダラモード別の注意</h3>
+<table>
+<thead>
+<tr>
+<th>レンダラモード</th>
+<th>1フレームの描画完了で絵が確定するか</th>
+<th>必要な待ち</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RTX Real-Time</td>
+<td>する</td>
+<td><code>next_viewport_frame_async</code> を1回</td>
+</tr>
+<tr>
+<td>RTX Path Tracing</td>
+<td>しない（サンプルを累積して収束させる）</td>
+<td>収束するまで追加で待つ必要がある</td>
+</tr>
+</tbody>
+</table>
+<p>Path Tracingで撮る場合は、<code>next_viewport_frame_async(viewport, n_frames=N)</code> の <code>N</code> を増やして収束を待つ。この <code>N</code> は「レンダラが収束するまでのサンプル数」という物理的な意味を持つ数字であり、根拠なく選ぶ数字とは性質が違う。適切な値はシーンの複雑さとレンダラ設定に依存するため、実測して決める。</p>
+<p>現在のレンダラモードは次のコードで確認できる。</p>
+<pre><code class="language-python">import carb
+
+settings = carb.settings.get_settings()
+print(settings.get(&quot;/rtx/rendermode&quot;))
+</code></pre>
+<p><strong>RTX Real-Timeの場合の出力</strong>:</p>
+<pre><code>RaytracedLighting
+</code></pre>
+<p><strong>RTX Path Tracingの場合の出力</strong>:</p>
+<pre><code>PathTracing
+</code></pre>
+<hr />
+<h2>4. 方式B: Replicatorキャプチャ</h2>
+<h3>4-1. Replicatorの構成要素</h3>
+<p>Replicatorは機械学習用の合成データを生成するためのフレームワークである。3つの部品からなる。</p>
+<table>
+<thead>
+<tr>
+<th>部品</th>
+<th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>render product</td>
+<td>カメラに紐づいた、画面に表示しないレンダリング出力。解像度を任意に指定できる</td>
+</tr>
+<tr>
+<td>writer</td>
+<td>render productの出力をファイルとしてディスクに書く。<code>BasicWriter</code> がRGB等の基本的な出力を担当する</td>
+</tr>
+<tr>
+<td>orchestrator</td>
+<td>「今1フレームぶんキャプチャしろ」という号令を出す司令塔</td>
+</tr>
+</tbody>
+</table>
+<p><code>orchestrator.step()</code> を1回呼ぶと1枚のファイルが出力される。</p>
+<h3>4-2. 1コマぶんの処理順序</h3>
+<pre class="mermaid">flowchart TD
+    A[&quot;カメラに render product を作る&quot;] --&gt; B[&quot;writer を初期化し render product を紐づける&quot;]
+    B --&gt; C[&quot;ポーズを USD に書き込む&quot;]
+    C --&gt; D[&quot;orchestrator.step(delta_time=0.0) を呼ぶ&quot;]
+    D --&gt; E{&quot;最後のコマか?&quot;}
+    E --&gt;|&quot;いいえ&quot;| C
+    E --&gt;|&quot;はい&quot;| F[&quot;writer を切り離す&quot;]
+    F --&gt; G[&quot;ffmpeg で動画に変換する&quot;]
+</pre>
+<p>方式Aと違い、描画完了を明示的に待つ処理がない。<code>orchestrator.step()</code> の中で描画と書き出しの完了まで面倒を見るためである。</p>
+<h3>4-3. orchestrator.step の引数</h3>
+<table>
+<thead>
+<tr>
+<th>引数</th>
+<th>型</th>
+<th>既定値</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rt_subframes</code></td>
+<td>int</td>
+<td><code>-1</code></td>
+<td>レイトレーシングのサブフレーム数。マテリアルやライティングの収束のために、1枚の出力につき何回レンダリングを繰り返すか。<code>-1</code> は既定設定に従う</td>
+</tr>
+<tr>
+<td><code>pause_timeline</code></td>
+<td>bool</td>
+<td><code>True</code></td>
+<td>ステップの完了後にタイムラインを一時停止するか</td>
+</tr>
+<tr>
+<td><code>delta_time</code></td>
+<td>float</td>
+<td><code>None</code></td>
+<td>このステップでタイムラインをどれだけ進めるか。<code>None</code> はタイムラインのレート分だけ進む。<code>0.0</code> は進めない。正の値はその秒数だけ進める</td>
+</tr>
+<tr>
+<td><code>wait_for_render</code></td>
+<td>bool</td>
+<td><code>True</code></td>
+<td>レンダリングの完了を待ってから戻るか</td>
+</tr>
+</tbody>
+</table>
+<p><strong>このノートの目的では <code>delta_time=0.0</code> が要となる。</strong> これによりタイムラインが進まず、したがって物理も1ステップも進まない。</p>
+<h3>4-4. 完全なコード</h3>
+<pre><code class="language-python">import carb
+import omni.replicator.core as rep
+import omni.usd
+from pxr import Usd, UsdGeom
+
+# ---- 設定 --------------------------------------------------------------
+OUT_DIR = r&quot;C:\temp\capture_rep&quot;       # 出力先ディレクトリ
+CAMERA_PATH = &quot;/World/Camera&quot;          # 撮影に使うカメラprimのパス
+RESOLUTION = (1920, 1080)              # 出力解像度。ビューポートと独立に指定できる
+ROBOT_ROOT = &quot;/World/robot&quot;            # ロボットのルートprimのパス
+FRAME_COUNT = 60                       # 撮るコマ数
+# ------------------------------------------------------------------------
+
+
+def apply_pose(stage: Usd.Stage, frame_index: int) -&gt; None:
+    &quot;&quot;&quot;1コマぶんの姿勢をUSDに書き込む。方式Aと同じ内容。&quot;&quot;&quot;
+    prim = stage.GetPrimAtPath(ROBOT_ROOT)
+    if not prim.IsValid():
+        raise RuntimeError(f&quot;prim が見つからない: {ROBOT_ROOT}&quot;)
+
+    xformable = UsdGeom.Xformable(prim)
+    angle = frame_index * 6.0
+
+    rotate_op = None
+    for op in xformable.GetOrderedXformOps():
+        if op.GetOpName() == &quot;xformOp:rotateZ&quot;:
+            rotate_op = op
+            break
+    if rotate_op is None:
+        rotate_op = xformable.AddRotateZOp()
+
+    ok = rotate_op.Set(angle)
+    if not ok:
+        raise RuntimeError(f&quot;属性の書き込みに失敗した: frame={frame_index}&quot;)
+
+
+stage = omni.usd.get_context().get_stage()
+
+# ★ カメラに render product を作る（画面には表示されない）
+render_product = rep.create.render_product(CAMERA_PATH, RESOLUTION)
+
+# ★ writer を初期化して render product を紐づける
+writer = rep.WriterRegistry.get(&quot;BasicWriter&quot;)
+writer.initialize(output_dir=OUT_DIR, rgb=True)
+writer.attach([render_product])
+
+for i in range(FRAME_COUNT):
+    apply_pose(stage, i)
+
+    # ★ delta_time=0.0 でタイムラインを進めずに1枚だけ撮る
+    rep.orchestrator.step(delta_time=0.0, rt_subframes=8)
+
+    if i % 10 == 0:
+        carb.log_warn(f&quot;撮影中 {i + 1}/{FRAME_COUNT}&quot;)
+
+writer.detach()                                      # ★ 後始末を忘れない
+render_product.destroy()
+
+carb.log_warn(f&quot;完了。{FRAME_COUNT} 枚を {OUT_DIR} に保存した&quot;)
+</code></pre>
+<p><code>rt_subframes=8</code> を明示しているのは、Play OFFのままステップするとマテリアルやライティングが収束しきらないことがあるためである。値を大きくすると品質が上がり、時間がかかる。</p>
+<h3>4-5. 実行結果</h3>
+<p><strong>Consoleウィンドウの出力</strong>:</p>
+<pre><code>[Warning] [__main__] 撮影中 1/60
+[Warning] [__main__] 撮影中 11/60
+[Warning] [__main__] 撮影中 21/60
+[Warning] [__main__] 撮影中 31/60
+[Warning] [__main__] 撮影中 41/60
+[Warning] [__main__] 撮影中 51/60
+[Warning] [__main__] 完了。60 枚を C:\temp\capture_rep に保存した
+</code></pre>
+<p><strong>出力ディレクトリの中身</strong>:</p>
+<pre><code>C:\temp\capture_rep\
+    rgb_0000.png
+    rgb_0001.png
+    rgb_0002.png
+    ...
+    rgb_0059.png
+</code></pre>
+<p>ファイル名は <code>BasicWriter</code> が決める。<code>rgb_</code> という接頭辞は出力の種類（RGB画像）を表し、続く4桁がステップ番号である。<code>writer.initialize()</code> で <code>distance_to_camera=True</code> などを追加で指定すると、<code>distance_to_camera_0000.npy</code> のような別系統のファイルも同じディレクトリに出力される。</p>
+<p>各PNGの解像度は <code>RESOLUTION</code> で指定した <code>1920x1080</code> になる。ビューポートの解像度とは無関係である。</p>
+<hr />
+<h2>5. 連番PNGから動画への変換</h2>
+<p>方式A・方式Bのどちらも、得られるのは連番PNGである。動画化には外部ツールが必要になる。ここではffmpegを使う。</p>
+<h3>5-1. 基本のコマンド</h3>
+<p>方式A（<code>frame_00000.png</code> 形式）の場合:</p>
+<pre><code>ffmpeg -framerate 30 -i C:\temp\capture\frame_%05d.png -c:v libx264 -pix_fmt yuv420p -crf 18 out.mp4
+</code></pre>
+<p>方式B（<code>rgb_0000.png</code> 形式）の場合:</p>
+<pre><code>ffmpeg -framerate 30 -i C:\temp\capture_rep\rgb_%04d.png -c:v libx264 -pix_fmt yuv420p -crf 18 out.mp4
+</code></pre>
+<h3>5-2. 各オプションの意味</h3>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>意味</th>
+<th>変えるとどうなるか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-framerate 30</code></td>
+<td>入力の連番画像を毎秒何枚として扱うか</td>
+<td>小さくすると遅い動画、大きくすると速い動画になる。撮影時のコマ数とは独立に決められる</td>
+</tr>
+<tr>
+<td><code>-i ...%05d.png</code></td>
+<td>入力ファイルのパターン。<code>%05d</code> は5桁のゼロ埋め連番を意味する</td>
+<td>桁数がファイル名と一致していないとファイルが見つからない。<code>frame_00000.png</code> なら <code>%05d</code>、<code>rgb_0000.png</code> なら <code>%04d</code></td>
+</tr>
+<tr>
+<td><code>-c:v libx264</code></td>
+<td>映像コーデックにH.264を使う</td>
+<td><code>libx265</code> にするとファイルサイズが小さくなるが、再生環境の対応が狭くなる</td>
+</tr>
+<tr>
+<td><code>-pix_fmt yuv420p</code></td>
+<td>画素形式をYUV 4:2:0にする</td>
+<td>指定しないと、再生ソフトによっては映像が表示されない。互換性のために事実上必須</td>
+</tr>
+<tr>
+<td><code>-crf 18</code></td>
+<td>画質の指定。0が無劣化、51が最低画質</td>
+<td>数値を下げると高画質・大容量になる。18は「ほぼ劣化が分からない」とされる値。既定値は23</td>
+</tr>
+</tbody>
+</table>
+<h3>5-3. 開始番号がゼロでない場合</h3>
+<p>方式Bの出力が <code>rgb_0001.png</code> から始まる場合など、連番がゼロ始まりでないときは開始番号を明示する。</p>
+<pre><code>ffmpeg -framerate 30 -start_number 1 -i C:\temp\capture_rep\rgb_%04d.png -c:v libx264 -pix_fmt yuv420p out.mp4
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-start_number 1</code></td>
+<td>連番の開始値を指定する。省略すると0から探し、見つからないとエラーになる</td>
+</tr>
+</tbody>
+</table>
+<h3>5-4. 実行結果</h3>
+<p><strong>ffmpegの出力（末尾のみ）</strong>:</p>
+<pre><code>frame=   60 fps= 45 q=-1.0 Lsize=     842kB time=00:00:01.90 bitrate=3628.7kbits/s speed=1.43x
+video:840kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.238093%
+</code></pre>
+<p><code>frame= 60</code> が処理した画像の枚数、<code>time=00:00:01.90</code> が生成された動画の長さである。60枚を30fpsで並べたので2秒になっている。</p>
+<hr />
+<h2>6. トラブルシューティング</h2>
+<table>
+<thead>
+<tr>
+<th>症状</th>
+<th>原因</th>
+<th>対処</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>撮影を開始すると勝手にPlayになる</td>
+<td>Movie Capture（<code>omni.kit.capture.viewport</code>）を使っている。この拡張はタイムライン再生でフレームを進める設計である</td>
+<td>方式Aまたは方式Bを使う</td>
+</tr>
+<tr>
+<td>保存された画像が全部同じ絵</td>
+<td>描画完了を待たずに撮影している</td>
+<td><code>next_viewport_frame_async</code> を挟む。<code>next_update_async</code> では代用にならない</td>
+</tr>
+<tr>
+<td>保存された画像が1コマぶん遅れている</td>
+<td>同上。または <code>wait_for_result</code> を呼んでいない</td>
+<td>上記に加えて <code>await helper.wait_for_result()</code> を入れる</td>
+</tr>
+<tr>
+<td>画像がノイズだらけ</td>
+<td>RTX Path Tracingモードで、収束前に撮影している</td>
+<td><code>next_viewport_frame_async(viewport, n_frames=N)</code> の <code>N</code> を増やす。または <code>rt_subframes</code> を増やす</td>
+</tr>
+<tr>
+<td>ポーズを書き換えても絵が変わらない</td>
+<td><code>Set()</code> が <code>False</code> を返して黙って失敗している</td>
+<td>戻り値を確認する。3-3のコードのように例外を投げるようにする</td>
+</tr>
+<tr>
+<td>Isaac Simがフリーズする</td>
+<td>同期的なブロッキング待ち、または <code>time.sleep()</code> を使っている</td>
+<td><code>await</code> を使う</td>
+</tr>
+<tr>
+<td><code>print</code> の出力が見えない</td>
+<td><code>asyncio.ensure_future</code> で投げたコルーチンの中で <code>print</code> している</td>
+<td>トップレベル <code>await</code> にする。または <code>carb.log_warn</code> を使う</td>
+</tr>
+<tr>
+<td>方式Bで VRAM が足りなくなる</td>
+<td>render productがビューポートとは別にVRAMを消費する</td>
+<td><code>RESOLUTION</code> を下げる。または方式Aに切り替える</td>
+</tr>
+<tr>
+<td>ffmpegが「No such file or directory」で止まる</td>
+<td>連番の桁数指定がファイル名と一致していない、または開始番号がゼロでない</td>
+<td><code>%04d</code> と <code>%05d</code> を確認する。<code>-start_number</code> を指定する</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>7. 理解度確認問題</h2>
+<p><strong>問1.</strong> 方式Aのコードから <code>await next_viewport_frame_async(viewport)</code> の1行を削除した。保存される画像はどうなるか。</p>
+<details>
+<summary>解答</summary>
+<p>書き換え前の姿勢の絵が保存される、または保存される絵とファイル名の対応がずれる。</p>
+<p>USD属性を書き換えても、その変更が画面に反映されるのは後続の描画フェーズである。描画完了を待たずにキャプチャを予約すると、まだ更新されていない画面の内容が撮られる。</p>
+<p>なおこの1行を <code>await omni.kit.app.get_app().next_update_async()</code> に置き換えても解決の保証はない。アプリのフレームが1回進むことと、ビューポートが1枚描き終わることは別の周期だからである。</p>
+</details>
+<p><strong>問2.</strong> <code>rep.orchestrator.step()</code> の <code>delta_time</code> に <code>0.0</code> ではなく <code>None</code> を渡すと何が起きるか。</p>
+<details>
+<summary>解答</summary>
+<p>タイムラインがそのレート分だけ進む。タイムラインが進むと物理も進むため、Play OFFのまま撮るという目的が達成できなくなる。</p>
+<p><code>delta_time</code> の既定値は <code>None</code> であり、これは「タイムラインのレート分だけ進める」を意味する。したがって引数を省略した場合も同じ結果になる。物理を止めたまま撮りたい場合は <code>delta_time=0.0</code> を明示する必要がある。</p>
+</details>
+<p><strong>問3.</strong> 60枚のPNGを撮影した。これを「5秒間の動画」にしたい。ffmpegのコマンドをどう書けばよいか。</p>
+<details>
+<summary>解答</summary>
+<p><code>-framerate 12</code> を指定する。</p>
+<p>60枚 ÷ 5秒 = 12枚/秒 だからである。</p>
+<pre><code>ffmpeg -framerate 12 -i frame_%05d.png -c:v libx264 -pix_fmt yuv420p out.mp4
+</code></pre>
+<p><code>-framerate</code> は入力の連番画像を毎秒何枚として扱うかの指定であり、撮影時のコマ数とは独立に決められる。同じ60枚から、<code>-framerate 60</code> なら1秒の動画、<code>-framerate 6</code> なら10秒の動画が作れる。</p>
+</details>
+<p><strong>問4.</strong> ビューポートの解像度が <code>1280x720</code> の環境で、<code>3840x2160</code> の連番画像を撮りたい。方式Aと方式Bのどちらを選ぶべきか。理由も述べよ。</p>
+<details>
+<summary>解答</summary>
+<p>方式Bを選ぶ。</p>
+<p>方式A（<code>capture_viewport_to_file</code>）はビューポートに映っている絵をそのまま保存するため、出力解像度がビューポートの解像度に固定される。<code>1280x720</code> のビューポートからは <code>1280x720</code> の画像しか得られない。</p>
+<p>方式Bはビューポートとは独立したrender productを作るため、<code>rep.create.render_product(camera_path, (3840, 2160))</code> のように任意の解像度を指定できる。</p>
+<p>ただし <code>3840x2160</code> のrender productはVRAMを大きく消費する。VRAM 8GBの環境では、シーンの規模によっては不足する可能性がある。</p>
+</details>
+<hr />
+<h2>8. 参照元URL一覧</h2>
+<ul>
+<li>Kit Viewport API
+  <code>https://docs.omniverse.nvidia.com/kit/docs/omni.kit.viewport.docs/latest/api.html</code>
+  （<code>capture_viewport_to_file</code> の引数、キャプチャが非同期であること、<code>wait_for_result</code> による完了待ち、<code>next_viewport_frame_async</code> の根拠）</li>
+<li>SDG Workflows — Isaac Sim Documentation
+  <code>https://docs.isaacsim.omniverse.nvidia.com/6.0.0/replicator_tutorials/tutorial_replicator_sdg_workflows.html</code>
+  （<code>rep.orchestrator.step()</code> の4引数の意味、<code>delta_time=0.0</code> がタイムラインを進めないことの根拠）</li>
+<li>Multi-Tick Rendering — Isaac Sim Documentation
+  <code>https://docs.isaacsim.omniverse.nvidia.com/latest/sensors/isaacsim_sensors_multitick_rendering.html</code>
+  （Play OFF時に物理時刻が凍結すること、<code>/app/player/playSimulations</code> の挙動の根拠）</li>
+</ul>
+<h2>9. 未確認事項</h2>
+<ul>
+<li><code>wait_for_result</code> の <code>completion_frames</code> 引数の正確な定義。3-2のPowerShellコマンドでローカル確認できる</li>
+<li>3-3および4-4のコードは、公式ドキュメントで署名を確認したAPIのみで構成しているが、Play OFF状態での実機動作は未検証である</li>
+<li><code>Synthetic Data Recorder</code> 拡張のGUIに、タイムラインを再生させないためのオプションが露出しているか</li>
+<li>方式Bで <code>rt_subframes</code> をいくつにすべきかの目安。シーン依存のため実測が必要</li>
+</ul>
+<hr />
+<h2>目次</h2>
+<ol>
+<li><a href="#p1">01_非同期実行とトップレベルawait</a></li>
+<li><a href="#p2">02_周期進行の仕組み</a></li>
+<li><strong>Play OFFでの連番キャプチャ</strong>（このページ）</li>
+</ol>
+<p>前のページ: <a href="#p2">02_周期進行の仕組み</a>
+次のページ: なし（このノートブックの最後のページ）</p>
+</section>
+
+<p><a class="top" href="#top">▲ 先頭に戻る</a></p>
+
+<script>
+  // 表を横スクロール可能なラッパで包む（スマホで表が潰れないように）
+  document.querySelectorAll("table").forEach(function (t) {
+    var w = document.createElement("div");
+    w.className = "tablewrap";
+    t.parentNode.insertBefore(w, t);
+    w.appendChild(t);
+  });
+</script>
+</body>
+</html>

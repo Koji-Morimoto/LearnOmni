@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540">
+  <rect class="background" x="0" y="0" width="900" height="540" fill="#1e1e2e"/>
+
+  <text x="450" y="34" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="21" fill="#cdd6f4">凹形状（U字断面）を衝突形状にする4つの表現の違い</text>
+  <text x="450" y="60" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">同じ元形状に対して、physics:approximation の値を変えたときに実際に使われる形</text>
+
+  <!-- panel 1 : original triangle mesh -->
+  <rect class="container" x="40" y="80" width="190" height="290" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <polygon points="70,115 105,115 105,195 165,195 165,115 200,115 200,225 70,225" fill="#89b4fa" fill-opacity="0.35" stroke="#89b4fa" stroke-width="2.5"/>
+  <text x="135" y="266" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="17" fill="#cdd6f4">元の三角形メッシュ</text>
+  <text x="135" y="288" text-anchor="middle" font-family="Noto Sans Mono CJK JP, monospace" font-size="13" fill="#f9e2af">approximation =</text>
+  <text x="135" y="308" text-anchor="middle" font-family="Noto Sans Mono CJK JP, monospace" font-size="13" fill="#f9e2af">none</text>
+  <text x="135" y="334" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8">静的・キネマティック専用。</text>
+  <text x="135" y="354" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8">動的剛体では凸包に置換される</text>
+
+  <!-- panel 2 : convex hull -->
+  <rect class="container" x="250" y="80" width="190" height="290" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <polygon points="280,115 315,115 315,195 375,195 375,115 410,115 410,225 280,225" fill="none" stroke="#89b4fa" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="280" y="115" width="130" height="110" fill="#f38ba8" fill-opacity="0.28" stroke="#f38ba8" stroke-width="3"/>
+  <text x="345" y="266" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="17" fill="#cdd6f4">凸包</text>
+  <text x="345" y="288" text-anchor="middle" font-family="Noto Sans Mono CJK JP, monospace" font-size="13" fill="#f9e2af">approximation =</text>
+  <text x="345" y="308" text-anchor="middle" font-family="Noto Sans Mono CJK JP, monospace" font-size="13" fill="#f9e2af">convexHull</text>
+  <text x="345" y="334" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8">凸形状1個。凹みが完全に</text>
+  <text x="345" y="354" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8">埋まり、実形状より膨らむ</text>
+
+  <!-- panel 3 : convex decomposition -->
+  <rect class="container" x="460" y="80" width="190" height="290" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <rect x="490" y="115" width="35" height="110" fill="#a6e3a1" fill-opacity="0.28" stroke="#a6e3a1" stroke-width="2.5"/>
+  <rect x="525" y="195" width="60" height="30" fill="#a6e3a1" fill-opacity="0.28" stroke="#a6e3a1" stroke-width="2.5"/>
+  <rect x="585" y="115" width="35" height="110" fill="#a6e3a1" fill-opacity="0.28" stroke="#a6e3a1" stroke-width="2.5"/>
+  <text x="555" y="266" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="17" fill="#cdd6f4">凸分解</text>
+  <text x="555" y="288" text-anchor="middle" font-family="Noto Sans Mono CJK JP, monospace" font-size="13" fill="#f9e2af">approximation =</text>
+  <text x="555" y="308" text-anchor="middle" font-family="Noto Sans Mono CJK JP, monospace" font-size="13" fill="#f9e2af">convexDecomposition</text>
+  <text x="555" y="334" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8">複数の凸形状に分割。</text>
+  <text x="555" y="354" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8">凹みを段階的に再現できる</text>
+
+  <!-- panel 4 : SDF -->
+  <rect class="container" x="670" y="80" width="190" height="290" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <polygon points="700,115 735,115 735,195 795,195 795,115 830,115 830,225 700,225" fill="#89b4fa" fill-opacity="0.35" stroke="#89b4fa" stroke-width="2.5"/>
+  <path d="M700 115 L700 225 M721 115 L721 225 M743 115 L743 225 M765 115 L765 225 M786 115 L786 225 M808 115 L808 225 M830 115 L830 225" stroke="#f9e2af" stroke-width="0.8" fill="none" opacity="0.85"/>
+  <path d="M700 115 L830 115 M700 137 L830 137 M700 159 L830 159 M700 181 L830 181 M700 203 L830 203 M700 225 L830 225" stroke="#f9e2af" stroke-width="0.8" fill="none" opacity="0.85"/>
+  <text x="765" y="266" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="17" fill="#cdd6f4">SDF（符号付き距離場）</text>
+  <text x="765" y="288" text-anchor="middle" font-family="Noto Sans Mono CJK JP, monospace" font-size="13" fill="#f9e2af">approximation =</text>
+  <text x="765" y="308" text-anchor="middle" font-family="Noto Sans Mono CJK JP, monospace" font-size="13" fill="#f9e2af">sdf</text>
+  <text x="765" y="334" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8">実形状のまま使える。ただし</text>
+  <text x="765" y="354" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8">格子で離散化。GPU必須</text>
+
+  <!-- legend -->
+  <rect class="container" x="40" y="392" width="820" height="106" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <text x="58" y="418" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">凡例</text>
+
+  <rect x="120" y="406" width="26" height="16" fill="#89b4fa" fill-opacity="0.35" stroke="#89b4fa" stroke-width="2.5"/>
+  <text x="156" y="419" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">青の塗り = 元の三角形メッシュの形状</text>
+
+  <rect x="470" y="406" width="26" height="16" fill="none" stroke="#89b4fa" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="506" y="419" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">青の破線 = 比較用に重ねた元形状の輪郭</text>
+
+  <rect x="120" y="436" width="26" height="16" fill="#f38ba8" fill-opacity="0.28" stroke="#f38ba8" stroke-width="3"/>
+  <text x="156" y="449" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">赤の太枠 = 凸包（凹みを失う単一の凸形状）</text>
+
+  <rect x="470" y="436" width="26" height="16" fill="#a6e3a1" fill-opacity="0.28" stroke="#a6e3a1" stroke-width="2.5"/>
+  <text x="506" y="449" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">緑の枠 = 凸分解で生成された個々の凸片</text>
+
+  <path d="M120 466 L146 466 M120 474 L146 474 M126 460 L126 480 M140 460 L140 480" stroke="#f9e2af" stroke-width="0.8" fill="none"/>
+  <text x="156" y="479" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">黄の細い格子 = SDFの距離サンプリング格子</text>
+
+  <text x="450" y="524" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">→ 動的剛体で凹みを表現したいなら、convexDecomposition か sdf のどちらかを選ぶしかない</text>
+</svg>

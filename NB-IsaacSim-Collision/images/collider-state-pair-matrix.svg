@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 800" width="900" height="800">
+  <rect class="background" x="0" y="0" width="900" height="800" fill="#1e1e2e"/>
+
+  <text x="450" y="36" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="22" fill="#cdd6f4">コライダー4状態と、ペアごとの衝突判定の成立可否</text>
+
+  <!-- state definition panel -->
+  <rect class="container" x="40" y="58" width="190" height="126" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <text x="135" y="86" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="17" fill="#f9e2af">状態A</text>
+  <text x="135" y="110" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">CollisionAPI  なし</text>
+  <text x="135" y="132" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">RigidBodyAPI  なし</text>
+  <text x="135" y="164" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#a6adc8">描画のみ</text>
+
+  <rect class="container" x="250" y="58" width="190" height="126" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <text x="345" y="86" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="17" fill="#f9e2af">状態B</text>
+  <text x="345" y="110" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">CollisionAPI  あり</text>
+  <text x="345" y="132" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">RigidBodyAPI  なし</text>
+  <text x="345" y="164" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#a6adc8">静的コライダー</text>
+
+  <rect class="container" x="460" y="58" width="190" height="126" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <text x="555" y="86" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="17" fill="#f9e2af">状態C</text>
+  <text x="555" y="110" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">CollisionAPI  なし</text>
+  <text x="555" y="132" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">RigidBodyAPI  あり</text>
+  <text x="555" y="164" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#f38ba8">衝突形状なし剛体</text>
+
+  <rect class="container" x="670" y="58" width="190" height="126" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <text x="765" y="86" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="17" fill="#f9e2af">状態D</text>
+  <text x="765" y="110" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">CollisionAPI  あり</text>
+  <text x="765" y="132" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">RigidBodyAPI  あり</text>
+  <text x="765" y="164" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#a6e3a1">動的コライダー</text>
+
+  <text x="40" y="216" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#89b4fa">下の表は「行の状態の物体」と「列の状態の物体」が接触したときに何が起きるかを示す</text>
+
+  <!-- column headers -->
+  <text x="265" y="256" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">列 = 状態A</text>
+  <text x="420" y="256" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">列 = 状態B</text>
+  <text x="575" y="256" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">列 = 状態C</text>
+  <text x="730" y="256" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">列 = 状態D</text>
+
+  <!-- row headers -->
+  <text x="112" y="316" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">行 = 状態A</text>
+  <text x="112" y="408" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">行 = 状態B</text>
+  <text x="112" y="500" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">行 = 状態C</text>
+  <text x="112" y="592" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">行 = 状態D</text>
+
+  <!-- row A -->
+  <rect x="190" y="268" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="265" y="302" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="265" y="328" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <rect x="345" y="268" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="420" y="302" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="420" y="328" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <rect x="500" y="268" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="575" y="302" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="575" y="328" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <rect x="655" y="268" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="730" y="302" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="730" y="328" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <!-- row B -->
+  <rect x="190" y="360" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="265" y="394" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="265" y="420" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <rect x="345" y="360" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="420" y="394" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="420" y="420" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <rect x="500" y="360" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="575" y="394" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="575" y="420" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <rect x="655" y="360" width="150" height="86" fill="#45475a" stroke="#a6e3a1" stroke-width="3.5" rx="5"/>
+  <text x="730" y="388" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">検出あり / 応答あり</text>
+  <text x="730" y="410" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6e3a1">力積はD側のみ</text>
+  <text x="730" y="431" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">重ならない</text>
+
+  <!-- row C -->
+  <rect x="190" y="452" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="265" y="486" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="265" y="512" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <rect x="345" y="452" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="420" y="486" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="420" y="512" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <rect x="500" y="452" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="575" y="486" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="575" y="512" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <rect x="655" y="452" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="730" y="486" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="730" y="512" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <!-- row D -->
+  <rect x="190" y="544" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="265" y="578" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="265" y="604" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <rect x="345" y="544" width="150" height="86" fill="#45475a" stroke="#a6e3a1" stroke-width="3.5" rx="5"/>
+  <text x="420" y="572" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">検出あり / 応答あり</text>
+  <text x="420" y="594" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6e3a1">力積はD側のみ</text>
+  <text x="420" y="615" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">重ならない</text>
+
+  <rect x="500" y="544" width="150" height="86" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4" rx="5"/>
+  <text x="575" y="578" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">検出なし / 応答なし</text>
+  <text x="575" y="604" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6adc8">重なる</text>
+
+  <rect x="655" y="544" width="150" height="86" fill="#45475a" stroke="#a6e3a1" stroke-width="3.5" rx="5"/>
+  <text x="730" y="572" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">検出あり / 応答あり</text>
+  <text x="730" y="594" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6e3a1">力積は双方に</text>
+  <text x="730" y="615" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">重ならない</text>
+
+  <!-- legend -->
+  <rect class="container" x="40" y="654" width="820" height="94" fill="#313244" stroke="#6c7086" stroke-width="1.5" rx="6"/>
+  <text x="56" y="682" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">凡例</text>
+
+  <rect x="120" y="670" width="28" height="18" fill="#45475a" stroke="#a6e3a1" stroke-width="3.5"/>
+  <text x="160" y="684" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">太い実線枠 = 衝突が成立するペア（接触検出も接触応答も行われる）</text>
+
+  <rect x="120" y="700" width="28" height="18" fill="#313244" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="160" y="714" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">細い破線枠 = 衝突が成立しないペア（接触検出そのものが行われない）</text>
+
+  <text x="56" y="738" text-anchor="start" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6adc8">行と列は対称であり、表の上三角と下三角は同じ内容になる（独立なペアは10通り）</text>
+
+  <text x="450" y="778" text-anchor="middle" font-family="Noto Sans CJK JP, sans-serif" font-size="16" fill="#f9e2af">→ 10通りのペアのうち、物理的な衝突が起こるのは 状態B×状態D と 状態D×状態D の2通りだけ</text>
+</svg>
