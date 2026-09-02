@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 710" width="1010" height="710">
+  <defs>
+    <marker id="ah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f9e2af"/>
+    </marker>
+  </defs>
+  <rect class="background" x="0" y="0" width="1010" height="710" fill="#1e1e2e"/>
+
+  <text x="30" y="42" font-family="Noto Sans CJK JP, sans-serif" font-size="20" fill="#cdd6f4">図: LIVRPS ─ 合成アークの強さ順序と、Local の中身の並び</text>
+
+  <rect class="container" x="20" y="70" width="570" height="440" fill="none" stroke="#585b70" stroke-width="1"/>
+  <text x="70" y="96" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#f9e2af">合成アークの強さ順序（上ほど強い）</text>
+
+  <text x="26" y="104" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">強い</text>
+  <line x1="44" y1="112" x2="44" y2="468" stroke="#f9e2af" stroke-width="2" marker-end="url(#ah3)"/>
+  <text x="26" y="490" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">弱い</text>
+
+  <rect x="70" y="112" width="500" height="56" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="84" y="136" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#a6e3a1">L ─ Local（SubLayer はここ）</text>
+  <text x="84" y="157" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">Root Layer とその SubLayer 群のすべて</text>
+
+  <rect x="70" y="172" width="500" height="56" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="84" y="196" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#89b4fa">I ─ Inherits</text>
+  <text x="84" y="217" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">継承元プリムから受け継いだ意見</text>
+
+  <rect x="70" y="232" width="500" height="56" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="84" y="256" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#89b4fa">V ─ VariantSets</text>
+  <text x="84" y="277" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">いま選ばれているバリアントの中身</text>
+
+  <rect x="70" y="292" width="500" height="56" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="84" y="316" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#89b4fa">R ─ References</text>
+  <text x="84" y="337" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">参照先ファイルから持ち込んだ意見</text>
+
+  <rect x="70" y="352" width="500" height="56" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="84" y="376" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#89b4fa">P ─ Payloads</text>
+  <text x="84" y="397" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">遅延ロードできる参照先から来た意見</text>
+
+  <rect x="70" y="412" width="500" height="56" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="84" y="436" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#89b4fa">S ─ Specializes</text>
+  <text x="84" y="457" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">常に最も弱い、特殊化元からの意見</text>
+
+  <rect class="container" x="610" y="70" width="380" height="440" fill="none" stroke="#585b70" stroke-width="1"/>
+  <text x="626" y="96" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#a6e3a1">L の中身の並び（上ほど強い）</text>
+
+  <rect x="630" y="112" width="340" height="56" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="644" y="136" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#cdd6f4">Session Layer</text>
+  <text x="644" y="157" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">自動生成される匿名レイヤー</text>
+
+  <rect x="630" y="178" width="340" height="56" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="644" y="202" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#cdd6f4">root.usd</text>
+  <text x="644" y="223" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">Root Layer（ステージの入口）</text>
+
+  <rect x="630" y="244" width="340" height="56" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="644" y="268" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#cdd6f4">a.usd</text>
+  <text x="644" y="289" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">root.usd の SubLayer（子）</text>
+
+  <rect x="630" y="310" width="340" height="56" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="644" y="334" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#cdd6f4">a1.usd</text>
+  <text x="644" y="355" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">a.usd の SubLayer（孫）</text>
+
+  <text x="626" y="400" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">孫の a1.usd も同じレイヤースタックに属する。</text>
+  <text x="626" y="424" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">この4枚はすべて Edit Target に選べる。</text>
+  <text x="626" y="452" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f38ba8">Reference の参照先はこの並びに入らない。</text>
+
+  <rect class="container" x="30" y="560" width="360" height="126" fill="none" stroke="#585b70" stroke-width="1"/>
+  <text x="44" y="586" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">凡例</text>
+  <rect x="44" y="598" width="20" height="14" fill="none" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="74" y="610" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">緑枠：Local アークとその内訳</text>
+  <rect x="44" y="624" width="20" height="14" fill="none" stroke="#89b4fa" stroke-width="2"/>
+  <text x="74" y="636" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">青枠：Local 以外の5つのアーク</text>
+  <text x="44" y="666" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">黄色の縦矢印：上ほど強い</text>
+
+  <text x="420" y="594" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">注：強さの比較はまずこの6段で行われる。</text>
+  <text x="420" y="622" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">同じ段に入った意見どうしになって初めて、</text>
+  <text x="420" y="650" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">レイヤーの並び順が見られる。</text>
+</svg>

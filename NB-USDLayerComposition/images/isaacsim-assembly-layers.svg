@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 710" width="1010" height="710">
+  <defs>
+    <marker id="ah4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f9e2af"/>
+    </marker>
+  </defs>
+  <rect class="background" x="0" y="0" width="1010" height="710" fill="#1e1e2e"/>
+
+  <text x="30" y="42" font-family="Noto Sans CJK JP, sans-serif" font-size="20" fill="#cdd6f4">図: ロボットアセンブリの構成 ─ Reference で取り込み、SubLayer で分ける</text>
+
+  <rect class="container" x="20" y="70" width="490" height="470" fill="none" stroke="#585b70" stroke-width="1"/>
+  <text x="60" y="96" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6e3a1">ルートレイヤースタック（4枚とも Edit Target に選べる）</text>
+
+  <text x="16" y="104" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">強い</text>
+  <line x1="40" y1="112" x2="40" y2="488" stroke="#f9e2af" stroke-width="2"/>
+  <text x="16" y="514" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">弱い</text>
+
+  <rect x="60" y="112" width="430" height="68" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="74" y="138" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#cdd6f4">robot_assembled.usd</text>
+  <text x="74" y="162" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">Root Layer。SubLayer を3枚並べるだけ</text>
+
+  <rect x="60" y="190" width="430" height="68" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="74" y="216" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#cdd6f4">collision.usd</text>
+  <text x="74" y="240" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">干渉モデル（カプセル・ボックス）の定義</text>
+
+  <rect x="60" y="268" width="430" height="68" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="74" y="294" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#cdd6f4">placement.usd</text>
+  <text x="74" y="318" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">エンドエフェクタの取り付け位置と姿勢</text>
+
+  <rect x="60" y="346" width="430" height="68" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="74" y="372" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#cdd6f4">parts.usd</text>
+  <text x="74" y="396" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">Reference を2本置いて部品を取り込む</text>
+
+  <text x="520" y="150" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f9e2af">Reference</text>
+  <line x1="496" y1="368" x2="605" y2="240" stroke="#f9e2af" stroke-width="2" marker-end="url(#ah4)"/>
+  <line x1="496" y1="392" x2="605" y2="390" stroke="#f9e2af" stroke-width="2" marker-end="url(#ah4)"/>
+
+  <rect class="container" x="590" y="120" width="410" height="380" fill="none" stroke="#585b70" stroke-width="1"/>
+  <text x="606" y="146" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">参照先＝別のレイヤースタック</text>
+
+  <rect x="610" y="170" width="370" height="120" fill="#313244" stroke="#f38ba8" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="624" y="198" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#cdd6f4">manipulator.usd</text>
+  <text x="624" y="222" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">マニピュレータ本体のアセット</text>
+  <text x="624" y="246" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">Edit Target に選べない</text>
+  <text x="624" y="270" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f38ba8">このファイル自体は変わらない</text>
+
+  <rect x="610" y="330" width="370" height="120" fill="#313244" stroke="#f38ba8" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="624" y="358" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#cdd6f4">end_effector.usd</text>
+  <text x="624" y="382" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">エンドエフェクタのアセット</text>
+  <text x="624" y="406" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">link6 の下に付け替えて配置される</text>
+  <text x="624" y="430" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f38ba8">このファイル自体は変わらない</text>
+
+  <rect class="container" x="30" y="560" width="380" height="126" fill="none" stroke="#585b70" stroke-width="1"/>
+  <text x="44" y="586" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">凡例</text>
+  <rect x="44" y="598" width="20" height="14" fill="none" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="74" y="610" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">緑の実線枠：ルートレイヤースタック</text>
+  <rect x="44" y="624" width="20" height="14" fill="none" stroke="#f38ba8" stroke-width="2" stroke-dasharray="6 3"/>
+  <text x="74" y="636" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">赤の破線枠：参照先の別スタック</text>
+  <text x="44" y="664" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">黄の矢印：Reference／黄の縦線：強さ</text>
+
+  <text x="440" y="594" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">注：Reference は部品の取り込み、SubLayer は記述の分割。</text>
+  <text x="440" y="622" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">両者は競合せず、アセンブリでは必ず同時に使う。</text>
+  <text x="440" y="650" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">取り付け位置を変えたいときは placement.usd だけ差し替える。</text>
+</svg>

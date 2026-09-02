@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 710" width="1010" height="710">
+  <defs>
+    <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#cdd6f4"/>
+    </marker>
+  </defs>
+  <rect class="background" x="0" y="0" width="1010" height="710" fill="#1e1e2e"/>
+
+  <text x="30" y="42" font-family="Noto Sans CJK JP, sans-serif" font-size="20" fill="#cdd6f4">図: SubLayer はパスがそのまま、Reference はパスが付け替わる</text>
+
+  <rect class="container" x="30" y="70" width="470" height="490" fill="none" stroke="#585b70" stroke-width="1"/>
+  <text x="46" y="96" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#f9e2af">A. SubLayer の場合</text>
+
+  <rect x="50" y="112" width="430" height="80" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="64" y="138" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#89b4fa">parts.usd が持つパス</text>
+  <text x="64" y="170" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#cdd6f4">/World/Arm/link1</text>
+
+  <line x1="265" y1="196" x2="265" y2="211" stroke="#cdd6f4" stroke-width="2" marker-end="url(#ah2)"/>
+
+  <rect x="50" y="215" width="430" height="130" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="64" y="241" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#89b4fa">scene.usd（Root Layer）の書き方</text>
+  <text x="64" y="271" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">subLayers = [ @parts.usd@ ]</text>
+  <text x="64" y="303" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">レイヤーメタデータ欄に書く</text>
+  <text x="64" y="327" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">（置き場所のプリムは要らない）</text>
+
+  <line x1="265" y1="349" x2="265" y2="369" stroke="#cdd6f4" stroke-width="2" marker-end="url(#ah2)"/>
+
+  <rect x="50" y="373" width="430" height="100" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="64" y="401" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6e3a1">ステージ上のパス</text>
+  <text x="64" y="433" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#a6e3a1">/World/Arm/link1</text>
+  <text x="64" y="459" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">parts.usd の中と完全に同じ</text>
+
+  <text x="50" y="505" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">同じファイルを2枚重ねてもパスが同一なので、</text>
+  <text x="50" y="531" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">必ず1つに潰れる。部品の複製配置はできない。</text>
+
+  <rect class="container" x="520" y="70" width="460" height="490" fill="none" stroke="#585b70" stroke-width="1"/>
+  <text x="536" y="96" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#f9e2af">B. Reference の場合</text>
+
+  <rect x="540" y="112" width="420" height="80" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="554" y="138" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#89b4fa">arm.usd が持つパス（defaultPrim = "Arm"）</text>
+  <text x="554" y="170" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#cdd6f4">/Arm/link1</text>
+
+  <line x1="750" y1="196" x2="750" y2="211" stroke="#cdd6f4" stroke-width="2" marker-end="url(#ah2)"/>
+
+  <rect x="540" y="215" width="420" height="130" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="554" y="241" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#89b4fa">scene.usd（Root Layer）の書き方</text>
+  <text x="554" y="271" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">def Xform "MyArm" ( references = @arm.usd@ )</text>
+  <text x="554" y="303" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">/World/MyArm というプリムに書く</text>
+  <text x="554" y="327" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">（置き場所のプリムが必ず要る）</text>
+
+  <line x1="750" y1="349" x2="750" y2="369" stroke="#cdd6f4" stroke-width="2" marker-end="url(#ah2)"/>
+
+  <rect x="540" y="373" width="420" height="100" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="554" y="401" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#a6e3a1">ステージ上のパス</text>
+  <text x="554" y="433" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="15" fill="#a6e3a1">/World/MyArm/link1</text>
+  <text x="554" y="459" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f38ba8">/Arm/link1 から付け替わった</text>
+
+  <text x="540" y="505" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">置き場所のプリムを変えれば、同じファイルを</text>
+  <text x="540" y="531" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">何度でも別の場所に配置できる。</text>
+
+  <rect class="container" x="30" y="580" width="330" height="110" fill="none" stroke="#585b70" stroke-width="1"/>
+  <text x="44" y="606" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">凡例</text>
+  <rect x="44" y="618" width="20" height="14" fill="none" stroke="#89b4fa" stroke-width="2"/>
+  <text x="74" y="630" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">青枠：ファイルの中身</text>
+  <rect x="44" y="644" width="20" height="14" fill="none" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="74" y="656" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">緑枠：ステージ上の合成結果</text>
+
+  <text x="390" y="614" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">注：SubLayer はパスを付け替えられない。だから</text>
+  <text x="390" y="642" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">部品を任意の場所に置く用途には Reference が要る。</text>
+</svg>

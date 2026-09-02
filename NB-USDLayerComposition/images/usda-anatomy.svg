@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620">
+  <rect class="background" x="0" y="0" width="900" height="620" fill="#1e1e2e"/>
+
+  <text x="30" y="40" font-family="Noto Sans CJK JP, sans-serif" font-size="20" fill="#cdd6f4">図: .usda ファイルは「レイヤーメタデータ欄」と「Spec ツリー」の2ゾーンでできている</text>
+
+  <rect class="container" x="30" y="62" width="560" height="470" fill="none" stroke="#89b4fa" stroke-width="2"/>
+  <text x="46" y="88" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#89b4fa">robot.usda ＝ 1枚のレイヤー ＝ 1ファイル（青枠）</text>
+
+  <rect x="50" y="100" width="520" height="170" fill="#313244" stroke="#f9e2af" stroke-width="2"/>
+  <text x="64" y="126" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f9e2af">① レイヤーメタデータ欄（レイヤー全体に効く設定を置く）</text>
+  <text x="64" y="154" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">#usda 1.0</text>
+  <text x="64" y="176" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">(</text>
+  <text x="64" y="198" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#a6e3a1">    defaultPrim = "Robot"</text>
+  <text x="64" y="220" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#a6e3a1">    subLayers = [ @collision.usd@ ]</text>
+  <text x="64" y="242" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">)</text>
+
+  <rect x="50" y="290" width="520" height="222" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="64" y="316" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#a6e3a1">② Spec ツリー（プリムパスをキーにした意見を置く）</text>
+  <text x="64" y="344" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">def Xform "Robot"</text>
+  <text x="64" y="366" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">{</text>
+  <text x="64" y="388" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">    def Cube "box"</text>
+  <text x="64" y="410" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">    {</text>
+  <text x="64" y="432" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">        double size = 2</text>
+  <text x="64" y="454" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">    }</text>
+  <text x="64" y="476" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">}</text>
+
+  <text x="612" y="126" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#f9e2af">① の欄に置けるもの</text>
+  <text x="612" y="152" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">レイヤー全体に効く設定だけ。</text>
+  <text x="612" y="174" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">個別プリムの情報は置けない。</text>
+  <text x="612" y="196" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">SubLayer はこの欄に書かれる。</text>
+
+  <text x="612" y="240" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#a6e3a1">② に並ぶのは PrimSpec</text>
+  <text x="612" y="266" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">ここにあるのは /Robot と</text>
+  <text x="612" y="288" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">/Robot/box という2つのパスに</text>
+  <text x="612" y="310" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">対する「このレイヤーの意見」。</text>
+  <text x="612" y="332" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">Prim そのものではない。</text>
+  <text x="612" y="354" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">Reference はこちらに書かれる。</text>
+
+  <rect class="container" x="606" y="386" width="270" height="126" fill="none" stroke="#585b70" stroke-width="1"/>
+  <text x="620" y="410" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">凡例</text>
+  <rect x="620" y="424" width="20" height="14" fill="none" stroke="#89b4fa" stroke-width="2"/>
+  <text x="650" y="436" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">青枠：1枚のレイヤー</text>
+  <rect x="620" y="450" width="20" height="14" fill="none" stroke="#f9e2af" stroke-width="2"/>
+  <text x="650" y="462" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">黄枠：メタデータ欄</text>
+  <rect x="620" y="476" width="20" height="14" fill="none" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="650" y="488" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">緑枠：Spec ツリー</text>
+
+  <text x="30" y="570" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">注：この2ゾーンの差が、SubLayer と Reference の違いの出発点になる。</text>
+  <text x="30" y="594" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">SubLayer は①（レイヤーに取り付ける）、Reference は②（プリムに取り付ける）。</text>
+</svg>

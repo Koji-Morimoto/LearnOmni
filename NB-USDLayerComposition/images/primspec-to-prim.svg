@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="960" height="620">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#89b4fa"/>
+    </marker>
+  </defs>
+  <rect class="background" x="0" y="0" width="960" height="620" fill="#1e1e2e"/>
+
+  <text x="30" y="40" font-family="Noto Sans CJK JP, sans-serif" font-size="20" fill="#cdd6f4">図: 3枚のレイヤーの PrimSpec が合成されて、ステージ上に1つの Prim ができる</text>
+
+  <rect x="60" y="90" width="380" height="100" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="74" y="116" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#89b4fa">① root.usd（最も強い）</text>
+  <text x="74" y="144" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">over "box"</text>
+  <text x="74" y="166" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">{ translate = (1, 0, 0) }</text>
+
+  <rect x="60" y="215" width="380" height="100" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="74" y="241" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#89b4fa">② a.usd</text>
+  <text x="74" y="269" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">over "box"</text>
+  <text x="74" y="291" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">{ double size = 5 }</text>
+
+  <rect x="60" y="340" width="380" height="122" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+  <text x="74" y="366" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#89b4fa">③ b.usd（最も弱い）</text>
+  <text x="74" y="394" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">def Cube "box"</text>
+  <text x="74" y="416" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">{ double size = 2</text>
+  <text x="74" y="438" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">  translate = (0, 0, 0) }</text>
+
+  <text x="500" y="100" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#89b4fa">合成</text>
+  <line x1="448" y1="140" x2="615" y2="230" stroke="#89b4fa" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="448" y1="265" x2="615" y2="275" stroke="#89b4fa" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="448" y1="400" x2="615" y2="330" stroke="#89b4fa" stroke-width="2" marker-end="url(#ah)"/>
+
+  <rect x="620" y="180" width="310" height="210" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="634" y="208" font-family="Noto Sans CJK JP, sans-serif" font-size="15" fill="#a6e3a1">ステージ上の Prim</text>
+  <text x="634" y="234" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">/World/box</text>
+  <text x="634" y="266" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">size = 5</text>
+  <text x="634" y="288" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">② a.usd の意見が勝った</text>
+  <text x="634" y="318" xml:space="preserve" font-family="Noto Sans Mono CJK JP, monospace" font-size="14" fill="#cdd6f4">translate = (1, 0, 0)</text>
+  <text x="634" y="340" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f9e2af">① root.usd の意見が勝った</text>
+  <text x="634" y="370" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#f38ba8">③ の size = 2 は負けて表に出ない</text>
+
+  <rect class="container" x="620" y="420" width="310" height="130" fill="none" stroke="#585b70" stroke-width="1"/>
+  <text x="634" y="446" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#cdd6f4">凡例</text>
+  <rect x="634" y="458" width="20" height="14" fill="none" stroke="#89b4fa" stroke-width="2"/>
+  <text x="664" y="470" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">青枠：意見を持つレイヤー</text>
+  <rect x="634" y="484" width="20" height="14" fill="none" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="664" y="496" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">緑枠：合成結果（ステージ）</text>
+  <text x="634" y="524" font-family="Noto Sans CJK JP, sans-serif" font-size="13" fill="#cdd6f4">①②③：強さの順位（①が最強）</text>
+
+  <text x="30" y="572" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">注：レイヤーの中にあるのは PrimSpec（1レイヤー分の意見）だけ。</text>
+  <text x="30" y="596" font-family="Noto Sans CJK JP, sans-serif" font-size="14" fill="#f38ba8">Prim はステージ上にしか存在せず、開くたびに合成で作り直される。</text>
+</svg>
