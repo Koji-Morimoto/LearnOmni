@@ -1,0 +1,90 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.1.3"
+    }
+    defaultPrim = "parallelogram_arm"
+    doc = """Generated from Composed Stage of root layer C:\\Users\\TaskM\\AppData\\Local\\Temp\\tmpbd8f5p9j\\parallelogram_arm.usdc
+
+
+Generated from Composed Stage of root layer C:\\Users\\TaskM\\AppData\\Local\\Temp\\urdf_import_parallelogram_arm_v1_8knwk5so\\usdex_parallelogram_arm_v1\\parallelogram_arm.usdc
+
+
+Generated from Composed Stage of root layer C:\\Users\\TaskM\\AppData\\Local\\Temp\\urdf_import_parallelogram_arm_v1_8knwk5so\\temp_parallelogram_arm_v1\\parallelogram_arm_v1.usd
+"""
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+over "parallelogram_arm" (
+    prepend apiSchemas = ["IsaacRobotAPI"]
+)
+{
+    prepend rel isaac:physics:robotJoints = [
+        </parallelogram_arm/Physics/root_joint>,
+        </parallelogram_arm/Physics/joint_crank>,
+        </parallelogram_arm/Physics/joint_rocker>,
+        </parallelogram_arm/Physics/joint_coupler>,
+    ]
+    prepend rel isaac:physics:robotLinks = [
+        </parallelogram_arm/Geometry/base_link>,
+        </parallelogram_arm/Geometry/base_link/link_crank>,
+        </parallelogram_arm/Geometry/base_link/link_crank/link_coupler>,
+        </parallelogram_arm/Geometry/base_link/link_rocker>,
+    ]
+    token isaac:robotType = "Default"
+
+    over "Geometry"
+    {
+        over "base_link" (
+            prepend apiSchemas = ["IsaacLinkAPI"]
+        )
+        {
+            over "link_crank" (
+                prepend apiSchemas = ["IsaacLinkAPI"]
+            )
+            {
+                over "link_coupler" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                }
+            }
+
+            over "link_rocker" (
+                prepend apiSchemas = ["IsaacLinkAPI"]
+            )
+            {
+            }
+        }
+    }
+
+    over "Physics"
+    {
+        over "root_joint" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint_crank" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint_coupler" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "joint_rocker" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+    }
+}
+

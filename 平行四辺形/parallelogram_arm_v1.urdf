@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<!--
+  parallelogram_arm_v1.urdf
+  平行四辺形リンク（4節リンク）を持つ最小構成のロボット。
+  単位: 長さ m / 角度 rad / 質量 kg
+  リンク形状: 太さ r=0.02 のシリンダ + 両端に r=0.04 のスフィア
+
+  【構造（URDF上は木構造）】
+      base_link (地面リンク, 長さ0.6)
+        +- joint_crank  (revolute, 駆動)      => link_crank   (長さ0.3)
+              +- joint_coupler (revolute, 従動) => link_coupler (長さ0.6)
+        +- joint_rocker (revolute, 従動)      => link_rocker  (長さ0.3)
+
+  link_coupler の先端 (0.6, 0, 0) と link_rocker の先端 (0.3, 0, 0) は
+  ワールド座標で常に一致するが、URDFは木構造しか書けないため
+  この2点を結ぶ「閉じる関節」は記述していない。
+  Isaac Sim へ取り込んだ後に USD 側で revolute joint を追加し、
+  その関節に Exclude from Articulation を設定して閉じること。
+
+  【関節値の関係】
+    joint_rocker  = +1.0 * joint_crank   （ロッカはクランクと同じ角度で回る）
+    joint_coupler = -1.0 * joint_crank   （カプラは常にワールドX軸と平行を保つ）
+  機構全体の自由度は1で、駆動関節は joint_crank だけ。
+-->
+<robot name="parallelogram_arm">
+
+  <material name="steel">
+    <color rgba="0.6 0.6 0.65 1.0"/>
+  </material>
+  <material name="joint_ball">
+    <color rgba="0.85 0.45 0.1 1.0"/>
+  </material>
+
+  <!-- ===================== 地面リンク（長さ0.6） ===================== -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.3 0 0" rpy="0 0 0"/>
+      <mass value="2.0"/>
+      <inertia ixx="4.0e-4" ixy="0" ixz="0" iyy="6.02e-2" iyz="0" izz="6.02e-2"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.3 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.02" length="0.6"/></geometry>
+      <material name="steel"/>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><sphere radius="0.04"/></geometry>
+      <material name="joint_ball"/>
+    </visual>
+    <visual>
+      <origin xyz="0.6 0 0" rpy="0 0 0"/>
+      <geometry><sphere radius="0.04"/></geometry>
+      <material name="joint_ball"/>
+    </visual>
+    <collision>
+      <origin xyz="0.3 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.02" length="0.6"/></geometry>
+    </collision>
+  </link>
+
+  <!-- ===================== クランク（駆動側, 長さ0.3） ===================== -->
+  <!-- origin の rpy で初期姿勢を +60deg 傾けている（関節値0でこの姿勢） -->
+  <joint name="joint_crank" type="revolute">
+    <parent link="base_link"/>
+    <child link="link_crank"/>
+    <origin xyz="0 0 0" rpy="0 -1.0472 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.7854" upper="0.7854" effort="50.0" velocity="3.0"/>
+    <dynamics damping="0.05" friction="0.0"/>
+  </joint>
+
+  <link name="link_crank">
+    <inertial>
+      <origin xyz="0.15 0 0" rpy="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="1.0e-4" ixy="0" ixz="0" iyy="3.8e-3" iyz="0" izz="3.8e-3"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.15 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.02" length="0.3"/></geometry>
+      <material name="steel"/>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><sphere radius="0.04"/></geometry>
+      <material name="joint_ball"/>
+    </visual>
+    <visual>
+      <origin xyz="0.3 0 0" rpy="0 0 0"/>
+      <geometry><sphere radius="0.04"/></geometry>
+      <material name="joint_ball"/>
+    </visual>
+    <collision>
+      <origin xyz="0.15 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.02" length="0.3"/></geometry>
+    </collision>
+  </link>
+
+  <!-- ===================== カプラ（従動, 長さ0.6） ===================== -->
+  <joint name="joint_coupler" type="revolute">
+    <parent link="link_crank"/>
+    <child link="link_coupler"/>
+    <origin xyz="0.3 0 0" rpy="0 1.0472 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.7854" upper="0.7854" effort="50.0" velocity="3.0"/>
+    <mimic joint="joint_crank" multiplier="-1.0" offset="0.0"/>
+  </joint>
+
+  <link name="link_coupler">
+    <inertial>
+      <origin xyz="0.3 0 0" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="2.0e-4" ixy="0" ixz="0" iyy="3.01e-2" iyz="0" izz="3.01e-2"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.3 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.02" length="0.6"/></geometry>
+      <material name="steel"/>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><sphere radius="0.04"/></geometry>
+      <material name="joint_ball"/>
+    </visual>
+    <visual>
+      <origin xyz="0.6 0 0" rpy="0 0 0"/>
+      <geometry><sphere radius="0.04"/></geometry>
+      <material name="joint_ball"/>
+    </visual>
+    <collision>
+      <origin xyz="0.3 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.02" length="0.6"/></geometry>
+    </collision>
+  </link>
+
+  <!-- ===================== ロッカ（従動, 長さ0.3） ===================== -->
+  <joint name="joint_rocker" type="revolute">
+    <parent link="base_link"/>
+    <child link="link_rocker"/>
+    <origin xyz="0.6 0 0" rpy="0 -1.0472 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.7854" upper="0.7854" effort="50.0" velocity="3.0"/>
+    <mimic joint="joint_crank" multiplier="1.0" offset="0.0"/>
+  </joint>
+
+  <link name="link_rocker">
+    <inertial>
+      <origin xyz="0.15 0 0" rpy="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="1.0e-4" ixy="0" ixz="0" iyy="3.8e-3" iyz="0" izz="3.8e-3"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.15 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.02" length="0.3"/></geometry>
+      <material name="steel"/>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><sphere radius="0.04"/></geometry>
+      <material name="joint_ball"/>
+    </visual>
+    <visual>
+      <origin xyz="0.3 0 0" rpy="0 0 0"/>
+      <geometry><sphere radius="0.04"/></geometry>
+      <material name="joint_ball"/>
+    </visual>
+    <collision>
+      <origin xyz="0.15 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.02" length="0.3"/></geometry>
+    </collision>
+  </link>
+
+  <!--
+    URDFでは書けない「閉じる関節」（参考、記述してもパースエラーになる）:
+      <joint name="joint_loop" type="revolute">
+        <parent link="link_coupler"/>   ... 先端 (0.6, 0, 0)
+        <child  link="link_rocker"/>    ... 先端 (0.3, 0, 0)  ← link_rocker は既に base_link の子
+      </joint>
+    子リンクが2つの親を持つことになり、URDFの木構造制約に違反する。
+  -->
+
+</robot>
