@@ -1,0 +1,1029 @@
+{
+ "group": "t18_nonuniform_scale",
+ "items": [
+  {
+   "id": "C:基準 scale=(1,1,1)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.25,
+    "local_y": 0.25,
+    "local_z": 0.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0009997040033340454,
+    "median": 0.0010986775159835815,
+    "max": 0.0014045387506484985
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010005980730056763,
+    "median": 0.0011027008295059204,
+    "max": 0.0014062374830245972
+   },
+   "query_vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "contact_sep_vs_hypothesis_abs_max": 4.6751127793717706e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:軸方向 (1,1,2)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.25,
+    "local_y": 0.25,
+    "local_z": 0.75
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.2087080031633377,
+    "median": 0.0010986775159835815,
+    "max": 0.002128288149833679
+   },
+   "vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.17336319386959076,
+    "median": 0.0011027008295059204,
+    "max": 0.0021984726190567017
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 4.6751127793717706e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:軸方向 (1,1,0.5)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.25,
+    "local_y": 0.25,
+    "local_z": 0.375
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0009997040033340454,
+    "median": 0.0038902312517166138,
+    "max": 0.12356217205524445
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010005980730056763,
+    "median": 0.004616394639015198,
+    "max": 0.12112681567668915
+   },
+   "query_vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "contact_sep_vs_hypothesis_abs_max": 3.6925415771923986e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:軸方向 (1,1,5)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.25,
+    "local_y": 0.25,
+    "local_z": 1.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.36898885667324066,
+    "median": 0.0011483877897262573,
+    "max": 0.004645809531211853
+   },
+   "vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.05986399948596954,
+    "median": 0.001142844557762146,
+    "max": 0.0033049732446670532
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 1.3957109378480437e-07,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:軸方向 (1,1,2) + 回転",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.25,
+    "local_y": 0.25,
+    "local_z": 0.75
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.24892093241214752,
+    "median": 0.0010975152254104614,
+    "max": 0.0021963268518447876
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.1717080920934677,
+    "median": 0.0010702461004257202,
+    "max": 0.0021870285272598267
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 3.981428791342834e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:断面を一様に (2,2,1)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5,
+    "local_z": 0.75
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010001510381698608,
+    "median": 0.006672576069831848,
+    "max": 0.24612222611904144
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010005980730056763,
+    "median": 0.008126243948936462,
+    "max": 0.24125008285045624
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 8.73195075048322e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:断面を一様に (0.5,0.5,1)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.125,
+    "local_y": 0.125,
+    "local_z": 0.375
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.10383792221546173,
+    "median": 0.0010990351438522339,
+    "max": 0.0021288245916366577
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.08614839613437653,
+    "median": 0.0011024326086044312,
+    "max": 0.002198919653892517
+   },
+   "query_vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "contact_sep_vs_hypothesis_abs_max": 4.040769195114147e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:断面を一様 + 軸方向 (2,2,3)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5,
+    "local_z": 1.25
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.22355340421199799,
+    "median": 0.001068010926246643,
+    "max": 0.0017481297254562378
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.19990848004817963,
+    "median": 0.0010712295770645142,
+    "max": 0.0017842501401901245
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 1.5091467121287894e-07,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:断面を一様 + 軸方向 (2,2,3) + 回転",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5,
+    "local_z": 1.25
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.24895097315311432,
+    "median": 0.0010777562856674194,
+    "max": 0.0017782598733901978
+   },
+   "vs_hypothesis_abs_max": 8.493661880493164e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.19876648485660553,
+    "median": 0.0010572820901870728,
+    "max": 0.001796141266822815
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 9.986246541672517e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:全体を一様に (2,2,2)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5,
+    "local_z": 1.0
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010001510381698608,
+    "median": 0.00109805166721344,
+    "max": 0.001404985785484314
+   },
+   "vs_hypothesis_abs_max": 8.493661880493164e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010005980730056763,
+    "median": 0.001103237271308899,
+    "max": 0.0014069527387619019
+   },
+   "query_vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "contact_sep_vs_hypothesis_abs_max": 9.420639800715447e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:断面が楕円 (2,1,1)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5,
+    "local_z": 0.75
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010807067155838013,
+    "median": 0.21431909501552582,
+    "max": 0.29428960382938385
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0025819391012191772,
+    "median": 0.21484945714473724,
+    "max": 0.2957911938428879
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 8.73195075048322e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:断面が楕円 (1,2,1)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5,
+    "local_z": 0.75
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0011264830827713013,
+    "median": 0.21445463597774506,
+    "max": 0.29580433666706085
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010280460119247437,
+    "median": 0.2135145217180252,
+    "max": 0.29533325135707855
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 8.73195075048322e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:断面が楕円 (1.1,1,1)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.275,
+    "local_y": 0.275,
+    "local_z": 0.525
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.001011773943901062,
+    "median": 0.018703356385231018,
+    "max": 0.035480305552482605
+   },
+   "vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.001177266240119934,
+    "median": 0.019404307007789612,
+    "max": 0.03506384789943695
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 5.0775897089336275e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:断面が楕円 + 軸方向 (2,1,3)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5,
+    "local_z": 1.25
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.22355340421199799,
+    "median": 0.21172334253787994,
+    "max": 0.4732615202665329
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.19990848004817963,
+    "median": 0.21484945714473724,
+    "max": 0.452463760972023
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 1.5091467121287894e-07,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:断面が楕円 (2,1,1) + 回転",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5,
+    "local_z": 0.75
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0011972039937973022,
+    "median": 0.21371997892856598,
+    "max": 0.29526789486408234
+   },
+   "vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0017397254705429077,
+    "median": 0.2156488448381424,
+    "max": 0.29188044369220734
+   },
+   "query_vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "contact_sep_vs_hypothesis_abs_max": 7.639658416123962e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:axis=X 軸方向 (2,1,1)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.75,
+    "local_y": 0.25,
+    "local_z": 0.25
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.20347769558429718,
+    "median": 0.00109805166721344,
+    "max": 0.0022183209657669067
+   },
+   "vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.21530883014202118,
+    "median": 0.0011098533868789673,
+    "max": 0.002223953604698181
+   },
+   "query_vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "contact_sep_vs_hypothesis_abs_max": 3.11345458216955e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:axis=X 断面を一様に (1,2,2)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.75,
+    "local_y": 0.5,
+    "local_z": 0.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0009994357824325562,
+    "median": 0.005142107605934143,
+    "max": 0.2454397827386856
+   },
+   "vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010000616312026978,
+    "median": 0.0051165372133255005,
+    "max": 0.24696658551692963
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 5.22684636596743e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:axis=X 断面が楕円 (1,2,1)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.75,
+    "local_y": 0.5,
+    "local_z": 0.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.001645311713218689,
+    "median": 0.21932007372379303,
+    "max": 0.2944677025079727
+   },
+   "vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0012057870626449585,
+    "median": 0.21862922608852386,
+    "max": 0.2952018231153488
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 5.22684636596743e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:axis=Y 軸方向 (1,2,1)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.25,
+    "local_y": 0.75,
+    "local_z": 0.25
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.20694606006145477,
+    "median": 0.001092866063117981,
+    "max": 0.002222970128059387
+   },
+   "vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.1985783725976944,
+    "median": 0.0010893791913986206,
+    "max": 0.0019798725843429565
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 8.876499436351326e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:対照: scale なしで height を変更 (h=1.0)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.25,
+    "local_y": 0.25,
+    "local_z": 0.75
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0009997040033340454,
+    "median": 0.0011378377676010132,
+    "max": 0.002128288149833679
+   },
+   "vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010005980730056763,
+    "median": 0.001142844557762146,
+    "max": 0.0021984726190567017
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 4.6751127793717706e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:親が軸方向 parent(1,1,2)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.25,
+    "local_y": 0.25,
+    "local_z": 0.75
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.2087080031633377,
+    "median": 0.0010986775159835815,
+    "max": 0.002128288149833679
+   },
+   "vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.17336319386959076,
+    "median": 0.0011027008295059204,
+    "max": 0.0021984726190567017
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 4.6751127793717706e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:親が断面方向 parent(1,1,2), 子を X 軸 90 度",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5,
+    "local_z": 0.75
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010868757963180542,
+    "median": 0.2169872671365738,
+    "max": 0.29461924731731415
+   },
+   "vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0021775513887405396,
+    "median": 0.21327687799930573,
+    "max": 0.29679881036281586
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 8.44822224486258e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "C:親のスケールが斜め parent(1,1,2), 子を X 軸 45 度",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5271,
+    "local_z": 0.73089
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.16485996544361115,
+    "median": 0.2401779145002365,
+    "max": 0.3118502050638199
+   },
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.10269539058208466,
+    "median": 0.24245958030223846,
+    "max": 0.3111845701932907
+   }
+  },
+  {
+   "id": "C:親は回転のみ, 子が軸方向 (1,1,2)",
+   "description": "カプセル r=0.25, h=0.5(対照を除く)",
+   "shapes": {
+    "capsule_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.25,
+    "local_y": 0.25,
+    "local_z": 0.75
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.24892093241214752,
+    "median": 0.0010975152254104614,
+    "max": 0.0021963268518447876
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.1717080920934677,
+    "median": 0.0010702461004257202,
+    "max": 0.0021870285272598267
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 3.981428791342834e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "B:基準 (1,1,1)",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5,
+    "local_z": 0.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010084658861160278,
+    "median": 0.001196935772895813,
+    "max": 0.0015427619218826294
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010063201189041138,
+    "median": 0.0012045353651046753,
+    "max": 0.0015606433153152466
+   },
+   "query_vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "contact_sep_vs_hypothesis_abs_max": 2.607862391833249e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "B:X (3,1,1)",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 1.5,
+    "local_y": 0.5,
+    "local_z": 0.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010084658861160278,
+    "median": 0.0012931376695632935,
+    "max": 0.002995535731315613
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010061413049697876,
+    "median": 0.0013054758310317993,
+    "max": 0.003047570586204529
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 2.946997289775266e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "B:Y (1,3,1)",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 1.5,
+    "local_z": 0.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010083764791488647,
+    "median": 0.0012931376695632935,
+    "max": 0.0032821744680404663
+   },
+   "vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010063201189041138,
+    "median": 0.001270785927772522,
+    "max": 0.0029721111059188843
+   },
+   "query_vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "contact_sep_vs_hypothesis_abs_max": 2.5387853383809778e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "B:Z (1,1,3)",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5,
+    "local_z": 1.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010084658861160278,
+    "median": 0.0013058334589004517,
+    "max": 0.0030462294816970825
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010063201189041138,
+    "median": 0.001270785927772522,
+    "max": 0.0027716606855392456
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 2.8458879022461026e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "B:XYZ (2,3,5)",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 1.0,
+    "local_y": 1.5,
+    "local_z": 2.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010083764791488647,
+    "median": 0.0012545138597488403,
+    "max": 0.0027426034212112427
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010062307119369507,
+    "median": 0.0012378841638565063,
+    "max": 0.0025270432233810425
+   },
+   "query_vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "contact_sep_vs_hypothesis_abs_max": 1.1665746569612667e-07,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "B:極端な比 (0.1,2,7)",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.05,
+    "local_y": 1.0,
+    "local_z": 3.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010083764791488647,
+    "median": 0.0019517093896865845,
+    "max": 0.04132787883281708
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010066777467727661,
+    "median": 0.0019861310720443726,
+    "max": 0.029518648982048035
+   },
+   "query_vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "contact_sep_vs_hypothesis_abs_max": 6.123569864721623e-09,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "B:薄板 (0.01,1,1)",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.005,
+    "local_y": 0.5,
+    "local_z": 0.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010082870721817017,
+    "median": 0.002006247639656067,
+    "max": 0.09507684409618378
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010064095258712769,
+    "median": 0.002006247639656067,
+    "max": 0.03704778850078583
+   },
+   "query_vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "contact_sep_vs_hypothesis_abs_max": 2.1877462254987767e-09,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "B:XYZ (2,3,5) + 回転",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 1.0,
+    "local_y": 1.5,
+    "local_z": 2.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.00099925696849823,
+    "median": 0.0012492388486862183,
+    "max": 0.0027933865785598755
+   },
+   "vs_hypothesis_abs_max": 1.1175870895385742e-06,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010114163160324097,
+    "median": 0.0012466460466384888,
+    "max": 0.002568349242210388
+   },
+   "query_vs_hypothesis_abs_max": 1.0281801223754883e-06,
+   "contact_sep_vs_hypothesis_abs_max": 2.833246115670207e-07,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "B:親が (1,1,2)、子は回転なし",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 0.5,
+    "local_z": 1.0
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010077506303787231,
+    "median": 0.0012548714876174927,
+    "max": 0.002137318253517151
+   },
+   "vs_hypothesis_abs_max": 6.705522537231445e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010063201189041138,
+    "median": 0.001237526535987854,
+    "max": 0.002165481448173523
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 4.308298230150387e-08,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "B:親が (1,1,2)、子を X 軸 90 度",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 1.0,
+    "local_z": 0.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.0010077506303787231,
+    "median": 0.0012548714876174927,
+    "max": 0.0021387487649917603
+   },
+   "vs_hypothesis_abs_max": 9.387731552124023e-07,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010063201189041138,
+    "median": 0.001237526535987854,
+    "max": 0.002165481448173523
+   },
+   "query_vs_hypothesis_abs_max": 7.599592208862305e-07,
+   "contact_sep_vs_hypothesis_abs_max": 1.7676751628246945e-07,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "B:親は回転のみ、子が (2,3,5)",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 1.0,
+    "local_y": 1.5,
+    "local_z": 2.5
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": 0.00099925696849823,
+    "median": 0.0012492388486862183,
+    "max": 0.0027933865785598755
+   },
+   "vs_hypothesis_abs_max": 1.1175870895385742e-06,
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": 0.0010114163160324097,
+    "median": 0.0012466460466384888,
+    "max": 0.002568349242210388
+   },
+   "query_vs_hypothesis_abs_max": 1.0281801223754883e-06,
+   "contact_sep_vs_hypothesis_abs_max": 2.833246115670207e-07,
+   "contact_not_reported": 0
+  },
+  {
+   "id": "B:親のスケールが斜め: 親 (1,1,2)、子を X 軸 45 度",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 0.5,
+    "local_y": 1.05415,
+    "local_z": 0.5271
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.7112484723329544,
+    "median": 0.0011508017778396606,
+    "max": 0.49990247189998627
+   },
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.7168945223093033,
+    "median": 0.0011226385831832886,
+    "max": 0.46104423701763153
+   }
+  },
+  {
+   "id": "B:親のスケールが斜め: 親 (1,1,3)、子を XYZ 回転",
+   "description": "Cube size=1",
+   "shapes": {
+    "box_shapes": 1
+   },
+   "extents": {
+    "local_x": 1.21789,
+    "local_y": 0.57008,
+    "local_z": 0.56555
+   },
+   "vs_usd_shape": {
+    "n": 128,
+    "min": -0.9359963983297348,
+    "median": -0.04886578023433685,
+    "max": 0.9665577560663223
+   },
+   "query_vs_usd_shape": {
+    "n": 64,
+    "min": -0.8385647088289261,
+    "median": -0.04886926710605621,
+    "max": 0.9554838985204697
+   }
+  }
+ ]
+}

@@ -1,0 +1,549 @@
+{
+ "group": "t10_query_mesh",
+ "items": [
+  {
+   "id": "Q-concave-query",
+   "description": "クエリ U 字メッシュの結果",
+   "no_CollisionAPI": {
+    "overlap_mesh": [
+     "/World/InNotch",
+     "/World/InSolid"
+    ],
+    "overlap_shape": [
+     "/World/InNotch",
+     "/World/InSolid"
+    ]
+   },
+   "none": {
+    "overlap_mesh": [
+     "/World/InNotch",
+     "/World/InSolid"
+    ],
+    "overlap_shape": [
+     "/World/InNotch",
+     "/World/InSolid"
+    ]
+   },
+   "meshSimplification": {
+    "overlap_mesh": [
+     "/World/InNotch",
+     "/World/InSolid"
+    ],
+    "overlap_shape": [
+     "/World/InNotch",
+     "/World/InSolid"
+    ]
+   },
+   "convexHull": {
+    "overlap_mesh": [
+     "/World/InNotch",
+     "/World/InSolid"
+    ],
+    "overlap_shape": [
+     "/World/InNotch",
+     "/World/InSolid"
+    ]
+   },
+   "convexDecomposition": {
+    "overlap_mesh": [
+     "/World/InNotch",
+     "/World/InSolid"
+    ],
+    "overlap_shape": [
+     "/World/InNotch",
+     "/World/InSolid"
+    ]
+   },
+   "sdf": {
+    "overlap_mesh": [
+     "/World/InNotch",
+     "/World/InSolid"
+    ],
+    "overlap_shape": [
+     "/World/InNotch",
+     "/World/InSolid"
+    ]
+   }
+  },
+  {
+   "id": "Q-interlocked",
+   "description": "組み合った U 字(真値: 接触なし)",
+   "none": {
+    "overlap_mesh_hits": [
+     "/World/S"
+    ],
+    "scene_tip_points": [
+     [
+      1.75,
+      -1.2246467991473532e-16,
+      0.6000000000000001
+     ],
+     [
+      -0.25,
+      -1.2246467991473532e-16,
+      0.6000000000000001
+     ]
+    ]
+   },
+   "convexHull": {
+    "overlap_mesh_hits": [
+     "/World/S"
+    ],
+    "scene_tip_points": [
+     [
+      1.75,
+      -1.2246467991473532e-16,
+      0.6000000000000001
+     ],
+     [
+      -0.25,
+      -1.2246467991473532e-16,
+      0.6000000000000001
+     ]
+    ]
+   }
+  },
+  {
+   "id": "Q-hull-limit",
+   "description": "クエリ境界とクック済み凸包の差",
+   "reference_vertices": {
+    "8": 8,
+    "32": 32,
+    "64": 34,
+    "255": 34
+   },
+   "no_collision_api": [
+    {
+     "label": "no_CollisionAPI",
+     "self_hit_any": true,
+     "distance_to_each_cooked_hull": {
+      "limit8(v=8)": {
+       "mean_abs": 0.1997542941492071,
+       "max_abs": 0.5673539623511675
+      },
+      "limit32(v=32)": {
+       "mean_abs": 0.05703358553498907,
+       "max_abs": 0.23671494694723016
+      },
+      "limit64(v=34)": {
+       "mean_abs": 3.187305673123947e-05,
+       "max_abs": 9.05643431754477e-05
+      },
+      "limit255(v=34)": {
+       "mean_abs": 3.187305673123947e-05,
+       "max_abs": 9.05643431754477e-05
+      }
+     }
+    },
+    {
+     "label": "convexHull_limit8",
+     "self_hit_any": true
+    },
+    {
+     "label": "convexHull_limit32",
+     "self_hit_any": true
+    },
+    {
+     "label": "convexHull_limit64",
+     "self_hit_any": true
+    },
+    {
+     "label": "convexHull_limit255",
+     "self_hit_any": true
+    }
+   ],
+   "collision_enabled_with_limit": [
+    {
+     "prim_hullVertexLimit": 8,
+     "boundary_ok": 96,
+     "vs_limit8(v=8)": {
+      "mean_abs": 0.1997542941492071,
+      "max_abs": 0.5673539623511675
+     },
+     "vs_limit32(v=32)": {
+      "mean_abs": 0.05703358553498907,
+      "max_abs": 0.23671494694723016
+     },
+     "vs_limit64(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     },
+     "vs_limit255(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     }
+    },
+    {
+     "prim_hullVertexLimit": 32,
+     "boundary_ok": 96,
+     "vs_limit8(v=8)": {
+      "mean_abs": 0.1997542941492071,
+      "max_abs": 0.5673539623511675
+     },
+     "vs_limit32(v=32)": {
+      "mean_abs": 0.05703358553498907,
+      "max_abs": 0.23671494694723016
+     },
+     "vs_limit64(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     },
+     "vs_limit255(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     }
+    },
+    {
+     "prim_hullVertexLimit": 255,
+     "boundary_ok": 96,
+     "vs_limit8(v=8)": {
+      "mean_abs": 0.1997542941492071,
+      "max_abs": 0.5673539623511675
+     },
+     "vs_limit32(v=32)": {
+      "mean_abs": 0.05703358553498907,
+      "max_abs": 0.23671494694723016
+     },
+     "vs_limit64(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     },
+     "vs_limit255(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     }
+    }
+   ],
+   "collision_disabled_with_limit": [
+    {
+     "prim_hullVertexLimit": 8,
+     "boundary_ok": 96,
+     "vs_limit8(v=8)": {
+      "mean_abs": 0.1997542941492071,
+      "max_abs": 0.5673539623511675
+     },
+     "vs_limit32(v=32)": {
+      "mean_abs": 0.05703358553498907,
+      "max_abs": 0.23671494694723016
+     },
+     "vs_limit64(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     },
+     "vs_limit255(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     }
+    },
+    {
+     "prim_hullVertexLimit": 32,
+     "boundary_ok": 96,
+     "vs_limit8(v=8)": {
+      "mean_abs": 0.1997542941492071,
+      "max_abs": 0.5673539623511675
+     },
+     "vs_limit32(v=32)": {
+      "mean_abs": 0.05703358553498907,
+      "max_abs": 0.23671494694723016
+     },
+     "vs_limit64(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     },
+     "vs_limit255(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     }
+    },
+    {
+     "prim_hullVertexLimit": 64,
+     "boundary_ok": 96,
+     "vs_limit8(v=8)": {
+      "mean_abs": 0.1997542941492071,
+      "max_abs": 0.5673539623511675
+     },
+     "vs_limit32(v=32)": {
+      "mean_abs": 0.05703358553498907,
+      "max_abs": 0.23671494694723016
+     },
+     "vs_limit64(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     },
+     "vs_limit255(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     }
+    },
+    {
+     "prim_hullVertexLimit": 255,
+     "boundary_ok": 96,
+     "vs_limit8(v=8)": {
+      "mean_abs": 0.1997542941492071,
+      "max_abs": 0.5673539623511675
+     },
+     "vs_limit32(v=32)": {
+      "mean_abs": 0.05703358553498907,
+      "max_abs": 0.23671494694723016
+     },
+     "vs_limit64(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     },
+     "vs_limit255(v=34)": {
+      "mean_abs": 3.187305673123947e-05,
+      "max_abs": 9.05643431754477e-05
+     }
+    }
+   ]
+  },
+  {
+   "id": "Q-convex-query-exact",
+   "description": "正 n 角柱をクエリにしたときの境界誤差(負 = 真の表面より内側)",
+   "rows": [
+    {
+     "n_sides": 4,
+     "vertices": 8,
+     "err": {
+      "n": 8,
+      "min": -7.402319577298755e-07,
+      "median": 4.043579102663841e-07,
+      "max": 4.043579102663841e-07
+     }
+    },
+    {
+     "n_sides": 16,
+     "vertices": 32,
+     "err": {
+      "n": 32,
+      "min": 4.043579102663841e-07,
+      "median": 4.938277265997826e-07,
+      "max": 4.938277265997826e-07
+     }
+    },
+    {
+     "n_sides": 32,
+     "vertices": 64,
+     "err": {
+      "n": 64,
+      "min": -3.7761213833586993e-07,
+      "median": 4.043579102663841e-07,
+      "max": 0.017518619580244588
+     }
+    },
+    {
+     "n_sides": 33,
+     "vertices": 66,
+     "err": {
+      "n": 66,
+      "min": 4.043579102663841e-07,
+      "median": 4.3613052869151403e-07,
+      "max": 0.01367803317642724
+     }
+    },
+    {
+     "n_sides": 64,
+     "vertices": 128,
+     "err": {
+      "n": 128,
+      "min": -0.004815650939941407,
+      "median": 4.043579102663841e-07,
+      "max": 0.012705253601074329
+     }
+    },
+    {
+     "n_sides": 128,
+     "vertices": 256,
+     "err": {
+      "n": 256,
+      "min": -0.004815650939941407,
+      "median": -0.001806034577551907,
+      "max": 0.012815700041588829
+     }
+    },
+    {
+     "n_sides": 256,
+     "vertices": 512,
+     "err": {
+      "n": 512,
+      "min": -0.004815650939941407,
+      "median": -0.002107215881347657,
+      "max": 0.014829044193570451
+     }
+    }
+   ]
+  },
+  {
+   "id": "Q-first-slow",
+   "description": "呼び出しごとの所要時間",
+   "rows": [
+    {
+     "vertices": 8066,
+     "call_times_ms": [
+      2.087,
+      0.07,
+      0.021,
+      0.017,
+      0.016
+     ]
+    },
+    {
+     "vertices": 130562,
+     "call_times_ms": [
+      31.609,
+      0.146,
+      0.02,
+      0.016,
+      0.016
+     ]
+    },
+    {
+     "vertices": 523266,
+     "call_times_ms": [
+      125.063,
+      0.122,
+      0.021,
+      0.017,
+      0.016
+     ]
+    }
+   ]
+  },
+  {
+   "id": "Q-merge",
+   "description": "merge collisionAPI",
+   "None": {
+    "overlap_mesh_any": false,
+    "overlap_shape_any": false,
+    "overlap_mesh_hits": [],
+    "overlap_shape_hits": [],
+    "shapes": {
+     "sphere_shapes": 3,
+     "trimesh_shapes": 1
+    }
+   },
+   "none": {
+    "overlap_mesh_any": false,
+    "overlap_shape_any": false,
+    "overlap_mesh_hits": [],
+    "overlap_shape_hits": [],
+    "shapes": {
+     "sphere_shapes": 3,
+     "trimesh_shapes": 1
+    }
+   },
+   "meshSimplification": {
+    "overlap_mesh_any": false,
+    "overlap_shape_any": false,
+    "overlap_mesh_hits": [],
+    "overlap_shape_hits": [],
+    "shapes": {
+     "sphere_shapes": 3,
+     "trimesh_shapes": 1
+    }
+   },
+   "convexHull": {
+    "overlap_mesh_any": true,
+    "overlap_shape_any": true,
+    "overlap_mesh_hits": [
+     "/World/Between",
+     "/World/Merged",
+     "/World/OnM1"
+    ],
+    "overlap_shape_hits": [
+     "/World/Between",
+     "/World/Merged",
+     "/World/OnM1"
+    ],
+    "shapes": {
+     "convex_shapes": 1,
+     "sphere_shapes": 3
+    }
+   },
+   "convexDecomposition": {
+    "overlap_mesh_any": false,
+    "overlap_shape_any": false,
+    "overlap_mesh_hits": [],
+    "overlap_shape_hits": [],
+    "shapes": {
+     "convex_shapes": 2,
+     "sphere_shapes": 3
+    }
+   },
+   "sdf": {
+    "overlap_mesh_any": false,
+    "overlap_shape_any": false,
+    "overlap_mesh_hits": [],
+    "overlap_shape_hits": [],
+    "shapes": {
+     "sphere_shapes": 3,
+     "trimesh_shapes": 1
+    }
+   },
+   "boundingCube": {
+    "overlap_mesh_any": false,
+    "overlap_shape_any": false,
+    "overlap_mesh_hits": [],
+    "overlap_shape_hits": [],
+    "shapes": {
+     "box_shapes": 1,
+     "sphere_shapes": 3
+    }
+   }
+  },
+  {
+   "id": "Q-analytic-vs-mesh",
+   "description": "溝の底 z=0.4 までの境界",
+   "rows": [
+    {
+     "kind": "static",
+     "shapes": {
+      "trimesh_shapes": 1
+     },
+     "QBox": {
+      "boundary_z": 0.4999998331069947,
+      "expected_z": 0.5,
+      "error": -1.6689300530448037e-07,
+      "in_notch_no_contact": true
+     },
+     "QSphere": {
+      "boundary_z": 0.4999998331069947,
+      "expected_z": 0.5,
+      "error": -1.6689300530448037e-07,
+      "in_notch_no_contact": true
+     },
+     "QCapsule": {
+      "boundary_z": 0.4999998331069947,
+      "expected_z": 0.5,
+      "error": -1.6689300530448037e-07,
+      "in_notch_no_contact": true
+     }
+    },
+    {
+     "kind": "kinematic",
+     "shapes": {
+      "trimesh_shapes": 1
+     },
+     "QBox": {
+      "boundary_z": 0.4999998331069947,
+      "expected_z": 0.5,
+      "error": -1.6689300530448037e-07,
+      "in_notch_no_contact": true
+     },
+     "QSphere": {
+      "boundary_z": 0.4999998331069947,
+      "expected_z": 0.5,
+      "error": -1.6689300530448037e-07,
+      "in_notch_no_contact": true
+     },
+     "QCapsule": {
+      "boundary_z": 0.4999998331069947,
+      "expected_z": 0.5,
+      "error": -1.6689300530448037e-07,
+      "in_notch_no_contact": true
+     }
+    }
+   ]
+  }
+ ]
+}

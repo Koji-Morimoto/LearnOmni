@@ -1,0 +1,129 @@
+{
+ "group": "t13_scaling",
+ "items": [
+  {
+   "id": "Z-dispersed",
+   "description": "1 回あたりの時間 [µs]",
+   "rows": [
+    {
+     "N": 10,
+     "usd_s": 0.0,
+     "force_load_s": 0.02,
+     "empty_area_us": 4.14,
+     "one_near_any_us": 4.27,
+     "one_near_report_us": 5.51
+    },
+    {
+     "N": 100,
+     "usd_s": 0.03,
+     "force_load_s": 0.0,
+     "empty_area_us": 4.36,
+     "one_near_any_us": 4.37,
+     "one_near_report_us": 5.63
+    },
+    {
+     "N": 1000,
+     "usd_s": 0.26,
+     "force_load_s": 0.02,
+     "empty_area_us": 4.31,
+     "one_near_any_us": 4.39,
+     "one_near_report_us": 5.65
+    },
+    {
+     "N": 10000,
+     "usd_s": 5.11,
+     "force_load_s": 0.32,
+     "empty_area_us": 4.27,
+     "one_near_any_us": 4.27,
+     "one_near_report_us": 5.46
+    }
+   ]
+  },
+  {
+   "id": "Z-clustered",
+   "description": "全コライダーがクエリに重なる配置",
+   "rows": [
+    {
+     "N": 10,
+     "hits_per_call": 10.0,
+     "per_call_us": 10.99,
+     "per_hit_us": 1.099
+    },
+    {
+     "N": 100,
+     "hits_per_call": 100.0,
+     "per_call_us": 64.62,
+     "per_hit_us": 0.646
+    },
+    {
+     "N": 1000,
+     "hits_per_call": 1000.0,
+     "per_call_us": 592.35,
+     "per_hit_us": 0.592
+    },
+    {
+     "N": 10000,
+     "hits_per_call": 10000.0,
+     "per_call_us": 6145.82,
+     "per_hit_us": 0.615
+    }
+   ]
+  },
+  {
+   "id": "Z-narrow-phase",
+   "description": "厳密判定だけが増える配置",
+   "rows": [
+    {
+     "N": 1,
+     "hits": 0,
+     "per_call_us": 4.62,
+     "us_per_candidate": 4.62
+    },
+    {
+     "N": 10,
+     "hits": 0,
+     "per_call_us": 4.75,
+     "us_per_candidate": 0.4748
+    },
+    {
+     "N": 100,
+     "hits": 0,
+     "per_call_us": 4.67,
+     "us_per_candidate": 0.0467
+    },
+    {
+     "N": 1000,
+     "hits": 0,
+     "per_call_us": 8.34,
+     "us_per_candidate": 0.0083
+    },
+    {
+     "N": 10000,
+     "hits": 0,
+     "per_call_us": 19.95,
+     "us_per_candidate": 0.002
+    }
+   ]
+  },
+  {
+   "id": "Z-contact-pairs",
+   "description": "全ペアではなくブロードフェーズを通過したペアだけ処理されるか",
+   "rows": [
+    {
+     "label": "dispersed_1000",
+     "colliders": 1000,
+     "all_possible_pairs": 499500,
+     "nb_discrete_contact_pairs_total": 0,
+     "with_contacts": 0
+    },
+    {
+     "label": "chain_100_each_touching_next",
+     "colliders": 100,
+     "all_possible_pairs": 4950,
+     "nb_discrete_contact_pairs_total": 99,
+     "with_contacts": 97
+    }
+   ]
+  }
+ ]
+}

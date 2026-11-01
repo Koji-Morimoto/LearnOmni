@@ -1,0 +1,611 @@
+{
+ "group": "t17_sdf_fin_tri",
+ "items": [
+  {
+   "id": "S2-fin",
+   "description": "相手は SDF なしの三角形メッシュ球",
+   "rows": [
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 8,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.0010014325380325317
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 16,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.0010002478957176208
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 32,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.0010049641132354736
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 64,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.0010000000474974513
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 128,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.0010013654828071594
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 256,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.001000095158815384
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 64,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "on_base_top",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.050000011920928955
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 64,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "free_space",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 8,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 16,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 32,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.0010000000474974513
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 128,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": 0.002906249836087227
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "on_base_top",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.050000011920928955
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "free_space",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 8,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.010008051991462708
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 16,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.010001271963119507
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 32,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.010000213980674744
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 64,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.009999999776482582
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 128,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.01000133529305458
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 256,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.010000007227063179
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 64,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "on_base_top",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.050000011920928955
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 64,
+     "subgrid": null,
+     "fin_kind": "static",
+     "place": "free_space",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 8,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 16,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 32,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.009999999776482582
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.002187499776482582
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 128,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.006093749776482582
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "on_base_top",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.050000011920928955
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "fin_kind": "static",
+     "place": "free_space",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 8,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.0010014325380325317
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 16,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.0010002478957176208
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 32,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.0010049641132354736
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 64,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.0010000000474974513
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 128,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.0010013654828071594
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 256,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.001000095158815384
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 64,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "on_base_top",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.050000011920928955
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 64,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "free_space",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 8,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 16,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 32,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.0010000000474974513
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 128,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": 0.002906249836087227
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "on_base_top",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.050000011920928955
+    },
+    {
+     "fin_t": 0.002,
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "free_space",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 8,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.010008051991462708
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 16,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.010001271963119507
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 32,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.010000213980674744
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 64,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.009999999776482582
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 128,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.01000133529305458
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 256,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.010000007227063179
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 64,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "on_base_top",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.050000011920928955
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 64,
+     "subgrid": null,
+     "fin_kind": "kinematic",
+     "place": "free_space",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 8,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 16,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 32,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.009999999776482582
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.002187499776482582
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 128,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "straddling_fin",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.006093749776482582
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "on_base_top",
+     "reported": true,
+     "events": 4,
+     "min_sep": -0.050000011920928955
+    },
+    {
+     "fin_t": 0.02,
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "fin_kind": "kinematic",
+     "place": "free_space",
+     "reported": false,
+     "events": 0,
+     "min_sep": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,266 @@
+{
+ "group": "t02_body_types",
+ "items": [
+  {
+   "id": "B-drop-static_noRB",
+   "description": "Cube を static_noRB にして球を落とす",
+   "target_usd_before": [
+    0.0,
+    0.0,
+    -0.5
+   ],
+   "target_usd_after": [
+    0.0,
+    0.0,
+    -0.5
+   ],
+   "ball_usd_after": [
+    0.0,
+    0.0,
+    0.1
+   ],
+   "ball_stopped_on_target": true,
+   "physx_rigidbody_query": {
+    "ret_val": true,
+    "pos": [
+     0.0,
+     0.0,
+     -0.5
+    ]
+   },
+   "overlap_hits": [
+    {
+     "collision": "/World/Target",
+     "rigid_body": "/World/Target"
+    }
+   ]
+  },
+  {
+   "id": "B-drop-rigidBodyEnabled_False",
+   "description": "Cube を rigidBodyEnabled_False にして球を落とす",
+   "target_usd_before": [
+    0.0,
+    0.0,
+    -0.5
+   ],
+   "target_usd_after": [
+    0.0,
+    0.0,
+    -0.5
+   ],
+   "ball_usd_after": [
+    0.0,
+    0.0,
+    0.1
+   ],
+   "ball_stopped_on_target": true,
+   "physx_rigidbody_query": {
+    "ret_val": true,
+    "pos": [
+     0.0,
+     0.0,
+     -0.5
+    ]
+   },
+   "overlap_hits": [
+    {
+     "collision": "/World/Target",
+     "rigid_body": "/World/Target"
+    }
+   ]
+  },
+  {
+   "id": "B-drop-dynamic",
+   "description": "Cube を dynamic にして球を落とす",
+   "target_usd_before": [
+    0.0,
+    0.0,
+    -0.5
+   ],
+   "target_usd_after": [
+    0.0,
+    0.0,
+    -20.28349
+   ],
+   "ball_usd_after": [
+    0.0,
+    0.0,
+    -19.28349
+   ],
+   "ball_stopped_on_target": false,
+   "physx_rigidbody_query": {
+    "ret_val": true,
+    "pos": [
+     0.0,
+     0.0,
+     -20.28349
+    ]
+   },
+   "overlap_hits": [
+    {
+     "collision": "/World/Target",
+     "rigid_body": "/World/Target"
+    }
+   ]
+  },
+  {
+   "id": "B-drop-kinematic",
+   "description": "Cube を kinematic にして球を落とす",
+   "target_usd_before": [
+    0.0,
+    0.0,
+    -0.5
+   ],
+   "target_usd_after": [
+    0.0,
+    0.0,
+    -0.5
+   ],
+   "ball_usd_after": [
+    0.0,
+    0.0,
+    0.1
+   ],
+   "ball_stopped_on_target": true,
+   "physx_rigidbody_query": {
+    "ret_val": true,
+    "pos": [
+     0.0,
+     0.0,
+     -0.5
+    ]
+   },
+   "overlap_hits": [
+    {
+     "collision": "/World/Target",
+     "rigid_body": "/World/Target"
+    }
+   ]
+  },
+  {
+   "id": "B-ancestor",
+   "description": "祖先に RigidBodyAPI がある Collider は親と一緒に動く",
+   "child_before": [
+    0.0,
+    0.0,
+    5.0
+   ],
+   "child_after": [
+    0.0,
+    0.0,
+    3.73287
+   ],
+   "hits": [
+    {
+     "collision": "/World/Parent/Child",
+     "rigid_body": "/World/Parent"
+    }
+   ]
+  },
+  {
+   "id": "B-kinematic-read",
+   "description": "USD で動かすと PhysX 側が追従する",
+   "before": {
+    "ret_val": true,
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "after": {
+    "ret_val": true,
+    "pos": [
+     3.0,
+     0.0,
+     0.0
+    ]
+   },
+   "hit_at_new_pos": true,
+   "hit_at_old_pos": false
+  },
+  {
+   "id": "B-dynamic-write",
+   "description": "USD の transform がシミュレーションで更新される",
+   "start": [
+    0,
+    0,
+    10
+   ],
+   "usd_after_30_frames": [
+    0.0,
+    0.0,
+    8.73287
+   ],
+   "steps": 30,
+   "trace": [
+    {
+     "frame": 9,
+     "usd_before_write": [
+      0.0,
+      0.0,
+      9.85013
+     ],
+     "physx": {
+      "ret_val": true,
+      "pos": [
+       0.0,
+       0.0,
+       9.85013
+      ]
+     }
+    },
+    {
+     "frame": 19,
+     "usd_before_write": [
+      0.0,
+      0.0,
+      9.42775
+     ],
+     "physx": {
+      "ret_val": true,
+      "pos": [
+       0.0,
+       0.0,
+       9.42775
+      ]
+     }
+    }
+   ],
+   "usd_after_stop_resetOnStop": [
+    0.0,
+    0.0,
+    10.0
+   ]
+  },
+  {
+   "id": "B-static-moves",
+   "description": "Rotate で動かした Collider",
+   "is_rigid_body_at_start": {
+    "ret_val": true,
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "is_rigid_body_after_rotate": {
+    "ret_val": true,
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "hits_old_new_before": [
+    true,
+    false
+   ],
+   "hits_old_new_after": [
+    false,
+    true
+   ],
+   "has_RigidBodyAPI": false
+  }
+ ]
+}

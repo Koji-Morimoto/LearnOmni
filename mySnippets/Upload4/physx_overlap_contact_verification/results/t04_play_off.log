@@ -1,0 +1,107 @@
+Skipping automatic ROS environment setup
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-01T13:56:16Z [Info] [carb] Logging to file: c:/isaacsim-6.0.2/kit/logs/Kit/PhysX claim verification/6.2/kit_20261101_225616.log
+[0.150s] [ext: omni.assets.plugins-0.0.0] startup
+[0.153s] [ext: omni.blobkey-1.1.2] startup
+[0.154s] [ext: omni.kit.async_engine-0.0.5] startup
+[0.179s] [ext: omni.client.lib-1.1.1] startup
+[0.195s] [ext: omni.client-1.3.0] startup
+[0.258s] [ext: omni.protobuf.lib-1.0.1] startup
+[0.258s] [ext: omni.grpc.lib-1.0.1] startup
+[0.259s] [ext: omni.metrics.core-0.0.3] startup
+[0.260s] [ext: omni.datastore-0.0.0] startup
+[0.262s] [ext: omni.gpu_foundation.shadercache.d3d12-1.0.0] startup
+[0.268s] [ext: omni.hsscclient-1.1.4] startup
+[0.270s] [ext: omni.stats-1.0.1] startup
+[0.272s] [ext: omni.ujitso.default-1.0.0] startup
+[0.283s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.304s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.305s] [ext: omni.usd.config-1.0.8] startup
+2026-11-01T13:56:16Z [218ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+[0.319s] [ext: omni.usd.libs-1.0.3] startup
+[0.361s] [ext: omni.usd.schema.audio-0.0.1] startup
+[0.459s] [ext: omni.usd.schema.newton-1.5.0] startup
+[0.460s] [ext: omni.usd.schema.physx-110.4.4] startup
+[0.497s] [ext: carb.audio-0.1.0] startup
+[0.498s] [ext: omni.kit.actions.core-1.2.1] startup
+[0.503s] [ext: omni.kit.commands-1.6.2] startup
+[0.508s] [ext: omni.convexdecomposition-110.4.4] startup
+[0.512s] [ext: omni.cubric-0.1.0] startup
+[0.513s] [ext: omni.graph.exec-0.9.6] startup
+[0.514s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[0.517s] [ext: omni.kit.exec.core-0.13.6] startup
+[0.520s] [ext: omni.kit.loop-isaac-1.6.2] startup
+[0.523s] [ext: omni.kit.usd_undo-0.1.8] startup
+[0.523s] [ext: omni.timeline-1.1.2] startup
+[0.526s] [ext: omni.usd_resolver-1.0.0] startup
+[0.531s] [ext: omni.usd.core-1.10.42] startup
+[0.533s] [ext: omni.usd-1.19.11] startup
+[0.581s] [ext: omni.kit.usd.layers-2.7.9] startup
+[0.589s] [ext: omni.kit.primitive.mesh-1.1.1] startup
+[0.594s] [ext: omni.kit.stage_template.core-1.1.23] startup
+[0.595s] [ext: omni.kit.stage_templates-2.0.3] startup
+[0.598s] [ext: omni.physics-110.4.4] startup
+[0.602s] [ext: omni.physx.gpu-110.4.4] startup
+[0.603s] [ext: omni.physx.foundation-110.4.4] startup
+[0.615s] [ext: omni.usdphysics-110.4.4] startup
+[0.617s] [ext: omni.physx.cooking-110.4.4] startup
+[0.620s] [ext: usdrt.scenegraph-7.6.3] startup
+[0.655s] [ext: omni.physx-110.4.4] startup
+[0.666s] [ext: omni.physics.physx-110.4.4] startup
+[0.668s] [ext: omni.physics.stageupdate-110.4.4] startup
+[0.672s] [ext: physx_verify-6.2.0] startup
+[0.674s] Simulation App Starting
+2026-11-01T13:56:17Z [885ms] [Error] [omni.usd] '/app/useFabricSceneDelegate' is enabled, but usdrt::population::IUtils could not be created. Is UsdRt enabled?
+[1.099s] Simulation App Startup Complete
+[1.099s] app ready
+Starting kit application with the following args:  ['C:\\isaacsim-6.0.2\\exts\\isaacsim.simulation_app\\isaacsim\\simulation_app\\simulation_app.py', 'C:\\isaacsim-6.0.2\\CodeByClaude\\physx_overlap_contact_verification\\code\\physx_verify.kit', '--/app/tokens/exe-path=C:\\isaacsim-6.0.2\\kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni/kit/plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', 'C:\\isaacsim-6.0.2/exts', '--ext-folder', 'C:\\isaacsim-6.0.2/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=16', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=16', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--no-ros-env']
+[START] P-follow-stop_force_load/self_rotate/static
+[RESULT] P-follow-stop_force_load/self_rotate/static: {"baseline": {"old": true, "new": false}, "immediately_after_set": {"old": false, "new": true}, "after_1_update": {"old": false, "new": true}, "after_5_updates": {"old": false, "new": true}, "after_update_simulation": {"old": false, "new": true}, "after_release_and_reload": {"old": false, "new": true}, "sweep_36_frames": {"correct_immediately": 36, "correct_after_update": 36, "total": 36, "mean_frame_s": 0.009932388888854702}}
+[END] P-follow-stop_force_load/self_rotate/static 0.4s
+[START] P-follow-stop_force_load/self_rotate/kinematic
+[RESULT] P-follow-stop_force_load/self_rotate/kinematic: {"baseline": {"old": true, "new": false}, "immediately_after_set": {"old": true, "new": false}, "after_1_update": {"old": true, "new": false}, "after_5_updates": {"old": true, "new": false}, "after_update_simulation": {"old": false, "new": true}, "after_release_and_reload": {"old": false, "new": true}, "sweep_36_frames": {"correct_immediately": 2, "correct_after_update": 2, "total": 36, "mean_frame_s": 0.009877652777706518}}
+[END] P-follow-stop_force_load/self_rotate/kinematic 0.4s
+[START] P-follow-stop_force_load/parent_rotate/static
+[RESULT] P-follow-stop_force_load/parent_rotate/static: {"baseline": {"old": true, "new": false}, "immediately_after_set": {"old": false, "new": true}, "after_1_update": {"old": false, "new": true}, "after_5_updates": {"old": false, "new": true}, "after_update_simulation": {"old": false, "new": true}, "after_release_and_reload": {"old": false, "new": true}, "sweep_36_frames": {"correct_immediately": 36, "correct_after_update": 36, "total": 36, "mean_frame_s": 0.009887008333357193}}
+[END] P-follow-stop_force_load/parent_rotate/static 0.4s
+[START] P-follow-stop_force_load/parent_rotate/kinematic
+[RESULT] P-follow-stop_force_load/parent_rotate/kinematic: {"baseline": {"old": true, "new": false}, "immediately_after_set": {"old": true, "new": false}, "after_1_update": {"old": true, "new": false}, "after_5_updates": {"old": true, "new": false}, "after_update_simulation": {"old": false, "new": true}, "after_release_and_reload": {"old": false, "new": true}, "sweep_36_frames": {"correct_immediately": 1, "correct_after_update": 1, "total": 36, "mean_frame_s": 0.009876197222183691}}
+[END] P-follow-stop_force_load/parent_rotate/kinematic 0.4s
+[START] P-follow-play/self_rotate/static
+[RESULT] P-follow-play/self_rotate/static: {"baseline": {"old": true, "new": false}, "immediately_after_set": {"old": false, "new": true}, "after_1_update": {"old": false, "new": true}, "after_5_updates": {"old": false, "new": true}, "sweep_36_frames": {"correct_immediately": 36, "correct_after_update": 36, "total": 36, "mean_frame_s": 0.01704431944441846}}
+[END] P-follow-play/self_rotate/static 0.8s
+[START] P-follow-play/self_rotate/kinematic
+[RESULT] P-follow-play/self_rotate/kinematic: {"baseline": {"old": true, "new": false}, "immediately_after_set": {"old": true, "new": false}, "after_1_update": {"old": false, "new": true}, "after_5_updates": {"old": false, "new": true}, "sweep_36_frames": {"correct_immediately": 0, "correct_after_update": 36, "total": 36, "mean_frame_s": 0.017027955555426563}}
+[END] P-follow-play/self_rotate/kinematic 0.8s
+[START] P-follow-play/parent_rotate/static
+[RESULT] P-follow-play/parent_rotate/static: {"baseline": {"old": true, "new": false}, "immediately_after_set": {"old": false, "new": true}, "after_1_update": {"old": false, "new": true}, "after_5_updates": {"old": false, "new": true}, "sweep_36_frames": {"correct_immediately": 36, "correct_after_update": 36, "total": 36, "mean_frame_s": 0.017033936111046286}}
+[END] P-follow-play/parent_rotate/static 0.8s
+[START] P-follow-play/parent_rotate/kinematic
+[RESULT] P-follow-play/parent_rotate/kinematic: {"baseline": {"old": true, "new": false}, "immediately_after_set": {"old": true, "new": false}, "after_1_update": {"old": false, "new": true}, "after_5_updates": {"old": false, "new": true}, "sweep_36_frames": {"correct_immediately": 0, "correct_after_update": 36, "total": 36, "mean_frame_s": 0.01703191944458619}}
+[END] P-follow-play/parent_rotate/kinematic 0.8s
+[START] P-states
+[RESULT] P-states: {"1_stopped_never_played": {"box_any": false, "sphere_any": false, "shape_hits": []}, "2_stopped_after_update": {"box_any": false, "sphere_any": false, "shape_hits": []}, "3_playing": {"box_any": true, "sphere_any": true, "shape_hits": ["/World/A"]}, "4_paused": {"box_any": true, "sphere_any": true, "shape_hits": ["/World/A"]}, "5_stopped_after_play": {"box_any": false, "sphere_any": false, "shape_hits": []}, "6_stopped_force_load": {"box_any": true, "sphere_any": true, "shape_hits": ["/World/A"]}, "6_timeline_is_stopped": true, "7_after_release": {"box_any": false, "sphere_any": false, "shape_hits": []}}
+[END] P-states 0.1s
+[START] P-no-scene
+[RESULT] P-no-scene: {"hit": true, "scene_prims_before": [], "scene_prims_during": ["/PhysicsScene_16e12ee3daea"], "scene_prims_after_release": ["/PhysicsScene_16e12ee3daea"]}
+[END] P-no-scene 0.0s
+[START] P-query-side
+[RESULT] P-query-side: {"noncollider_before": [], "noncollider_after_move_no_update": ["/World/Target"], "collider_before": ["/World/QColl"], "collider_after_move_no_update": ["/World/QColl", "/World/Target"]}
+[END] P-query-side 0.0s
+[START] P-contact-playoff
+[RESULT] P-contact-playoff: {"no_force_load+update_simulation": {"timeline_stopped": true, "events": 5, "pairs": [["/World/D", "/World/S"]], "min_sep": 0.004999995231628418, "polled_headers": 1}, "force_load+update_simulation": {"timeline_stopped": true, "events": 5, "pairs": [["/World/D", "/World/S"]], "min_sep": 0.004999995231628418, "polled_headers": 1}, "force_load+simulate_fetch": {"timeline_stopped": true, "events": 5, "pairs": [["/World/D", "/World/S"]], "min_sep": 0.004999995231628418, "polled_headers": 1}}
+[END] P-contact-playoff 0.1s
+[START] P-pair-table
+[RESULT] P-pair-table: {"all_pairs": 6, "table": [["A", "B"], ["C", "D"]], "play/no_filter/stationary": {"steps": 12, "events_per_pair": {}, "reported_pairs": []}, "play/no_filter/moving": {"steps": 12, "events_per_pair": {"C-D": 9, "B-C": 9, "B-D": 9, "A-B": 9, "A-C": 9, "A-D": 9}, "reported_pairs": [["/World/A", "/World/B"], ["/World/A", "/World/C"], ["/World/A", "/World/D"], ["/World/B", "/World/C"], ["/World/B", "/World/D"], ["/World/C", "/World/D"]]}, "play/filter/stationary": {"steps": 12, "events_per_pair": {}, "reported_pairs": []}, "play/filter/moving": {"steps": 12, "events_per_pair": {"C-D": 9, "A-B": 9}, "reported_pairs": [["/World/A", "/World/B"], ["/World/C", "/World/D"]]}, "play_off/no_filter/stationary": {"steps": 10, "events_per_pair": {}, "reported_pairs": []}, "play_off/no_filter/moving": {"steps": 10, "events_per_pair": {"C-D": 9, "B-C": 9, "B-D": 9, "A-B": 9, "A-C": 9, "A-D": 9}, "reported_pairs": [["/World/A", "/World/B"], ["/World/A", "/World/C"], ["/World/A", "/World/D"], ["/World/B", "/World/C"], ["/World/B", "/World/D"], ["/World/C", "/World/D"]]}, "play_off/filter/stationary": {"steps": 10, "events_per_pair": {}, "reported_pairs": []}, "play_off/filter/moving": {"steps": 10, "events_per_pair": {"C-D": 9, "A-B": 9}, "reported_pairs": [["/World/A", "/World/B"], ["/World/C", "/World/D"]]}}
+[END] P-pair-table 1.0s
+[START] P-update-sim-side-effect
+[RESULT] P-update-sim-side-effect: {"timeline_stopped": true, "z_before": 10.0, "z_after_30_steps": 10.0, "physx_z_after_30_steps": 8.732874870300293, "z_after_release": 10.0}
+[END] P-update-sim-side-effect 0.0s
+[START] P-contact-playoff-follow
+[RESULT] P-contact-playoff-follow: {"seq": [{"angle": 0, "new_events": []}, {"angle": 0, "new_events": []}, {"angle": 90, "new_events": []}, {"angle": 90, "new_events": ["CONTACT_FOUND"]}, {"angle": 0, "new_events": ["CONTACT_PERSIST"]}, {"angle": 0, "new_events": ["CONTACT_LOST"]}], "timeline_stopped": true}
+[END] P-contact-playoff-follow 0.1s
+[DONE] t04_play_off 15
+2026-11-01T13:56:22Z [5,844ms] [Warning] [omni.physx.plugin] Physx scene queries can only be performed during simulation.
+2026-11-01T13:56:22Z [5,844ms] [Warning] [omni.physx.plugin] Physx scene queries can only be performed during simulation.
+[7.239s] Simulation App Shutting Down

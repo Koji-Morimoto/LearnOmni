@@ -1,0 +1,494 @@
+{
+ "group": "t03_contact_basic",
+ "items": [
+  {
+   "id": "C-scope",
+   "description": "報告範囲",
+   "cases": {
+    "none": {
+     "pairs": [],
+     "found_events": 0,
+     "events": 0,
+     "steps": 10
+    },
+    "A_only": {
+     "pairs": [
+      [
+       "/World/A",
+       "/World/B"
+      ]
+     ],
+     "found_events": 1,
+     "events": 10,
+     "steps": 10
+    },
+    "B_only": {
+     "pairs": [
+      [
+       "/World/A",
+       "/World/B"
+      ]
+     ],
+     "found_events": 1,
+     "events": 10,
+     "steps": 10
+    },
+    "A_and_B": {
+     "pairs": [
+      [
+       "/World/A",
+       "/World/B"
+      ]
+     ],
+     "found_events": 1,
+     "events": 10,
+     "steps": 10
+    },
+    "all_four": {
+     "pairs": [
+      [
+       "/World/A",
+       "/World/B"
+      ],
+      [
+       "/World/C",
+       "/World/D"
+      ]
+     ],
+     "found_events": 2,
+     "events": 20,
+     "steps": 10
+    }
+   },
+   "control_no_api_D_x_after_30_frames": 10.998250961303711,
+   "control_note": "D の初期 x=10.95。増えていれば報告なしでも衝突は計算されている"
+  },
+  {
+   "id": "C-per-step",
+   "description": "ステップ数とコールバック回数",
+   "steps": 20,
+   "callbacks": 20,
+   "events": 20,
+   "found": 1,
+   "persist": 19,
+   "lost": 0
+  },
+  {
+   "id": "C-play-off-no-step",
+   "description": "Stop 中に app.update を 10 回",
+   "events": 0,
+   "callbacks": 0
+  },
+  {
+   "id": "C-decode",
+   "description": "actor/collider を intToSdfPath で戻す",
+   "actor0": "/World/B",
+   "actor1": "/World/A",
+   "collider0": "/World/B",
+   "collider1": "/World/A",
+   "raw_actor0": 3585
+  },
+  {
+   "id": "C-offset-sweep",
+   "description": "隙間と報告の関係",
+   "rows": [
+    {
+     "co_sum": 0.02,
+     "gap": 0.04,
+     "ratio": 2.0,
+     "reported": false,
+     "min_sep": null,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.02,
+     "gap": 0.025,
+     "ratio": 1.25,
+     "reported": false,
+     "min_sep": null,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.02,
+     "gap": 0.021,
+     "ratio": 1.05,
+     "reported": false,
+     "min_sep": null,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.02,
+     "gap": 0.019,
+     "ratio": 0.95,
+     "reported": true,
+     "min_sep": 0.01900005340576172,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.02,
+     "gap": 0.015,
+     "ratio": 0.75,
+     "reported": true,
+     "min_sep": 0.014999985694885254,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.02,
+     "gap": 0.01,
+     "ratio": 0.5,
+     "reported": true,
+     "min_sep": 0.009999990463256836,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.02,
+     "gap": 0.002,
+     "ratio": 0.1,
+     "reported": true,
+     "min_sep": 0.001999974250793457,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.034999999999999996,
+     "gap": 0.07,
+     "ratio": 2.0,
+     "reported": false,
+     "min_sep": null,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.034999999999999996,
+     "gap": 0.04375,
+     "ratio": 1.25,
+     "reported": false,
+     "min_sep": null,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.034999999999999996,
+     "gap": 0.03675,
+     "ratio": 1.05,
+     "reported": false,
+     "min_sep": null,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.034999999999999996,
+     "gap": 0.03325,
+     "ratio": 0.95,
+     "reported": true,
+     "min_sep": 0.03324997425079346,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.034999999999999996,
+     "gap": 0.02625,
+     "ratio": 0.75,
+     "reported": true,
+     "min_sep": 0.026250004768371582,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.034999999999999996,
+     "gap": 0.0175,
+     "ratio": 0.5,
+     "reported": true,
+     "min_sep": 0.01750004291534424,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.034999999999999996,
+     "gap": 0.0035,
+     "ratio": 0.1,
+     "reported": true,
+     "min_sep": 0.0034999847412109375,
+     "first_impulse_zero": true
+    },
+    {
+     "co_sum": 0.02,
+     "gap": 0.0,
+     "ratio": null,
+     "reported": true,
+     "min_sep": 0.0
+    },
+    {
+     "co_sum": 0.02,
+     "gap": -0.001,
+     "ratio": null,
+     "reported": true,
+     "min_sep": -0.0009999871253967285
+    },
+    {
+     "co_sum": 0.02,
+     "gap": -0.01,
+     "ratio": null,
+     "reported": true,
+     "min_sep": -0.009999990463256836
+    },
+    {
+     "co_sum": 0.02,
+     "gap": -0.05,
+     "ratio": null,
+     "reported": true,
+     "min_sep": -0.050000011920928955
+    }
+   ]
+  },
+  {
+   "id": "C-threshold",
+   "description": "threshold と報告",
+   "cases": {
+    "default_1.0_gap+0.005": {
+     "events": 0,
+     "min_sep": null
+    },
+    "0.0_gap+0.005": {
+     "events": 5,
+     "min_sep": 0.004999995231628418
+    },
+    "default_1.0_gap-0.05": {
+     "events": 2,
+     "min_sep": -0.050000011920928955
+    },
+    "0.0_gap-0.05": {
+     "events": 5,
+     "min_sep": -0.050000011920928955
+    }
+   }
+  },
+  {
+   "id": "O-geometric",
+   "description": "隙間と overlap の判定",
+   "rows": [
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.0,
+     "gap": 0.05,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.0,
+     "gap": 0.01,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.0,
+     "gap": 0.001,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.0,
+     "gap": 0.0001,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.0,
+     "gap": 1e-05,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.0,
+     "gap": 0.0,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.0,
+     "gap": -1e-05,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.0,
+     "gap": -0.0001,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.0,
+     "gap": -0.001,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.0,
+     "gap": -0.01,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.05,
+     "gap": 0.05,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.05,
+     "gap": 0.01,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.05,
+     "gap": 0.001,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.05,
+     "gap": 0.0001,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.05,
+     "gap": 1e-05,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.05,
+     "gap": 0.0,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.05,
+     "gap": -1e-05,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.05,
+     "gap": -0.0001,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.05,
+     "gap": -0.001,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.1,
+     "restOffset": 0.05,
+     "gap": -0.01,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.001,
+     "restOffset": 0.0,
+     "gap": 0.05,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.001,
+     "restOffset": 0.0,
+     "gap": 0.01,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.001,
+     "restOffset": 0.0,
+     "gap": 0.001,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.001,
+     "restOffset": 0.0,
+     "gap": 0.0001,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.001,
+     "restOffset": 0.0,
+     "gap": 1e-05,
+     "B_hit": false
+    },
+    {
+     "contactOffset": 0.001,
+     "restOffset": 0.0,
+     "gap": 0.0,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.001,
+     "restOffset": 0.0,
+     "gap": -1e-05,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.001,
+     "restOffset": 0.0,
+     "gap": -0.0001,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.001,
+     "restOffset": 0.0,
+     "gap": -0.001,
+     "B_hit": true
+    },
+    {
+     "contactOffset": 0.001,
+     "restOffset": 0.0,
+     "gap": -0.01,
+     "B_hit": true
+    }
+   ]
+  },
+  {
+   "id": "O-boundary",
+   "description": "球クエリの境界",
+   "rows": [
+    {
+     "contactOffset": 0.2,
+     "probe_radius": 0.001,
+     "boundary_x": 0.5009997367858887,
+     "expected": 0.501,
+     "error": -2.6321411128460426e-07
+    },
+    {
+     "contactOffset": 0.2,
+     "probe_radius": 0.01,
+     "boundary_x": 0.5099999427795405,
+     "expected": 0.51,
+     "error": -5.7220459481754915e-08
+    },
+    {
+     "contactOffset": 0.2,
+     "probe_radius": 0.1,
+     "boundary_x": 0.5999997138977051,
+     "expected": 0.6,
+     "error": -2.861022948552616e-07
+    },
+    {
+     "contactOffset": 0.001,
+     "probe_radius": 0.001,
+     "boundary_x": 0.5009997367858887,
+     "expected": 0.501,
+     "error": -2.6321411128460426e-07
+    },
+    {
+     "contactOffset": 0.001,
+     "probe_radius": 0.01,
+     "boundary_x": 0.5099999427795405,
+     "expected": 0.51,
+     "error": -5.7220459481754915e-08
+    },
+    {
+     "contactOffset": 0.001,
+     "probe_radius": 0.1,
+     "boundary_x": 0.5999997138977051,
+     "expected": 0.6,
+     "error": -2.861022948552616e-07
+    }
+   ]
+  }
+ ]
+}

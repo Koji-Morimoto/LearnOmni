@@ -1,0 +1,547 @@
+{
+ "group": "t04_play_off",
+ "items": [
+  {
+   "id": "P-follow-stop_force_load/self_rotate/static",
+   "description": "transform 変更の反映",
+   "baseline": {
+    "old": true,
+    "new": false
+   },
+   "immediately_after_set": {
+    "old": false,
+    "new": true
+   },
+   "after_1_update": {
+    "old": false,
+    "new": true
+   },
+   "after_5_updates": {
+    "old": false,
+    "new": true
+   },
+   "after_update_simulation": {
+    "old": false,
+    "new": true
+   },
+   "after_release_and_reload": {
+    "old": false,
+    "new": true
+   },
+   "sweep_36_frames": {
+    "correct_immediately": 36,
+    "correct_after_update": 36,
+    "total": 36,
+    "mean_frame_s": 0.009932388888854702
+   }
+  },
+  {
+   "id": "P-follow-stop_force_load/self_rotate/kinematic",
+   "description": "transform 変更の反映",
+   "baseline": {
+    "old": true,
+    "new": false
+   },
+   "immediately_after_set": {
+    "old": true,
+    "new": false
+   },
+   "after_1_update": {
+    "old": true,
+    "new": false
+   },
+   "after_5_updates": {
+    "old": true,
+    "new": false
+   },
+   "after_update_simulation": {
+    "old": false,
+    "new": true
+   },
+   "after_release_and_reload": {
+    "old": false,
+    "new": true
+   },
+   "sweep_36_frames": {
+    "correct_immediately": 2,
+    "correct_after_update": 2,
+    "total": 36,
+    "mean_frame_s": 0.009877652777706518
+   }
+  },
+  {
+   "id": "P-follow-stop_force_load/parent_rotate/static",
+   "description": "transform 変更の反映",
+   "baseline": {
+    "old": true,
+    "new": false
+   },
+   "immediately_after_set": {
+    "old": false,
+    "new": true
+   },
+   "after_1_update": {
+    "old": false,
+    "new": true
+   },
+   "after_5_updates": {
+    "old": false,
+    "new": true
+   },
+   "after_update_simulation": {
+    "old": false,
+    "new": true
+   },
+   "after_release_and_reload": {
+    "old": false,
+    "new": true
+   },
+   "sweep_36_frames": {
+    "correct_immediately": 36,
+    "correct_after_update": 36,
+    "total": 36,
+    "mean_frame_s": 0.009887008333357193
+   }
+  },
+  {
+   "id": "P-follow-stop_force_load/parent_rotate/kinematic",
+   "description": "transform 変更の反映",
+   "baseline": {
+    "old": true,
+    "new": false
+   },
+   "immediately_after_set": {
+    "old": true,
+    "new": false
+   },
+   "after_1_update": {
+    "old": true,
+    "new": false
+   },
+   "after_5_updates": {
+    "old": true,
+    "new": false
+   },
+   "after_update_simulation": {
+    "old": false,
+    "new": true
+   },
+   "after_release_and_reload": {
+    "old": false,
+    "new": true
+   },
+   "sweep_36_frames": {
+    "correct_immediately": 1,
+    "correct_after_update": 1,
+    "total": 36,
+    "mean_frame_s": 0.009876197222183691
+   }
+  },
+  {
+   "id": "P-follow-play/self_rotate/static",
+   "description": "transform 変更の反映",
+   "baseline": {
+    "old": true,
+    "new": false
+   },
+   "immediately_after_set": {
+    "old": false,
+    "new": true
+   },
+   "after_1_update": {
+    "old": false,
+    "new": true
+   },
+   "after_5_updates": {
+    "old": false,
+    "new": true
+   },
+   "sweep_36_frames": {
+    "correct_immediately": 36,
+    "correct_after_update": 36,
+    "total": 36,
+    "mean_frame_s": 0.01704431944441846
+   }
+  },
+  {
+   "id": "P-follow-play/self_rotate/kinematic",
+   "description": "transform 変更の反映",
+   "baseline": {
+    "old": true,
+    "new": false
+   },
+   "immediately_after_set": {
+    "old": true,
+    "new": false
+   },
+   "after_1_update": {
+    "old": false,
+    "new": true
+   },
+   "after_5_updates": {
+    "old": false,
+    "new": true
+   },
+   "sweep_36_frames": {
+    "correct_immediately": 0,
+    "correct_after_update": 36,
+    "total": 36,
+    "mean_frame_s": 0.017027955555426563
+   }
+  },
+  {
+   "id": "P-follow-play/parent_rotate/static",
+   "description": "transform 変更の反映",
+   "baseline": {
+    "old": true,
+    "new": false
+   },
+   "immediately_after_set": {
+    "old": false,
+    "new": true
+   },
+   "after_1_update": {
+    "old": false,
+    "new": true
+   },
+   "after_5_updates": {
+    "old": false,
+    "new": true
+   },
+   "sweep_36_frames": {
+    "correct_immediately": 36,
+    "correct_after_update": 36,
+    "total": 36,
+    "mean_frame_s": 0.017033936111046286
+   }
+  },
+  {
+   "id": "P-follow-play/parent_rotate/kinematic",
+   "description": "transform 変更の反映",
+   "baseline": {
+    "old": true,
+    "new": false
+   },
+   "immediately_after_set": {
+    "old": true,
+    "new": false
+   },
+   "after_1_update": {
+    "old": false,
+    "new": true
+   },
+   "after_5_updates": {
+    "old": false,
+    "new": true
+   },
+   "sweep_36_frames": {
+    "correct_immediately": 0,
+    "correct_after_update": 36,
+    "total": 36,
+    "mean_frame_s": 0.01703191944458619
+   }
+  },
+  {
+   "id": "P-states",
+   "description": "状態ごとの overlap",
+   "1_stopped_never_played": {
+    "box_any": false,
+    "sphere_any": false,
+    "shape_hits": []
+   },
+   "2_stopped_after_update": {
+    "box_any": false,
+    "sphere_any": false,
+    "shape_hits": []
+   },
+   "3_playing": {
+    "box_any": true,
+    "sphere_any": true,
+    "shape_hits": [
+     "/World/A"
+    ]
+   },
+   "4_paused": {
+    "box_any": true,
+    "sphere_any": true,
+    "shape_hits": [
+     "/World/A"
+    ]
+   },
+   "5_stopped_after_play": {
+    "box_any": false,
+    "sphere_any": false,
+    "shape_hits": []
+   },
+   "6_stopped_force_load": {
+    "box_any": true,
+    "sphere_any": true,
+    "shape_hits": [
+     "/World/A"
+    ]
+   },
+   "6_timeline_is_stopped": true,
+   "7_after_release": {
+    "box_any": false,
+    "sphere_any": false,
+    "shape_hits": []
+   }
+  },
+  {
+   "id": "P-no-scene",
+   "description": "シーン prim なしで force_load",
+   "hit": true,
+   "scene_prims_before": [],
+   "scene_prims_during": [
+    "/PhysicsScene_16e12ee3daea"
+   ],
+   "scene_prims_after_release": [
+    "/PhysicsScene_16e12ee3daea"
+   ]
+  },
+  {
+   "id": "P-query-side",
+   "description": "クエリ形状を動かした直後",
+   "noncollider_before": [],
+   "noncollider_after_move_no_update": [
+    "/World/Target"
+   ],
+   "collider_before": [
+    "/World/QColl"
+   ],
+   "collider_after_move_no_update": [
+    "/World/QColl",
+    "/World/Target"
+   ]
+  },
+  {
+   "id": "P-contact-playoff",
+   "description": "Play OFF での ContactReport",
+   "no_force_load+update_simulation": {
+    "timeline_stopped": true,
+    "events": 5,
+    "pairs": [
+     [
+      "/World/D",
+      "/World/S"
+     ]
+    ],
+    "min_sep": 0.004999995231628418,
+    "polled_headers": 1
+   },
+   "force_load+update_simulation": {
+    "timeline_stopped": true,
+    "events": 5,
+    "pairs": [
+     [
+      "/World/D",
+      "/World/S"
+     ]
+    ],
+    "min_sep": 0.004999995231628418,
+    "polled_headers": 1
+   },
+   "force_load+simulate_fetch": {
+    "timeline_stopped": true,
+    "events": 5,
+    "pairs": [
+     [
+      "/World/D",
+      "/World/S"
+     ]
+    ],
+    "min_sep": 0.004999995231628418,
+    "polled_headers": 1
+   }
+  },
+  {
+   "id": "P-pair-table",
+   "description": "ペア表",
+   "all_pairs": 6,
+   "table": [
+    [
+     "A",
+     "B"
+    ],
+    [
+     "C",
+     "D"
+    ]
+   ],
+   "play/no_filter/stationary": {
+    "steps": 12,
+    "events_per_pair": {},
+    "reported_pairs": []
+   },
+   "play/no_filter/moving": {
+    "steps": 12,
+    "events_per_pair": {
+     "C-D": 9,
+     "B-C": 9,
+     "B-D": 9,
+     "A-B": 9,
+     "A-C": 9,
+     "A-D": 9
+    },
+    "reported_pairs": [
+     [
+      "/World/A",
+      "/World/B"
+     ],
+     [
+      "/World/A",
+      "/World/C"
+     ],
+     [
+      "/World/A",
+      "/World/D"
+     ],
+     [
+      "/World/B",
+      "/World/C"
+     ],
+     [
+      "/World/B",
+      "/World/D"
+     ],
+     [
+      "/World/C",
+      "/World/D"
+     ]
+    ]
+   },
+   "play/filter/stationary": {
+    "steps": 12,
+    "events_per_pair": {},
+    "reported_pairs": []
+   },
+   "play/filter/moving": {
+    "steps": 12,
+    "events_per_pair": {
+     "C-D": 9,
+     "A-B": 9
+    },
+    "reported_pairs": [
+     [
+      "/World/A",
+      "/World/B"
+     ],
+     [
+      "/World/C",
+      "/World/D"
+     ]
+    ]
+   },
+   "play_off/no_filter/stationary": {
+    "steps": 10,
+    "events_per_pair": {},
+    "reported_pairs": []
+   },
+   "play_off/no_filter/moving": {
+    "steps": 10,
+    "events_per_pair": {
+     "C-D": 9,
+     "B-C": 9,
+     "B-D": 9,
+     "A-B": 9,
+     "A-C": 9,
+     "A-D": 9
+    },
+    "reported_pairs": [
+     [
+      "/World/A",
+      "/World/B"
+     ],
+     [
+      "/World/A",
+      "/World/C"
+     ],
+     [
+      "/World/A",
+      "/World/D"
+     ],
+     [
+      "/World/B",
+      "/World/C"
+     ],
+     [
+      "/World/B",
+      "/World/D"
+     ],
+     [
+      "/World/C",
+      "/World/D"
+     ]
+    ]
+   },
+   "play_off/filter/stationary": {
+    "steps": 10,
+    "events_per_pair": {},
+    "reported_pairs": []
+   },
+   "play_off/filter/moving": {
+    "steps": 10,
+    "events_per_pair": {
+     "C-D": 9,
+     "A-B": 9
+    },
+    "reported_pairs": [
+     [
+      "/World/A",
+      "/World/B"
+     ],
+     [
+      "/World/C",
+      "/World/D"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "P-update-sim-side-effect",
+   "description": "動的剛体の USD transform",
+   "timeline_stopped": true,
+   "z_before": 10.0,
+   "z_after_30_steps": 10.0,
+   "physx_z_after_30_steps": 8.732874870300293,
+   "z_after_release": 10.0
+  },
+  {
+   "id": "P-contact-playoff-follow",
+   "description": "Play OFF で動かす",
+   "seq": [
+    {
+     "angle": 0,
+     "new_events": []
+    },
+    {
+     "angle": 0,
+     "new_events": []
+    },
+    {
+     "angle": 90,
+     "new_events": []
+    },
+    {
+     "angle": 90,
+     "new_events": [
+      "CONTACT_FOUND"
+     ]
+    },
+    {
+     "angle": 0,
+     "new_events": [
+      "CONTACT_PERSIST"
+     ]
+    },
+    {
+     "angle": 0,
+     "new_events": [
+      "CONTACT_LOST"
+     ]
+    }
+   ],
+   "timeline_stopped": true
+  }
+ ]
+}

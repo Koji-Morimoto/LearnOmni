@@ -1,0 +1,132 @@
+Skipping automatic ROS environment setup
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-01T13:56:31Z [Info] [carb] Logging to file: c:/isaacsim-6.0.2/kit/logs/Kit/PhysX claim verification/6.2/kit_20261101_225631.log
+[0.156s] [ext: omni.assets.plugins-0.0.0] startup
+[0.159s] [ext: omni.blobkey-1.1.2] startup
+[0.160s] [ext: omni.kit.async_engine-0.0.5] startup
+[0.183s] [ext: omni.client.lib-1.1.1] startup
+[0.197s] [ext: omni.client-1.3.0] startup
+[0.258s] [ext: omni.protobuf.lib-1.0.1] startup
+[0.258s] [ext: omni.grpc.lib-1.0.1] startup
+[0.259s] [ext: omni.metrics.core-0.0.3] startup
+[0.260s] [ext: omni.datastore-0.0.0] startup
+[0.261s] [ext: omni.gpu_foundation.shadercache.d3d12-1.0.0] startup
+[0.266s] [ext: omni.hsscclient-1.1.4] startup
+[0.267s] [ext: omni.stats-1.0.1] startup
+[0.269s] [ext: omni.ujitso.default-1.0.0] startup
+[0.278s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.299s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.300s] [ext: omni.usd.config-1.0.8] startup
+2026-11-01T13:56:31Z [202ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+[0.312s] [ext: omni.usd.libs-1.0.3] startup
+[0.369s] [ext: omni.usd.schema.audio-0.0.1] startup
+[0.469s] [ext: omni.usd.schema.newton-1.5.0] startup
+[0.471s] [ext: omni.usd.schema.physx-110.4.4] startup
+[0.508s] [ext: carb.audio-0.1.0] startup
+[0.508s] [ext: omni.kit.actions.core-1.2.1] startup
+[0.513s] [ext: omni.kit.commands-1.6.2] startup
+[0.519s] [ext: omni.convexdecomposition-110.4.4] startup
+[0.521s] [ext: omni.cubric-0.1.0] startup
+[0.523s] [ext: omni.graph.exec-0.9.6] startup
+[0.524s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[0.527s] [ext: omni.kit.exec.core-0.13.6] startup
+[0.531s] [ext: omni.kit.loop-isaac-1.6.2] startup
+[0.533s] [ext: omni.kit.usd_undo-0.1.8] startup
+[0.534s] [ext: omni.timeline-1.1.2] startup
+[0.537s] [ext: omni.usd_resolver-1.0.0] startup
+[0.542s] [ext: omni.usd.core-1.10.42] startup
+[0.544s] [ext: omni.usd-1.19.11] startup
+[0.594s] [ext: omni.kit.usd.layers-2.7.9] startup
+[0.602s] [ext: omni.kit.primitive.mesh-1.1.1] startup
+[0.607s] [ext: omni.kit.stage_template.core-1.1.23] startup
+[0.608s] [ext: omni.kit.stage_templates-2.0.3] startup
+[0.611s] [ext: omni.physics-110.4.4] startup
+[0.615s] [ext: omni.physx.gpu-110.4.4] startup
+[0.616s] [ext: omni.physx.foundation-110.4.4] startup
+[0.627s] [ext: omni.usdphysics-110.4.4] startup
+[0.629s] [ext: omni.physx.cooking-110.4.4] startup
+[0.632s] [ext: usdrt.scenegraph-7.6.3] startup
+[0.669s] [ext: omni.physx-110.4.4] startup
+[0.681s] [ext: omni.physics.physx-110.4.4] startup
+[0.683s] [ext: omni.physics.stageupdate-110.4.4] startup
+[0.687s] [ext: physx_verify-6.2.0] startup
+[0.688s] Simulation App Starting
+2026-11-01T13:56:32Z [897ms] [Error] [omni.usd] '/app/useFabricSceneDelegate' is enabled, but usdrt::population::IUtils could not be created. Is UsdRt enabled?
+[1.121s] Simulation App Startup Complete
+[1.121s] app ready
+Starting kit application with the following args:  ['C:\\isaacsim-6.0.2\\exts\\isaacsim.simulation_app\\isaacsim\\simulation_app\\simulation_app.py', 'C:\\isaacsim-6.0.2\\CodeByClaude\\physx_overlap_contact_verification\\code\\physx_verify.kit', '--/app/tokens/exe-path=C:\\isaacsim-6.0.2\\kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni/kit/plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', 'C:\\isaacsim-6.0.2/exts', '--ext-folder', 'C:\\isaacsim-6.0.2/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=16', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=16', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--no-ros-env']
+[START] G-scene-Sphere-static
+[RESULT] G-scene-Sphere-static: {"shape_stats": {"sphere_shapes": 1}, "err": {"n": 256, "min": 1.341104507446289e-07, "median": 1.341104507446289e-07, "max": 1.341104507446289e-07}, "abs_max": 1.341104507446289e-07, "bisect_fail": 0}
+[END] G-scene-Sphere-static 0.0s
+[START] G-scene-Sphere-kinematic
+[RESULT] G-scene-Sphere-kinematic: {"shape_stats": {"sphere_shapes": 1}, "err": {"n": 256, "min": 1.341104507446289e-07, "median": 1.341104507446289e-07, "max": 1.341104507446289e-07}, "abs_max": 1.341104507446289e-07, "bisect_fail": 0}
+[END] G-scene-Sphere-kinematic 0.0s
+[START] G-scene-Sphere-dynamic
+[RESULT] G-scene-Sphere-dynamic: {"shape_stats": {"sphere_shapes": 1}, "err": {"n": 256, "min": 1.341104507446289e-07, "median": 1.341104507446289e-07, "max": 1.341104507446289e-07}, "abs_max": 1.341104507446289e-07, "bisect_fail": 0}
+[END] G-scene-Sphere-dynamic 0.0s
+[START] G-scene-Cube-static
+[RESULT] G-scene-Cube-static: {"shape_stats": {"box_shapes": 1}, "err": {"n": 256, "min": -6.705522537231445e-07, "median": 4.470348358154297e-08, "max": 7.599592208862305e-07}, "abs_max": 7.599592208862305e-07, "bisect_fail": 0}
+[END] G-scene-Cube-static 0.0s
+[START] G-scene-Cube-kinematic
+[RESULT] G-scene-Cube-kinematic: {"shape_stats": {"box_shapes": 1}, "err": {"n": 256, "min": -6.705522537231445e-07, "median": 4.470348358154297e-08, "max": 7.599592208862305e-07}, "abs_max": 7.599592208862305e-07, "bisect_fail": 0}
+[END] G-scene-Cube-kinematic 0.0s
+[START] G-scene-Cube-dynamic
+[RESULT] G-scene-Cube-dynamic: {"shape_stats": {"box_shapes": 1}, "err": {"n": 256, "min": -6.705522537231445e-07, "median": 4.470348358154297e-08, "max": 7.599592208862305e-07}, "abs_max": 7.599592208862305e-07, "bisect_fail": 0}
+[END] G-scene-Cube-dynamic 0.0s
+[START] G-scene-Capsule-static
+[RESULT] G-scene-Capsule-static: {"shape_stats": {"capsule_shapes": 1}, "err": {"n": 256, "min": -7.599592208862305e-07, "median": -1.341104507446289e-07, "max": 7.599592208862305e-07}, "abs_max": 7.599592208862305e-07, "bisect_fail": 0}
+[END] G-scene-Capsule-static 0.0s
+[START] G-scene-Capsule-kinematic
+[RESULT] G-scene-Capsule-kinematic: {"shape_stats": {"capsule_shapes": 1}, "err": {"n": 256, "min": -7.599592208862305e-07, "median": -1.341104507446289e-07, "max": 7.599592208862305e-07}, "abs_max": 7.599592208862305e-07, "bisect_fail": 0}
+[END] G-scene-Capsule-kinematic 0.0s
+[START] G-scene-Capsule-dynamic
+[RESULT] G-scene-Capsule-dynamic: {"shape_stats": {"capsule_shapes": 1}, "err": {"n": 256, "min": -7.599592208862305e-07, "median": -1.341104507446289e-07, "max": 7.599592208862305e-07}, "abs_max": 7.599592208862305e-07, "bisect_fail": 0}
+[END] G-scene-Capsule-dynamic 0.0s
+[START] G-scene-Cylinder-static
+[RESULT] G-scene-Cylinder-static: {"shape_stats": {"cylinder_shapes": 1}, "err": {"n": 256, "min": -4.917383193969727e-07, "median": 2.2351741790771484e-07, "max": 1.0281801223754883e-06}, "abs_max": 1.0281801223754883e-06, "bisect_fail": 0}
+[END] G-scene-Cylinder-static 0.0s
+[START] G-scene-Cylinder-kinematic
+[RESULT] G-scene-Cylinder-kinematic: {"shape_stats": {"cylinder_shapes": 1}, "err": {"n": 256, "min": -4.917383193969727e-07, "median": 2.2351741790771484e-07, "max": 1.0281801223754883e-06}, "abs_max": 1.0281801223754883e-06, "bisect_fail": 0}
+[END] G-scene-Cylinder-kinematic 0.0s
+[START] G-scene-Cylinder-dynamic
+[RESULT] G-scene-Cylinder-dynamic: {"shape_stats": {"cylinder_shapes": 1}, "err": {"n": 256, "min": -4.917383193969727e-07, "median": 2.2351741790771484e-07, "max": 1.0281801223754883e-06}, "abs_max": 1.0281801223754883e-06, "bisect_fail": 0}
+[END] G-scene-Cylinder-dynamic 0.0s
+[START] G-scene-Cone-static
+[RESULT] G-scene-Cone-static: {"shape_stats": {"cone_shapes": 1}, "err": {"n": 256, "min": -4.917383193969727e-07, "median": 2.2351741790771484e-07, "max": 1.1175870895385742e-06}, "abs_max": 1.1175870895385742e-06, "bisect_fail": 0}
+[END] G-scene-Cone-static 0.1s
+[START] G-scene-Cone-kinematic
+[RESULT] G-scene-Cone-kinematic: {"shape_stats": {"cone_shapes": 1}, "err": {"n": 256, "min": -4.917383193969727e-07, "median": 2.2351741790771484e-07, "max": 1.1175870895385742e-06}, "abs_max": 1.1175870895385742e-06, "bisect_fail": 0}
+[END] G-scene-Cone-kinematic 0.1s
+[START] G-scene-Cone-dynamic
+[RESULT] G-scene-Cone-dynamic: {"shape_stats": {"cone_shapes": 1}, "err": {"n": 256, "min": -4.917383193969727e-07, "median": 2.2351741790771484e-07, "max": 1.1175870895385742e-06}, "abs_max": 1.1175870895385742e-06, "bisect_fail": 0}
+[END] G-scene-Cone-dynamic 0.1s
+[START] G-query-Sphere
+[RESULT] G-query-Sphere: {"err": {"n": 64, "min": 1.341104507446289e-07, "median": 1.341104507446289e-07, "max": 1.341104507446289e-07}, "abs_max": 1.341104507446289e-07, "n": 64}
+[END] G-query-Sphere 0.1s
+[START] G-query-Cube
+[RESULT] G-query-Cube: {"err": {"n": 64, "min": -6.705522537231445e-07, "median": 1.341104507446289e-07, "max": 6.705522537231445e-07}, "abs_max": 6.705522537231445e-07, "n": 64}
+[END] G-query-Cube 0.1s
+[START] G-query-Capsule
+[RESULT] G-query-Capsule: {"err": {"n": 64, "min": -7.599592208862305e-07, "median": -1.341104507446289e-07, "max": 6.705522537231445e-07}, "abs_max": 7.599592208862305e-07, "n": 64}
+[END] G-query-Capsule 0.1s
+[START] G-query-Cylinder
+[RESULT] G-query-Cylinder: {"err": {"n": 64, "min": -0.003579184412956238, "median": -0.0013943463563919067, "max": 8.538365364074707e-06}, "abs_max": 0.003579184412956238, "n": 64}
+[END] G-query-Cylinder 0.1s
+[START] G-query-Cone
+[RESULT] G-query-Cone: {"err": {"n": 64, "min": -0.005435004830360413, "median": -0.0007218271493911743, "max": 1.2069940567016602e-06}, "abs_max": 0.005435004830360413, "n": 64}
+[END] G-query-Cone 0.1s
+[START] G-scene-approx-control
+[RESULT] G-scene-approx-control: {"Cylinder": {"shape_stats": {"cylinder_shapes": 1}, "err": {"n": 256, "min": -0.003777936100959778, "median": -0.0014707893133163452, "max": 9.521842002868652e-06}, "abs_max": 0.003777936100959778, "bisect_fail": 0}, "Cone": {"shape_stats": {"cone_shapes": 1}, "err": {"n": 256, "min": -0.007034853100776672, "median": -0.0007440894842147827, "max": 5.856156349182129e-06}, "abs_max": 0.007034853100776672, "bisect_fail": 0}}
+[END] G-scene-approx-control 0.1s
+[START] G-nonuniform
+[RESULT] G-nonuniform: {"scale": [1.0, 1.0, 2.0], "Sphere": {"shape_stats": {"sphere_shapes": 1}, "t_minus_surface": {"n": 128, "min": 0.023559391498565674, "median": 0.4482741355895996, "max": 0.5009889602661133}, "note": "プローブ半径 1 mm 分の正の差は正常(約 0.001〜)"}, "Capsule": {"shape_stats": {"capsule_shapes": 1}, "t_minus_surface": {"n": 128, "min": -0.20870822668075562, "median": 0.0010979771614074707, "max": 0.0021285414695739746}, "note": "プローブ半径 1 mm 分の正の差は正常(約 0.001〜)"}, "Cylinder": {"shape_stats": {"cylinder_shapes": 1}, "t_minus_surface": {"n": 128, "min": 0.0010004043579101562, "median": 0.0010982751846313477, "max": 0.0021294355392456055}, "note": "プローブ半径 1 mm 分の正の差は正常(約 0.001〜)"}, "Cone": {"shape_stats": {"cone_shapes": 1}, "t_minus_surface": {"n": 128, "min": 0.00099945068359375, "median": 0.0011281371116638184, "max": 0.004139602184295654}, "note": "プローブ半径 1 mm 分の正の差は正常(約 0.001〜)"}, "Cube": {"shape_stats": {"box_shapes": 1}, "t_minus_surface": {"n": 128, "min": 0.0010075569152832031, "median": 0.001255631446838379, "max": 0.0021385550498962402}, "note": "プローブ半径 1 mm 分の正の差は正常(約 0.001〜)"}}
+[END] G-nonuniform 0.1s
+[START] G-contact-cyl-cone
+[RESULT] G-contact-cyl-cone: {"Sphere": {"sep_minus_true": {"n": 64, "min": -5.3644180295769894e-09, "median": -5.3644180295769894e-09, "max": 5.4240226745813636e-08}, "abs_max": 5.4240226745813636e-08, "not_reported": 0}, "Cube": {"sep_minus_true": {"n": 64, "min": -2.6533845129753098e-08, "median": 1.2400541806942278e-08, "max": 2.9566485362439443e-08}, "abs_max": 2.9566485362439443e-08, "not_reported": 0}, "Capsule": {"sep_minus_true": {"n": 64, "min": -6.758610899583462e-08, "median": 1.3670769452231446e-08, "max": 6.42929052687563e-08}, "abs_max": 6.758610899583462e-08, "not_reported": 0}, "Cylinder": {"sep_minus_true": {"n": 64, "min": -1.7387030294170602e-07, "median": -8.799391849369231e-08, "max": 9.303912520616797e-09}, "abs_max": 1.7387030294170602e-07, "not_reported": 0}, "Cone": {"sep_minus_true": {"n": 64, "min": -1.0990537703016445e-07, "median": -4.657604341790078e-08, "max": 4.2495156303556936e-08}, "abs_max": 1.0990537703016445e-07, "not_reported": 0}}
+[END] G-contact-cyl-cone 12.5s
+[DONE] t07_analytic 23
+2026-11-01T13:56:33Z [2,197ms] [Warning] [omni.physicsschema.plugin] Non-uniform scale may result in a non matching collision representation on prim: /World/S
+2026-11-01T13:56:33Z [2,222ms] [Warning] [omni.physicsschema.plugin] Non-uniform scale may result in a non matching collision representation on prim: /World/S
+2026-11-01T13:56:33Z [2,277ms] [Warning] [omni.physicsschema.plugin] Non-uniform scale may result in a non matching collision representation on prim: /World/S
+[14.928s] Simulation App Shutting Down

@@ -1,0 +1,66 @@
+Skipping automatic ROS environment setup
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-01T14:01:33Z [Info] [carb] Logging to file: c:/isaacsim-6.0.2/kit/logs/Kit/PhysX claim verification/6.2/kit_20261101_230133.log
+[0.148s] [ext: omni.assets.plugins-0.0.0] startup
+[0.151s] [ext: omni.blobkey-1.1.2] startup
+[0.152s] [ext: omni.kit.async_engine-0.0.5] startup
+[0.177s] [ext: omni.client.lib-1.1.1] startup
+[0.191s] [ext: omni.client-1.3.0] startup
+[0.253s] [ext: omni.protobuf.lib-1.0.1] startup
+[0.254s] [ext: omni.grpc.lib-1.0.1] startup
+[0.255s] [ext: omni.metrics.core-0.0.3] startup
+[0.255s] [ext: omni.datastore-0.0.0] startup
+[0.257s] [ext: omni.gpu_foundation.shadercache.d3d12-1.0.0] startup
+[0.263s] [ext: omni.hsscclient-1.1.4] startup
+[0.264s] [ext: omni.stats-1.0.1] startup
+[0.266s] [ext: omni.ujitso.default-1.0.0] startup
+[0.275s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.294s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.295s] [ext: omni.usd.config-1.0.8] startup
+2026-11-01T14:01:33Z [206ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+[0.311s] [ext: omni.usd.libs-1.0.3] startup
+[0.355s] [ext: omni.usd.schema.audio-0.0.1] startup
+[0.454s] [ext: omni.usd.schema.newton-1.5.0] startup
+[0.456s] [ext: omni.usd.schema.physx-110.4.4] startup
+[0.492s] [ext: carb.audio-0.1.0] startup
+[0.493s] [ext: omni.kit.actions.core-1.2.1] startup
+[0.497s] [ext: omni.kit.commands-1.6.2] startup
+[0.503s] [ext: omni.convexdecomposition-110.4.4] startup
+[0.506s] [ext: omni.cubric-0.1.0] startup
+[0.508s] [ext: omni.graph.exec-0.9.6] startup
+[0.509s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[0.511s] [ext: omni.kit.exec.core-0.13.6] startup
+[0.514s] [ext: omni.kit.loop-isaac-1.6.2] startup
+[0.517s] [ext: omni.kit.usd_undo-0.1.8] startup
+[0.518s] [ext: omni.timeline-1.1.2] startup
+[0.520s] [ext: omni.usd_resolver-1.0.0] startup
+[0.525s] [ext: omni.usd.core-1.10.42] startup
+[0.528s] [ext: omni.usd-1.19.11] startup
+[0.579s] [ext: omni.kit.usd.layers-2.7.9] startup
+[0.588s] [ext: omni.kit.primitive.mesh-1.1.1] startup
+[0.594s] [ext: omni.kit.stage_template.core-1.1.23] startup
+[0.595s] [ext: omni.kit.stage_templates-2.0.3] startup
+[0.598s] [ext: omni.physics-110.4.4] startup
+[0.603s] [ext: omni.physx.gpu-110.4.4] startup
+[0.604s] [ext: omni.physx.foundation-110.4.4] startup
+[0.616s] [ext: omni.usdphysics-110.4.4] startup
+[0.618s] [ext: omni.physx.cooking-110.4.4] startup
+[0.622s] [ext: usdrt.scenegraph-7.6.3] startup
+[0.659s] [ext: omni.physx-110.4.4] startup
+[0.671s] [ext: omni.physics.physx-110.4.4] startup
+[0.673s] [ext: omni.physics.stageupdate-110.4.4] startup
+[0.677s] [ext: physx_verify-6.2.0] startup
+[0.678s] Simulation App Starting
+2026-11-01T14:01:34Z [900ms] [Error] [omni.usd] '/app/useFabricSceneDelegate' is enabled, but usdrt::population::IUtils could not be created. Is UsdRt enabled?
+[1.120s] Simulation App Startup Complete
+[1.120s] app ready
+Starting kit application with the following args:  ['C:\\isaacsim-6.0.2\\exts\\isaacsim.simulation_app\\isaacsim\\simulation_app\\simulation_app.py', 'C:\\isaacsim-6.0.2\\CodeByClaude\\physx_overlap_contact_verification\\code\\physx_verify.kit', '--/app/tokens/exe-path=C:\\isaacsim-6.0.2\\kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni/kit/plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', 'C:\\isaacsim-6.0.2/exts', '--ext-folder', 'C:\\isaacsim-6.0.2/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=16', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=16', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--no-ros-env']
+[START] GPU-False
+[RESULT] GPU-False: {"gpu": false, "steps": 20, "contact_events": 1280, "pairs_reported": 64, "min_sep": 0.0049991607666015625, "gpu_mem_nonzero_fields": {}, "pairs_total_stat": 64, "play_20_frames_s": 0.355, "overlap_any_us": 4.56, "overlap_hit": true, "overlap_miss": false, "overlap_shape_A0": ["/World/A0"]}
+[END] GPU-False 0.4s
+[START] GPU-True
+[RESULT] GPU-True: {"gpu": true, "steps": 20, "contact_events": 1280, "pairs_reported": 64, "min_sep": 0.0049991607666015625, "gpu_mem_nonzero_fields": {"gpu_mem_found_lost_pairs": 64, "gpu_mem_heap": 67108864, "gpu_mem_heap_articulation": 360, "gpu_mem_heap_broadphase": 8937548, "gpu_mem_heap_narrowphase": 60424, "gpu_mem_heap_simulation": 89472, "gpu_mem_heap_simulation_articulation": 216, "gpu_mem_heap_simulation_deformable_surface": 8, "gpu_mem_heap_simulation_deformable_volume": 12, "gpu_mem_heap_solver": 22265512, "gpu_mem_rigid_contact_count": 256, "gpu_mem_rigid_patch_count": 64, "gpu_mem_temp_buffer_capacity": 3824}, "pairs_total_stat": 0, "play_20_frames_s": 0.357, "overlap_any_us": 4.19, "overlap_hit": true, "overlap_miss": false, "overlap_shape_A0": ["/World/A0"]}
+[END] GPU-True 0.4s
+[DONE] t14_gpu 2
+[2.025s] Simulation App Shutting Down

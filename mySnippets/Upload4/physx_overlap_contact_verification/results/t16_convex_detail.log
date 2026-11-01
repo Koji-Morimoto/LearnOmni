@@ -1,0 +1,75 @@
+Skipping automatic ROS environment setup
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-01T14:01:48Z [Info] [carb] Logging to file: c:/isaacsim-6.0.2/kit/logs/Kit/PhysX claim verification/6.2/kit_20261101_230148.log
+[0.162s] [ext: omni.assets.plugins-0.0.0] startup
+[0.165s] [ext: omni.blobkey-1.1.2] startup
+[0.166s] [ext: omni.kit.async_engine-0.0.5] startup
+[0.191s] [ext: omni.client.lib-1.1.1] startup
+[0.205s] [ext: omni.client-1.3.0] startup
+[0.267s] [ext: omni.protobuf.lib-1.0.1] startup
+[0.268s] [ext: omni.grpc.lib-1.0.1] startup
+[0.268s] [ext: omni.metrics.core-0.0.3] startup
+[0.269s] [ext: omni.datastore-0.0.0] startup
+[0.271s] [ext: omni.gpu_foundation.shadercache.d3d12-1.0.0] startup
+[0.276s] [ext: omni.hsscclient-1.1.4] startup
+[0.277s] [ext: omni.stats-1.0.1] startup
+[0.279s] [ext: omni.ujitso.default-1.0.0] startup
+[0.290s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.309s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.310s] [ext: omni.usd.config-1.0.8] startup
+2026-11-01T14:01:48Z [211ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+[0.327s] [ext: omni.usd.libs-1.0.3] startup
+[0.370s] [ext: omni.usd.schema.audio-0.0.1] startup
+[0.474s] [ext: omni.usd.schema.newton-1.5.0] startup
+[0.476s] [ext: omni.usd.schema.physx-110.4.4] startup
+[0.513s] [ext: carb.audio-0.1.0] startup
+[0.513s] [ext: omni.kit.actions.core-1.2.1] startup
+[0.518s] [ext: omni.kit.commands-1.6.2] startup
+[0.524s] [ext: omni.convexdecomposition-110.4.4] startup
+[0.527s] [ext: omni.cubric-0.1.0] startup
+[0.529s] [ext: omni.graph.exec-0.9.6] startup
+[0.529s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[0.532s] [ext: omni.kit.exec.core-0.13.6] startup
+[0.535s] [ext: omni.kit.loop-isaac-1.6.2] startup
+[0.538s] [ext: omni.kit.usd_undo-0.1.8] startup
+[0.538s] [ext: omni.timeline-1.1.2] startup
+[0.541s] [ext: omni.usd_resolver-1.0.0] startup
+[0.545s] [ext: omni.usd.core-1.10.42] startup
+[0.548s] [ext: omni.usd-1.19.11] startup
+[0.597s] [ext: omni.kit.usd.layers-2.7.9] startup
+[0.606s] [ext: omni.kit.primitive.mesh-1.1.1] startup
+[0.611s] [ext: omni.kit.stage_template.core-1.1.23] startup
+[0.612s] [ext: omni.kit.stage_templates-2.0.3] startup
+[0.615s] [ext: omni.physics-110.4.4] startup
+[0.619s] [ext: omni.physx.gpu-110.4.4] startup
+[0.620s] [ext: omni.physx.foundation-110.4.4] startup
+[0.631s] [ext: omni.usdphysics-110.4.4] startup
+[0.634s] [ext: omni.physx.cooking-110.4.4] startup
+[0.637s] [ext: usdrt.scenegraph-7.6.3] startup
+[0.672s] [ext: omni.physx-110.4.4] startup
+[0.684s] [ext: omni.physics.physx-110.4.4] startup
+[0.686s] [ext: omni.physics.stageupdate-110.4.4] startup
+[0.691s] [ext: physx_verify-6.2.0] startup
+[0.692s] Simulation App Starting
+2026-11-01T14:01:49Z [894ms] [Error] [omni.usd] '/app/useFabricSceneDelegate' is enabled, but usdrt::population::IUtils could not be created. Is UsdRt enabled?
+[1.124s] Simulation App Startup Complete
+[1.125s] app ready
+Starting kit application with the following args:  ['C:\\isaacsim-6.0.2\\exts\\isaacsim.simulation_app\\isaacsim\\simulation_app\\simulation_app.py', 'C:\\isaacsim-6.0.2\\CodeByClaude\\physx_overlap_contact_verification\\code\\physx_verify.kit', '--/app/tokens/exe-path=C:\\isaacsim-6.0.2\\kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni/kit/plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', 'C:\\isaacsim-6.0.2/exts', '--ext-folder', 'C:\\isaacsim-6.0.2/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=16', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=16', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--no-ros-env']
+[START] H-prism-default
+[RESULT] H-prism-default: {"rows": [{"n_sides": 4, "input_vertices": 8, "limit": null, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 8, "cooked_polygons": 6, "rel_err_min": -7.402319577298755e-07, "rel_err_max": 8.306355351195283e-05}, {"n_sides": 8, "input_vertices": 16, "limit": null, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 16, "cooked_polygons": 10, "rel_err_min": 4.043579102663841e-07, "rel_err_max": 2.043718457234167e-05}, {"n_sides": 12, "input_vertices": 24, "limit": null, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 24, "cooked_polygons": 14, "rel_err_min": -2.052563534693519e-07, "rel_err_max": 9.509133801488545e-06}, {"n_sides": 16, "input_vertices": 32, "limit": null, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 32, "cooked_polygons": 18, "rel_err_min": 4.043579102663841e-07, "rel_err_max": 4.191358577876336e-06}, {"n_sides": 17, "input_vertices": 34, "limit": null, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 34, "cooked_polygons": 19, "rel_err_min": 4.0342889118250014e-07, "rel_err_max": 4.489916913930081e-06}, {"n_sides": 18, "input_vertices": 36, "limit": null, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 36, "cooked_polygons": 20, "rel_err_min": 4.043579102663841e-07, "rel_err_max": 3.920058586848185e-06}, {"n_sides": 20, "input_vertices": 40, "limit": null, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 40, "cooked_polygons": 22, "rel_err_min": 1.283379676975116e-07, "rel_err_max": 3.479808073
+[END] H-prism-default 0.6s
+[START] H-prism-limit
+[RESULT] H-prism-limit: {"rows": [{"n_sides": 32, "input_vertices": 64, "limit": 8, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 8, "cooked_polygons": 6, "rel_err_min": 2.311706543078884e-06, "rel_err_max": 0.3881698646974321}, {"n_sides": 32, "input_vertices": 64, "limit": 32, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 32, "cooked_polygons": 18, "rel_err_min": -3.7761213833586993e-07, "rel_err_max": 0.019515613598799275}, {"n_sides": 32, "input_vertices": 64, "limit": 64, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 62, "cooked_polygons": 33, "rel_err_min": -3.7761213833586993e-07, "rel_err_max": 0.017518619580244588}, {"n_sides": 32, "input_vertices": 64, "limit": 65, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 62, "cooked_polygons": 33, "rel_err_min": -3.7761213833586993e-07, "rel_err_max": 0.017518619580244588}, {"n_sides": 32, "input_vertices": 64, "limit": 128, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 62, "cooked_polygons": 33, "rel_err_min": -3.7761213833586993e-07, "rel_err_max": 0.017518619580244588}, {"n_sides": 32, "input_vertices": 64, "limit": 200, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 62, "cooked_polygons": 33, "rel_err_min": -3.7761213833586993e-07, "rel_err_max": 0.017518619580244588}, {"n_sides": 32, "input_vertices": 64, "limit": 255, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 62, "cooked_polygons": 33, "rel_err_min": -3.7761213833586993e-07, "rel_err_max": 0.01751861958024458
+[END] H-prism-limit 1.9s
+[START] H-size-dependence
+[RESULT] H-size-dependence: {"prism32": [{"n_sides": 32, "input_vertices": 64, "limit": null, "radius": 0.01, "cook": "RESULT_VALID", "cooked_vertices": 32, "cooked_polygons": 18, "rel_err_min": -0.019214225769042734, "rel_err_max": 4.043579101761785e-07}, {"n_sides": 32, "input_vertices": 64, "limit": null, "radius": 0.1, "cook": "RESULT_VALID", "cooked_vertices": 62, "cooked_polygons": 33, "rel_err_min": -3.776121383636255e-07, "rel_err_max": 0.01751861958024445}, {"n_sides": 32, "input_vertices": 64, "limit": null, "radius": 0.5, "cook": "RESULT_VALID", "cooked_vertices": 62, "cooked_polygons": 33, "rel_err_min": -3.7761213833586993e-07, "rel_err_max": 0.017518619580244588}, {"n_sides": 32, "input_vertices": 64, "limit": null, "radius": 1.0, "cook": "RESULT_VALID", "cooked_vertices": 62, "cooked_polygons": 33, "rel_err_min": -3.7761213833586993e-07, "rel_err_max": 0.017518619580244588}, {"n_sides": 32, "input_vertices": 64, "limit": null, "radius": 2.0, "cook": "RESULT_VALID", "cooked_vertices": 62, "cooked_polygons": 33, "rel_err_min": -3.7761213833586993e-07, "rel_err_max": 0.017518619580244588}, {"n_sides": 32, "input_vertices": 64, "limit": null, "radius": 5.0, "cook": "RESULT_VALID", "cooked_vertices": 62, "cooked_polygons": 33, "rel_err_min": -3.7761213835807437e-07, "rel_err_max": 0.017518619580244456}, {"n_sides": 32, "input_vertices": 64, "limit": null, "radius": 10.0, "cook": "RESULT_VALID", "cooked_vertices": 62, "cooked_polygons": 33, "rel_err_min": -3.7761213835807437e-07, "rel_err_max":
+[END] H-size-dependence 0.4s
+[START] H-few-verts-exact
+[RESULT] H-few-verts-exact: {"rows": [{"half_size": 0.01, "cooked_vertices": 8, "boundary_rel_err": -7.247924812409101e-08}, {"half_size": 0.1, "cooked_vertices": 8, "boundary_rel_err": -7.24792480200076e-08}, {"half_size": 1.0, "cooked_vertices": 8, "boundary_rel_err": -7.247924793674088e-08}, {"half_size": 10.0, "cooked_vertices": 8, "boundary_rel_err": -7.247924784792304e-08}]}
+[END] H-few-verts-exact 0.1s
+[START] H-polygon-cap
+[RESULT] H-polygon-cap: {"rows": [{"level": 0, "input_vertices": 12, "input_faces": 20, "cooked_vertices": 12, "cooked_polygons": 20, "vertex_dir_err_min": 4.043579102663841e-07, "vertex_dir_err_max": 4.043579102663841e-07}, {"level": 1, "input_vertices": 42, "input_faces": 80, "cooked_vertices": 37, "cooked_polygons": 62, "vertex_dir_err_min": -0.14934880828857422, "vertex_dir_err_max": 4.043579102663841e-07}, {"level": 2, "input_vertices": 162, "input_faces": 320, "cooked_vertices": 34, "cooked_polygons": 63, "vertex_dir_err_min": -0.12569005584716797, "vertex_dir_err_max": 4.043579102663841e-07}]}
+[END] H-polygon-cap 0.1s
+[DONE] t16_convex_detail 5
+[4.240s] Simulation App Shutting Down

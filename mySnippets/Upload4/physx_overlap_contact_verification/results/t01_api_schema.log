@@ -1,0 +1,78 @@
+Skipping automatic ROS environment setup
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-01T13:55:57Z [Info] [carb] Logging to file: c:/isaacsim-6.0.2/kit/logs/Kit/PhysX claim verification/6.2/kit_20261101_225557.log
+[0.152s] [ext: omni.assets.plugins-0.0.0] startup
+[0.155s] [ext: omni.blobkey-1.1.2] startup
+[0.155s] [ext: omni.kit.async_engine-0.0.5] startup
+[0.179s] [ext: omni.client.lib-1.1.1] startup
+[0.194s] [ext: omni.client-1.3.0] startup
+[0.255s] [ext: omni.protobuf.lib-1.0.1] startup
+[0.256s] [ext: omni.grpc.lib-1.0.1] startup
+[0.257s] [ext: omni.metrics.core-0.0.3] startup
+[0.257s] [ext: omni.datastore-0.0.0] startup
+[0.259s] [ext: omni.gpu_foundation.shadercache.d3d12-1.0.0] startup
+[0.265s] [ext: omni.hsscclient-1.1.4] startup
+[0.267s] [ext: omni.stats-1.0.1] startup
+[0.268s] [ext: omni.ujitso.default-1.0.0] startup
+[0.278s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.300s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.302s] [ext: omni.usd.config-1.0.8] startup
+2026-11-01T13:55:58Z [221ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+[0.320s] [ext: omni.usd.libs-1.0.3] startup
+[0.366s] [ext: omni.usd.schema.audio-0.0.1] startup
+[0.473s] [ext: omni.usd.schema.newton-1.5.0] startup
+[0.474s] [ext: omni.usd.schema.physx-110.4.4] startup
+[0.511s] [ext: carb.audio-0.1.0] startup
+[0.512s] [ext: omni.kit.actions.core-1.2.1] startup
+[0.517s] [ext: omni.kit.commands-1.6.2] startup
+[0.523s] [ext: omni.convexdecomposition-110.4.4] startup
+[0.526s] [ext: omni.cubric-0.1.0] startup
+[0.528s] [ext: omni.graph.exec-0.9.6] startup
+[0.529s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[0.532s] [ext: omni.kit.exec.core-0.13.6] startup
+[0.535s] [ext: omni.kit.loop-isaac-1.6.2] startup
+[0.537s] [ext: omni.kit.usd_undo-0.1.8] startup
+[0.538s] [ext: omni.timeline-1.1.2] startup
+[0.540s] [ext: omni.usd_resolver-1.0.0] startup
+[0.545s] [ext: omni.usd.core-1.10.42] startup
+[0.548s] [ext: omni.usd-1.19.11] startup
+[0.598s] [ext: omni.kit.usd.layers-2.7.9] startup
+[0.606s] [ext: omni.kit.primitive.mesh-1.1.1] startup
+[0.612s] [ext: omni.kit.stage_template.core-1.1.23] startup
+[0.613s] [ext: omni.kit.stage_templates-2.0.3] startup
+[0.615s] [ext: omni.physics-110.4.4] startup
+[0.620s] [ext: omni.physx.gpu-110.4.4] startup
+[0.621s] [ext: omni.physx.foundation-110.4.4] startup
+[0.636s] [ext: omni.usdphysics-110.4.4] startup
+[0.638s] [ext: omni.physx.cooking-110.4.4] startup
+[0.642s] [ext: usdrt.scenegraph-7.6.3] startup
+[0.681s] [ext: omni.physx-110.4.4] startup
+[0.692s] [ext: omni.physics.physx-110.4.4] startup
+[0.694s] [ext: omni.physics.stageupdate-110.4.4] startup
+[0.698s] [ext: physx_verify-6.2.0] startup
+[0.700s] Simulation App Starting
+2026-11-01T13:55:58Z [915ms] [Error] [omni.usd] '/app/useFabricSceneDelegate' is enabled, but usdrt::population::IUtils could not be created. Is UsdRt enabled?
+[1.128s] Simulation App Startup Complete
+[1.128s] app ready
+Starting kit application with the following args:  ['C:\\isaacsim-6.0.2\\exts\\isaacsim.simulation_app\\isaacsim\\simulation_app\\simulation_app.py', 'C:\\isaacsim-6.0.2\\CodeByClaude\\physx_overlap_contact_verification\\code\\physx_verify.kit', '--/app/tokens/exe-path=C:\\isaacsim-6.0.2\\kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni/kit/plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', 'C:\\isaacsim-6.0.2/exts', '--ext-folder', 'C:\\isaacsim-6.0.2/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=16', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=16', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--no-ros-env']
+[START] A-01
+[RESULT] A-01: {"omni.physx": "omni.physx-110.4.4", "omni.physics.physx": "omni.physics.physx-110.4.4", "omni.usd.schema.physx": "omni.usd.schema.physx-110.4.4", "omni.usdphysics": "omni.usdphysics-110.4.4", "omni.physx.cooking": "omni.physx.cooking-110.4.4", "isaac_sim_VERSION": "6.2.0-rc.14+release.52805.02189a84.gl"}
+[END] A-01 0.0s
+[START] A-02
+[RESULT] A-02: {"names": ["overlap_box", "overlap_box_any", "overlap_mesh", "overlap_mesh_any", "overlap_shape", "overlap_shape_any", "overlap_sphere", "overlap_sphere_any"], "signatures": {"overlap_box": "overlap_box(self: omni.physx.bindings._physx.PhysXSceneQuery, halfExtent: carb._carb.Float3, pos: carb._carb.Float3, rot: carb._carb.Float4, reportFn: Callable[[omni.physx.bindings._physx.OverlapHit], bool], anyHit: bool = False) -> int", "overlap_box_any": "overlap_box_any(self: omni.physx.bindings._physx.PhysXSceneQuery, halfExtent: carb._carb.Float3, pos: carb._carb.Float3, rot: carb._carb.Float4) -> bool", "overlap_mesh": "overlap_mesh(self: omni.physx.bindings._physx.PhysXSceneQuery, meshPath0: int, meshPath1: int, reportFn: Callable[[omni.physx.bindings._physx.OverlapHit], bool], anyHit: bool = False) -> int", "overlap_mesh_any": "overlap_mesh_any(self: omni.physx.bindings._physx.PhysXSceneQuery, meshPath0: int, meshPath1: int) -> bool", "overlap_shape": "overlap_shape(self: omni.physx.bindings._physx.PhysXSceneQuery, meshPath0: int, meshPath1: int, reportFn: Callable[[omni.physx.bindings._physx.OverlapHit], bool], anyHit: bool = False) -> int", "overlap_shape_any": "overlap_shape_any(self: omni.physx.bindings._physx.PhysXSceneQuery, meshPath0: int, meshPath1: int) -> bool", "overlap_sphere": "overlap_sphere(self: omni.physx.bindings._physx.PhysXSceneQuery, radius: float, pos: carb._carb.Float3, reportFn: Callable[[omni.physx.bindings._physx.OverlapHit], bool], anyHit: bool = False)
+[END] A-02 0.0s
+[START] A-03
+[RESULT] A-03: {"OverlapHit": ["collision", "collision_encoded", "protoIndex", "rigid_body", "rigid_body_encoded"], "ContactData": ["face_index0", "face_index1", "impulse", "material0", "material1", "normal", "position", "separation"], "ContactEventHeader": ["actor0", "actor1", "collider0", "collider1", "contact_data_offset", "friction_anchors_offset", "num_contact_data", "num_friction_anchors_data", "proto_index0", "proto_index1", "stage_id", "type"], "force_load_exists": true, "release_exists": true}
+[END] A-03 0.0s
+[START] A-04
+[RESULT] A-04: {"encoded": [3329, 0], "element_types": ["int", "int"], "n": 2, "decode_roundtrip": "/World/SomePrim/Child", "int_form": 3329, "int_roundtrip": "/World/SomePrim/Child"}
+[END] A-04 0.0s
+[START] A-05
+[RESULT] A-05: {"defaults": {"physics:kinematicEnabled": "False", "physics:rigidBodyEnabled": "True", "physxScene:reportKinematicKinematicPairs": "False", "physxScene:reportKinematicStaticPairs": "False", "physxScene:enableSceneQuerySupport": "True", "physxScene:enableGPUDynamics": "True", "physxScene:broadphaseType": "GPU", "physxConvexHullCollision:hullVertexLimit": "64", "physxConvexHullCollision:minThickness": "0.0010000000474974513", "physxConvexDecompositionCollision:hullVertexLimit": "64", "physxConvexDecompositionCollision:maxConvexHulls": "32", "physxContactReport:threshold": "1.0", "physxCollision:contactOffset": "-inf", "physxCollision:restOffset": "-inf", "physxSDFMeshCollision:sdfResolution": "256", "physxSDFMeshCollision:sdfSubgridResolution": "6", "physics:approximation": "none"}, "approximation_tokens": ["none", "convexDecomposition", "convexHull", "boundingSphere", "boundingCube", "meshSimplification", "sdf", "sphereFill"], "mesh_subdivisionScheme_default": "catmullClark"}
+[END] A-05 0.0s
+[START] A-06
+[RESULT] A-06: {"member_name_matches": {"scene_query": [], "simulation": [], "physx": ["compute_vehicle_velocity"], "cooking": ["compute_conforming_tetrahedral_mesh", "compute_voxel_tetrahedral_mesh"]}, "omni_physx_interfaces": ["get_physx_benchmarks_interface", "get_physx_cooking_interface", "get_physx_interface", "get_physx_property_query_interface", "get_physx_replicator_interface", "get_physx_scene_query_interface", "get_physx_simulation_interface", "get_physx_stage_update_interface", "get_physx_statistics_interface", "get_physx_visualization_interface", "get_physxunittests_interface"]}
+[END] A-06 0.0s
+[DONE] t01_api_schema 6
+[1.157s] Simulation App Shutting Down

@@ -1,0 +1,105 @@
+Skipping automatic ROS environment setup
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-01T13:57:03Z [Info] [carb] Logging to file: c:/isaacsim-6.0.2/kit/logs/Kit/PhysX claim verification/6.2/kit_20261101_225703.log
+[0.136s] [ext: omni.assets.plugins-0.0.0] startup
+[0.140s] [ext: omni.blobkey-1.1.2] startup
+[0.140s] [ext: omni.kit.async_engine-0.0.5] startup
+[0.164s] [ext: omni.client.lib-1.1.1] startup
+[0.178s] [ext: omni.client-1.3.0] startup
+[0.239s] [ext: omni.protobuf.lib-1.0.1] startup
+[0.240s] [ext: omni.grpc.lib-1.0.1] startup
+[0.241s] [ext: omni.metrics.core-0.0.3] startup
+[0.242s] [ext: omni.datastore-0.0.0] startup
+[0.243s] [ext: omni.gpu_foundation.shadercache.d3d12-1.0.0] startup
+[0.249s] [ext: omni.hsscclient-1.1.4] startup
+[0.251s] [ext: omni.stats-1.0.1] startup
+[0.252s] [ext: omni.ujitso.default-1.0.0] startup
+[0.261s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.282s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.283s] [ext: omni.usd.config-1.0.8] startup
+2026-11-01T13:57:03Z [203ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+[0.299s] [ext: omni.usd.libs-1.0.3] startup
+[0.357s] [ext: omni.usd.schema.audio-0.0.1] startup
+[0.456s] [ext: omni.usd.schema.newton-1.5.0] startup
+[0.458s] [ext: omni.usd.schema.physx-110.4.4] startup
+[0.494s] [ext: carb.audio-0.1.0] startup
+[0.495s] [ext: omni.kit.actions.core-1.2.1] startup
+[0.499s] [ext: omni.kit.commands-1.6.2] startup
+[0.505s] [ext: omni.convexdecomposition-110.4.4] startup
+[0.508s] [ext: omni.cubric-0.1.0] startup
+[0.510s] [ext: omni.graph.exec-0.9.6] startup
+[0.511s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[0.513s] [ext: omni.kit.exec.core-0.13.6] startup
+[0.516s] [ext: omni.kit.loop-isaac-1.6.2] startup
+[0.519s] [ext: omni.kit.usd_undo-0.1.8] startup
+[0.520s] [ext: omni.timeline-1.1.2] startup
+[0.522s] [ext: omni.usd_resolver-1.0.0] startup
+[0.527s] [ext: omni.usd.core-1.10.42] startup
+[0.529s] [ext: omni.usd-1.19.11] startup
+[0.578s] [ext: omni.kit.usd.layers-2.7.9] startup
+[0.587s] [ext: omni.kit.primitive.mesh-1.1.1] startup
+[0.592s] [ext: omni.kit.stage_template.core-1.1.23] startup
+[0.593s] [ext: omni.kit.stage_templates-2.0.3] startup
+[0.596s] [ext: omni.physics-110.4.4] startup
+[0.600s] [ext: omni.physx.gpu-110.4.4] startup
+[0.601s] [ext: omni.physx.foundation-110.4.4] startup
+[0.612s] [ext: omni.usdphysics-110.4.4] startup
+[0.614s] [ext: omni.physx.cooking-110.4.4] startup
+[0.618s] [ext: usdrt.scenegraph-7.6.3] startup
+[0.658s] [ext: omni.physx-110.4.4] startup
+[0.670s] [ext: omni.physics.physx-110.4.4] startup
+[0.672s] [ext: omni.physics.stageupdate-110.4.4] startup
+[0.676s] [ext: physx_verify-6.2.0] startup
+[0.678s] Simulation App Starting
+2026-11-01T13:57:04Z [890ms] [Error] [omni.usd] '/app/useFabricSceneDelegate' is enabled, but usdrt::population::IUtils could not be created. Is UsdRt enabled?
+[1.100s] Simulation App Startup Complete
+[1.100s] app ready
+Starting kit application with the following args:  ['C:\\isaacsim-6.0.2\\exts\\isaacsim.simulation_app\\isaacsim\\simulation_app\\simulation_app.py', 'C:\\isaacsim-6.0.2\\CodeByClaude\\physx_overlap_contact_verification\\code\\physx_verify.kit', '--/app/tokens/exe-path=C:\\isaacsim-6.0.2\\kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni/kit/plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', 'C:\\isaacsim-6.0.2/exts', '--ext-folder', 'C:\\isaacsim-6.0.2/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=16', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=16', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--no-ros-env']
+[START] Q-concave-query
+[RESULT] Q-concave-query: {"no_CollisionAPI": {"overlap_mesh": ["/World/InNotch", "/World/InSolid"], "overlap_shape": ["/World/InNotch", "/World/InSolid"]}, "none": {"overlap_mesh": ["/World/InNotch", "/World/InSolid"], "overlap_shape": ["/World/InNotch", "/World/InSolid"]}, "meshSimplification": {"overlap_mesh": ["/World/InNotch", "/World/InSolid"], "overlap_shape": ["/World/InNotch", "/World/InSolid"]}, "convexHull": {"overlap_mesh": ["/World/InNotch", "/World/InSolid"], "overlap_shape": ["/World/InNotch", "/World/InSolid"]}, "convexDecomposition": {"overlap_mesh": ["/World/InNotch", "/World/InSolid"], "overlap_shape": ["/World/InNotch", "/World/InSolid"]}, "sdf": {"overlap_mesh": ["/World/InNotch", "/World/InSolid"], "overlap_shape": ["/World/InNotch", "/World/InSolid"]}}
+[END] Q-concave-query 0.2s
+[START] Q-interlocked
+[RESULT] Q-interlocked: {"none": {"overlap_mesh_hits": ["/World/S"], "scene_tip_points": [[1.75, -1.2246467991473532e-16, 0.6000000000000001], [-0.25, -1.2246467991473532e-16, 0.6000000000000001]]}, "convexHull": {"overlap_mesh_hits": ["/World/S"], "scene_tip_points": [[1.75, -1.2246467991473532e-16, 0.6000000000000001], [-0.25, -1.2246467991473532e-16, 0.6000000000000001]]}}
+[END] Q-interlocked 0.0s
+[START] Q-hull-limit
+[RESULT] Q-hull-limit: {"reference_vertices": {"8": 8, "32": 32, "64": 34, "255": 34}, "no_collision_api": [{"label": "no_CollisionAPI", "self_hit_any": true, "distance_to_each_cooked_hull": {"limit8(v=8)": {"mean_abs": 0.1997542941492071, "max_abs": 0.5673539623511675}, "limit32(v=32)": {"mean_abs": 0.05703358553498907, "max_abs": 0.23671494694723016}, "limit64(v=34)": {"mean_abs": 3.187305673123947e-05, "max_abs": 9.05643431754477e-05}, "limit255(v=34)": {"mean_abs": 3.187305673123947e-05, "max_abs": 9.05643431754477e-05}}}, {"label": "convexHull_limit8", "self_hit_any": true}, {"label": "convexHull_limit32", "self_hit_any": true}, {"label": "convexHull_limit64", "self_hit_any": true}, {"label": "convexHull_limit255", "self_hit_any": true}], "collision_enabled_with_limit": [{"prim_hullVertexLimit": 8, "boundary_ok": 96, "vs_limit8(v=8)": {"mean_abs": 0.1997542941492071, "max_abs": 0.5673539623511675}, "vs_limit32(v=32)": {"mean_abs": 0.05703358553498907, "max_abs": 0.23671494694723016}, "vs_limit64(v=34)": {"mean_abs": 3.187305673123947e-05, "max_abs": 9.05643431754477e-05}, "vs_limit255(v=34)": {"mean_abs": 3.187305673123947e-05, "max_abs": 9.05643431754477e-05}}, {"prim_hullVertexLimit": 32, "boundary_ok": 96, "vs_limit8(v=8)": {"mean_abs": 0.1997542941492071, "max_abs": 0.5673539623511675}, "vs_limit32(v=32)": {"mean_abs": 0.05703358553498907, "max_abs": 0.23671494694723016}, "vs_limit64(v=34)": {"mean_abs": 3.187305673123947e-05, "max_abs": 9.05643431754477e-05}, "vs_limit255(v=34)": {"mean_a
+[END] Q-hull-limit 1.4s
+[START] Q-convex-query-exact
+[RESULT] Q-convex-query-exact: {"rows": [{"n_sides": 4, "vertices": 8, "err": {"n": 8, "min": -7.402319577298755e-07, "median": 4.043579102663841e-07, "max": 4.043579102663841e-07}}, {"n_sides": 16, "vertices": 32, "err": {"n": 32, "min": 4.043579102663841e-07, "median": 4.938277265997826e-07, "max": 4.938277265997826e-07}}, {"n_sides": 32, "vertices": 64, "err": {"n": 64, "min": -3.7761213833586993e-07, "median": 4.043579102663841e-07, "max": 0.017518619580244588}}, {"n_sides": 33, "vertices": 66, "err": {"n": 66, "min": 4.043579102663841e-07, "median": 4.3613052869151403e-07, "max": 0.01367803317642724}}, {"n_sides": 64, "vertices": 128, "err": {"n": 128, "min": -0.004815650939941407, "median": 4.043579102663841e-07, "max": 0.012705253601074329}}, {"n_sides": 128, "vertices": 256, "err": {"n": 256, "min": -0.004815650939941407, "median": -0.001806034577551907, "max": 0.012815700041588829}}, {"n_sides": 256, "vertices": 512, "err": {"n": 512, "min": -0.004815650939941407, "median": -0.002107215881347657, "max": 0.014829044193570451}}]}
+[END] Q-convex-query-exact 1.1s
+[START] Q-first-slow
+[RESULT] Q-first-slow: {"rows": [{"vertices": 8066, "call_times_ms": [2.087, 0.07, 0.021, 0.017, 0.016]}, {"vertices": 130562, "call_times_ms": [31.609, 0.146, 0.02, 0.016, 0.016]}, {"vertices": 523266, "call_times_ms": [125.063, 0.122, 0.021, 0.017, 0.016]}]}
+[END] Q-first-slow 1.4s
+[START] Q-merge
+2026-11-01T13:57:08Z [5,110ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,110ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,110ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,110ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,126ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,126ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,126ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,126ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,141ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,141ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,141ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,141ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,171ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,171ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,171ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,171ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,187ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,187ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,187ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,187ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,202ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,202ms] [Warning] [omni.physx.plugin] Mes[RESULT] Q-merge: {"None": {"overlap_mesh_any": false, "overlap_shape_any": false, "overlap_mesh_hits": [], "overlap_shape_hits": [], "shapes": {"sphere_shapes": 3, "trimesh_shapes": 1}}, "none": {"overlap_mesh_any": false, "overlap_shape_any": false, "overlap_mesh_hits": [], "overlap_shape_hits": [], "shapes": {"sphere_shapes": 3, "trimesh_shapes": 1}}, "meshSimplification": {"overlap_mesh_any": false, "overlap_shape_any": false, "overlap_mesh_hits": [], "overlap_shape_hits": [], "shapes": {"sphere_shapes": 3, "trimesh_shapes": 1}}, "convexHull": {"overlap_mesh_any": true, "overlap_shape_any": true, "overlap_mesh_hits": ["/World/Between", "/World/Merged", "/World/OnM1"], "overlap_shape_hits": ["/World/Between", "/World/Merged", "/World/OnM1"], "shapes": {"convex_shapes": 1, "sphere_shapes": 3}}, "convexDecomposition": {"overlap_mesh_any": false, "overlap_shape_any": false, "overlap_mesh_hits": [], "overlap_shape_hits": [], "shapes": {"convex_shapes": 2, "sphere_shapes": 3}}, "sdf": {"overlap_mesh_any": false, "overlap_shape_any": false, "overlap_mesh_hits": [], "overlap_shape_hits": [], "shapes": {"sphere_shapes": 3, "trimesh_shapes": 1}}, "boundingCube": {"overlap_mesh_any": false, "overlap_shape_any": false, "overlap_mesh_hits": [], "overlap_shape_hits": [], "shapes": {"box_shapes": 1, "sphere_shapes": 3}}}
+[END] Q-merge 0.1s
+[START] Q-analytic-vs-mesh
+[RESULT] Q-analytic-vs-mesh: {"rows": [{"kind": "static", "shapes": {"trimesh_shapes": 1}, "QBox": {"boundary_z": 0.4999998331069947, "expected_z": 0.5, "error": -1.6689300530448037e-07, "in_notch_no_contact": true}, "QSphere": {"boundary_z": 0.4999998331069947, "expected_z": 0.5, "error": -1.6689300530448037e-07, "in_notch_no_contact": true}, "QCapsule": {"boundary_z": 0.4999998331069947, "expected_z": 0.5, "error": -1.6689300530448037e-07, "in_notch_no_contact": true}}, {"kind": "kinematic", "shapes": {"trimesh_shapes": 1}, "QBox": {"boundary_z": 0.4999998331069947, "expected_z": 0.5, "error": -1.6689300530448037e-07, "in_notch_no_contact": true}, "QSphere": {"boundary_z": 0.4999998331069947, "expected_z": 0.5, "error": -1.6689300530448037e-07, "in_notch_no_contact": true}, "QCapsule": {"boundary_z": 0.4999998331069947, "expected_z": 0.5, "error": -1.6689300530448037e-07, "in_notch_no_contact": true}}]}
+[END] Q-analytic-vs-mesh 0.0s
+[DONE] t10_query_mesh 7
+h merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,202ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+2026-11-01T13:57:08Z [5,202ms] [Warning] [omni.physx.plugin] Mesh merge collision overlap works only with convexHull approximation, please switch the approximation for the prim: /World/Merged
+[5.340s] Simulation App Shutting Down

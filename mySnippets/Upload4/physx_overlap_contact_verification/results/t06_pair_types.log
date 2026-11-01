@@ -1,0 +1,133 @@
+Skipping automatic ROS environment setup
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-01T13:56:26Z [Info] [carb] Logging to file: c:/isaacsim-6.0.2/kit/logs/Kit/PhysX claim verification/6.2/kit_20261101_225626.log
+[0.183s] [ext: omni.assets.plugins-0.0.0] startup
+[0.187s] [ext: omni.blobkey-1.1.2] startup
+[0.187s] [ext: omni.kit.async_engine-0.0.5] startup
+[0.212s] [ext: omni.client.lib-1.1.1] startup
+[0.228s] [ext: omni.client-1.3.0] startup
+[0.290s] [ext: omni.protobuf.lib-1.0.1] startup
+[0.292s] [ext: omni.grpc.lib-1.0.1] startup
+[0.293s] [ext: omni.metrics.core-0.0.3] startup
+[0.293s] [ext: omni.datastore-0.0.0] startup
+[0.296s] [ext: omni.gpu_foundation.shadercache.d3d12-1.0.0] startup
+[0.303s] [ext: omni.hsscclient-1.1.4] startup
+[0.305s] [ext: omni.stats-1.0.1] startup
+[0.307s] [ext: omni.ujitso.default-1.0.0] startup
+[0.318s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.344s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.345s] [ext: omni.usd.config-1.0.8] startup
+2026-11-01T13:56:26Z [230ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+[0.361s] [ext: omni.usd.libs-1.0.3] startup
+[0.453s] [ext: omni.usd.schema.audio-0.0.1] startup
+[0.567s] [ext: omni.usd.schema.newton-1.5.0] startup
+[0.569s] [ext: omni.usd.schema.physx-110.4.4] startup
+[0.608s] [ext: carb.audio-0.1.0] startup
+[0.609s] [ext: omni.kit.actions.core-1.2.1] startup
+[0.613s] [ext: omni.kit.commands-1.6.2] startup
+[0.620s] [ext: omni.convexdecomposition-110.4.4] startup
+[0.624s] [ext: omni.cubric-0.1.0] startup
+[0.626s] [ext: omni.graph.exec-0.9.6] startup
+[0.627s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[0.630s] [ext: omni.kit.exec.core-0.13.6] startup
+[0.633s] [ext: omni.kit.loop-isaac-1.6.2] startup
+[0.636s] [ext: omni.kit.usd_undo-0.1.8] startup
+[0.636s] [ext: omni.timeline-1.1.2] startup
+[0.639s] [ext: omni.usd_resolver-1.0.0] startup
+[0.645s] [ext: omni.usd.core-1.10.42] startup
+[0.648s] [ext: omni.usd-1.19.11] startup
+[0.703s] [ext: omni.kit.usd.layers-2.7.9] startup
+[0.711s] [ext: omni.kit.primitive.mesh-1.1.1] startup
+[0.718s] [ext: omni.kit.stage_template.core-1.1.23] startup
+[0.720s] [ext: omni.kit.stage_templates-2.0.3] startup
+[0.722s] [ext: omni.physics-110.4.4] startup
+[0.728s] [ext: omni.physx.gpu-110.4.4] startup
+[0.729s] [ext: omni.physx.foundation-110.4.4] startup
+[0.743s] [ext: omni.usdphysics-110.4.4] startup
+[0.745s] [ext: omni.physx.cooking-110.4.4] startup
+[0.749s] [ext: usdrt.scenegraph-7.6.3] startup
+[0.792s] [ext: omni.physx-110.4.4] startup
+[0.805s] [ext: omni.physics.physx-110.4.4] startup
+[0.808s] [ext: omni.physics.stageupdate-110.4.4] startup
+[0.812s] [ext: physx_verify-6.2.0] startup
+[0.813s] Simulation App Starting
+2026-11-01T13:56:27Z [1,012ms] [Error] [omni.usd] '/app/useFabricSceneDelegate' is enabled, but usdrt::population::IUtils could not be created. Is UsdRt enabled?
+[1.257s] Simulation App Startup Complete
+[1.258s] app ready
+Starting kit application with the following args:  ['C:\\isaacsim-6.0.2\\exts\\isaacsim.simulation_app\\isaacsim\\simulation_app\\simulation_app.py', 'C:\\isaacsim-6.0.2\\CodeByClaude\\physx_overlap_contact_verification\\code\\physx_verify.kit', '--/app/tokens/exe-path=C:\\isaacsim-6.0.2\\kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni/kit/plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', 'C:\\isaacsim-6.0.2/exts', '--ext-folder', 'C:\\isaacsim-6.0.2/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=16', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=16', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--no-ros-env']
+[START] K-(None, None, True, True, None, None)
+[RESULT] K-static-static|rep=11|kk=None|ks=None: {"reported_pairs": [], "events": 0, "nb_discrete_contact_pairs_total": 0, "nb_discrete_contact_pairs_with_contacts": 0, "overlap_A_hits": ["/World/A", "/World/B"], "overlap_B_hits": ["/World/A", "/World/B"]}
+[END] K-(None, None, True, True, None, None) 0.1s
+[START] K-(None, None, True, True, True, True)
+[RESULT] K-static-static|rep=11|kk=True|ks=True: {"reported_pairs": [], "events": 0, "nb_discrete_contact_pairs_total": 0, "nb_discrete_contact_pairs_with_contacts": 0, "overlap_A_hits": ["/World/A", "/World/B"], "overlap_B_hits": ["/World/A", "/World/B"]}
+[END] K-(None, None, True, True, True, True) 0.1s
+[START] K-(None, 'kinematic', True, True, None, None)
+[RESULT] K-static-kinematic|rep=11|kk=None|ks=None: {"reported_pairs": [], "events": 0, "nb_discrete_contact_pairs_total": 0, "nb_discrete_contact_pairs_with_contacts": 0, "overlap_A_hits": ["/World/A", "/World/B"], "overlap_B_hits": ["/World/A", "/World/B"]}
+[END] K-(None, 'kinematic', True, True, None, None) 0.1s
+[START] K-(None, 'kinematic', True, True, None, True)
+[RESULT] K-static-kinematic|rep=11|kk=None|ks=True: {"reported_pairs": [], "events": 0, "nb_discrete_contact_pairs_total": 0, "nb_discrete_contact_pairs_with_contacts": 0, "overlap_A_hits": ["/World/A", "/World/B"], "overlap_B_hits": ["/World/A", "/World/B"]}
+[END] K-(None, 'kinematic', True, True, None, True) 0.1s
+[START] K-('kinematic', 'kinematic', True, True, None, None)
+[RESULT] K-kinematic-kinematic|rep=11|kk=None|ks=None: {"reported_pairs": [], "events": 0, "nb_discrete_contact_pairs_total": 0, "nb_discrete_contact_pairs_with_contacts": 0, "overlap_A_hits": ["/World/A", "/World/B"], "overlap_B_hits": ["/World/A", "/World/B"]}
+[END] K-('kinematic', 'kinematic', True, True, None, None) 0.1s
+[START] K-('kinematic', 'kinematic', True, True, True, None)
+[RESULT] K-kinematic-kinematic|rep=11|kk=True|ks=None: {"reported_pairs": [], "events": 0, "nb_discrete_contact_pairs_total": 0, "nb_discrete_contact_pairs_with_contacts": 0, "overlap_A_hits": ["/World/A", "/World/B"], "overlap_B_hits": ["/World/A", "/World/B"]}
+[END] K-('kinematic', 'kinematic', True, True, True, None) 0.1s
+[START] K-('dynamic', None, True, True, None, None)
+[RESULT] K-dynamic-static|rep=11|kk=None|ks=None: {"reported_pairs": [["/World/A", "/World/B"]], "events": 5, "nb_discrete_contact_pairs_total": 1, "nb_discrete_contact_pairs_with_contacts": 1, "overlap_A_hits": ["/World/A"], "overlap_B_hits": ["/World/B"]}
+[END] K-('dynamic', None, True, True, None, None) 0.1s
+[START] K-('dynamic', None, True, False, None, None)
+[RESULT] K-dynamic-static|rep=10|kk=None|ks=None: {"reported_pairs": [["/World/A", "/World/B"]], "events": 5, "nb_discrete_contact_pairs_total": 1, "nb_discrete_contact_pairs_with_contacts": 1, "overlap_A_hits": ["/World/A"], "overlap_B_hits": ["/World/B"]}
+[END] K-('dynamic', None, True, False, None, None) 0.1s
+[START] K-('dynamic', None, False, True, None, None)
+[RESULT] K-dynamic-static|rep=01|kk=None|ks=None: {"reported_pairs": [["/World/A", "/World/B"]], "events": 5, "nb_discrete_contact_pairs_total": 1, "nb_discrete_contact_pairs_with_contacts": 1, "overlap_A_hits": ["/World/A"], "overlap_B_hits": ["/World/B"]}
+[END] K-('dynamic', None, False, True, None, None) 0.1s
+[START] K-('dynamic', 'kinematic', True, True, None, None)
+[RESULT] K-dynamic-kinematic|rep=11|kk=None|ks=None: {"reported_pairs": [["/World/A", "/World/B"]], "events": 5, "nb_discrete_contact_pairs_total": 1, "nb_discrete_contact_pairs_with_contacts": 1, "overlap_A_hits": ["/World/A"], "overlap_B_hits": ["/World/B"]}
+[END] K-('dynamic', 'kinematic', True, True, None, None) 0.1s
+[START] K-('dynamic', 'kinematic', False, True, None, None)
+[RESULT] K-dynamic-kinematic|rep=01|kk=None|ks=None: {"reported_pairs": [["/World/A", "/World/B"]], "events": 5, "nb_discrete_contact_pairs_total": 1, "nb_discrete_contact_pairs_with_contacts": 1, "overlap_A_hits": ["/World/A"], "overlap_B_hits": ["/World/B"]}
+[END] K-('dynamic', 'kinematic', False, True, None, None) 0.1s
+[START] K-('dynamic', 'dynamic', True, True, None, None)
+[RESULT] K-dynamic-dynamic|rep=11|kk=None|ks=None: {"reported_pairs": [["/World/A", "/World/B"]], "events": 5, "nb_discrete_contact_pairs_total": 1, "nb_discrete_contact_pairs_with_contacts": 1, "overlap_A_hits": ["/World/A"], "overlap_B_hits": ["/World/B"]}
+[END] K-('dynamic', 'dynamic', True, True, None, None) 0.1s
+[START] K-('dynamic', 'dynamic', True, False, None, None)
+[RESULT] K-dynamic-dynamic|rep=10|kk=None|ks=None: {"reported_pairs": [["/World/A", "/World/B"]], "events": 5, "nb_discrete_contact_pairs_total": 1, "nb_discrete_contact_pairs_with_contacts": 1, "overlap_A_hits": ["/World/A"], "overlap_B_hits": ["/World/B"]}
+[END] K-('dynamic', 'dynamic', True, False, None, None) 0.1s
+[START] K-('disabled', None, True, True, None, None)
+[RESULT] K-disabled-static|rep=11|kk=None|ks=None: {"reported_pairs": [], "events": 0, "nb_discrete_contact_pairs_total": 0, "nb_discrete_contact_pairs_with_contacts": 0, "overlap_A_hits": ["/World/A", "/World/B"], "overlap_B_hits": ["/World/A", "/World/B"]}
+[END] K-('disabled', None, True, True, None, None) 0.1s
+[START] K-('disabled', 'dynamic', True, True, None, None)
+[RESULT] K-disabled-dynamic|rep=11|kk=None|ks=None: {"reported_pairs": [["/World/A", "/World/B"]], "events": 5, "nb_discrete_contact_pairs_total": 1, "nb_discrete_contact_pairs_with_contacts": 1, "overlap_A_hits": ["/World/A"], "overlap_B_hits": ["/World/B"]}
+[END] K-('disabled', 'dynamic', True, True, None, None) 0.1s
+[START] K-moving-('kinematic', 'kinematic', None, None)
+[RESULT] K-kinematic-kinematic|moving|kk=None|ks=None: {"reported_pairs": [], "events": 0, "types": [], "min_sep": null, "nb_discrete_contact_pairs_total": 0}
+[END] K-moving-('kinematic', 'kinematic', None, None) 0.2s
+[START] K-moving-('kinematic', 'kinematic', True, None)
+[RESULT] K-kinematic-kinematic|moving|kk=True|ks=None: {"reported_pairs": [["/World/A", "/World/B"]], "events": 8, "types": ["CONTACT_FOUND", "CONTACT_PERSIST"], "min_sep": -0.050000011920928955, "nb_discrete_contact_pairs_total": 1}
+[END] K-moving-('kinematic', 'kinematic', True, None) 0.2s
+[START] K-moving-(None, 'kinematic', None, None)
+[RESULT] K-static-kinematic|moving|kk=None|ks=None: {"reported_pairs": [], "events": 0, "types": [], "min_sep": null, "nb_discrete_contact_pairs_total": 0}
+[END] K-moving-(None, 'kinematic', None, None) 0.2s
+[START] K-moving-(None, 'kinematic', None, True)
+[RESULT] K-static-kinematic|moving|kk=None|ks=True: {"reported_pairs": [["/World/A", "/World/B"]], "events": 8, "types": ["CONTACT_FOUND", "CONTACT_PERSIST"], "min_sep": -0.050000011920928955, "nb_discrete_contact_pairs_total": 1}
+[END] K-moving-(None, 'kinematic', None, True) 0.2s
+[START] K-moving-('kinematic', None, None, True)
+[RESULT] K-kinematic-static|moving|kk=None|ks=True: {"reported_pairs": [], "events": 0, "types": [], "min_sep": null, "nb_discrete_contact_pairs_total": 0}
+[END] K-moving-('kinematic', None, None, True) 0.2s
+[START] K-moving-(None, None, None, None)
+[RESULT] K-static-static|moving|kk=None|ks=None: {"reported_pairs": [], "events": 0, "types": [], "min_sep": null, "nb_discrete_contact_pairs_total": 0}
+[END] K-moving-(None, None, None, None) 0.2s
+[START] K-moving-(None, None, True, True)
+[RESULT] K-static-static|moving|kk=True|ks=True: {"reported_pairs": [], "events": 0, "types": [], "min_sep": null, "nb_discrete_contact_pairs_total": 0}
+[END] K-moving-(None, None, True, True) 0.2s
+[START] K-dedup
+[RESULT] K-dedup: {"report_api_A=True_B=False": {"steps": 6, "headers_total": 6, "headers_per_step": 1.0}, "report_api_A=True_B=True": {"steps": 6, "headers_total": 6, "headers_per_step": 1.0}, "overlap": {"A_hits": ["/World/A", "/World/B"], "B_hits": ["/World/A", "/World/B"], "pair_found_times": 2}}
+[END] K-dedup 0.3s
+[START] K-non-collider-query
+2026-11-01T13:56:30Z [4,447ms] [Error] [omni.physx.plugin] omni::physx::doShapeSceneQuery: Provided prim is not a UsdGeomGPrim: /World/QXform
+[RESULT] K-non-collider-query: {"QCube": ["/World/Target"], "QSphere": ["/World/Target"], "QCapsule": ["/World/Target"], "QCyl": ["/World/Target"], "QCone": ["/World/Target"], "QMesh": ["/World/Target"], "QMesh_overlap_mesh": ["/World/Target"], "QMesh_any_type": "bool", "QCube_any_value": true, "box_any_type": "bool", "sphere_any_type": "bool", "xform_query_hits": []}
+[END] K-non-collider-query 0.1s
+[DONE] t06_pair_types 24
+[4.582s] Simulation App Shutting Down

@@ -1,0 +1,180 @@
+{
+ "group": "t01_api_schema",
+ "items": [
+  {
+   "id": "A-01",
+   "description": "同梱バージョン",
+   "omni.physx": "omni.physx-110.4.4",
+   "omni.physics.physx": "omni.physics.physx-110.4.4",
+   "omni.usd.schema.physx": "omni.usd.schema.physx-110.4.4",
+   "omni.usdphysics": "omni.usdphysics-110.4.4",
+   "omni.physx.cooking": "omni.physx.cooking-110.4.4",
+   "isaac_sim_VERSION": "6.2.0-rc.14+release.52805.02189a84.gl"
+  },
+  {
+   "id": "A-02",
+   "description": "overlap_* のシグネチャ",
+   "names": [
+    "overlap_box",
+    "overlap_box_any",
+    "overlap_mesh",
+    "overlap_mesh_any",
+    "overlap_shape",
+    "overlap_shape_any",
+    "overlap_sphere",
+    "overlap_sphere_any"
+   ],
+   "signatures": {
+    "overlap_box": "overlap_box(self: omni.physx.bindings._physx.PhysXSceneQuery, halfExtent: carb._carb.Float3, pos: carb._carb.Float3, rot: carb._carb.Float4, reportFn: Callable[[omni.physx.bindings._physx.OverlapHit], bool], anyHit: bool = False) -> int",
+    "overlap_box_any": "overlap_box_any(self: omni.physx.bindings._physx.PhysXSceneQuery, halfExtent: carb._carb.Float3, pos: carb._carb.Float3, rot: carb._carb.Float4) -> bool",
+    "overlap_mesh": "overlap_mesh(self: omni.physx.bindings._physx.PhysXSceneQuery, meshPath0: int, meshPath1: int, reportFn: Callable[[omni.physx.bindings._physx.OverlapHit], bool], anyHit: bool = False) -> int",
+    "overlap_mesh_any": "overlap_mesh_any(self: omni.physx.bindings._physx.PhysXSceneQuery, meshPath0: int, meshPath1: int) -> bool",
+    "overlap_shape": "overlap_shape(self: omni.physx.bindings._physx.PhysXSceneQuery, meshPath0: int, meshPath1: int, reportFn: Callable[[omni.physx.bindings._physx.OverlapHit], bool], anyHit: bool = False) -> int",
+    "overlap_shape_any": "overlap_shape_any(self: omni.physx.bindings._physx.PhysXSceneQuery, meshPath0: int, meshPath1: int) -> bool",
+    "overlap_sphere": "overlap_sphere(self: omni.physx.bindings._physx.PhysXSceneQuery, radius: float, pos: carb._carb.Float3, reportFn: Callable[[omni.physx.bindings._physx.OverlapHit], bool], anyHit: bool = False) -> int",
+    "overlap_sphere_any": "overlap_sphere_any(self: omni.physx.bindings._physx.PhysXSceneQuery, radius: float, pos: carb._carb.Float3) -> bool"
+   },
+   "args_about_approx_or_filter": {},
+   "all_scene_query_members": [
+    "overlap_box",
+    "overlap_box_any",
+    "overlap_mesh",
+    "overlap_mesh_any",
+    "overlap_shape",
+    "overlap_shape_any",
+    "overlap_sphere",
+    "overlap_sphere_any",
+    "raycast_all",
+    "raycast_any",
+    "raycast_closest",
+    "sweep_box_all",
+    "sweep_box_any",
+    "sweep_box_closest",
+    "sweep_mesh_all",
+    "sweep_mesh_any",
+    "sweep_mesh_closest",
+    "sweep_shape_all",
+    "sweep_shape_any",
+    "sweep_shape_closest",
+    "sweep_sphere_all",
+    "sweep_sphere_any",
+    "sweep_sphere_closest"
+   ]
+  },
+  {
+   "id": "A-03",
+   "description": "ヒット・接触データの属性",
+   "OverlapHit": [
+    "collision",
+    "collision_encoded",
+    "protoIndex",
+    "rigid_body",
+    "rigid_body_encoded"
+   ],
+   "ContactData": [
+    "face_index0",
+    "face_index1",
+    "impulse",
+    "material0",
+    "material1",
+    "normal",
+    "position",
+    "separation"
+   ],
+   "ContactEventHeader": [
+    "actor0",
+    "actor1",
+    "collider0",
+    "collider1",
+    "contact_data_offset",
+    "friction_anchors_offset",
+    "num_contact_data",
+    "num_friction_anchors_data",
+    "proto_index0",
+    "proto_index1",
+    "stage_id",
+    "type"
+   ],
+   "force_load_exists": true,
+   "release_exists": true
+  },
+  {
+   "id": "A-04",
+   "description": "パス符号化",
+   "encoded": [
+    3329,
+    0
+   ],
+   "element_types": [
+    "int",
+    "int"
+   ],
+   "n": 2,
+   "decode_roundtrip": "/World/SomePrim/Child",
+   "int_form": 3329,
+   "int_roundtrip": "/World/SomePrim/Child"
+  },
+  {
+   "id": "A-05",
+   "description": "スキーマのフォールバック値",
+   "defaults": {
+    "physics:kinematicEnabled": "False",
+    "physics:rigidBodyEnabled": "True",
+    "physxScene:reportKinematicKinematicPairs": "False",
+    "physxScene:reportKinematicStaticPairs": "False",
+    "physxScene:enableSceneQuerySupport": "True",
+    "physxScene:enableGPUDynamics": "True",
+    "physxScene:broadphaseType": "GPU",
+    "physxConvexHullCollision:hullVertexLimit": "64",
+    "physxConvexHullCollision:minThickness": "0.0010000000474974513",
+    "physxConvexDecompositionCollision:hullVertexLimit": "64",
+    "physxConvexDecompositionCollision:maxConvexHulls": "32",
+    "physxContactReport:threshold": "1.0",
+    "physxCollision:contactOffset": "-inf",
+    "physxCollision:restOffset": "-inf",
+    "physxSDFMeshCollision:sdfResolution": "256",
+    "physxSDFMeshCollision:sdfSubgridResolution": "6",
+    "physics:approximation": "none"
+   },
+   "approximation_tokens": [
+    "none",
+    "convexDecomposition",
+    "convexHull",
+    "boundingSphere",
+    "boundingCube",
+    "meshSimplification",
+    "sdf",
+    "sphereFill"
+   ],
+   "mesh_subdivisionScheme_default": "catmullClark"
+  },
+  {
+   "id": "A-06",
+   "description": "ペア指定の問い合わせ API が存在するか",
+   "member_name_matches": {
+    "scene_query": [],
+    "simulation": [],
+    "physx": [
+     "compute_vehicle_velocity"
+    ],
+    "cooking": [
+     "compute_conforming_tetrahedral_mesh",
+     "compute_voxel_tetrahedral_mesh"
+    ]
+   },
+   "omni_physx_interfaces": [
+    "get_physx_benchmarks_interface",
+    "get_physx_cooking_interface",
+    "get_physx_interface",
+    "get_physx_property_query_interface",
+    "get_physx_replicator_interface",
+    "get_physx_scene_query_interface",
+    "get_physx_simulation_interface",
+    "get_physx_stage_update_interface",
+    "get_physx_statistics_interface",
+    "get_physx_visualization_interface",
+    "get_physxunittests_interface"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+{
+ "group": "t15_capsule_box",
+ "items": [
+  {
+   "id": "X-overlap-capsule-capsule",
+   "description": "overlap 境界と真値の差(ランダム姿勢)",
+   "err_m": {
+    "n": 60,
+    "min": 0.0,
+    "median": 0.0,
+    "max": 9.5367431640625e-07
+   },
+   "abs_max_m": 9.5367431640625e-07,
+   "cases": 60,
+   "fails": 0
+  },
+  {
+   "id": "X-overlap-capsule-box",
+   "description": "overlap 境界と真値の差(ランダム姿勢)",
+   "err_m": {
+    "n": 60,
+    "min": 0.0,
+    "median": 0.0,
+    "max": 0.0
+   },
+   "abs_max_m": 0.0,
+   "cases": 60,
+   "fails": 0
+  },
+  {
+   "id": "X-overlap-box-capsule",
+   "description": "overlap 境界と真値の差(ランダム姿勢)",
+   "err_m": {
+    "n": 60,
+    "min": -9.5367431640625e-07,
+    "median": 0.0,
+    "max": 9.5367431640625e-07
+   },
+   "abs_max_m": 9.5367431640625e-07,
+   "cases": 60,
+   "fails": 0
+  },
+  {
+   "id": "X-overlap-box-box",
+   "description": "overlap 境界と真値の差(ランダム姿勢)",
+   "err_m": {
+    "n": 60,
+    "min": 0.0,
+    "median": 9.5367431640625e-07,
+    "max": 2.86102294921875e-06
+   },
+   "abs_max_m": 2.86102294921875e-06,
+   "cases": 60,
+   "fails": 0
+  },
+  {
+   "id": "X-contact-capsule-capsule",
+   "description": "separation と真の距離の差(ランダム姿勢、キネマティック同士)",
+   "sep_minus_true_gap": {
+    "n": 30,
+    "min": -1.172145583649975e-07,
+    "median": -2.007827404337803e-08,
+    "max": 1.9394442857256777e-08
+   },
+   "abs_max": 1.172145583649975e-07,
+   "reported": 30,
+   "not_reported": 0
+  },
+  {
+   "id": "X-contact-capsule-box",
+   "description": "separation と真の距離の差(ランダム姿勢、キネマティック同士)",
+   "sep_minus_true_gap": {
+    "n": 30,
+    "min": -5.820605117612399e-07,
+    "median": -2.8368184162852472e-08,
+    "max": 1.428445522977384e-07
+   },
+   "abs_max": 5.820605117612399e-07,
+   "reported": 30,
+   "not_reported": 0
+  }
+ ]
+}

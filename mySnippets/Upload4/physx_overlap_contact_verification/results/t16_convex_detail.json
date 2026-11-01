@@ -1,0 +1,916 @@
+{
+ "group": "t16_convex_detail",
+ "items": [
+  {
+   "id": "H-prism-default",
+   "description": "正 n 角柱(半径 1)",
+   "rows": [
+    {
+     "n_sides": 4,
+     "input_vertices": 8,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 8,
+     "cooked_polygons": 6,
+     "rel_err_min": -7.402319577298755e-07,
+     "rel_err_max": 8.306355351195283e-05
+    },
+    {
+     "n_sides": 8,
+     "input_vertices": 16,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 16,
+     "cooked_polygons": 10,
+     "rel_err_min": 4.043579102663841e-07,
+     "rel_err_max": 2.043718457234167e-05
+    },
+    {
+     "n_sides": 12,
+     "input_vertices": 24,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 24,
+     "cooked_polygons": 14,
+     "rel_err_min": -2.052563534693519e-07,
+     "rel_err_max": 9.509133801488545e-06
+    },
+    {
+     "n_sides": 16,
+     "input_vertices": 32,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 32,
+     "cooked_polygons": 18,
+     "rel_err_min": 4.043579102663841e-07,
+     "rel_err_max": 4.191358577876336e-06
+    },
+    {
+     "n_sides": 17,
+     "input_vertices": 34,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 34,
+     "cooked_polygons": 19,
+     "rel_err_min": 4.0342889118250014e-07,
+     "rel_err_max": 4.489916913930081e-06
+    },
+    {
+     "n_sides": 18,
+     "input_vertices": 36,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 36,
+     "cooked_polygons": 20,
+     "rel_err_min": 4.043579102663841e-07,
+     "rel_err_max": 3.920058586848185e-06
+    },
+    {
+     "n_sides": 20,
+     "input_vertices": 40,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 40,
+     "cooked_polygons": 22,
+     "rel_err_min": 1.283379676975116e-07,
+     "rel_err_max": 3.479808073358903e-06
+    },
+    {
+     "n_sides": 24,
+     "input_vertices": 48,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 48,
+     "cooked_polygons": 26,
+     "rel_err_min": -8.229826971017928e-07,
+     "rel_err_max": 2.371144057544683e-06
+    },
+    {
+     "n_sides": 28,
+     "input_vertices": 56,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 56,
+     "cooked_polygons": 30,
+     "rel_err_min": -3.339777152611134e-07,
+     "rel_err_max": 1.7502488653953208e-06
+    },
+    {
+     "n_sides": 30,
+     "input_vertices": 60,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 60,
+     "cooked_polygons": 32,
+     "rel_err_min": 4.043579102663841e-07,
+     "rel_err_max": 1.4371943397595288e-06
+    },
+    {
+     "n_sides": 31,
+     "input_vertices": 62,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": 3.1314374937529976e-07,
+     "rel_err_max": 1.5954260293993272e-06
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 33,
+     "input_vertices": 66,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": 4.043579102663841e-07,
+     "rel_err_max": 0.01367803317642724
+    },
+    {
+     "n_sides": 40,
+     "input_vertices": 80,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": 2.7658786083684106e-07,
+     "rel_err_max": 0.01242717157693074
+    },
+    {
+     "n_sides": 50,
+     "input_vertices": 100,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 61,
+     "cooked_polygons": 35,
+     "rel_err_min": -0.00788457489013672,
+     "rel_err_max": 0.011132764064404332
+    },
+    {
+     "n_sides": 64,
+     "input_vertices": 128,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.013418153386686615
+    },
+    {
+     "n_sides": 100,
+     "input_vertices": 200,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.003945899963378907,
+     "rel_err_max": 0.010996361367749286
+    },
+    {
+     "n_sides": 127,
+     "input_vertices": 254,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004891944885253907,
+     "rel_err_max": 0.012383678647795882
+    },
+    {
+     "n_sides": 128,
+     "input_vertices": 256,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.014979646185521278
+    },
+    {
+     "n_sides": 200,
+     "input_vertices": 400,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004437995910644532,
+     "rel_err_max": 0.013263496607694991
+    }
+   ]
+  },
+  {
+   "id": "H-prism-limit",
+   "description": "正 n 角柱 × hullVertexLimit",
+   "rows": [
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": 8,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 8,
+     "cooked_polygons": 6,
+     "rel_err_min": 2.311706543078884e-06,
+     "rel_err_max": 0.3881698646974321
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": 32,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 32,
+     "cooked_polygons": 18,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.019515613598799275
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": 64,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": 65,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": 128,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": 200,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": 255,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": 256,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": 257,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": 512,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": 1024,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 64,
+     "input_vertices": 128,
+     "limit": 8,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 8,
+     "cooked_polygons": 6,
+     "rel_err_min": -0.002889228820800782,
+     "rel_err_max": 0.4043178115898116
+    },
+    {
+     "n_sides": 64,
+     "input_vertices": 128,
+     "limit": 32,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 32,
+     "cooked_polygons": 18,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.017158912658691516
+    },
+    {
+     "n_sides": 64,
+     "input_vertices": 128,
+     "limit": 64,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.013418153386686615
+    },
+    {
+     "n_sides": 64,
+     "input_vertices": 128,
+     "limit": 65,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.013418153386686615
+    },
+    {
+     "n_sides": 64,
+     "input_vertices": 128,
+     "limit": 128,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.013418153386686615
+    },
+    {
+     "n_sides": 64,
+     "input_vertices": 128,
+     "limit": 200,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.013418153386686615
+    },
+    {
+     "n_sides": 64,
+     "input_vertices": 128,
+     "limit": 255,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.013418153386686615
+    },
+    {
+     "n_sides": 64,
+     "input_vertices": 128,
+     "limit": 256,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.013418153386686615
+    },
+    {
+     "n_sides": 64,
+     "input_vertices": 128,
+     "limit": 257,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.013418153386686615
+    },
+    {
+     "n_sides": 64,
+     "input_vertices": 128,
+     "limit": 512,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.013418153386686615
+    },
+    {
+     "n_sides": 64,
+     "input_vertices": 128,
+     "limit": 1024,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.013418153386686615
+    },
+    {
+     "n_sides": 128,
+     "input_vertices": 256,
+     "limit": 8,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 8,
+     "cooked_polygons": 6,
+     "rel_err_min": -0.002889228820800782,
+     "rel_err_max": 0.40371535824471383
+    },
+    {
+     "n_sides": 128,
+     "input_vertices": 256,
+     "limit": 32,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 32,
+     "cooked_polygons": 18,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.017489716986302528
+    },
+    {
+     "n_sides": 128,
+     "input_vertices": 256,
+     "limit": 64,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.014979646185521278
+    },
+    {
+     "n_sides": 128,
+     "input_vertices": 256,
+     "limit": 65,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.014979646185521278
+    },
+    {
+     "n_sides": 128,
+     "input_vertices": 256,
+     "limit": 128,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.014979646185521278
+    },
+    {
+     "n_sides": 128,
+     "input_vertices": 256,
+     "limit": 200,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.014979646185521278
+    },
+    {
+     "n_sides": 128,
+     "input_vertices": 256,
+     "limit": 255,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.014979646185521278
+    },
+    {
+     "n_sides": 128,
+     "input_vertices": 256,
+     "limit": 256,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.014979646185521278
+    },
+    {
+     "n_sides": 128,
+     "input_vertices": 256,
+     "limit": 257,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.014979646185521278
+    },
+    {
+     "n_sides": 128,
+     "input_vertices": 256,
+     "limit": 512,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.014979646185521278
+    },
+    {
+     "n_sides": 128,
+     "input_vertices": 256,
+     "limit": 1024,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004815650939941407,
+     "rel_err_max": 0.014979646185521278
+    },
+    {
+     "n_sides": 200,
+     "input_vertices": 400,
+     "limit": 8,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 8,
+     "cooked_polygons": 6,
+     "rel_err_min": -0.0019870529174804696,
+     "rel_err_max": 0.4114402999877931
+    },
+    {
+     "n_sides": 200,
+     "input_vertices": 400,
+     "limit": 32,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 32,
+     "cooked_polygons": 18,
+     "rel_err_min": -0.004437995910644532,
+     "rel_err_max": 0.017703482301579143
+    },
+    {
+     "n_sides": 200,
+     "input_vertices": 400,
+     "limit": 64,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004437995910644532,
+     "rel_err_max": 0.013263496607694991
+    },
+    {
+     "n_sides": 200,
+     "input_vertices": 400,
+     "limit": 65,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004437995910644532,
+     "rel_err_max": 0.013263496607694991
+    },
+    {
+     "n_sides": 200,
+     "input_vertices": 400,
+     "limit": 128,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004437995910644532,
+     "rel_err_max": 0.013263496607694991
+    },
+    {
+     "n_sides": 200,
+     "input_vertices": 400,
+     "limit": 200,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004437995910644532,
+     "rel_err_max": 0.013263496607694991
+    },
+    {
+     "n_sides": 200,
+     "input_vertices": 400,
+     "limit": 255,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004437995910644532,
+     "rel_err_max": 0.013263496607694991
+    },
+    {
+     "n_sides": 200,
+     "input_vertices": 400,
+     "limit": 256,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004437995910644532,
+     "rel_err_max": 0.013263496607694991
+    },
+    {
+     "n_sides": 200,
+     "input_vertices": 400,
+     "limit": 257,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004437995910644532,
+     "rel_err_max": 0.013263496607694991
+    },
+    {
+     "n_sides": 200,
+     "input_vertices": 400,
+     "limit": 512,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004437995910644532,
+     "rel_err_max": 0.013263496607694991
+    },
+    {
+     "n_sides": 200,
+     "input_vertices": 400,
+     "limit": 1024,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -0.004437995910644532,
+     "rel_err_max": 0.013263496607694991
+    }
+   ]
+  },
+  {
+   "id": "H-size-dependence",
+   "description": "寸法とクック結果",
+   "prism32": [
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": null,
+     "radius": 0.01,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 32,
+     "cooked_polygons": 18,
+     "rel_err_min": -0.019214225769042734,
+     "rel_err_max": 4.043579101761785e-07
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": null,
+     "radius": 0.1,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.776121383636255e-07,
+     "rel_err_max": 0.01751861958024445
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": null,
+     "radius": 0.5,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": null,
+     "radius": 1.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": null,
+     "radius": 2.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213833586993e-07,
+     "rel_err_max": 0.017518619580244588
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": null,
+     "radius": 5.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213835807437e-07,
+     "rel_err_max": 0.017518619580244456
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": null,
+     "radius": 10.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213835807437e-07,
+     "rel_err_max": 0.017518619580244456
+    },
+    {
+     "n_sides": 32,
+     "input_vertices": 64,
+     "limit": null,
+     "radius": 100.0,
+     "cook": "RESULT_VALID",
+     "cooked_vertices": 62,
+     "cooked_polygons": 33,
+     "rel_err_min": -3.7761213832254727e-07,
+     "rel_err_max": 0.01751861958024449
+    }
+   ],
+   "uv_sphere": [
+    {
+     "radius": 0.01,
+     "source_vertices": 8066,
+     "cooked_vertices": 34,
+     "cooked_polygons": 64,
+     "rel_err_min": -0.12365872955322262,
+     "rel_err_max": -0.012481285095214747
+    },
+    {
+     "radius": 0.1,
+     "source_vertices": 8066,
+     "cooked_vertices": 36,
+     "cooked_polygons": 63,
+     "rel_err_min": -0.12024648284912107,
+     "rel_err_max": -0.009215904235839872
+    },
+    {
+     "radius": 1.0,
+     "source_vertices": 8066,
+     "cooked_vertices": 34,
+     "cooked_polygons": 64,
+     "rel_err_min": -0.12479741668701172,
+     "rel_err_max": -0.00811345672607422
+    },
+    {
+     "radius": 10.0,
+     "source_vertices": 8066,
+     "cooked_vertices": 34,
+     "cooked_polygons": 64,
+     "rel_err_min": -0.12236936187744138,
+     "rel_err_max": -0.006789756774902322
+    },
+    {
+     "radius": 100.0,
+     "source_vertices": 8066,
+     "cooked_vertices": 34,
+     "cooked_polygons": 64,
+     "rel_err_min": -0.12279660797119135,
+     "rel_err_max": -0.0070987472534179115
+    }
+   ]
+  },
+  {
+   "id": "H-few-verts-exact",
+   "description": "箱メッシュ",
+   "rows": [
+    {
+     "half_size": 0.01,
+     "cooked_vertices": 8,
+     "boundary_rel_err": -7.247924812409101e-08
+    },
+    {
+     "half_size": 0.1,
+     "cooked_vertices": 8,
+     "boundary_rel_err": -7.24792480200076e-08
+    },
+    {
+     "half_size": 1.0,
+     "cooked_vertices": 8,
+     "boundary_rel_err": -7.247924793674088e-08
+    },
+    {
+     "half_size": 10.0,
+     "cooked_vertices": 8,
+     "boundary_rel_err": -7.247924784792304e-08
+    }
+   ]
+  },
+  {
+   "id": "H-polygon-cap",
+   "description": "正二十面体の細分(半径 1)",
+   "rows": [
+    {
+     "level": 0,
+     "input_vertices": 12,
+     "input_faces": 20,
+     "cooked_vertices": 12,
+     "cooked_polygons": 20,
+     "vertex_dir_err_min": 4.043579102663841e-07,
+     "vertex_dir_err_max": 4.043579102663841e-07
+    },
+    {
+     "level": 1,
+     "input_vertices": 42,
+     "input_faces": 80,
+     "cooked_vertices": 37,
+     "cooked_polygons": 62,
+     "vertex_dir_err_min": -0.14934880828857422,
+     "vertex_dir_err_max": 4.043579102663841e-07
+    },
+    {
+     "level": 2,
+     "input_vertices": 162,
+     "input_faces": 320,
+     "cooked_vertices": 34,
+     "cooked_polygons": 63,
+     "vertex_dir_err_min": -0.12569005584716797,
+     "vertex_dir_err_max": 4.043579102663841e-07
+    }
+   ]
+  }
+ ]
+}

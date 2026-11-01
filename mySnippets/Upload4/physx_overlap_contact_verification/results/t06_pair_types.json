@@ -1,0 +1,403 @@
+{
+ "group": "t06_pair_types",
+ "items": [
+  {
+   "id": "K-static-static|rep=11|kk=None|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [],
+   "events": 0,
+   "nb_discrete_contact_pairs_total": 0,
+   "nb_discrete_contact_pairs_with_contacts": 0,
+   "overlap_A_hits": [
+    "/World/A",
+    "/World/B"
+   ],
+   "overlap_B_hits": [
+    "/World/A",
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-static-static|rep=11|kk=True|ks=True",
+   "description": "組み合わせ別",
+   "reported_pairs": [],
+   "events": 0,
+   "nb_discrete_contact_pairs_total": 0,
+   "nb_discrete_contact_pairs_with_contacts": 0,
+   "overlap_A_hits": [
+    "/World/A",
+    "/World/B"
+   ],
+   "overlap_B_hits": [
+    "/World/A",
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-static-kinematic|rep=11|kk=None|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [],
+   "events": 0,
+   "nb_discrete_contact_pairs_total": 0,
+   "nb_discrete_contact_pairs_with_contacts": 0,
+   "overlap_A_hits": [
+    "/World/A",
+    "/World/B"
+   ],
+   "overlap_B_hits": [
+    "/World/A",
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-static-kinematic|rep=11|kk=None|ks=True",
+   "description": "組み合わせ別",
+   "reported_pairs": [],
+   "events": 0,
+   "nb_discrete_contact_pairs_total": 0,
+   "nb_discrete_contact_pairs_with_contacts": 0,
+   "overlap_A_hits": [
+    "/World/A",
+    "/World/B"
+   ],
+   "overlap_B_hits": [
+    "/World/A",
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-kinematic-kinematic|rep=11|kk=None|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [],
+   "events": 0,
+   "nb_discrete_contact_pairs_total": 0,
+   "nb_discrete_contact_pairs_with_contacts": 0,
+   "overlap_A_hits": [
+    "/World/A",
+    "/World/B"
+   ],
+   "overlap_B_hits": [
+    "/World/A",
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-kinematic-kinematic|rep=11|kk=True|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [],
+   "events": 0,
+   "nb_discrete_contact_pairs_total": 0,
+   "nb_discrete_contact_pairs_with_contacts": 0,
+   "overlap_A_hits": [
+    "/World/A",
+    "/World/B"
+   ],
+   "overlap_B_hits": [
+    "/World/A",
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-dynamic-static|rep=11|kk=None|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [
+    [
+     "/World/A",
+     "/World/B"
+    ]
+   ],
+   "events": 5,
+   "nb_discrete_contact_pairs_total": 1,
+   "nb_discrete_contact_pairs_with_contacts": 1,
+   "overlap_A_hits": [
+    "/World/A"
+   ],
+   "overlap_B_hits": [
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-dynamic-static|rep=10|kk=None|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [
+    [
+     "/World/A",
+     "/World/B"
+    ]
+   ],
+   "events": 5,
+   "nb_discrete_contact_pairs_total": 1,
+   "nb_discrete_contact_pairs_with_contacts": 1,
+   "overlap_A_hits": [
+    "/World/A"
+   ],
+   "overlap_B_hits": [
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-dynamic-static|rep=01|kk=None|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [
+    [
+     "/World/A",
+     "/World/B"
+    ]
+   ],
+   "events": 5,
+   "nb_discrete_contact_pairs_total": 1,
+   "nb_discrete_contact_pairs_with_contacts": 1,
+   "overlap_A_hits": [
+    "/World/A"
+   ],
+   "overlap_B_hits": [
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-dynamic-kinematic|rep=11|kk=None|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [
+    [
+     "/World/A",
+     "/World/B"
+    ]
+   ],
+   "events": 5,
+   "nb_discrete_contact_pairs_total": 1,
+   "nb_discrete_contact_pairs_with_contacts": 1,
+   "overlap_A_hits": [
+    "/World/A"
+   ],
+   "overlap_B_hits": [
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-dynamic-kinematic|rep=01|kk=None|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [
+    [
+     "/World/A",
+     "/World/B"
+    ]
+   ],
+   "events": 5,
+   "nb_discrete_contact_pairs_total": 1,
+   "nb_discrete_contact_pairs_with_contacts": 1,
+   "overlap_A_hits": [
+    "/World/A"
+   ],
+   "overlap_B_hits": [
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-dynamic-dynamic|rep=11|kk=None|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [
+    [
+     "/World/A",
+     "/World/B"
+    ]
+   ],
+   "events": 5,
+   "nb_discrete_contact_pairs_total": 1,
+   "nb_discrete_contact_pairs_with_contacts": 1,
+   "overlap_A_hits": [
+    "/World/A"
+   ],
+   "overlap_B_hits": [
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-dynamic-dynamic|rep=10|kk=None|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [
+    [
+     "/World/A",
+     "/World/B"
+    ]
+   ],
+   "events": 5,
+   "nb_discrete_contact_pairs_total": 1,
+   "nb_discrete_contact_pairs_with_contacts": 1,
+   "overlap_A_hits": [
+    "/World/A"
+   ],
+   "overlap_B_hits": [
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-disabled-static|rep=11|kk=None|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [],
+   "events": 0,
+   "nb_discrete_contact_pairs_total": 0,
+   "nb_discrete_contact_pairs_with_contacts": 0,
+   "overlap_A_hits": [
+    "/World/A",
+    "/World/B"
+   ],
+   "overlap_B_hits": [
+    "/World/A",
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-disabled-dynamic|rep=11|kk=None|ks=None",
+   "description": "組み合わせ別",
+   "reported_pairs": [
+    [
+     "/World/A",
+     "/World/B"
+    ]
+   ],
+   "events": 5,
+   "nb_discrete_contact_pairs_total": 1,
+   "nb_discrete_contact_pairs_with_contacts": 1,
+   "overlap_A_hits": [
+    "/World/A"
+   ],
+   "overlap_B_hits": [
+    "/World/B"
+   ]
+  },
+  {
+   "id": "K-kinematic-kinematic|moving|kk=None|ks=None",
+   "description": "B を動かす",
+   "reported_pairs": [],
+   "events": 0,
+   "types": [],
+   "min_sep": null,
+   "nb_discrete_contact_pairs_total": 0
+  },
+  {
+   "id": "K-kinematic-kinematic|moving|kk=True|ks=None",
+   "description": "B を動かす",
+   "reported_pairs": [
+    [
+     "/World/A",
+     "/World/B"
+    ]
+   ],
+   "events": 8,
+   "types": [
+    "CONTACT_FOUND",
+    "CONTACT_PERSIST"
+   ],
+   "min_sep": -0.050000011920928955,
+   "nb_discrete_contact_pairs_total": 1
+  },
+  {
+   "id": "K-static-kinematic|moving|kk=None|ks=None",
+   "description": "B を動かす",
+   "reported_pairs": [],
+   "events": 0,
+   "types": [],
+   "min_sep": null,
+   "nb_discrete_contact_pairs_total": 0
+  },
+  {
+   "id": "K-static-kinematic|moving|kk=None|ks=True",
+   "description": "B を動かす",
+   "reported_pairs": [
+    [
+     "/World/A",
+     "/World/B"
+    ]
+   ],
+   "events": 8,
+   "types": [
+    "CONTACT_FOUND",
+    "CONTACT_PERSIST"
+   ],
+   "min_sep": -0.050000011920928955,
+   "nb_discrete_contact_pairs_total": 1
+  },
+  {
+   "id": "K-kinematic-static|moving|kk=None|ks=True",
+   "description": "B を動かす",
+   "reported_pairs": [],
+   "events": 0,
+   "types": [],
+   "min_sep": null,
+   "nb_discrete_contact_pairs_total": 0
+  },
+  {
+   "id": "K-static-static|moving|kk=None|ks=None",
+   "description": "B を動かす",
+   "reported_pairs": [],
+   "events": 0,
+   "types": [],
+   "min_sep": null,
+   "nb_discrete_contact_pairs_total": 0
+  },
+  {
+   "id": "K-static-static|moving|kk=True|ks=True",
+   "description": "B を動かす",
+   "reported_pairs": [],
+   "events": 0,
+   "types": [],
+   "min_sep": null,
+   "nb_discrete_contact_pairs_total": 0
+  },
+  {
+   "id": "K-dedup",
+   "description": "重複の有無",
+   "report_api_A=True_B=False": {
+    "steps": 6,
+    "headers_total": 6,
+    "headers_per_step": 1.0
+   },
+   "report_api_A=True_B=True": {
+    "steps": 6,
+    "headers_total": 6,
+    "headers_per_step": 1.0
+   },
+   "overlap": {
+    "A_hits": [
+     "/World/A",
+     "/World/B"
+    ],
+    "B_hits": [
+     "/World/A",
+     "/World/B"
+    ],
+    "pair_found_times": 2
+   }
+  },
+  {
+   "id": "K-non-collider-query",
+   "description": "非コライダーのクエリ形状",
+   "QCube": [
+    "/World/Target"
+   ],
+   "QSphere": [
+    "/World/Target"
+   ],
+   "QCapsule": [
+    "/World/Target"
+   ],
+   "QCyl": [
+    "/World/Target"
+   ],
+   "QCone": [
+    "/World/Target"
+   ],
+   "QMesh": [
+    "/World/Target"
+   ],
+   "QMesh_overlap_mesh": [
+    "/World/Target"
+   ],
+   "QMesh_any_type": "bool",
+   "QCube_any_value": true,
+   "box_any_type": "bool",
+   "sphere_any_type": "bool",
+   "xform_query_hits": []
+  }
+ ]
+}

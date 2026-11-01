@@ -1,0 +1,520 @@
+{
+ "group": "t09_convex_limits",
+ "items": [
+  {
+   "id": "L-hull-limit",
+   "description": "凸包の頂点数",
+   "source_vertices": 8066,
+   "rows": [
+    {
+     "limit": null,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      34
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 3,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      8
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 4,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      8
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 8,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      8
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 16,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      16
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 32,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      32
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 64,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      34
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 65,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      34
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 128,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      34
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 200,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      34
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 255,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      34
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 256,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      34
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 257,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      34
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 300,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      34
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 512,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      34
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    },
+    {
+     "limit": 1024,
+     "cook_result": "RESULT_VALID",
+     "hulls": 1,
+     "vertices": [
+      34
+     ],
+     "shapes": {
+      "convex_shapes": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "L-hull-error-direction",
+   "description": "半径 1 の球メッシュの凸包。radial_err<0 は真の面より内側(見逃し)",
+   "rows": [
+    {
+     "limit": 8,
+     "vertices": [
+      8
+     ],
+     "radial_err": {
+      "n": 256,
+      "min": -0.09983594512939442,
+      "median": 0.11474268341064464,
+      "max": 0.548454689025879
+     },
+     "dirs_miss_inside": 51,
+     "dirs_over_outside": 205,
+     "dirs": 256
+    },
+    {
+     "limit": 16,
+     "vertices": [
+      16
+     ],
+     "radial_err": {
+      "n": 256,
+      "min": -0.09983594512939442,
+      "median": 0.03879015350341808,
+      "max": 0.5229038467407228
+     },
+     "dirs_miss_inside": 93,
+     "dirs_over_outside": 163,
+     "dirs": 256
+    },
+    {
+     "limit": 32,
+     "vertices": [
+      32
+     ],
+     "radial_err": {
+      "n": 256,
+      "min": -0.09983594512939442,
+      "median": -0.02434308624267567,
+      "max": 0.17475740814208995
+     },
+     "dirs_miss_inside": 158,
+     "dirs_over_outside": 97,
+     "dirs": 256
+    },
+    {
+     "limit": 64,
+     "vertices": [
+      34
+     ],
+     "radial_err": {
+      "n": 256,
+      "min": -0.12472493743896473,
+      "median": -0.06300313568115223,
+      "max": -0.005832267761230359
+     },
+     "dirs_miss_inside": 256,
+     "dirs_over_outside": 0,
+     "dirs": 256
+    },
+    {
+     "limit": 128,
+     "vertices": [
+      34
+     ],
+     "radial_err": {
+      "n": 256,
+      "min": -0.12472493743896473,
+      "median": -0.06300313568115223,
+      "max": -0.005832267761230359
+     },
+     "dirs_miss_inside": 256,
+     "dirs_over_outside": 0,
+     "dirs": 256
+    },
+    {
+     "limit": 255,
+     "vertices": [
+      34
+     ],
+     "radial_err": {
+      "n": 256,
+      "min": -0.12472493743896473,
+      "median": -0.06300313568115223,
+      "max": -0.005832267761230359
+     },
+     "dirs_miss_inside": 256,
+     "dirs_over_outside": 0,
+     "dirs": 256
+    }
+   ]
+  },
+  {
+   "id": "L-boundary-vs-cooked",
+   "description": "クック済み平面との比較(hull 頂点数 32)",
+   "hull_vertices": [
+    32
+   ],
+   "overlap_err": {
+    "n": 256,
+    "min": -9.426146112545553e-07,
+    "median": 3.8583360284505375e-08,
+    "max": 1.2010112231397585e-06
+   },
+   "overlap_within_1e_4": 256,
+   "of": 256,
+   "contact": [
+    {
+     "gap_to_cooked_plane": 0.0005,
+     "contactOffset_each": 0.0001,
+     "offset_sum": 0.0002,
+     "reported": 0,
+     "of": 12,
+     "sep_minus_gap": null
+    },
+    {
+     "gap_to_cooked_plane": 5e-05,
+     "contactOffset_each": 0.0001,
+     "offset_sum": 0.0002,
+     "reported": 12,
+     "of": 12,
+     "sep_minus_gap": {
+      "n": 12,
+      "min": -3.3612549304964554e-08,
+      "median": 3.996193408965825e-08,
+      "max": 9.770393371581792e-08
+     }
+    },
+    {
+     "gap_to_cooked_plane": 0.005,
+     "contactOffset_each": 0.01,
+     "offset_sum": 0.02,
+     "reported": 12,
+     "of": 12,
+     "sep_minus_gap": {
+      "n": 12,
+      "min": -2.4326145649060382e-08,
+      "median": 5.483627319325529e-08,
+      "max": 0.00012044411152601232
+     }
+    }
+   ]
+  },
+  {
+   "id": "L-decomp",
+   "description": "トーラス(R=1, r=0.3)を格子 7 cm で走査",
+   "rows": [
+    {
+     "params": {},
+     "cook_result": "RESULT_VALID",
+     "hull_count": 32,
+     "max_vertices_per_hull": 48,
+     "shapes": {
+      "convex_shapes": 32
+     },
+     "grid": {
+      "true_pos": 5170,
+      "true_neg": 13017,
+      "false_pos_overdetect": 995,
+      "false_neg_miss": 18,
+      "max_overdetect_m": 0.06181732996336786,
+      "max_miss_depth_m": 0.10439619212778589
+     }
+    },
+    {
+     "params": {
+      "maxConvexHulls": 4
+     },
+     "cook_result": "RESULT_VALID",
+     "hull_count": 4,
+     "max_vertices_per_hull": 42,
+     "shapes": {
+      "convex_shapes": 4
+     },
+     "grid": {
+      "true_pos": 5164,
+      "true_neg": 11983,
+      "false_pos_overdetect": 2031,
+      "false_neg_miss": 22,
+      "max_overdetect_m": 0.4209925823497089,
+      "max_miss_depth_m": 0.14424105273176102
+     }
+    },
+    {
+     "params": {
+      "maxConvexHulls": 8
+     },
+     "cook_result": "RESULT_VALID",
+     "hull_count": 8,
+     "max_vertices_per_hull": 50,
+     "shapes": {
+      "convex_shapes": 8
+     },
+     "grid": {
+      "true_pos": 5166,
+      "true_neg": 12761,
+      "false_pos_overdetect": 1252,
+      "false_neg_miss": 21,
+      "max_overdetect_m": 0.1448414495505156,
+      "max_miss_depth_m": 0.10439619212778589
+     }
+    },
+    {
+     "params": {
+      "maxConvexHulls": 64
+     },
+     "cook_result": "RESULT_VALID",
+     "hull_count": 64,
+     "max_vertices_per_hull": 48,
+     "shapes": {
+      "convex_shapes": 64
+     },
+     "grid": {
+      "true_pos": 5170,
+      "true_neg": 13039,
+      "false_pos_overdetect": 973,
+      "false_neg_miss": 18,
+      "max_overdetect_m": 0.054058030204828855,
+      "max_miss_depth_m": 0.10439619212778589
+     }
+    },
+    {
+     "params": {
+      "maxConvexHulls": 128
+     },
+     "cook_result": "RESULT_VALID",
+     "hull_count": 128,
+     "max_vertices_per_hull": 48,
+     "shapes": {
+      "convex_shapes": 128
+     },
+     "grid": {
+      "true_pos": 5170,
+      "true_neg": 13055,
+      "false_pos_overdetect": 957,
+      "false_neg_miss": 18,
+      "max_overdetect_m": 0.054058030204828855,
+      "max_miss_depth_m": 0.10439619212778589
+     }
+    },
+    {
+     "params": {
+      "hullVertexLimit": 8
+     },
+     "cook_result": "RESULT_VALID",
+     "hull_count": 32,
+     "max_vertices_per_hull": 8,
+     "shapes": {
+      "convex_shapes": 32
+     },
+     "grid": {
+      "true_pos": 2643,
+      "true_neg": 13949,
+      "false_pos_overdetect": 166,
+      "false_neg_miss": 2442,
+      "max_overdetect_m": 0.0513440500593062,
+      "max_miss_depth_m": 0.27987411762653486
+     }
+    },
+    {
+     "params": {
+      "hullVertexLimit": 128
+     },
+     "cook_result": "RESULT_VALID",
+     "hull_count": 32,
+     "max_vertices_per_hull": 48,
+     "shapes": {
+      "convex_shapes": 32
+     },
+     "grid": {
+      "true_pos": 5170,
+      "true_neg": 13017,
+      "false_pos_overdetect": 995,
+      "false_neg_miss": 18,
+      "max_overdetect_m": 0.06181732996336786,
+      "max_miss_depth_m": 0.10439619212778589
+     }
+    },
+    {
+     "params": {
+      "approximation": "none"
+     },
+     "grid": {
+      "true_pos": 100,
+      "true_neg": 14064,
+      "false_pos_overdetect": 0,
+      "false_neg_miss": 5036,
+      "max_overdetect_m": 0.0,
+      "max_miss_depth_m": 0.27987411762653486
+     }
+    },
+    {
+     "params": {
+      "approximation": "convexHull"
+     },
+     "grid": {
+      "true_pos": 4292,
+      "true_neg": 11195,
+      "false_pos_overdetect": 2916,
+      "false_neg_miss": 797,
+      "max_overdetect_m": 0.733247308247158,
+      "max_miss_depth_m": 0.09723953962611365
+     }
+    }
+   ]
+  },
+  {
+   "id": "L-hull-concave-overdetect",
+   "description": "U 字の溝の中(真値はすべて外)",
+   "convexHull": {
+    "notch_z=0.45": true,
+    "notch_z=0.6": true,
+    "notch_z=0.8": true,
+    "notch_z=0.95": true
+   },
+   "convexDecomposition": {
+    "notch_z=0.45": false,
+    "notch_z=0.6": false,
+    "notch_z=0.8": false,
+    "notch_z=0.95": false
+   },
+   "none": {
+    "notch_z=0.45": false,
+    "notch_z=0.6": false,
+    "notch_z=0.8": false,
+    "notch_z=0.95": false
+   }
+  }
+ ]
+}

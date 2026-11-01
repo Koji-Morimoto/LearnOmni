@@ -1,0 +1,84 @@
+Skipping automatic ROS environment setup
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-01T13:55:59Z [Info] [carb] Logging to file: c:/isaacsim-6.0.2/kit/logs/Kit/PhysX claim verification/6.2/kit_20261101_225559.log
+[0.152s] [ext: omni.assets.plugins-0.0.0] startup
+[0.155s] [ext: omni.blobkey-1.1.2] startup
+[0.156s] [ext: omni.kit.async_engine-0.0.5] startup
+[0.179s] [ext: omni.client.lib-1.1.1] startup
+[0.193s] [ext: omni.client-1.3.0] startup
+[0.254s] [ext: omni.protobuf.lib-1.0.1] startup
+[0.254s] [ext: omni.grpc.lib-1.0.1] startup
+[0.255s] [ext: omni.metrics.core-0.0.3] startup
+[0.256s] [ext: omni.datastore-0.0.0] startup
+[0.257s] [ext: omni.gpu_foundation.shadercache.d3d12-1.0.0] startup
+[0.263s] [ext: omni.hsscclient-1.1.4] startup
+[0.264s] [ext: omni.stats-1.0.1] startup
+[0.265s] [ext: omni.ujitso.default-1.0.0] startup
+[0.274s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.294s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.296s] [ext: omni.usd.config-1.0.8] startup
+2026-11-01T13:55:59Z [206ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+[0.310s] [ext: omni.usd.libs-1.0.3] startup
+[0.373s] [ext: omni.usd.schema.audio-0.0.1] startup
+[0.472s] [ext: omni.usd.schema.newton-1.5.0] startup
+[0.474s] [ext: omni.usd.schema.physx-110.4.4] startup
+[0.511s] [ext: carb.audio-0.1.0] startup
+[0.512s] [ext: omni.kit.actions.core-1.2.1] startup
+[0.517s] [ext: omni.kit.commands-1.6.2] startup
+[0.523s] [ext: omni.convexdecomposition-110.4.4] startup
+[0.526s] [ext: omni.cubric-0.1.0] startup
+[0.528s] [ext: omni.graph.exec-0.9.6] startup
+[0.529s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[0.532s] [ext: omni.kit.exec.core-0.13.6] startup
+[0.535s] [ext: omni.kit.loop-isaac-1.6.2] startup
+[0.537s] [ext: omni.kit.usd_undo-0.1.8] startup
+[0.538s] [ext: omni.timeline-1.1.2] startup
+[0.541s] [ext: omni.usd_resolver-1.0.0] startup
+[0.546s] [ext: omni.usd.core-1.10.42] startup
+[0.548s] [ext: omni.usd-1.19.11] startup
+[0.597s] [ext: omni.kit.usd.layers-2.7.9] startup
+[0.605s] [ext: omni.kit.primitive.mesh-1.1.1] startup
+[0.610s] [ext: omni.kit.stage_template.core-1.1.23] startup
+[0.611s] [ext: omni.kit.stage_templates-2.0.3] startup
+[0.613s] [ext: omni.physics-110.4.4] startup
+[0.618s] [ext: omni.physx.gpu-110.4.4] startup
+[0.619s] [ext: omni.physx.foundation-110.4.4] startup
+[0.630s] [ext: omni.usdphysics-110.4.4] startup
+[0.633s] [ext: omni.physx.cooking-110.4.4] startup
+[0.636s] [ext: usdrt.scenegraph-7.6.3] startup
+[0.671s] [ext: omni.physx-110.4.4] startup
+[0.682s] [ext: omni.physics.physx-110.4.4] startup
+[0.684s] [ext: omni.physics.stageupdate-110.4.4] startup
+[0.687s] [ext: physx_verify-6.2.0] startup
+[0.689s] Simulation App Starting
+2026-11-01T13:56:00Z [892ms] [Error] [omni.usd] '/app/useFabricSceneDelegate' is enabled, but usdrt::population::IUtils could not be created. Is UsdRt enabled?
+[1.109s] Simulation App Startup Complete
+[1.110s] app ready
+Starting kit application with the following args:  ['C:\\isaacsim-6.0.2\\exts\\isaacsim.simulation_app\\isaacsim\\simulation_app\\simulation_app.py', 'C:\\isaacsim-6.0.2\\CodeByClaude\\physx_overlap_contact_verification\\code\\physx_verify.kit', '--/app/tokens/exe-path=C:\\isaacsim-6.0.2\\kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni/kit/plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', 'C:\\isaacsim-6.0.2/exts', '--ext-folder', 'C:\\isaacsim-6.0.2/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=16', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=16', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--no-ros-env']
+[START] B-drop-static_noRB
+[RESULT] B-drop-static_noRB: {"target_usd_before": [0.0, 0.0, -0.5], "target_usd_after": [0.0, 0.0, -0.5], "ball_usd_after": [0.0, 0.0, 0.1], "ball_stopped_on_target": true, "physx_rigidbody_query": {"ret_val": true, "pos": [0.0, 0.0, -0.5]}, "overlap_hits": [{"collision": "/World/Target", "rigid_body": "/World/Target"}]}
+[END] B-drop-static_noRB 2.0s
+[START] B-drop-rigidBodyEnabled_False
+[RESULT] B-drop-rigidBodyEnabled_False: {"target_usd_before": [0.0, 0.0, -0.5], "target_usd_after": [0.0, 0.0, -0.5], "ball_usd_after": [0.0, 0.0, 0.1], "ball_stopped_on_target": true, "physx_rigidbody_query": {"ret_val": true, "pos": [0.0, 0.0, -0.5]}, "overlap_hits": [{"collision": "/World/Target", "rigid_body": "/World/Target"}]}
+[END] B-drop-rigidBodyEnabled_False 2.0s
+[START] B-drop-dynamic
+[RESULT] B-drop-dynamic: {"target_usd_before": [0.0, 0.0, -0.5], "target_usd_after": [0.0, 0.0, -20.28349], "ball_usd_after": [0.0, 0.0, -19.28349], "ball_stopped_on_target": false, "physx_rigidbody_query": {"ret_val": true, "pos": [0.0, 0.0, -20.28349]}, "overlap_hits": [{"collision": "/World/Target", "rigid_body": "/World/Target"}]}
+[END] B-drop-dynamic 2.0s
+[START] B-drop-kinematic
+[RESULT] B-drop-kinematic: {"target_usd_before": [0.0, 0.0, -0.5], "target_usd_after": [0.0, 0.0, -0.5], "ball_usd_after": [0.0, 0.0, 0.1], "ball_stopped_on_target": true, "physx_rigidbody_query": {"ret_val": true, "pos": [0.0, 0.0, -0.5]}, "overlap_hits": [{"collision": "/World/Target", "rigid_body": "/World/Target"}]}
+[END] B-drop-kinematic 2.0s
+[START] B-ancestor
+[RESULT] B-ancestor: {"child_before": [0.0, 0.0, 5.0], "child_after": [0.0, 0.0, 3.73287], "hits": [{"collision": "/World/Parent/Child", "rigid_body": "/World/Parent"}]}
+[END] B-ancestor 0.5s
+[START] B-kinematic-read
+[RESULT] B-kinematic-read: {"before": {"ret_val": true, "pos": [0.0, 0.0, 0.0]}, "after": {"ret_val": true, "pos": [3.0, 0.0, 0.0]}, "hit_at_new_pos": true, "hit_at_old_pos": false}
+[END] B-kinematic-read 0.2s
+[START] B-dynamic-write
+[RESULT] B-dynamic-write: {"start": [0, 0, 10], "usd_after_30_frames": [0.0, 0.0, 8.73287], "steps": 30, "trace": [{"frame": 9, "usd_before_write": [0.0, 0.0, 9.85013], "physx": {"ret_val": true, "pos": [0.0, 0.0, 9.85013]}}, {"frame": 19, "usd_before_write": [0.0, 0.0, 9.42775], "physx": {"ret_val": true, "pos": [0.0, 0.0, 9.42775]}}], "usd_after_stop_resetOnStop": [0.0, 0.0, 10.0]}
+[END] B-dynamic-write 0.5s
+[START] B-static-moves
+[RESULT] B-static-moves: {"is_rigid_body_at_start": {"ret_val": true, "pos": [0.0, 0.0, 0.0]}, "is_rigid_body_after_rotate": {"ret_val": true, "pos": [0.0, 0.0, 0.0]}, "hits_old_new_before": [true, false], "hits_old_new_after": [false, true], "has_RigidBodyAPI": false}
+[END] B-static-moves 0.2s
+[DONE] t02_body_types 8
+[10.601s] Simulation App Shutting Down

@@ -1,0 +1,681 @@
+{
+ "group": "t08_mesh_approx",
+ "items": [
+  {
+   "id": "M-none/static",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": false,
+    "solid": false,
+    "prong": false,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": false,
+     "min_sep": null
+    },
+    "solid": {
+     "reported": false,
+     "min_sep": null
+    },
+    "prong": {
+     "reported": false,
+     "min_sep": null
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "trimesh_shapes": 1
+   },
+   "cooked_result": "RESULT_ERROR_UNSUPPORTED_APPROXIMATION",
+   "cooked_hull_vertices": []
+  },
+  {
+   "id": "M-none/kinematic",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": false,
+    "solid": false,
+    "prong": false,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": false,
+     "min_sep": null
+    },
+    "solid": {
+     "reported": false,
+     "min_sep": null
+    },
+    "prong": {
+     "reported": false,
+     "min_sep": null
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "trimesh_shapes": 1
+   },
+   "cooked_result": "RESULT_ERROR_UNSUPPORTED_APPROXIMATION",
+   "cooked_hull_vertices": []
+  },
+  {
+   "id": "M-none/dynamic",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": true,
+    "solid": true,
+    "prong": true,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": true,
+     "min_sep": -0.20999999344348907
+    },
+    "solid": {
+     "reported": true,
+     "min_sep": -0.21000000834465027
+    },
+    "prong": {
+     "reported": true,
+     "min_sep": -0.20999999344348907
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "convex_shapes": 1
+   },
+   "cooked_result": "RESULT_VALID",
+   "cooked_hull_vertices": [
+    8
+   ]
+  },
+  {
+   "id": "M-meshSimplification/static",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": false,
+    "solid": false,
+    "prong": false,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": false,
+     "min_sep": null
+    },
+    "solid": {
+     "reported": false,
+     "min_sep": null
+    },
+    "prong": {
+     "reported": false,
+     "min_sep": null
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "trimesh_shapes": 1
+   },
+   "cooked_result": "RESULT_ERROR_UNSUPPORTED_APPROXIMATION",
+   "cooked_hull_vertices": []
+  },
+  {
+   "id": "M-meshSimplification/kinematic",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": false,
+    "solid": false,
+    "prong": false,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": false,
+     "min_sep": null
+    },
+    "solid": {
+     "reported": false,
+     "min_sep": null
+    },
+    "prong": {
+     "reported": false,
+     "min_sep": null
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "trimesh_shapes": 1
+   },
+   "cooked_result": "RESULT_ERROR_UNSUPPORTED_APPROXIMATION",
+   "cooked_hull_vertices": []
+  },
+  {
+   "id": "M-meshSimplification/dynamic",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": true,
+    "solid": true,
+    "prong": true,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": true,
+     "min_sep": -0.20999999344348907
+    },
+    "solid": {
+     "reported": true,
+     "min_sep": -0.21000000834465027
+    },
+    "prong": {
+     "reported": true,
+     "min_sep": -0.20999999344348907
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "convex_shapes": 1
+   },
+   "cooked_result": "RESULT_VALID",
+   "cooked_hull_vertices": [
+    8
+   ]
+  },
+  {
+   "id": "M-convexHull/static",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": true,
+    "solid": true,
+    "prong": true,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": true,
+     "min_sep": -0.20999999344348907
+    },
+    "solid": {
+     "reported": true,
+     "min_sep": -0.21000000834465027
+    },
+    "prong": {
+     "reported": true,
+     "min_sep": -0.20999999344348907
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "convex_shapes": 1
+   },
+   "cooked_result": "RESULT_VALID",
+   "cooked_hull_vertices": [
+    8
+   ]
+  },
+  {
+   "id": "M-convexHull/kinematic",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": true,
+    "solid": true,
+    "prong": true,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": true,
+     "min_sep": -0.20999999344348907
+    },
+    "solid": {
+     "reported": true,
+     "min_sep": -0.21000000834465027
+    },
+    "prong": {
+     "reported": true,
+     "min_sep": -0.20999999344348907
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "convex_shapes": 1
+   },
+   "cooked_result": "RESULT_VALID",
+   "cooked_hull_vertices": [
+    8
+   ]
+  },
+  {
+   "id": "M-convexHull/dynamic",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": true,
+    "solid": true,
+    "prong": true,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": true,
+     "min_sep": -0.20999999344348907
+    },
+    "solid": {
+     "reported": true,
+     "min_sep": -0.21000000834465027
+    },
+    "prong": {
+     "reported": true,
+     "min_sep": -0.20999999344348907
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "convex_shapes": 1
+   },
+   "cooked_result": "RESULT_VALID",
+   "cooked_hull_vertices": [
+    8
+   ]
+  },
+  {
+   "id": "M-convexDecomposition/static",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": false,
+    "solid": true,
+    "prong": true,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": false,
+     "min_sep": null
+    },
+    "solid": {
+     "reported": true,
+     "min_sep": -0.21000000834465027
+    },
+    "prong": {
+     "reported": true,
+     "min_sep": -0.24030297994613647
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "convex_shapes": 3
+   },
+   "cooked_result": "RESULT_VALID",
+   "cooked_hull_vertices": [
+    9,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "M-convexDecomposition/kinematic",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": false,
+    "solid": true,
+    "prong": true,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": false,
+     "min_sep": null
+    },
+    "solid": {
+     "reported": true,
+     "min_sep": -0.21000000834465027
+    },
+    "prong": {
+     "reported": true,
+     "min_sep": -0.24030297994613647
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "convex_shapes": 3
+   },
+   "cooked_result": "RESULT_VALID",
+   "cooked_hull_vertices": [
+    9,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "M-convexDecomposition/dynamic",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": false,
+    "solid": true,
+    "prong": true,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": false,
+     "min_sep": null
+    },
+    "solid": {
+     "reported": true,
+     "min_sep": -0.21000000834465027
+    },
+    "prong": {
+     "reported": true,
+     "min_sep": -0.24030297994613647
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "convex_shapes": 3
+   },
+   "cooked_result": "RESULT_VALID",
+   "cooked_hull_vertices": [
+    9,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "M-sdf/static",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": false,
+    "solid": false,
+    "prong": false,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": false,
+     "min_sep": null
+    },
+    "solid": {
+     "reported": false,
+     "min_sep": null
+    },
+    "prong": {
+     "reported": false,
+     "min_sep": null
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "trimesh_shapes": 1
+   },
+   "cooked_result": "n/a",
+   "cooked_hull_vertices": []
+  },
+  {
+   "id": "M-sdf/kinematic",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": false,
+    "solid": false,
+    "prong": false,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": false,
+     "min_sep": null
+    },
+    "solid": {
+     "reported": false,
+     "min_sep": null
+    },
+    "prong": {
+     "reported": false,
+     "min_sep": null
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "trimesh_shapes": 1
+   },
+   "cooked_result": "n/a",
+   "cooked_hull_vertices": []
+  },
+  {
+   "id": "M-sdf/dynamic",
+   "description": "U 字メッシュ",
+   "overlap": {
+    "notch": false,
+    "solid": false,
+    "prong": false,
+    "surface": true,
+    "far": false
+   },
+   "contact": {
+    "notch": {
+     "reported": false,
+     "min_sep": null
+    },
+    "solid": {
+     "reported": false,
+     "min_sep": null
+    },
+    "prong": {
+     "reported": false,
+     "min_sep": null
+    },
+    "far": {
+     "reported": false,
+     "min_sep": null
+    }
+   },
+   "physx_shapes": {
+    "trimesh_shapes": 1
+   },
+   "cooked_result": "n/a",
+   "cooked_hull_vertices": []
+  },
+  {
+   "id": "M-none-exact",
+   "description": "三角形面の境界",
+   "rows": [
+    {
+     "face": "溝の底 z=0.4",
+     "boundary": 0.400999927520752,
+     "expected": 0.401,
+     "error": -7.247924804776318e-08
+    },
+    {
+     "face": "歯の内側面 x=0.5",
+     "boundary": 0.49900007247924805,
+     "expected": 0.499,
+     "error": 7.247924804776318e-08
+    },
+    {
+     "face": "底面 z=0",
+     "boundary": -0.0009999275207519531,
+     "expected": -0.001,
+     "error": 7.247924804689582e-08
+    }
+   ]
+  },
+  {
+   "id": "M-enclosed",
+   "description": "内包ケース",
+   "physx_shapes": {
+    "trimesh_shapes": 1
+   },
+   "overlap_sphere_inside": false,
+   "overlap_box_inside": false,
+   "overlap_sphere_straddling_face": true,
+   "overlap_box_covering_mesh": true,
+   "control_convexHull_sphere_inside": true,
+   "contact_none_inside": {
+    "reported": false,
+    "min_sep": null
+   },
+   "contact_convexHull_inside": {
+    "reported": true,
+    "min_sep": -1.100000023841858
+   },
+   "contact_none_straddling_face": {
+    "reported": false,
+    "min_sep": null
+   },
+   "contact_convexHull_straddling_face": {
+    "reported": true,
+    "min_sep": -0.15000000596046448
+   }
+  },
+  {
+   "id": "M-trimesh-scale",
+   "description": "大きな三角形メッシュ",
+   "rows": [
+    {
+     "vertices": 1986,
+     "triangles": 3968,
+     "usd_build_s": 0.0,
+     "force_load_s": 0.0,
+     "shapes": {
+      "trimesh_shapes": 1
+     },
+     "hit_on_surface": true,
+     "radial_error": {
+      "n": 64,
+      "min": -0.0023272476196288805,
+      "median": -0.001407417297363378,
+      "max": -0.00028932189941432984
+     }
+    },
+    {
+     "vertices": 130562,
+     "triangles": 261120,
+     "usd_build_s": 0.06,
+     "force_load_s": 0.03,
+     "shapes": {
+      "trimesh_shapes": 1
+     },
+     "hit_on_surface": true,
+     "radial_error": {
+      "n": 64,
+      "min": -3.678894042968839e-05,
+      "median": -2.1530151367188388e-05,
+      "max": -3.982543944958117e-06
+     }
+    },
+    {
+     "vertices": 523266,
+     "triangles": 1046528,
+     "usd_build_s": 0.26,
+     "force_load_s": 0.11,
+     "shapes": {
+      "trimesh_shapes": 1
+     },
+     "hit_on_surface": true,
+     "radial_error": {
+      "n": 64,
+      "min": -8.56018066397457e-06,
+      "median": -5.508422851296935e-06,
+      "max": -1.6784667977720602e-07
+     }
+    },
+    {
+     "vertices": 2095106,
+     "triangles": 4190208,
+     "usd_build_s": 1.01,
+     "force_load_s": 0.48,
+     "shapes": {
+      "trimesh_shapes": 1
+     },
+     "hit_on_surface": true,
+     "radial_error": {
+      "n": 64,
+      "min": -2.456665039063388e-06,
+      "median": -9.307861327245703e-07,
+      "max": -1.6784667977720602e-07
+     }
+    }
+   ]
+  },
+  {
+   "id": "M-subdivision",
+   "description": "subdivisionScheme の影響",
+   "cage_corner": 0.5,
+   "catmull_clark_limit_corner": 0.25,
+   "none/none": {
+    "corner_first_hit_t": 0.500500000000033,
+    "face_first_hit_x": 0.501000000000033
+   },
+   "none/convexHull": {
+    "corner_first_hit_t": 0.500500000000033,
+    "face_first_hit_x": 0.501000000000033
+   },
+   "catmullClark/none": {
+    "corner_first_hit_t": 0.500500000000033,
+    "face_first_hit_x": 0.501000000000033
+   },
+   "catmullClark/convexHull": {
+    "corner_first_hit_t": 0.500500000000033,
+    "face_first_hit_x": 0.501000000000033
+   }
+  }
+ ]
+}

@@ -1,0 +1,716 @@
+Skipping automatic ROS environment setup
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-01T13:57:18Z [Info] [carb] Logging to file: c:/isaacsim-6.0.2/kit/logs/Kit/PhysX claim verification/6.2/kit_20261101_225718.log
+[0.145s] [ext: omni.assets.plugins-0.0.0] startup
+[0.148s] [ext: omni.blobkey-1.1.2] startup
+[0.148s] [ext: omni.kit.async_engine-0.0.5] startup
+[0.171s] [ext: omni.client.lib-1.1.1] startup
+[0.186s] [ext: omni.client-1.3.0] startup
+[0.247s] [ext: omni.protobuf.lib-1.0.1] startup
+[0.248s] [ext: omni.grpc.lib-1.0.1] startup
+[0.249s] [ext: omni.metrics.core-0.0.3] startup
+[0.250s] [ext: omni.datastore-0.0.0] startup
+[0.251s] [ext: omni.gpu_foundation.shadercache.d3d12-1.0.0] startup
+[0.257s] [ext: omni.hsscclient-1.1.4] startup
+[0.258s] [ext: omni.stats-1.0.1] startup
+[0.260s] [ext: omni.ujitso.default-1.0.0] startup
+[0.269s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.289s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.291s] [ext: omni.usd.config-1.0.8] startup
+2026-11-01T13:57:18Z [207ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+[0.306s] [ext: omni.usd.libs-1.0.3] startup
+[0.391s] [ext: omni.usd.schema.audio-0.0.1] startup
+[0.490s] [ext: omni.usd.schema.newton-1.5.0] startup
+[0.491s] [ext: omni.usd.schema.physx-110.4.4] startup
+[0.528s] [ext: carb.audio-0.1.0] startup
+[0.529s] [ext: omni.kit.actions.core-1.2.1] startup
+[0.533s] [ext: omni.kit.commands-1.6.2] startup
+[0.539s] [ext: omni.convexdecomposition-110.4.4] startup
+[0.542s] [ext: omni.cubric-0.1.0] startup
+[0.544s] [ext: omni.graph.exec-0.9.6] startup
+[0.544s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[0.547s] [ext: omni.kit.exec.core-0.13.6] startup
+[0.550s] [ext: omni.kit.loop-isaac-1.6.2] startup
+[0.552s] [ext: omni.kit.usd_undo-0.1.8] startup
+[0.553s] [ext: omni.timeline-1.1.2] startup
+[0.555s] [ext: omni.usd_resolver-1.0.0] startup
+[0.561s] [ext: omni.usd.core-1.10.42] startup
+[0.563s] [ext: omni.usd-1.19.11] startup
+[0.612s] [ext: omni.kit.usd.layers-2.7.9] startup
+[0.621s] [ext: omni.kit.primitive.mesh-1.1.1] startup
+[0.627s] [ext: omni.kit.stage_template.core-1.1.23] startup
+[0.628s] [ext: omni.kit.stage_templates-2.0.3] startup
+[0.631s] [ext: omni.physics-110.4.4] startup
+[0.635s] [ext: omni.physx.gpu-110.4.4] startup
+[0.636s] [ext: omni.physx.foundation-110.4.4] startup
+[0.648s] [ext: omni.usdphysics-110.4.4] startup
+[0.650s] [ext: omni.physx.cooking-110.4.4] startup
+[0.653s] [ext: usdrt.scenegraph-7.6.3] startup
+[0.690s] [ext: omni.physx-110.4.4] startup
+[0.701s] [ext: omni.physics.physx-110.4.4] startup
+[0.704s] [ext: omni.physics.stageupdate-110.4.4] startup
+[0.708s] [ext: physx_verify-6.2.0] startup
+[0.709s] Simulation App Starting
+2026-11-01T13:57:19Z [922ms] [Error] [omni.usd] '/app/useFabricSceneDelegate' is enabled, but usdrt::population::IUtils could not be created. Is UsdRt enabled?
+[1.136s] Simulation App Startup Complete
+[1.136s] app ready
+Starting kit application with the following args:  ['C:\\isaacsim-6.0.2\\exts\\isaacsim.simulation_app\\isaacsim\\simulation_app\\simulation_app.py', 'C:\\isaacsim-6.0.2\\CodeByClaude\\physx_overlap_contact_verification\\code\\physx_verify.kit', '--/app/tokens/exe-path=C:\\isaacsim-6.0.2\\kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni/kit/plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', 'C:\\isaacsim-6.0.2/exts', '--ext-folder', 'C:\\isaacsim-6.0.2/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=16', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=16', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--no-ros-env']
+[START] S-fin
+[CASE] fin t=0.002 none res=None dropper=sdf_mesh subgrid=None
+2026-11-01T13:57:19Z [1,183ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,187ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,187ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,187ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,187ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,199ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,200ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,200ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,200ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,200ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,216ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,216ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,216ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,216ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,216ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,233ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,233ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,233ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,233ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,233ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,249ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,250ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,250ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,250ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,250ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,266ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,266ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,266ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,266ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,266ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,283ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,283ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,283ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,283ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,283ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,300ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,300ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,300ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,300ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,300ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,316ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,317ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,317ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,317ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,317ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,333ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,333ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,333ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,333ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,333ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,350ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,350ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,350ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,350ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,350ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,366ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,366ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,366ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,367ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,367ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,383ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,383ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,383ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,383ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,383ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,400ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,400ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,400ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,400ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,400ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,416ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,417ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,417ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,417ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,417ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,433ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,433ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,433ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,433ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,433ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,450ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,450ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,450ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,450ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,450ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,467ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,467ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,467ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,467ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - ret[CASE] fin t=0.002 sdf res=8 dropper=sdf_mesh subgrid=None
+[CASE] fin t=0.002 sdf res=16 dropper=sdf_mesh subgrid=None
+[CASE] fin t=0.002 sdf res=32 dropper=sdf_mesh subgrid=None
+[CASE] fin t=0.002 sdf res=64 dropper=sdf_mesh subgrid=None
+[CASE] fin t=0.002 sdf res=128 dropper=sdf_mesh subgrid=None
+[CASE] fin t=0.002 sdf res=256 dropper=sdf_mesh subgrid=None
+[CASE] fin t=0.002 sdf res=8 dropper=sdf_mesh subgrid=0
+[CASE] fin t=0.002 sdf res=32 dropper=sdf_mesh subgrid=0
+[CASE] fin t=0.002 sdf res=64 dropper=sdf_mesh subgrid=0
+[CASE] fin t=0.02 none res=None dropper=sdf_mesh subgrid=None
+urning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,467ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,483ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,483ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,483ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,483ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,483ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,500ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,500ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,500ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,500ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,500ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,517ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,517ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,517ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,517ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:19Z [1,517ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,139ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,139ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,139ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,139ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,139ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,155ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,155ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,155ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,155ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,155ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,172ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,172ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,172ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,172ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,172ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,188ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,188ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,189ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,189ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,189ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,205ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,205ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,205ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,205ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,205ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,222ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,222ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,222ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,222ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,222ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,238ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,238ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,239ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,239ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,239ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,255ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,255ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,255ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,255ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,255ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,272ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,272ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,272ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,272ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,272ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,289ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,289ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,289ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,289ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,289ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,305ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,305ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,305ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,305ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,305ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,322ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,322ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,322ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,322ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,322ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,339ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,339ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,339ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,339ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,339ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,355ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,356ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,356ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,356ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,356ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,372ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,372ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,372ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,372ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,372ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,389ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,389ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,389ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,389ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,389ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,405ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,406ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,406ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,406ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,406ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,422ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,422ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,422ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,422ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,422ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T[CASE] fin t=0.02 sdf res=8 dropper=sdf_mesh subgrid=None
+[CASE] fin t=0.02 sdf res=16 dropper=sdf_mesh subgrid=None
+[CASE] fin t=0.02 sdf res=32 dropper=sdf_mesh subgrid=None
+[CASE] fin t=0.02 sdf res=64 dropper=sdf_mesh subgrid=None
+[CASE] fin t=0.02 sdf res=128 dropper=sdf_mesh subgrid=None
+[CASE] fin t=0.02 sdf res=256 dropper=sdf_mesh subgrid=None
+[CASE] fin t=0.02 sdf res=8 dropper=sdf_mesh subgrid=0
+[CASE] fin t=0.02 sdf res=32 dropper=sdf_mesh subgrid=0
+[CASE] fin t=0.02 sdf res=64 dropper=sdf_mesh subgrid=0
+[CASE] fin t=0.002 none res=None dropper=convex subgrid=None
+[CASE] fin t=0.002 sdf res=8 dropper=convex subgrid=None
+[CASE] fin t=0.002 sdf res=16 dropper=convex subgrid=None
+[CASE] fin t=0.002 sdf res=32 dropper=convex subgrid=None
+[CASE] fin t=0.002 sdf res=64 dropper=convex subgrid=None
+[CASE] fin t=0.002 sdf res=128 dropper=convex subgrid=None
+[CASE] fin t=0.002 sdf res=256 dropper=convex subgrid=None
+[CASE] fin t=0.002 sdf res=8 dropper=convex subgrid=0
+[CASE] fin t=0.002 sdf res=32 dropper=convex subgrid=0
+[CASE] fin t=0.002 sdf res=64 dropper=convex subgrid=0
+[CASE] fin t=0.02 none res=None dropper=convex subgrid=None
+[CASE] fin t=0.02 sdf res=8 dropper=convex subgrid=None
+[CASE] fin t=0.02 sdf res=16 dropper=convex subgrid=None
+[CASE] fin t=0.02 sdf res=32 dropper=convex subgrid=None
+[CASE] fin t=0.02 sdf res=64 dropper=convex subgrid=None
+[CASE] fin t=0.02 sdf res=128 dropper=convex subgrid=None
+[CASE] fin t=0.02 sdf res=256 dropper=convex subgrid=None
+[CASE] fin t=0.02 sdf res=8 dropper=convex subgrid=0
+[CASE] fin t=0.02 sdf res=32 dropper=convex subgrid=0
+[CASE] fin t=0.02 sdf res=64 dropper=convex subgrid=0
+[CASE] fin t=0.002 none res=None dropper=sphere subgrid=None
+[CASE] fin t=0.002 sdf res=8 dropper=sphere subgrid=None
+[CASE] fin t=0.002 sdf res=16 dropper=sphere subgrid=None
+[CASE] fin t=0.002 sdf res=32 dropper=sphere subgrid=None
+[CASE] fin t=0.002 sdf res=64 dropper=sphere subgrid=None
+[CASE] fin t=0.002 sdf res=128 dropper=sphere subgrid=None
+[CASE] fin t=0.002 sdf res=256 dropper=sphere subgrid=None
+[CASE] fin t=0.002 sdf res=8 dropper=sphere subgrid=0
+[CASE] fin t=0.002 sdf res=32 dropper=sphere subgrid=0
+[CASE] fin t=0.002 sdf res=64 dropper=sphere subgrid=0
+[CASE] fin t=0.02 none res=None dropper=sphere subgrid=None
+[CASE] fin t=0.02 sdf res=8 dropper=sphere subgrid=None
+[CASE] fin t=0.02 sdf res=16 dropper=sphere subgrid=None
+[CASE] fin t=0.02 sdf res=32 dropper=sphere subgrid=None
+[CASE] fin t=0.02 sdf res=64 dropper=sphere subgrid=None
+[CASE] fin t=0.02 sdf res=128 dropper=sphere subgrid=None
+[CASE] fin t=0.02 sdf res=256 dropper=sphere subgrid=None
+[CASE] fin t=0.02 sdf res=8 dropper=sphere subgrid=0
+[CASE] fin t=0.02 sdf res=32 dropper=sphere subgrid=0
+[CASE] fin t=0.02 sdf res=64 dropper=sphere subgrid=0
+[RESULT] S-fin: {"rows": [{"fin_thickness": 0.002, "approx": "none", "sdfResolution": null, "subgrid": null, "dropper": "sdf_mesh", "x_after": 0.051, "passed_through_fin": false, "contact_found_events": 1}, {"fin_thickness": 0.002, "approx": "sdf", "sdfResolution": 8, "subgrid": null, "dropper": "sdf_mesh", "x_after": 0.0457, "passed_through_fin": false, "contact_found_events": 1}, {"fin_thickness": 0.002, "approx": "sdf", "sdfResolution": 16, "subgrid": null, "dropper": "sdf_mesh", "x_after": 0.053, "passed_through_fin": false, "contact_found_events": 1}, {"fin_thickness": 0.002, "approx": "sdf", "sdfResolution": 32, "subgrid": null, "dropper": "sdf_mesh", "x_after": 0.053, "passed_through_fin": false, "contact_found_events": 1}, {"fin_thickness": 0.002, "approx": "sdf", "sdfResolution": 64, "subgrid": null, "dropper": "sdf_mesh", "x_after": 0.051, "passed_through_fin": false, "contact_found_events": 1}, {"fin_thickness": 0.002, "approx": "sdf", "sdfResolution": 128, "subgrid": null, "dropper": "sdf_mesh", "x_after": 0.053, "passed_through_fin": false, "contact_found_events": 1}, {"fin_thickness": 0.002, "approx": "sdf", "sdfResolution": 256, "subgrid": null, "dropper": "sdf_mesh", "x_after": 0.053, "passed_through_fin": false, "contact_found_events": 1}, {"fin_thickness": 0.002, "approx": "sdf", "sdfResolution": 8, "subgrid": 0, "dropper": "sdf_mesh", "x_after": 0.8104, "passed_through_fin": false, "contact_found_events": 2}, {"fin_thickness": 0.002, "approx": "sdf", "sdfResolution": 32, "
+[END] S-fin 41.7s
+[START] S-thin
+[CASE] drop sphere t=0.002 none res=None subgrid=None
+[CASE] drop sphere t=0.002 sdf res=8 subgrid=None
+[CASE] drop sphere t=0.002 sdf res=16 subgrid=None
+[CASE] drop sphere t=0.002 sdf res=32 subgrid=None
+[CASE] drop sphere t=0.002 sdf res=64 subgrid=None
+[CASE] drop sphere t=0.002 sdf res=128 subgrid=None
+[CASE] drop sphere t=0.002 sdf res=256 subgrid=None
+[CASE] drop sphere t=0.01 none res=None subgrid=None
+[CASE] drop sphere t=0.01 sdf res=8 subgrid=None
+[CASE] drop sphere t=0.01 sdf res=16 subgrid=None
+[CASE] drop sphere t=0.01 sdf res=32 subgrid=None
+[CASE] drop sphere t=0.01 sdf res=64 subgrid=None
+[CASE] drop sphere t=0.01 sdf res=128 subgrid=None
+[CASE] drop sphere t=0.01 sdf res=256 subgrid=None
+[CASE] drop sphere t=0.05 none res=None subgrid=None
+[CASE] drop sphere t=0.05 sdf res=8 subgrid=None
+[CASE] drop sphere t=0.05 sdf res=16 subgrid=None
+[CASE] drop sphere t=0.05 sdf res=32 subgrid=None
+[CASE] drop sphere t=0.05 sdf res=64 subgrid=None
+[CASE] drop sphere t=0.05 sdf res=128 subgrid=None
+[CASE] drop sphere t=0.05 sdf res=256 subgrid=None
+[CASE] drop cube t=0.002 none res=None subgrid=None
+[CASE] drop cube t=0.002 sdf res=8 subgrid=None
+[CASE] drop cube t=0.002 sdf res=16 subgrid=None
+[CASE] drop cube t=0.002 sdf res=32 subgrid=None
+[CASE] drop cube t=0.002 sdf res=64 subgrid=None
+[CASE] drop cube t=0.002 sdf res=128 subgrid=None
+[CASE] drop cube t=0.002 sdf res=256 subgrid=None
+[CASE] drop cube t=0.01 none res=None subgrid=None
+[CASE] drop cube t=0.01 sdf res=8 subgrid=None
+[CASE] drop cube t=0.01 sdf res=16 subgrid=None
+[CASE] drop cube t=0.01 sdf res=32 subgrid=None
+[CASE] drop cube t=0.01 sdf res=64 subgrid=None
+[CASE] drop cube t=0.01 sdf res=128 subgrid=None
+[CASE] drop cube t=0.01 sdf res=256 subgrid=None
+[CASE] drop cube t=0.05 none res=None subgrid=None
+[CASE] drop cube t=0.05 sdf res=8 subgrid=None
+[CASE] drop cube t=0.05 sdf res=16 subgrid=None
+[CASE] drop cube t=0.05 sdf res=32 subgrid=None
+[CASE] drop cube t=0.05 sdf res=64 subgrid=None
+[CASE] drop cube t=0.05 sdf res=128 subgrid=None
+[CASE] drop cube t=0.05 sdf res=256 subgrid=None
+[CASE] drop convex t=0.002 none res=None subgrid=None
+[CASE] drop convex t=0.002 sdf res=8 subgrid=None
+[CASE] drop convex t=0.002 sdf res=16 subgrid=None
+[CASE] drop convex t=0.002 sdf res=32 subgrid=None
+[CASE] drop convex t=0.002 sdf res=64 subgrid=None
+[CASE] drop convex t=0.002 sdf res=128 subgrid=None
+[CASE] drop convex t=0.002 sdf res=256 subgrid=None
+[CASE] drop convex t=0.01 none res=None subgrid=None
+[CASE] drop convex t=0.01 sdf res=8 subgrid=None
+[CASE] drop convex t=0.01 sdf res=16 subgrid=None
+[CASE] drop convex t=0.01 sdf res=32 subgrid=None
+[CASE] drop convex t=0.01 sdf res=64 subgrid=None
+[CASE] drop convex t=0.01 sdf res=128 subgrid=None
+[CASE] drop convex t=0.01 sdf res=256 subgrid=None
+[CASE] drop convex t=0.05 none res=None subgrid=None
+[CASE] drop convex t=0.05 sdf res=8 subgrid=None
+[CASE] drop convex t=0.05 sdf res=16 subgrid=None
+[CASE] drop convex t=0.05 sdf res=32 subgrid=None
+[CASE] drop convex t=0.05 sdf res=64 subgrid=None
+[CASE] drop convex t=0.05 sdf res=128 subgrid=None
+[CASE] drop convex t=0.05 sdf res=256 subgrid=None
+[CASE] drop sdf_mesh t=0.002 none res=None subgrid=None
+13:57:26Z [8,439ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,439ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,439ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,439ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,439ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,455ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,456ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,456ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,456ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,456ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,472ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,472ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,472ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,472ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T13:57:26Z [8,472ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,559ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,559ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,559ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,559ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,559ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,576ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,576ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,576ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,576ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,576ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,593ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,593ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,593ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,593ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,593ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,609ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,609ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,609ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,609ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,609ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,626ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,626ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,626ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,626ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,626ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,643ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,643ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,643ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,643ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:08Z [170,643ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,659ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,659ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,659ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,659ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,659ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,676ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,676ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,676ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,676ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,676ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,693ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,693ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,693ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,693ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,693ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,709ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,709ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,709ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,709ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,709ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,726ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,726ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,726ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,726ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,726ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,743ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,743ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,744ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,744ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,744ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,759ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,760ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,760ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,760ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,760ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,776ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,776ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,776ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,776ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,776ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,793ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,793ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,793ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:[CASE] drop sdf_mesh t=0.002 sdf res=8 subgrid=None
+[CASE] drop sdf_mesh t=0.002 sdf res=16 subgrid=None
+[CASE] drop sdf_mesh t=0.002 sdf res=32 subgrid=None
+[CASE] drop sdf_mesh t=0.002 sdf res=64 subgrid=None
+[CASE] drop sdf_mesh t=0.002 sdf res=128 subgrid=None
+[CASE] drop sdf_mesh t=0.002 sdf res=256 subgrid=None
+[CASE] drop sdf_mesh t=0.01 none res=None subgrid=None
+09Z [170,793ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,793ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,810ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,810ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,810ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,810ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,810ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,826ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,826ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,826ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,826ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,827ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,843ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,843ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,843ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,843ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:09Z [170,843ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,741ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,742ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,742ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,742ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,742ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,758ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,758ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,758ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,758ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,758ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,775ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,775ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,775ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,775ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,775ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,792ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,792ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,792ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,792ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,792ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,808ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,808ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,808ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,808ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,808ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,825ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,825ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,825ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,825ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,825ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,841ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,841ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,841ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,842ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,842ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,858ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,858ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,858ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,858ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,858ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,875ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,875ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,875ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,875ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,875ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,891ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,892ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,892ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,892ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,892ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,908ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,908ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,908ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,908ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,908ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,925ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,925ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,925ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,925ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,925ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,942ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,942ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,942ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,942ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,942ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,958ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,958ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,958ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,958ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,958ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,975ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,975ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,975ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,975ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,975ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,992ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,992ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,992ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,992ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [184,992ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [185,008ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [185,009ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [185,009ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [185,009ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [185,009ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [185,025ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [185,025ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [185,025ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [185,025ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received[CASE] drop sdf_mesh t=0.01 sdf res=8 subgrid=None
+[CASE] drop sdf_mesh t=0.01 sdf res=16 subgrid=None
+[CASE] drop sdf_mesh t=0.01 sdf res=32 subgrid=None
+[CASE] drop sdf_mesh t=0.01 sdf res=64 subgrid=None
+[CASE] drop sdf_mesh t=0.01 sdf res=128 subgrid=None
+[CASE] drop sdf_mesh t=0.01 sdf res=256 subgrid=None
+[CASE] drop sdf_mesh t=0.05 none res=None subgrid=None
+ 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:23Z [185,025ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,893ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,893ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,893ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,893ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,893ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,909ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,910ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,910ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,910ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,910ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,926ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,927ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,927ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,927ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,927ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,943ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,943ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,943ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,943ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,943ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,960ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,960ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,960ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,960ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,960ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,976ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,976ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,976ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,976ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,976ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,993ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,993ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,993ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,993ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [198,993ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,010ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,010ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,010ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,010ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,010ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,026ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,027ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,027ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,027ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,027ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,043ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,043ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,043ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,043ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,043ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,060ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,060ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,060ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,060ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,060ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,077ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,077ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,077ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,077ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,077ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,093ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,093ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,093ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,093ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,093ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,110ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,110ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,110ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,110ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,110ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,127ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,127ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,127ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,127ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,127ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,143ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,143ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,143ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,143ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,143ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,160ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,160ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,160ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,160ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,160ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,177ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,177ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromIn[CASE] drop sdf_mesh t=0.05 sdf res=8 subgrid=None
+[CASE] drop sdf_mesh t=0.05 sdf res=16 subgrid=None
+[CASE] drop sdf_mesh t=0.05 sdf res=32 subgrid=None
+[CASE] drop sdf_mesh t=0.05 sdf res=64 subgrid=None
+[CASE] drop sdf_mesh t=0.05 sdf res=128 subgrid=None
+[CASE] drop sdf_mesh t=0.05 sdf res=256 subgrid=None
+[RESULT] S-thin: {"rows": [{"dropper": "sphere", "thickness": 0.002, "approx": "none", "sdfResolution": null, "subgrid": null, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"sphere_shapes": 1, "trimesh_shapes": 1}}, {"dropper": "sphere", "thickness": 0.002, "approx": "sdf", "sdfResolution": 8, "subgrid": null, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"sphere_shapes": 1, "trimesh_shapes": 1}}, {"dropper": "sphere", "thickness": 0.002, "approx": "sdf", "sdfResolution": 16, "subgrid": null, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"sphere_shapes": 1, "trimesh_shapes": 1}}, {"dropper": "sphere", "thickness": 0.002, "approx": "sdf", "sdfResolution": 32, "subgrid": null, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"sphere_shapes": 1, "trimesh_shapes": 1}}, {"dropper": "sphere", "thickness": 0.002, "approx": "sdf", "sdfResolution": 64, "subgrid": null, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"sphere_shapes": 1, "trimesh_shapes": 1}}, {"dropper": "sphere", "thickness": 0.002, "approx": "sdf", "sdfResolution": 128, "subgrid": null, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"sphere_shapes": 1, "trimesh_shapes": 1}}, {"dropper": "sphere", "thickness": 0.002, "approx": "sdf", "sdfResolution": 256, "subgrid": null, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"sphere_shapes": 
+[END] S-thin 170.2s
+[START] S-dense-sdf
+[CASE] drop convex t=0.002 sdf res=8 subgrid=0
+[CASE] drop convex t=0.002 sdf res=16 subgrid=0
+[CASE] drop convex t=0.002 sdf res=32 subgrid=0
+[CASE] drop convex t=0.002 sdf res=64 subgrid=0
+[CASE] drop convex t=0.002 sdf res=128 subgrid=0
+[CASE] drop sdf_mesh t=0.002 sdf res=8 subgrid=0
+[CASE] drop sdf_mesh t=0.002 sdf res=16 subgrid=0
+[CASE] drop sdf_mesh t=0.002 sdf res=32 subgrid=0
+[CASE] drop sdf_mesh t=0.002 sdf res=64 subgrid=0
+[CASE] drop sdf_mesh t=0.002 sdf res=128 subgrid=0
+[RESULT] S-dense-sdf: {"rows": [{"dropper": "convex", "thickness": 0.002, "approx": "sdf", "sdfResolution": 8, "subgrid": 0, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"convex_shapes": 1, "trimesh_shapes": 1}}, {"dropper": "convex", "thickness": 0.002, "approx": "sdf", "sdfResolution": 16, "subgrid": 0, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"convex_shapes": 1, "trimesh_shapes": 1}}, {"dropper": "convex", "thickness": 0.002, "approx": "sdf", "sdfResolution": 32, "subgrid": 0, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"convex_shapes": 1, "trimesh_shapes": 1}}, {"dropper": "convex", "thickness": 0.002, "approx": "sdf", "sdfResolution": 64, "subgrid": 0, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"convex_shapes": 1, "trimesh_shapes": 1}}, {"dropper": "convex", "thickness": 0.002, "approx": "sdf", "sdfResolution": 128, "subgrid": 0, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"convex_shapes": 1, "trimesh_shapes": 1}}, {"dropper": "sdf_mesh", "thickness": 0.002, "approx": "sdf", "sdfResolution": 8, "subgrid": 0, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"trimesh_shapes": 2}}, {"dropper": "sdf_mesh", "thickness": 0.002, "approx": "sdf", "sdfResolution": 16, "subgrid": 0, "z_after": 0.031, "passed_through": false, "contact_events": 18, "shapes": {"trimesh_shapes": 2}}, {"dropper": "sdf_mesh", "thickness":
+[END] S-dense-sdf 20.3s
+[START] S-static-sdf
+[RESULT] S-static-sdf: {"static": {"overlap_notch": false, "overlap_solid": false, "shapes": {"trimesh_shapes": 1}, "contact_in_notch": false}, "kinematic": {"overlap_notch": false, "overlap_solid": false, "shapes": {"trimesh_shapes": 1}, "contact_in_notch": false}, "dynamic": {"overlap_notch": false, "overlap_solid": false, "shapes": {"trimesh_shapes": 1}, "contact_in_notch": false}}
+[END] S-static-sdf 0.2s
+[DONE] t12_sdf_thin 4
+ternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,177ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,177ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,177ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,193ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,193ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,193ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,193ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,194ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,210ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,210ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,210ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,210ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+2026-11-01T14:00:37Z [199,210ms] [Warning] [omni.physx.plugin] PhysX warning: PxShape::getMaterialFromInternalFaceIndex received 0xFFFFffff as input - returning NULL., FILE C:\g\433647380\physx\source\physx\src\NpShape.cpp, LINE 598
+[233.601s] Simulation App Shutting Down

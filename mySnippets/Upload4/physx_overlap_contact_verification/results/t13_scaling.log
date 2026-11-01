@@ -1,0 +1,72 @@
+Skipping automatic ROS environment setup
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-01T14:01:12Z [Info] [carb] Logging to file: c:/isaacsim-6.0.2/kit/logs/Kit/PhysX claim verification/6.2/kit_20261101_230112.log
+[0.144s] [ext: omni.assets.plugins-0.0.0] startup
+[0.147s] [ext: omni.blobkey-1.1.2] startup
+[0.147s] [ext: omni.kit.async_engine-0.0.5] startup
+[0.171s] [ext: omni.client.lib-1.1.1] startup
+[0.187s] [ext: omni.client-1.3.0] startup
+[0.249s] [ext: omni.protobuf.lib-1.0.1] startup
+[0.250s] [ext: omni.grpc.lib-1.0.1] startup
+[0.250s] [ext: omni.metrics.core-0.0.3] startup
+[0.251s] [ext: omni.datastore-0.0.0] startup
+[0.253s] [ext: omni.gpu_foundation.shadercache.d3d12-1.0.0] startup
+[0.259s] [ext: omni.hsscclient-1.1.4] startup
+[0.260s] [ext: omni.stats-1.0.1] startup
+[0.262s] [ext: omni.ujitso.default-1.0.0] startup
+[0.271s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.292s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.293s] [ext: omni.usd.config-1.0.8] startup
+2026-11-01T14:01:12Z [209ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+[0.309s] [ext: omni.usd.libs-1.0.3] startup
+[0.353s] [ext: omni.usd.schema.audio-0.0.1] startup
+[0.455s] [ext: omni.usd.schema.newton-1.5.0] startup
+[0.457s] [ext: omni.usd.schema.physx-110.4.4] startup
+[0.493s] [ext: carb.audio-0.1.0] startup
+[0.494s] [ext: omni.kit.actions.core-1.2.1] startup
+[0.498s] [ext: omni.kit.commands-1.6.2] startup
+[0.504s] [ext: omni.convexdecomposition-110.4.4] startup
+[0.507s] [ext: omni.cubric-0.1.0] startup
+[0.509s] [ext: omni.graph.exec-0.9.6] startup
+[0.510s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[0.512s] [ext: omni.kit.exec.core-0.13.6] startup
+[0.516s] [ext: omni.kit.loop-isaac-1.6.2] startup
+[0.518s] [ext: omni.kit.usd_undo-0.1.8] startup
+[0.519s] [ext: omni.timeline-1.1.2] startup
+[0.521s] [ext: omni.usd_resolver-1.0.0] startup
+[0.526s] [ext: omni.usd.core-1.10.42] startup
+[0.528s] [ext: omni.usd-1.19.11] startup
+[0.578s] [ext: omni.kit.usd.layers-2.7.9] startup
+[0.586s] [ext: omni.kit.primitive.mesh-1.1.1] startup
+[0.591s] [ext: omni.kit.stage_template.core-1.1.23] startup
+[0.592s] [ext: omni.kit.stage_templates-2.0.3] startup
+[0.595s] [ext: omni.physics-110.4.4] startup
+[0.600s] [ext: omni.physx.gpu-110.4.4] startup
+[0.600s] [ext: omni.physx.foundation-110.4.4] startup
+[0.612s] [ext: omni.usdphysics-110.4.4] startup
+[0.614s] [ext: omni.physx.cooking-110.4.4] startup
+[0.617s] [ext: usdrt.scenegraph-7.6.3] startup
+[0.656s] [ext: omni.physx-110.4.4] startup
+[0.667s] [ext: omni.physics.physx-110.4.4] startup
+[0.669s] [ext: omni.physics.stageupdate-110.4.4] startup
+[0.673s] [ext: physx_verify-6.2.0] startup
+[0.674s] Simulation App Starting
+2026-11-01T14:01:13Z [918ms] [Error] [omni.usd] '/app/useFabricSceneDelegate' is enabled, but usdrt::population::IUtils could not be created. Is UsdRt enabled?
+[1.133s] Simulation App Startup Complete
+[1.134s] app ready
+Starting kit application with the following args:  ['C:\\isaacsim-6.0.2\\exts\\isaacsim.simulation_app\\isaacsim\\simulation_app\\simulation_app.py', 'C:\\isaacsim-6.0.2\\CodeByClaude\\physx_overlap_contact_verification\\code\\physx_verify.kit', '--/app/tokens/exe-path=C:\\isaacsim-6.0.2\\kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni/kit/plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', 'C:\\isaacsim-6.0.2/exts', '--ext-folder', 'C:\\isaacsim-6.0.2/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=16', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=16', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--no-ros-env']
+[START] Z-dispersed
+[RESULT] Z-dispersed: {"rows": [{"N": 10, "usd_s": 0.0, "force_load_s": 0.02, "empty_area_us": 4.14, "one_near_any_us": 4.27, "one_near_report_us": 5.51}, {"N": 100, "usd_s": 0.03, "force_load_s": 0.0, "empty_area_us": 4.36, "one_near_any_us": 4.37, "one_near_report_us": 5.63}, {"N": 1000, "usd_s": 0.26, "force_load_s": 0.02, "empty_area_us": 4.31, "one_near_any_us": 4.39, "one_near_report_us": 5.65}, {"N": 10000, "usd_s": 5.11, "force_load_s": 0.32, "empty_area_us": 4.27, "one_near_any_us": 4.27, "one_near_report_us": 5.46}]}
+[END] Z-dispersed 6.1s
+[START] Z-clustered
+[RESULT] Z-clustered: {"rows": [{"N": 10, "hits_per_call": 10.0, "per_call_us": 10.99, "per_hit_us": 1.099}, {"N": 100, "hits_per_call": 100.0, "per_call_us": 64.62, "per_hit_us": 0.646}, {"N": 1000, "hits_per_call": 1000.0, "per_call_us": 592.35, "per_hit_us": 0.592}, {"N": 10000, "hits_per_call": 10000.0, "per_call_us": 6145.82, "per_hit_us": 0.615}]}
+[END] Z-clustered 6.3s
+[START] Z-narrow-phase
+[RESULT] Z-narrow-phase: {"rows": [{"N": 1, "hits": 0, "per_call_us": 4.62, "us_per_candidate": 4.62}, {"N": 10, "hits": 0, "per_call_us": 4.75, "us_per_candidate": 0.4748}, {"N": 100, "hits": 0, "per_call_us": 4.67, "us_per_candidate": 0.0467}, {"N": 1000, "hits": 0, "per_call_us": 8.34, "us_per_candidate": 0.0083}, {"N": 10000, "hits": 0, "per_call_us": 19.95, "us_per_candidate": 0.002}]}
+[END] Z-narrow-phase 6.1s
+[START] Z-contact-pairs
+[RESULT] Z-contact-pairs: {"rows": [{"label": "dispersed_1000", "colliders": 1000, "all_possible_pairs": 499500, "nb_discrete_contact_pairs_total": 0, "with_contacts": 0}, {"label": "chain_100_each_touching_next", "colliders": 100, "all_possible_pairs": 4950, "nb_discrete_contact_pairs_total": 99, "with_contacts": 97}]}
+[END] Z-contact-pairs 0.5s
+[DONE] t13_scaling 4
+[20.207s] Simulation App Shutting Down

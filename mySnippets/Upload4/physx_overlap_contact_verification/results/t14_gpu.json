@@ -1,0 +1,55 @@
+{
+ "group": "t14_gpu",
+ "items": [
+  {
+   "id": "GPU-False",
+   "description": "CPU/GPU パイプライン",
+   "gpu": false,
+   "steps": 20,
+   "contact_events": 1280,
+   "pairs_reported": 64,
+   "min_sep": 0.0049991607666015625,
+   "gpu_mem_nonzero_fields": {},
+   "pairs_total_stat": 64,
+   "play_20_frames_s": 0.355,
+   "overlap_any_us": 4.56,
+   "overlap_hit": true,
+   "overlap_miss": false,
+   "overlap_shape_A0": [
+    "/World/A0"
+   ]
+  },
+  {
+   "id": "GPU-True",
+   "description": "CPU/GPU パイプライン",
+   "gpu": true,
+   "steps": 20,
+   "contact_events": 1280,
+   "pairs_reported": 64,
+   "min_sep": 0.0049991607666015625,
+   "gpu_mem_nonzero_fields": {
+    "gpu_mem_found_lost_pairs": 64,
+    "gpu_mem_heap": 67108864,
+    "gpu_mem_heap_articulation": 360,
+    "gpu_mem_heap_broadphase": 8937548,
+    "gpu_mem_heap_narrowphase": 60424,
+    "gpu_mem_heap_simulation": 89472,
+    "gpu_mem_heap_simulation_articulation": 216,
+    "gpu_mem_heap_simulation_deformable_surface": 8,
+    "gpu_mem_heap_simulation_deformable_volume": 12,
+    "gpu_mem_heap_solver": 22265512,
+    "gpu_mem_rigid_contact_count": 256,
+    "gpu_mem_rigid_patch_count": 64,
+    "gpu_mem_temp_buffer_capacity": 3824
+   },
+   "pairs_total_stat": 0,
+   "play_20_frames_s": 0.357,
+   "overlap_any_us": 4.19,
+   "overlap_hit": true,
+   "overlap_miss": false,
+   "overlap_shape_A0": [
+    "/World/A0"
+   ]
+  }
+ ]
+}

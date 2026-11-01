@@ -1,0 +1,86 @@
+{
+ "group": "t05_filter",
+ "items": [
+  {
+   "id": "F-control",
+   "description": "フィルタ別の結果",
+   "contact_pairs": [
+    [
+     "/World/A",
+     "/World/B"
+    ]
+   ],
+   "overlap_before_step_force_load": [
+    "/World/A",
+    "/World/B"
+   ],
+   "overlap_shape_A_after_5_frames": [
+    "/World/A"
+   ],
+   "overlap_box_after_5_frames": [
+    "/World/A"
+   ]
+  },
+  {
+   "id": "F-filtered_pairs",
+   "description": "フィルタ別の結果",
+   "contact_pairs": [],
+   "overlap_before_step_force_load": [
+    "/World/A",
+    "/World/B"
+   ],
+   "overlap_shape_A_after_5_frames": [
+    "/World/A",
+    "/World/B"
+   ],
+   "overlap_box_after_5_frames": [
+    "/World/A",
+    "/World/B"
+   ]
+  },
+  {
+   "id": "F-collision_groups",
+   "description": "フィルタ別の結果",
+   "contact_pairs": [],
+   "overlap_before_step_force_load": [
+    "/World/A",
+    "/World/B"
+   ],
+   "overlap_shape_A_after_5_frames": [
+    "/World/A",
+    "/World/B"
+   ],
+   "overlap_box_after_5_frames": [
+    "/World/A",
+    "/World/B"
+   ]
+  },
+  {
+   "id": "F-collision_disabled_B",
+   "description": "フィルタ別の結果",
+   "contact_pairs": [],
+   "overlap_before_step_force_load": [
+    "/World/A"
+   ],
+   "overlap_shape_A_after_5_frames": [
+    "/World/A"
+   ],
+   "overlap_box_after_5_frames": [
+    "/World/A"
+   ]
+  },
+  {
+   "id": "F-scene-query-off",
+   "description": "シーンクエリ無効",
+   "overlap_hit": false
+  },
+  {
+   "id": "F-callback-discard",
+   "description": "コールバックの戻り値",
+   "return_false_n": 5,
+   "return_false_seen": 1,
+   "return_true_n": 5,
+   "return_true_seen": 5
+  }
+ ]
+}

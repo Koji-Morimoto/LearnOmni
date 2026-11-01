@@ -1,0 +1,47 @@
+# 検証専用の軽量エクスペリエンス。
+# 同じ Isaac Sim 6.2.0 インストールの omni.physx (110.4.4) を使い、描画・UI 系だけを外す。
+# 理由: 検証時の PC はコミット領域の空きが約 7.8 GB で、フルアプリの起動が bad allocation で止まったため。
+[package]
+title = "PhysX claim verification"
+version = "6.2.0"
+
+[dependencies]
+"omni.kit.loop-isaac" = {}
+"omni.usd" = {}
+"omni.usd.libs" = {}
+"omni.timeline" = {}
+"omni.usd.schema.physx" = {}
+"omni.usdphysics" = {}
+"omni.physics" = {}
+"omni.physx.foundation" = {}
+"omni.physx.cooking" = {}
+"omni.physx.gpu" = {}
+"omni.physx" = {}
+"omni.physics.physx" = {}
+"omni.physics.stageupdate" = {}
+"omni.kit.async_engine" = {}
+"omni.kit.usd.layers" = {}
+"omni.kit.stage_templates" = {}
+
+# 以下は isaacsim.exp.base.kit の物理関連設定と同じ値
+[settings]
+physics.autoPopupSimulationOutputWindow = false
+physics.resetOnStop = true
+
+[settings.app]
+name = "PhysX claim verification"
+version = "6.2.0"
+settings.persistent = false
+renderer.skipWhileMinimized = true
+
+[settings.persistent]
+physics.visualizationDisplayJoints = false
+physics.visualizationSimulationOutput = false
+
+[settings.app.exts.folders]
+'++' = [
+    "C:/isaacsim-6.0.2/exts",
+    "C:/isaacsim-6.0.2/extscache",
+    "C:/isaacsim-6.0.2/kit/exts",
+    "C:/isaacsim-6.0.2/kit/extscore",
+]

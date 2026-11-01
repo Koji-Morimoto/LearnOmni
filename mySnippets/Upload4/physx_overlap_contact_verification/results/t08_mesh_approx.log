@@ -1,0 +1,144 @@
+Skipping automatic ROS environment setup
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-01T13:56:47Z [Info] [carb] Logging to file: c:/isaacsim-6.0.2/kit/logs/Kit/PhysX claim verification/6.2/kit_20261101_225647.log
+[0.139s] [ext: omni.assets.plugins-0.0.0] startup
+[0.143s] [ext: omni.blobkey-1.1.2] startup
+[0.143s] [ext: omni.kit.async_engine-0.0.5] startup
+[0.167s] [ext: omni.client.lib-1.1.1] startup
+[0.181s] [ext: omni.client-1.3.0] startup
+[0.242s] [ext: omni.protobuf.lib-1.0.1] startup
+[0.243s] [ext: omni.grpc.lib-1.0.1] startup
+[0.244s] [ext: omni.metrics.core-0.0.3] startup
+[0.244s] [ext: omni.datastore-0.0.0] startup
+[0.246s] [ext: omni.gpu_foundation.shadercache.d3d12-1.0.0] startup
+[0.252s] [ext: omni.hsscclient-1.1.4] startup
+[0.253s] [ext: omni.stats-1.0.1] startup
+[0.255s] [ext: omni.ujitso.default-1.0.0] startup
+[0.263s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.283s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.285s] [ext: omni.usd.config-1.0.8] startup
+2026-11-01T13:56:47Z [207ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+[0.301s] [ext: omni.usd.libs-1.0.3] startup
+[0.359s] [ext: omni.usd.schema.audio-0.0.1] startup
+[0.463s] [ext: omni.usd.schema.newton-1.5.0] startup
+[0.465s] [ext: omni.usd.schema.physx-110.4.4] startup
+[0.501s] [ext: carb.audio-0.1.0] startup
+[0.502s] [ext: omni.kit.actions.core-1.2.1] startup
+[0.506s] [ext: omni.kit.commands-1.6.2] startup
+[0.512s] [ext: omni.convexdecomposition-110.4.4] startup
+[0.515s] [ext: omni.cubric-0.1.0] startup
+[0.517s] [ext: omni.graph.exec-0.9.6] startup
+[0.518s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[0.521s] [ext: omni.kit.exec.core-0.13.6] startup
+[0.524s] [ext: omni.kit.loop-isaac-1.6.2] startup
+[0.527s] [ext: omni.kit.usd_undo-0.1.8] startup
+[0.528s] [ext: omni.timeline-1.1.2] startup
+[0.530s] [ext: omni.usd_resolver-1.0.0] startup
+[0.535s] [ext: omni.usd.core-1.10.42] startup
+[0.538s] [ext: omni.usd-1.19.11] startup
+[0.588s] [ext: omni.kit.usd.layers-2.7.9] startup
+[0.597s] [ext: omni.kit.primitive.mesh-1.1.1] startup
+[0.602s] [ext: omni.kit.stage_template.core-1.1.23] startup
+[0.603s] [ext: omni.kit.stage_templates-2.0.3] startup
+[0.606s] [ext: omni.physics-110.4.4] startup
+[0.610s] [ext: omni.physx.gpu-110.4.4] startup
+[0.611s] [ext: omni.physx.foundation-110.4.4] startup
+[0.623s] [ext: omni.usdphysics-110.4.4] startup
+[0.625s] [ext: omni.physx.cooking-110.4.4] startup
+[0.629s] [ext: usdrt.scenegraph-7.6.3] startup
+[0.665s] [ext: omni.physx-110.4.4] startup
+[0.676s] [ext: omni.physics.physx-110.4.4] startup
+[0.679s] [ext: omni.physics.stageupdate-110.4.4] startup
+[0.683s] [ext: physx_verify-6.2.0] startup
+[0.685s] Simulation App Starting
+2026-11-01T13:56:48Z [923ms] [Error] [omni.usd] '/app/useFabricSceneDelegate' is enabled, but usdrt::population::IUtils could not be created. Is UsdRt enabled?
+[1.133s] Simulation App Startup Complete
+[1.134s] app ready
+Starting kit application with the following args:  ['C:\\isaacsim-6.0.2\\exts\\isaacsim.simulation_app\\isaacsim\\simulation_app\\simulation_app.py', 'C:\\isaacsim-6.0.2\\CodeByClaude\\physx_overlap_contact_verification\\code\\physx_verify.kit', '--/app/tokens/exe-path=C:\\isaacsim-6.0.2\\kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni/kit/plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', 'C:\\isaacsim-6.0.2/exts', '--ext-folder', 'C:\\isaacsim-6.0.2/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=16', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=16', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--no-ros-env']
+[START] M-none/static
+[CASE] none/static
+[RESULT] M-none/static: {"overlap": {"notch": false, "solid": false, "prong": false, "surface": true, "far": false}, "contact": {"notch": {"reported": false, "min_sep": null}, "solid": {"reported": false, "min_sep": null}, "prong": {"reported": false, "min_sep": null}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"trimesh_shapes": 1}, "cooked_result": "RESULT_ERROR_UNSUPPORTED_APPROXIMATION", "cooked_hull_vertices": []}
+[END] M-none/static 0.3s
+[START] M-none/kinematic
+[CASE] none/kinematic
+[RESULT] M-none/kinematic: {"overlap": {"notch": false, "solid": false, "prong": false, "surface": true, "far": false}, "contact": {"notch": {"reported": false, "min_sep": null}, "solid": {"reported": false, "min_sep": null}, "prong": {"reported": false, "min_sep": null}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"trimesh_shapes": 1}, "cooked_result": "RESULT_ERROR_UNSUPPORTED_APPROXIMATION", "cooked_hull_vertices": []}
+[END] M-none/kinematic 0.2s
+[START] M-none/dynamic
+[CASE] none/dynamic
+2026-11-01T13:56:48Z [1,624ms] [Error] [omni.physx.plugin] PhysicsUSD: Parse collision - triangle mesh collision (approximation None/MeshSimplification) cannot be a part of a dynamic body, falling back to convexHull approximation: /World/U.For dynamic collision please use approximations : convex hull, convex decomposition, box, sphere or SDF approximation.
+2026-11-01T13:56:48Z [1,625ms] [Error] [omni.physx.plugin] PhysicsUSD: Parse collision - triangle mesh collision (approximation None/MeshSimplification) cannot be a part of a dynamic body, falling back to convexHull approximation: /World/U.For dynamic collision please use approximations : convex hull, convex decomposition, box, sphere or SDF approximation.
+2026-11-01T13:56:48Z [1,640ms] [Error] [omni.physx.plugin] PhysicsUSD: Parse collision - triangle mesh collision (approximation None/MeshSimplification) cannot be a part of a dynamic body, falling back to convexHull approximation: /World/U.For dynamic collision please use approximations : convex hull, convex decomposition, box, sphere or SDF approximation.
+2026-11-01T13:56:48Z [1,697ms] [Error] [omni.physx.plugin] PhysicsUSD: Parse collision - triangle mesh collision (approximation None/MeshSimplification) cannot be a part of a dynamic body, falling back to convexHull approximation: /World/U.For dynamic collision please use approximations : convex hull, convex decomposition, box, sphere or SDF approximation.
+2026-11-01T13:56:48Z [1,754ms] [Error] [omni.physx.plugin] PhysicsUSD: Parse collision - triangle mesh collision (approximation None/MeshSimplification) cannot be a part of a dynamic body, falling back to convexHull approximation: /World/U.For dynamic collision please use approximations : convex hull, convex decomposition, box, sphere or SDF approximation.
+2026-11-01T13:56:49Z [1,808ms] [Error] [omni.physx.plugin] PhysicsUSD: Parse collision - triangle mesh collision (approximation None/MeshSimplification) cannot be a part of a dynamic body, falling back to convexHull approximation: /World/U.For dynamic collision please use approximations : convex hull, convex decomposition, box, sphere or SDF approximation.
+[RESULT] M-none/dynamic: {"overlap": {"notch": true, "solid": true, "prong": true, "surface": true, "far": false}, "contact": {"notch": {"reported": true, "min_sep": -0.20999999344348907}, "solid": {"reported": true, "min_sep": -0.21000000834465027}, "prong": {"reported": true, "min_sep": -0.20999999344348907}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"convex_shapes": 1}, "cooked_result": "RESULT_VALID", "cooked_hull_vertices": [8]}
+[END] M-none/dynamic 0.2s
+[START] M-meshSimplification/static
+[CASE] meshSimplification/static
+[RESULT] M-meshSimplification/static: {"overlap": {"notch": false, "solid": false, "prong": false, "surface": true, "far": false}, "contact": {"notch": {"reported": false, "min_sep": null}, "solid": {"reported": false, "min_sep": null}, "prong": {"reported": false, "min_sep": null}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"trimesh_shapes": 1}, "cooked_result": "RESULT_ERROR_UNSUPPORTED_APPROXIMATION", "cooked_hull_vertices": []}
+[END] M-meshSimplification/static 0.2s
+[START] M-meshSimplification/kinematic
+[CASE] meshSimplification/kinematic
+[RESULT] M-meshSimplification/kinematic: {"overlap": {"notch": false, "solid": false, "prong": false, "surface": true, "far": false}, "contact": {"notch": {"reported": false, "min_sep": null}, "solid": {"reported": false, "min_sep": null}, "prong": {"reported": false, "min_sep": null}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"trimesh_shapes": 1}, "cooked_result": "RESULT_ERROR_UNSUPPORTED_APPROXIMATION", "cooked_hull_vertices": []}
+[END] M-meshSimplification/kinematic 0.2s
+[START] M-meshSimplification/dynamic
+[CASE] meshSimplification/dynamic
+2026-11-01T13:56:49Z [2,339ms] [Error] [omni.physx.plugin] PhysicsUSD: Parse collision - triangle mesh collision (approximation None/MeshSimplification) cannot be a part of a dynamic body, falling back to convexHull approximation: /World/U.For dynamic collision please use approximations : convex hull, convex decomposition, box, sphere or SDF approximation.
+2026-11-01T13:56:49Z [2,340ms] [Error] [omni.physx.plugin] PhysicsUSD: Parse collision - triangle mesh collision (approximation None/MeshSimplification) cannot be a part of a dynamic body, falling back to convexHull approximation: /World/U.For dynamic collision please use approximations : convex hull, convex decomposition, box, sphere or SDF approximation.
+2026-11-01T13:56:49Z [2,355ms] [Error] [omni.physx.plugin] PhysicsUSD: Parse collision - triangle mesh collision (approximation None/MeshSimplification) cannot be a part of a dynamic body, falling back to convexHull approximation: /World/U.For dynamic collision please use approximations : convex hull, convex decomposition, box, sphere or SDF approximation.
+2026-11-01T13:56:49Z [2,410ms] [Error] [omni.physx.plugin] PhysicsUSD: Parse collision - triangle mesh collision (approximation None/MeshSimplification) cannot be a part of a dynamic body, falling back to convexHull approximation: /World/U.For dynamic collision please use approximations : convex hull, convex decomposition, box, sphere or SDF approximation.
+2026-11-01T13:56:49Z [2,465ms] [Error] [omni.physx.plugin] PhysicsUSD: Parse collision - triangle mesh collision (approximation None/MeshSimplification) cannot be a part of a dynamic body, falling back to convexHull approximation: /World/U.For dynamic collision please use approximations : convex hull, convex decomposition, box, sphere or SDF approximation.
+2026-11-01T13:56:49Z [2,521ms] [Error] [omni.physx.plugin] PhysicsUSD: Parse collision - triangle mesh collision (approximation None/MeshSimplification) cannot be a part of a dynamic body, falling back to convexHull approximation: /World/U.For dynamic collision please use approximations : convex hull, convex decomposition, box, sphere or SDF approximation.
+[RESULT] M-meshSimplification/dynamic: {"overlap": {"notch": true, "solid": true, "prong": true, "surface": true, "far": false}, "contact": {"notch": {"reported": true, "min_sep": -0.20999999344348907}, "solid": {"reported": true, "min_sep": -0.21000000834465027}, "prong": {"reported": true, "min_sep": -0.20999999344348907}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"convex_shapes": 1}, "cooked_result": "RESULT_VALID", "cooked_hull_vertices": [8]}
+[END] M-meshSimplification/dynamic 0.2s
+[START] M-convexHull/static
+[CASE] convexHull/static
+[RESULT] M-convexHull/static: {"overlap": {"notch": true, "solid": true, "prong": true, "surface": true, "far": false}, "contact": {"notch": {"reported": true, "min_sep": -0.20999999344348907}, "solid": {"reported": true, "min_sep": -0.21000000834465027}, "prong": {"reported": true, "min_sep": -0.20999999344348907}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"convex_shapes": 1}, "cooked_result": "RESULT_VALID", "cooked_hull_vertices": [8]}
+[END] M-convexHull/static 0.2s
+[START] M-convexHull/kinematic
+[CASE] convexHull/kinematic
+[RESULT] M-convexHull/kinematic: {"overlap": {"notch": true, "solid": true, "prong": true, "surface": true, "far": false}, "contact": {"notch": {"reported": true, "min_sep": -0.20999999344348907}, "solid": {"reported": true, "min_sep": -0.21000000834465027}, "prong": {"reported": true, "min_sep": -0.20999999344348907}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"convex_shapes": 1}, "cooked_result": "RESULT_VALID", "cooked_hull_vertices": [8]}
+[END] M-convexHull/kinematic 0.2s
+[START] M-convexHull/dynamic
+[CASE] convexHull/dynamic
+[RESULT] M-convexHull/dynamic: {"overlap": {"notch": true, "solid": true, "prong": true, "surface": true, "far": false}, "contact": {"notch": {"reported": true, "min_sep": -0.20999999344348907}, "solid": {"reported": true, "min_sep": -0.21000000834465027}, "prong": {"reported": true, "min_sep": -0.20999999344348907}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"convex_shapes": 1}, "cooked_result": "RESULT_VALID", "cooked_hull_vertices": [8]}
+[END] M-convexHull/dynamic 0.2s
+[START] M-convexDecomposition/static
+[CASE] convexDecomposition/static
+[RESULT] M-convexDecomposition/static: {"overlap": {"notch": false, "solid": true, "prong": true, "surface": true, "far": false}, "contact": {"notch": {"reported": false, "min_sep": null}, "solid": {"reported": true, "min_sep": -0.21000000834465027}, "prong": {"reported": true, "min_sep": -0.24030297994613647}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"convex_shapes": 3}, "cooked_result": "RESULT_VALID", "cooked_hull_vertices": [9, 8, 8]}
+[END] M-convexDecomposition/static 0.2s
+[START] M-convexDecomposition/kinematic
+[CASE] convexDecomposition/kinematic
+[RESULT] M-convexDecomposition/kinematic: {"overlap": {"notch": false, "solid": true, "prong": true, "surface": true, "far": false}, "contact": {"notch": {"reported": false, "min_sep": null}, "solid": {"reported": true, "min_sep": -0.21000000834465027}, "prong": {"reported": true, "min_sep": -0.24030297994613647}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"convex_shapes": 3}, "cooked_result": "RESULT_VALID", "cooked_hull_vertices": [9, 8, 8]}
+[END] M-convexDecomposition/kinematic 0.2s
+[START] M-convexDecomposition/dynamic
+[CASE] convexDecomposition/dynamic
+[RESULT] M-convexDecomposition/dynamic: {"overlap": {"notch": false, "solid": true, "prong": true, "surface": true, "far": false}, "contact": {"notch": {"reported": false, "min_sep": null}, "solid": {"reported": true, "min_sep": -0.21000000834465027}, "prong": {"reported": true, "min_sep": -0.24030297994613647}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"convex_shapes": 3}, "cooked_result": "RESULT_VALID", "cooked_hull_vertices": [9, 8, 8]}
+[END] M-convexDecomposition/dynamic 0.2s
+[START] M-sdf/static
+[CASE] sdf/static
+[RESULT] M-sdf/static: {"overlap": {"notch": false, "solid": false, "prong": false, "surface": true, "far": false}, "contact": {"notch": {"reported": false, "min_sep": null}, "solid": {"reported": false, "min_sep": null}, "prong": {"reported": false, "min_sep": null}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"trimesh_shapes": 1}, "cooked_result": "n/a", "cooked_hull_vertices": []}
+[END] M-sdf/static 0.2s
+[START] M-sdf/kinematic
+[CASE] sdf/kinematic
+[RESULT] M-sdf/kinematic: {"overlap": {"notch": false, "solid": false, "prong": false, "surface": true, "far": false}, "contact": {"notch": {"reported": false, "min_sep": null}, "solid": {"reported": false, "min_sep": null}, "prong": {"reported": false, "min_sep": null}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"trimesh_shapes": 1}, "cooked_result": "n/a", "cooked_hull_vertices": []}
+[END] M-sdf/kinematic 0.2s
+[START] M-sdf/dynamic
+[CASE] sdf/dynamic
+[RESULT] M-sdf/dynamic: {"overlap": {"notch": false, "solid": false, "prong": false, "surface": true, "far": false}, "contact": {"notch": {"reported": false, "min_sep": null}, "solid": {"reported": false, "min_sep": null}, "prong": {"reported": false, "min_sep": null}, "far": {"reported": false, "min_sep": null}}, "physx_shapes": {"trimesh_shapes": 1}, "cooked_result": "n/a", "cooked_hull_vertices": []}
+[END] M-sdf/dynamic 0.2s
+[START] M-none-exact
+[RESULT] M-none-exact: {"rows": [{"face": "溝の底 z=0.4", "boundary": 0.400999927520752, "expected": 0.401, "error": -7.247924804776318e-08}, {"face": "歯の内側面 x=0.5", "boundary": 0.49900007247924805, "expected": 0.499, "error": 7.247924804776318e-08}, {"face": "底面 z=0", "boundary": -0.0009999275207519531, "expected": -0.001, "error": 7.247924804689582e-08}]}
+[END] M-none-exact 0.0s
+[START] M-enclosed
+[RESULT] M-enclosed: {"physx_shapes": {"trimesh_shapes": 1}, "overlap_sphere_inside": false, "overlap_box_inside": false, "overlap_sphere_straddling_face": true, "overlap_box_covering_mesh": true, "control_convexHull_sphere_inside": true, "contact_none_inside": {"reported": false, "min_sep": null}, "contact_convexHull_inside": {"reported": true, "min_sep": -1.100000023841858}, "contact_none_straddling_face": {"reported": false, "min_sep": null}, "contact_convexHull_straddling_face": {"reported": true, "min_sep": -0.15000000596046448}}
+[END] M-enclosed 0.3s
+[START] M-trimesh-scale
+[RESULT] M-trimesh-scale: {"rows": [{"vertices": 1986, "triangles": 3968, "usd_build_s": 0.0, "force_load_s": 0.0, "shapes": {"trimesh_shapes": 1}, "hit_on_surface": true, "radial_error": {"n": 64, "min": -0.0023272476196288805, "median": -0.001407417297363378, "max": -0.00028932189941432984}}, {"vertices": 130562, "triangles": 261120, "usd_build_s": 0.06, "force_load_s": 0.03, "shapes": {"trimesh_shapes": 1}, "hit_on_surface": true, "radial_error": {"n": 64, "min": -3.678894042968839e-05, "median": -2.1530151367188388e-05, "max": -3.982543944958117e-06}}, {"vertices": 523266, "triangles": 1046528, "usd_build_s": 0.26, "force_load_s": 0.11, "shapes": {"trimesh_shapes": 1}, "hit_on_surface": true, "radial_error": {"n": 64, "min": -8.56018066397457e-06, "median": -5.508422851296935e-06, "max": -1.6784667977720602e-07}}, {"vertices": 2095106, "triangles": 4190208, "usd_build_s": 1.01, "force_load_s": 0.48, "shapes": {"trimesh_shapes": 1}, "hit_on_surface": true, "radial_error": {"n": 64, "min": -2.456665039063388e-06, "median": -9.307861327245703e-07, "max": -1.6784667977720602e-07}}]}
+[END] M-trimesh-scale 5.4s
+[START] M-subdivision
+[RESULT] M-subdivision: {"cage_corner": 0.5, "catmull_clark_limit_corner": 0.25, "none/none": {"corner_first_hit_t": 0.500500000000033, "face_first_hit_x": 0.501000000000033}, "none/convexHull": {"corner_first_hit_t": 0.500500000000033, "face_first_hit_x": 0.501000000000033}, "catmullClark/none": {"corner_first_hit_t": 0.500500000000033, "face_first_hit_x": 0.501000000000033}, "catmullClark/convexHull": {"corner_first_hit_t": 0.500500000000033, "face_first_hit_x": 0.501000000000033}}
+[END] M-subdivision 0.1s
+[DONE] t08_mesh_approx 19
+[10.600s] Simulation App Shutting Down

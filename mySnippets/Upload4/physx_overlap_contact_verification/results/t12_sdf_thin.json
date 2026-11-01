@@ -1,0 +1,1941 @@
+{
+ "group": "t12_sdf_thin",
+ "items": [
+  {
+   "id": "S-fin",
+   "description": "球を x=0.15 から速度 -2 m/s でフィン(x=0)へ",
+   "rows": [
+    {
+     "fin_thickness": 0.002,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.0457,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.053,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.053,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.053,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.053,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": 0,
+     "dropper": "sdf_mesh",
+     "x_after": 0.8104,
+     "passed_through_fin": false,
+     "contact_found_events": 2
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": 0,
+     "dropper": "sdf_mesh",
+     "x_after": 0.0569,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "dropper": "sdf_mesh",
+     "x_after": 0.0475,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.0611,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.0748,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.0753,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.0601,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.0753,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "dropper": "sdf_mesh",
+     "x_after": 0.0753,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": 0,
+     "dropper": "sdf_mesh",
+     "x_after": 0.0471,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": 0,
+     "dropper": "sdf_mesh",
+     "x_after": 0.4588,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "dropper": "sdf_mesh",
+     "x_after": 0.0624,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": 0,
+     "dropper": "convex",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": 0,
+     "dropper": "convex",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "dropper": "convex",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "dropper": "convex",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": 0,
+     "dropper": "convex",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": 0,
+     "dropper": "convex",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "dropper": "convex",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": 0,
+     "dropper": "sphere",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": 0,
+     "dropper": "sphere",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "dropper": "sphere",
+     "x_after": 0.051,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "dropper": "sphere",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": 0,
+     "dropper": "sphere",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": 0,
+     "dropper": "sphere",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    },
+    {
+     "fin_thickness": 0.02,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "dropper": "sphere",
+     "x_after": 0.06,
+     "passed_through_fin": false,
+     "contact_found_events": 1
+    }
+   ]
+  },
+  {
+   "id": "S-thin",
+   "description": "SDF 解像度と薄板のすり抜け",
+   "rows": [
+    {
+     "dropper": "sphere",
+     "thickness": 0.002,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.01,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.05,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sphere",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "sphere_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.002,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.01,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.05,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "cube",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "box_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.002,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.01,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.05,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.002,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.01,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.01,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "z_after": 0.035,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.05,
+     "approx": "none",
+     "sdfResolution": null,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.05,
+     "approx": "sdf",
+     "sdfResolution": 256,
+     "subgrid": null,
+     "z_after": 0.055,
+     "passed_through": false,
+     "contact_events": 20,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "S-dense-sdf",
+   "description": "subgrid=0 の密な SDF",
+   "rows": [
+    {
+     "dropper": "convex",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": 0,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": 0,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": 0,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "convex",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": 0,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "convex_shapes": 1,
+      "trimesh_shapes": 1
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 8,
+     "subgrid": 0,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 16,
+     "subgrid": 0,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 32,
+     "subgrid": 0,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 64,
+     "subgrid": 0,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    },
+    {
+     "dropper": "sdf_mesh",
+     "thickness": 0.002,
+     "approx": "sdf",
+     "sdfResolution": 128,
+     "subgrid": 0,
+     "z_after": 0.031,
+     "passed_through": false,
+     "contact_events": 18,
+     "shapes": {
+      "trimesh_shapes": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "S-static-sdf",
+   "description": "SDF × ボディ種別",
+   "static": {
+    "overlap_notch": false,
+    "overlap_solid": false,
+    "shapes": {
+     "trimesh_shapes": 1
+    },
+    "contact_in_notch": false
+   },
+   "kinematic": {
+    "overlap_notch": false,
+    "overlap_solid": false,
+    "shapes": {
+     "trimesh_shapes": 1
+    },
+    "contact_in_notch": false
+   },
+   "dynamic": {
+    "overlap_notch": false,
+    "overlap_solid": false,
+    "shapes": {
+     "trimesh_shapes": 1
+    },
+    "contact_in_notch": false
+   }
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+Skipping automatic ROS environment setup
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-01T13:56:10Z [Info] [carb] Logging to file: c:/isaacsim-6.0.2/kit/logs/Kit/PhysX claim verification/6.2/kit_20261101_225610.log
+[0.169s] [ext: omni.assets.plugins-0.0.0] startup
+[0.173s] [ext: omni.blobkey-1.1.2] startup
+[0.173s] [ext: omni.kit.async_engine-0.0.5] startup
+[0.197s] [ext: omni.client.lib-1.1.1] startup
+[0.210s] [ext: omni.client-1.3.0] startup
+[0.272s] [ext: omni.protobuf.lib-1.0.1] startup
+[0.273s] [ext: omni.grpc.lib-1.0.1] startup
+[0.274s] [ext: omni.metrics.core-0.0.3] startup
+[0.275s] [ext: omni.datastore-0.0.0] startup
+[0.276s] [ext: omni.gpu_foundation.shadercache.d3d12-1.0.0] startup
+[0.281s] [ext: omni.hsscclient-1.1.4] startup
+[0.283s] [ext: omni.stats-1.0.1] startup
+[0.284s] [ext: omni.ujitso.default-1.0.0] startup
+[0.293s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.313s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.315s] [ext: omni.usd.config-1.0.8] startup
+2026-11-01T13:56:11Z [210ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+[0.331s] [ext: omni.usd.libs-1.0.3] startup
+[0.403s] [ext: omni.usd.schema.audio-0.0.1] startup
+[0.505s] [ext: omni.usd.schema.newton-1.5.0] startup
+[0.507s] [ext: omni.usd.schema.physx-110.4.4] startup
+[0.544s] [ext: carb.audio-0.1.0] startup
+[0.545s] [ext: omni.kit.actions.core-1.2.1] startup
+[0.549s] [ext: omni.kit.commands-1.6.2] startup
+[0.555s] [ext: omni.convexdecomposition-110.4.4] startup
+[0.558s] [ext: omni.cubric-0.1.0] startup
+[0.561s] [ext: omni.graph.exec-0.9.6] startup
+[0.562s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[0.564s] [ext: omni.kit.exec.core-0.13.6] startup
+[0.567s] [ext: omni.kit.loop-isaac-1.6.2] startup
+[0.570s] [ext: omni.kit.usd_undo-0.1.8] startup
+[0.570s] [ext: omni.timeline-1.1.2] startup
+[0.573s] [ext: omni.usd_resolver-1.0.0] startup
+[0.578s] [ext: omni.usd.core-1.10.42] startup
+[0.580s] [ext: omni.usd-1.19.11] startup
+[0.629s] [ext: omni.kit.usd.layers-2.7.9] startup
+[0.638s] [ext: omni.kit.primitive.mesh-1.1.1] startup
+[0.645s] [ext: omni.kit.stage_template.core-1.1.23] startup
+[0.646s] [ext: omni.kit.stage_templates-2.0.3] startup
+[0.648s] [ext: omni.physics-110.4.4] startup
+[0.653s] [ext: omni.physx.gpu-110.4.4] startup
+[0.654s] [ext: omni.physx.foundation-110.4.4] startup
+[0.666s] [ext: omni.usdphysics-110.4.4] startup
+[0.669s] [ext: omni.physx.cooking-110.4.4] startup
+[0.673s] [ext: usdrt.scenegraph-7.6.3] startup
+[0.711s] [ext: omni.physx-110.4.4] startup
+[0.721s] [ext: omni.physics.physx-110.4.4] startup
+[0.724s] [ext: omni.physics.stageupdate-110.4.4] startup
+[0.728s] [ext: physx_verify-6.2.0] startup
+[0.729s] Simulation App Starting
+2026-11-01T13:56:11Z [925ms] [Error] [omni.usd] '/app/useFabricSceneDelegate' is enabled, but usdrt::population::IUtils could not be created. Is UsdRt enabled?
+[1.164s] Simulation App Startup Complete
+[1.164s] app ready
+Starting kit application with the following args:  ['C:\\isaacsim-6.0.2\\exts\\isaacsim.simulation_app\\isaacsim\\simulation_app\\simulation_app.py', 'C:\\isaacsim-6.0.2\\CodeByClaude\\physx_overlap_contact_verification\\code\\physx_verify.kit', '--/app/tokens/exe-path=C:\\isaacsim-6.0.2\\kit', '--/persistent/app/viewport/displayOptions=3094', '--/rtx/materialDb/syncLoads=True', '--/rtx/hydra/materialSyncLoads=True', '--/omni/kit/plugin/syncUsdLoads=True', '--/app/renderer/resolution/width=1280', '--/app/renderer/resolution/height=720', '--/app/window/width=1440', '--/app/window/height=900', '--/renderer/multiGpu/enabled=True', '--/app/fastShutdown=True', '--/app/installSignalHandlers=0', '--ext-folder', 'C:\\isaacsim-6.0.2/exts', '--ext-folder', 'C:\\isaacsim-6.0.2/apps', '--/physics/cudaDevice=0', '--/plugins/carb.tasking.plugin/threadCount=16', '--/plugins/omni.tbb.globalcontrol/maxThreadCount=16', '--portable', '--no-window', '--/app/window/hideUi=1']
+Passing the following args to the base kit application:  ['--no-ros-env']
+[START] C-scope
+[RESULT] C-scope: {"cases": {"none": {"pairs": [], "found_events": 0, "events": 0, "steps": 10}, "A_only": {"pairs": [["/World/A", "/World/B"]], "found_events": 1, "events": 10, "steps": 10}, "B_only": {"pairs": [["/World/A", "/World/B"]], "found_events": 1, "events": 10, "steps": 10}, "A_and_B": {"pairs": [["/World/A", "/World/B"]], "found_events": 1, "events": 10, "steps": 10}, "all_four": {"pairs": [["/World/A", "/World/B"], ["/World/C", "/World/D"]], "found_events": 2, "events": 20, "steps": 10}}, "control_no_api_D_x_after_30_frames": 10.998250961303711, "control_note": "D の初期 x=10.95。増えていれば報告なしでも衝突は計算されている"}
+[END] C-scope 1.5s
+[START] C-per-step
+[RESULT] C-per-step: {"steps": 20, "callbacks": 20, "events": 20, "found": 1, "persist": 19, "lost": 0}
+[END] C-per-step 0.4s
+[START] C-play-off-no-step
+[RESULT] C-play-off-no-step: {"events": 0, "callbacks": 0}
+[END] C-play-off-no-step 0.1s
+[START] C-decode
+[RESULT] C-decode: {"actor0": "/World/B", "actor1": "/World/A", "collider0": "/World/B", "collider1": "/World/A", "raw_actor0": 3585}
+[END] C-decode 0.1s
+[START] C-offset-sweep
+[RESULT] C-offset-sweep: {"rows": [{"co_sum": 0.02, "gap": 0.04, "ratio": 2.0, "reported": false, "min_sep": null, "first_impulse_zero": true}, {"co_sum": 0.02, "gap": 0.025, "ratio": 1.25, "reported": false, "min_sep": null, "first_impulse_zero": true}, {"co_sum": 0.02, "gap": 0.021, "ratio": 1.05, "reported": false, "min_sep": null, "first_impulse_zero": true}, {"co_sum": 0.02, "gap": 0.019, "ratio": 0.95, "reported": true, "min_sep": 0.01900005340576172, "first_impulse_zero": true}, {"co_sum": 0.02, "gap": 0.015, "ratio": 0.75, "reported": true, "min_sep": 0.014999985694885254, "first_impulse_zero": true}, {"co_sum": 0.02, "gap": 0.01, "ratio": 0.5, "reported": true, "min_sep": 0.009999990463256836, "first_impulse_zero": true}, {"co_sum": 0.02, "gap": 0.002, "ratio": 0.1, "reported": true, "min_sep": 0.001999974250793457, "first_impulse_zero": true}, {"co_sum": 0.034999999999999996, "gap": 0.07, "ratio": 2.0, "reported": false, "min_sep": null, "first_impulse_zero": true}, {"co_sum": 0.034999999999999996, "gap": 0.04375, "ratio": 1.25, "reported": false, "min_sep": null, "first_impulse_zero": true}, {"co_sum": 0.034999999999999996, "gap": 0.03675, "ratio": 1.05, "reported": false, "min_sep": null, "first_impulse_zero": true}, {"co_sum": 0.034999999999999996, "gap": 0.03325, "ratio": 0.95, "reported": true, "min_sep": 0.03324997425079346, "first_impulse_zero": true}, {"co_sum": 0.034999999999999996, "gap": 0.02625, "ratio": 0.75, "reported": true, "min_sep": 0.026250004768371582, "first_impulse_zer
+[END] C-offset-sweep 0.9s
+[START] C-threshold
+[RESULT] C-threshold: {"cases": {"default_1.0_gap+0.005": {"events": 0, "min_sep": null}, "0.0_gap+0.005": {"events": 5, "min_sep": 0.004999995231628418}, "default_1.0_gap-0.05": {"events": 2, "min_sep": -0.050000011920928955}, "0.0_gap-0.05": {"events": 5, "min_sep": -0.050000011920928955}}}
+[END] C-threshold 0.4s
+[START] O-geometric
+[RESULT] O-geometric: {"rows": [{"contactOffset": 0.1, "restOffset": 0.0, "gap": 0.05, "B_hit": false}, {"contactOffset": 0.1, "restOffset": 0.0, "gap": 0.01, "B_hit": false}, {"contactOffset": 0.1, "restOffset": 0.0, "gap": 0.001, "B_hit": false}, {"contactOffset": 0.1, "restOffset": 0.0, "gap": 0.0001, "B_hit": false}, {"contactOffset": 0.1, "restOffset": 0.0, "gap": 1e-05, "B_hit": false}, {"contactOffset": 0.1, "restOffset": 0.0, "gap": 0.0, "B_hit": true}, {"contactOffset": 0.1, "restOffset": 0.0, "gap": -1e-05, "B_hit": true}, {"contactOffset": 0.1, "restOffset": 0.0, "gap": -0.0001, "B_hit": true}, {"contactOffset": 0.1, "restOffset": 0.0, "gap": -0.001, "B_hit": true}, {"contactOffset": 0.1, "restOffset": 0.0, "gap": -0.01, "B_hit": true}, {"contactOffset": 0.1, "restOffset": 0.05, "gap": 0.05, "B_hit": false}, {"contactOffset": 0.1, "restOffset": 0.05, "gap": 0.01, "B_hit": false}, {"contactOffset": 0.1, "restOffset": 0.05, "gap": 0.001, "B_hit": false}, {"contactOffset": 0.1, "restOffset": 0.05, "gap": 0.0001, "B_hit": false}, {"contactOffset": 0.1, "restOffset": 0.05, "gap": 1e-05, "B_hit": false}, {"contactOffset": 0.1, "restOffset": 0.05, "gap": 0.0, "B_hit": true}, {"contactOffset": 0.1, "restOffset": 0.05, "gap": -1e-05, "B_hit": true}, {"contactOffset": 0.1, "restOffset": 0.05, "gap": -0.0001, "B_hit": true}, {"contactOffset": 0.1, "restOffset": 0.05, "gap": -0.001, "B_hit": true}, {"contactOffset": 0.1, "restOffset": 0.05, "gap": -0.01, "B_hit": true}, {"contactOffset": 0.001, "re
+[END] O-geometric 0.4s
+[START] O-boundary
+[RESULT] O-boundary: {"rows": [{"contactOffset": 0.2, "probe_radius": 0.001, "boundary_x": 0.5009997367858887, "expected": 0.501, "error": -2.6321411128460426e-07}, {"contactOffset": 0.2, "probe_radius": 0.01, "boundary_x": 0.5099999427795405, "expected": 0.51, "error": -5.7220459481754915e-08}, {"contactOffset": 0.2, "probe_radius": 0.1, "boundary_x": 0.5999997138977051, "expected": 0.6, "error": -2.861022948552616e-07}, {"contactOffset": 0.001, "probe_radius": 0.001, "boundary_x": 0.5009997367858887, "expected": 0.501, "error": -2.6321411128460426e-07}, {"contactOffset": 0.001, "probe_radius": 0.01, "boundary_x": 0.5099999427795405, "expected": 0.51, "error": -5.7220459481754915e-08}, {"contactOffset": 0.001, "probe_radius": 0.1, "boundary_x": 0.5999997138977051, "expected": 0.6, "error": -2.861022948552616e-07}]}
+[END] O-boundary 0.0s
+[DONE] t03_contact_basic 8
+[5.017s] Simulation App Shutting Down
