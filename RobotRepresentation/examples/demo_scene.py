@@ -61,7 +61,7 @@ def _obstacle(stage, path, root_offset):
 
 
 def _paint(stage, robot, hot):
-    for k, (body, paths) in enumerate(robot.collider_paths().items()):
+    for k, (body, paths) in enumerate(robot.visual_paths().items()):
         c = RED if body in hot else Gf.Vec3f(*PALETTE[k % len(PALETTE)])
         for p in paths:
             UsdGeom.Gprim(stage.GetPrimAtPath(p)).GetDisplayColorAttr().Set(Vt.Vec3fArray([c]))

@@ -2,8 +2,10 @@
 """ロボットの干渉検知（Isaac Sim / Kit の中で使う）。
 
 CollisionChecker（collision="static" 向け。物理演算なし）
-  ロボットの形状 1 つずつについて、PhysX のシーンクエリ overlap_shape で「重なっているコライダー」を
-  問い合わせる。形状どうしの幾何的な重なりを見るので、contactOffset などの余白は入らない。
+  ロボットの干渉判定の形状（<body>/collisions/ のカプセルと球）1 つずつについて、PhysX のシーンクエリ
+  overlap_shape で「重なっているコライダー」を問い合わせる。形状どうしの幾何的な重なりを見るので、
+  contactOffset などの余白は入らない。カプセルと球は PhysX の問い合わせでも厳密に扱われる。
+  見た目の形状（<body>/visuals/）は判定に使わない。
   タイムラインが Stop でも Play でも、関節値を変えた直後から結果に反映される。
 
     checker = CollisionChecker(robot)              # robot は scene.SceneRobot

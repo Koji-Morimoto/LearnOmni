@@ -11,7 +11,10 @@
 
     robot = SceneRobot(stage, "/World/MyRobot")       # 作ってあるロボットをつかみ直す
 
-URDF も ArticulationRoot も使わない。ボディは Xform、形状は Capsule / Sphere を直接作る。
+URDF も ArticulationRoot も使わない。ボディは Xform で、その下に見た目と干渉判定の形状を別々に作る
+（半径・高さの属性で作り、拡大縮小は使わない）。
+  <body>/visuals/     見た目。リンクは円柱、関節の軸は軸に沿った円柱、折れ目は球
+  <body>/collisions/  干渉判定。リンクの折れ線の各区間のカプセル（purpose = guide なので描かれない）
 関節値は表現ごとのやり方で xformOp に書く（ユーザーは xformOp を触らない）。
   dh    : ボディを入れ子にし、各ボディに rotateX(alpha) translate(a) rotateZ(theta) translate(d)。
           関節値は rotateZ（回転）か translate:d（直動）の値に足す
@@ -42,7 +45,7 @@ from pxr import Gf, PhysxSchema, Sdf, Usd, UsdGeom, UsdPhysics, Vt
 
 from . import REPRESENTATIONS, robot_from_dict
 from ._math import TOL, min_rotation, quat_wxyz, tf_inv
-from .chain import Style, check_q, segments
+from .chain import Style, check_q, collision_segments, visual_segments
 
 COLLISION_MODES = ("static", "kinematic", "none")
 LAYOUTS = ("nested", "flat")
@@ -123,16 +126,19 @@ def build_robot(stage, path, robot, style=None, collision="static", layout=None,
         body_paths.append(bp)
 
     colors = colors or PALETTE
-    for i, seg in enumerate(segments(chain, style)):
-        local = tf_inv(home[seg.body])
-        a = local[:3, :3] @ np.array(seg.a) + local[:3, 3]
-        b = local[:3, :3] @ np.array(seg.b) + local[:3, 3]
-        gp = body_paths[seg.body].AppendChild(f"{seg.role}_{i:02d}")
-        gprim = _author_segment(stage, gp, a, b, seg.radius)
-        c = colors[seg.body % len(colors)]
-        gprim.CreateDisplayColorAttr(Vt.Vec3fArray([Gf.Vec3f(*c)]))
-        if collision != "none":
-            UsdPhysics.CollisionAPI.Apply(gprim.GetPrim())
+    for group, segs in (("visuals", visual_segments(chain, style)), ("collisions", collision_segments(chain, style))):
+        for bp in body_paths:
+            g = UsdGeom.Xform.Define(stage, bp.AppendChild(group))
+            if group == "collisions":  # 干渉判定の形状は描かない（ビューポートの Show By Type で表示できる）
+                g.CreatePurposeAttr(UsdGeom.Tokens.guide)
+        for i, seg in enumerate(segs):
+            local = tf_inv(home[seg.body])
+            a = local[:3, :3] @ np.array(seg.a) + local[:3, 3]
+            b = local[:3, :3] @ np.array(seg.b) + local[:3, 3]
+            gprim = _author_segment(stage, _shape_path(body_paths[seg.body], group, seg, i), seg.shape, a, b, seg.radius)
+            gprim.CreateDisplayColorAttr(Vt.Vec3fArray([Gf.Vec3f(*colors[seg.body % len(colors)])]))
+            if group == "collisions" and collision != "none":
+                UsdPhysics.CollisionAPI.Apply(gprim.GetPrim())
 
     tool = UsdGeom.Xform.Define(stage, body_paths[-1].AppendChild("tool"))
     _author_tool_ops(robot, tool, home[-1])
@@ -190,22 +196,32 @@ def _author_tool_ops(robot, tool, last_home):
         _dop(tool, "orient").Set(_gf_quat(m[:3, :3]))
 
 
-def _author_segment(stage, path, a, b, radius):
-    d = b - a
-    length = float(np.linalg.norm(d))
-    if length < TOL:
+def _shape_path(body_path, group, seg, i):
+    return body_path.AppendChild(group).AppendChild(f"{seg.role}_{i:02d}")
+
+
+def _author_segment(stage, path, shape, a, b, radius):
+    """Sphere / Capsule / Cylinder を、拡大縮小を使わずに半径・高さの属性で作る。"""
+    radius = float(radius)
+    if shape == "sphere":
         g = UsdGeom.Sphere.Define(stage, path)
-        g.CreateRadiusAttr(float(radius))
+        g.CreateRadiusAttr(radius)
         _dop(g, "translate").Set(Gf.Vec3d(*[float(x) for x in a]))
         g.CreateExtentAttr(Vt.Vec3fArray([Gf.Vec3f(-radius), Gf.Vec3f(radius)]))
         return g
-    g = UsdGeom.Capsule.Define(stage, path)
+    d = b - a
+    length = float(np.linalg.norm(d))
+    if shape == "capsule":
+        g = UsdGeom.Capsule.Define(stage, path)
+        half = 0.5 * length + radius
+    else:
+        g = UsdGeom.Cylinder.Define(stage, path)
+        half = 0.5 * length
     g.CreateAxisAttr(UsdGeom.Tokens.z)
-    g.CreateRadiusAttr(float(radius))
+    g.CreateRadiusAttr(radius)
     g.CreateHeightAttr(length)
-    half = 0.5 * length + radius
     g.CreateExtentAttr(Vt.Vec3fArray([Gf.Vec3f(-radius, -radius, -half), Gf.Vec3f(radius, radius, half)]))
-    r = min_rotation(np.array([0.0, 0.0, 1.0]), d / length)
+    r = min_rotation(np.array([0.0, 0.0, 1.0]), d / length) if length >= TOL else np.eye(3)
     if r is None:  # 真下向き
         r = np.diag([1.0, -1.0, -1.0])
     _dop(g, "translate").Set(Gf.Vec3d(*[float(x) for x in 0.5 * (a + b)]))
@@ -256,6 +272,11 @@ class SceneRobot:
             self.body_paths.append(parent.AppendChild(body_name(k)))
         self.tool_path = self.body_paths[-1].AppendChild("tool")
         self._ops = [self._joint_op(k) for k in range(1, self.dof + 1)]
+        # build_robot と同じ順・同じ名前で形状の prim を並べる
+        self.visual_shapes = [(seg, str(_shape_path(self.body_paths[seg.body], "visuals", seg, i)))
+                              for i, seg in enumerate(visual_segments(self.chain, self.style))]
+        self.collision_shapes = [(seg, str(_shape_path(self.body_paths[seg.body], "collisions", seg, i)))
+                                 for i, seg in enumerate(collision_segments(self.chain, self.style))]
 
     # ---- 情報 ----
     @property
@@ -279,11 +300,17 @@ class SceneRobot:
         return self.robot.limits
 
     def collider_paths(self):
-        """{ボディ名: [形状の prim パス, ...]}"""
-        out = {}
-        for k, bp in enumerate(self.body_paths):
-            body = self.stage.GetPrimAtPath(bp)
-            out[body_name(k)] = [str(c.GetPath()) for c in body.GetChildren() if c.IsA(UsdGeom.Gprim)]
+        """{ボディ名: [干渉判定の形状の prim パス, ...]}"""
+        return self._by_body(self.collision_shapes)
+
+    def visual_paths(self):
+        """{ボディ名: [見た目の形状の prim パス, ...]}"""
+        return self._by_body(self.visual_shapes)
+
+    def _by_body(self, shapes):
+        out = {body_name(k): [] for k in range(self.dof + 1)}
+        for seg, path in shapes:
+            out[body_name(seg.body)].append(path)
         return out
 
     # ---- 関節値 ----

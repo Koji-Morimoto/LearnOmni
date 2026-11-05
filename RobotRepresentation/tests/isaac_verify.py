@@ -45,7 +45,7 @@ import omni.usd  # noqa: E402
 from omni.physx import get_physx_interface  # noqa: E402
 from pxr import Gf, UsdGeom, UsdPhysics  # noqa: E402
 
-from robot_repr import Style, segments  # noqa: E402
+from robot_repr import Style, collision_segments, visual_segments  # noqa: E402
 from robot_repr.collision import CollisionChecker, ContactMonitor  # noqa: E402
 from robot_repr.scene import SceneRobot, build_robot  # noqa: E402
 from sample_robots import all_three  # noqa: E402
@@ -90,10 +90,10 @@ def seg_dist(p1, q1, p2, q2):
     return float(np.linalg.norm((p1 + d1 * s) - (p2 + d2 * t)))
 
 
-def world_segments(q):
+def world_segments(q, make=collision_segments):
     motions = CHAIN.body_motions(q)
     out = []
-    for s in segments(CHAIN, STYLE):
+    for s in make(CHAIN, STYLE):
         m = motions[s.body]
         out.append((s, m[:3, :3] @ np.array(s.a) + m[:3, 3], m[:3, :3] @ np.array(s.b) + m[:3, 3]))
     return out
@@ -162,17 +162,18 @@ def build_all(stage, collision, configs):
     return robots, obstacles
 
 
-def usd_endpoints(stage, sr):
-    """各形状のワールド端点（ルート座標系）を USD の xform 合成で求める。形状は segments() と同じ順。"""
+def usd_endpoints(stage, sr, group="collisions"):
+    """各形状のワールド端点（ルート座標系）を USD の xform 合成で求める。形状は collision_segments() /
+    visual_segments() と同じ順。"""
     cache = UsdGeom.XformCache()
     root_inv = cache.GetLocalToWorldTransform(stage.GetPrimAtPath(sr.path)).GetInverse()
     pts = {}
-    for paths in sr.collider_paths().values():
+    for paths in (sr.collider_paths() if group == "collisions" else sr.visual_paths()).values():
         for p in paths:
             prim = stage.GetPrimAtPath(p)
             m = cache.GetLocalToWorldTransform(prim) * root_inv
-            if prim.IsA(UsdGeom.Capsule):
-                h = UsdGeom.Capsule(prim).GetHeightAttr().Get()
+            if prim.IsA(UsdGeom.Capsule) or prim.IsA(UsdGeom.Cylinder):
+                h = UsdGeom.Gprim(prim).GetPrim().GetAttribute("height").Get()
                 a, b = m.Transform(Gf.Vec3d(0, 0, -h / 2)), m.Transform(Gf.Vec3d(0, 0, h / 2))
             else:
                 a = b = m.Transform(Gf.Vec3d(0, 0, 0))
@@ -211,14 +212,16 @@ def verify_static():
             t0 = time.perf_counter()
             r.set_joint_positions(q)
             t_set.append(time.perf_counter() - t0)
-        # V1: USD の端点
-        want = world_segments(q)
-        ends = {n: usd_endpoints(stage, r) for n, r in robots.items()}
-        for n, e in ends.items():
-            for (s, a, b), (ua, ub) in zip(want, e):
-                max_err_np = max(max_err_np, float(np.max(np.abs(ua - a))), float(np.max(np.abs(ub - b))))
-            for (ua, ub), (va, vb) in zip(e, ends[REFERENCE]):
-                max_err_cross = max(max_err_cross, float(np.max(np.abs(ua - va))), float(np.max(np.abs(ub - vb))))
+        # V1: USD の端点（干渉判定の形状と見た目の形状の両方）
+        for group, make in (("collisions", collision_segments), ("visuals", visual_segments)):
+            want = world_segments(q, make)
+            ends = {n: usd_endpoints(stage, r, group) for n, r in robots.items()}
+            for n, e in ends.items():
+                assert len(e) == len(want)
+                for (s, a, b), (ua, ub) in zip(want, e):
+                    max_err_np = max(max_err_np, float(np.max(np.abs(ua - a))), float(np.max(np.abs(ub - b))))
+                for (ua, ub), (va, vb) in zip(e, ends[REFERENCE]):
+                    max_err_cross = max(max_err_cross, float(np.max(np.abs(ua - va))), float(np.max(np.abs(ub - vb))))
         # V2: 干渉（app.update() を挟まない）
         hit, unsure, margin = truth(q)
         results = {}

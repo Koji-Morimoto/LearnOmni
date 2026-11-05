@@ -41,11 +41,11 @@ chain = robot_def.to_chain()
 
 
 def margin(q):
-    from robot_repr import segments, Style
+    from robot_repr import Style, collision_segments
 
     best = 1e9
     mot = chain.body_motions(q)
-    for s in segments(chain, Style()):
+    for s in collision_segments(chain, Style()):
         m = mot[s.body]
         a, b = m[:3, :3] @ np.array(s.a) + m[:3, 3], m[:3, :3] @ np.array(s.b) + m[:3, 3]
         d = b - a

@@ -11,7 +11,7 @@ numpy だけで使える部分（ロボットの定義・変換・順運動学�
 """
 
 from ._math import TOL, rotation_from_rpy
-from .chain import DEFAULT_LIMITS, JointLine, LineChain, Segment, Style, foot_points, segments
+from .chain import DEFAULT_LIMITS, JointLine, LineChain, Segment, Style, collision_segments, foot_points, visual_segments
 from .dh import DHAxis, DHBase, DHRobot, DHTool, dh_angle
 from .screw import ScrewAxis, ScrewRobot, ScrewTool
 from .swing import SwingAxis, SwingRobot, SwingTool
@@ -33,6 +33,7 @@ def robot_from_dict(d):
 
 __all__ = [
     "TOL", "rotation_from_rpy", "DEFAULT_LIMITS", "JointLine", "LineChain", "Segment", "Style", "foot_points",
-    "segments", "DHAxis", "DHBase", "DHRobot", "DHTool", "dh_angle", "ScrewAxis", "ScrewRobot", "ScrewTool",
-    "SwingAxis", "SwingRobot", "SwingTool", "REPRESENTATIONS", "convert", "robot_from_dict",
+    "visual_segments", "collision_segments", "DHAxis", "DHBase", "DHRobot", "DHTool", "dh_angle",
+    "ScrewAxis", "ScrewRobot", "ScrewTool", "SwingAxis", "SwingRobot", "SwingTool", "REPRESENTATIONS", "convert",
+    "robot_from_dict",
 ]

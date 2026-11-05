@@ -10,7 +10,7 @@
                同じロボットのまま正準形に戻る。正準形のコンストラクタはそれを受け付けない
   T4 動き:      各表現の独自の積（DH の Rx Tx Rz Tz、スイングの入れ子、PoE の exp）で求めた
                ボディの動きと工具の位置姿勢が、ランダムな関節値で一致する
-  T5 形状:      各表現から作った形状（カプセルの端点）が一致する
+  T5 形状:      各表現から作った見た目の形状と干渉判定の形状（端点）が一致する
   T6 退化した配置: 平行・逆平行・交差・同一直線・ルートの Z 軸と一致・3 軸が 1 点で交わる・直動関節
   T7 辞書と平坦な数値列の往復
 """
@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from robot_repr import (  # noqa: E402
     DHAxis, DHBase, DHRobot, DHTool, LineChain, REPRESENTATIONS, ScrewAxis, ScrewRobot, SwingAxis, SwingRobot, Style,
-    convert, robot_from_dict, segments,
+    collision_segments, convert, robot_from_dict, visual_segments,
 )
 from robot_repr._math import rot_axis_angle, rotvec_to_matrix, tf, tf_inv, wrap_pi  # noqa: E402
 from robot_repr.chain import line_from_point  # noqa: E402
@@ -161,12 +161,13 @@ def test_motion_and_shape():
                 assert np.max(np.abs(r.tool_frame(q) - want_tool)) < 1e-9, f"T4 tool {r.NAME} {name}"
                 count += 1
         for style in (Style(), Style(link_rule="projection")):
-            segs = [segments(r.to_chain(), style) for r in reps]
-            for s in segs[1:]:
-                assert len(s) == len(segs[0])
-                for a, b in zip(s, segs[0]):
-                    assert a.body == b.body and a.role == b.role
-                    assert np.max(np.abs(np.array(a.a + a.b) - np.array(b.a + b.b))) < 1e-9, f"T5 {name}"
+            for make in (visual_segments, collision_segments):
+                segs = [make(r.to_chain(), style) for r in reps]
+                for s in segs[1:]:
+                    assert len(s) == len(segs[0])
+                    for a, b in zip(s, segs[0]):
+                        assert a.body == b.body and a.role == b.role and a.shape == b.shape
+                        assert np.max(np.abs(np.array(a.a + a.b) - np.array(b.a + b.b))) < 1e-9, f"T5 {name}"
     return f"{count} 件"
 
 
